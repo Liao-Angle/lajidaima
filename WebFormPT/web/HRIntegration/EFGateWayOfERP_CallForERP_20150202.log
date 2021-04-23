@@ -1,0 +1,1400 @@
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:03:48
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4575
+strWfSheetNo = 20150128
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:03:52
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4575
+strWfSheetNo = 20150128
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:04:02
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5031
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0002
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:04:02
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5031
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0002
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:04:15
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4354
+strWfSheetNo = 20150204
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:04:16
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4354
+strWfSheetNo = 20150204
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:04:24
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 3308
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:04:24
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 3308
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:04:39
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4029
+strWfSheetNo = 20150213
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:04:39
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4029
+strWfSheetNo = 20150213
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:04:46
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4872
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:04:47
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4872
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:04:55
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 3677
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:04:55
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 3677
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:05:17
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4074
+strWfSheetNo = 20150210
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:05:18
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4074
+strWfSheetNo = 20150210
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:05:19
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4074
+strWfSheetNo = 20150211
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:05:19
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4074
+strWfSheetNo = 20150211
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:05:26
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00034
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:05:27
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00034
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:07:07
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150204
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:07:08
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150204
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:07:16
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150206
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:07:16
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150206
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:07:23
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150209
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:07:24
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150209
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:09:18
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 1749
+strWfSheetNo = 20150203
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:09:18
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 1749
+strWfSheetNo = 20150203
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:12:14
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4704
+strWfSheetNo = 20150213
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:12:14
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4704
+strWfSheetNo = 20150213
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:12:38
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5027
+strWfSheetNo = 20150213
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:12:38
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5027
+strWfSheetNo = 20150213
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:15:37
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150126
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:15:38
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150126
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:15:44
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150129
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:15:44
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150129
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:15:44
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:15:45
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 5041
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:15:51
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 3304
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:15:51
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 3304
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:15:57
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00038
+strWfSheetNo = 20150202
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0002
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:15:58
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00038
+strWfSheetNo = 20150202
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0002
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:39:34
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4263
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:39:34
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4263
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:40:03
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00054
+strWfSheetNo = 20150128
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:40:04
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00054
+strWfSheetNo = 20150128
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:47:54
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4878
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:47:54
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4878
+strWfSheetNo = 20150130
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 上午 10:48:43
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00038
+strWfSheetNo = 20150127
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 上午 10:48:43
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 00038
+strWfSheetNo = 20150127
+lngAction = 0
+strProgID = PALI12
+strCompID = TP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 下午 12:31:27
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 1566
+strWfSheetNo = 20150204
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 下午 12:31:28
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 1566
+strWfSheetNo = 20150204
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 下午 12:33:19
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4154
+strWfSheetNo = 20150209
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 下午 12:33:20
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4154
+strWfSheetNo = 20150209
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+
+BeforeApprove - DoCheck ..... 
+Start Time = 2015/2/2 下午 12:33:20
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4154
+strWfSheetNo = 20150210
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2015/2/2 下午 12:33:21
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4154
+strWfSheetNo = 20150210
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP
+strUserID = 2854
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = LISA_LAI
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => Y
+回寫狀態描述 => 確認或取消確認資料單身共  0筆;成功  1筆;失敗  0筆;
+
+

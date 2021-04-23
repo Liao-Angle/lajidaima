@@ -1,0 +1,50 @@
+
+A:link
+{
+	font-size:9pt;
+	color:rgb(90,74,232);
+	text-decoration:none;
+}
+A:visited
+{
+	font-size:9pt;
+	color:rgb(90,74,232);
+	text-decoration:none;
+}
+A:hover
+{
+	font-size:9pt;
+	color:rgb(24,28,158);
+}
+.MainMenuItem
+{
+	font-size:9pt;
+	color:white;
+	cursor:pointer;
+	height:20px;
+	padding-top:3px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.MenuList
+{
+	border-width:1px;
+	border-style:solid;
+	border-color:rgb(90,74,232);
+}
+.MenuHead
+{
+	background-color:rgb(90,74,232);
+}
+.MenuContent
+{
+	background-color:White;
+	font-size:9pt;
+}
+.FrameTitle
+{
+	background-color:blue;
+	color:White;
+	font-size:9pt;
+}

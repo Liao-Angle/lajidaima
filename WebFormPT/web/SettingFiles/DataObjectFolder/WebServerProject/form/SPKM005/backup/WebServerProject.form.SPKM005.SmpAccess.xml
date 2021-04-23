@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPKM005.SmpAccess" tableName="SmpAccess">
+  <queryStr>
+    select GUID, DocGUID, RevGUID, BelongGroupType, BelongGroupGUID,
+    IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,
+    KindName, id, Name, EffectiveDate, ExpiryDate, InsertTime
+    from (
+    select r.GUID, r.DocGUID, r.RevGUID, r.BelongGroupType, r.BelongGroupGUID,
+    r.IS_LOCK, r.IS_DISPLAY, r.DATA_STATUS, r.D_INSERTUSER, r.D_INSERTTIME, r.D_MODIFYUSER, r.D_MODIFYTIME,
+    '人員' KindName, u.id , u.userName Name, r.EffectiveDate, r.ExpiryDate, r.D_INSERTTIME InsertTime
+    From SmpReader r
+    join Users u on u.OID = r.BelongGroupGUID
+    where r.BelongGroupType =1 and r.FromAccess='Y'
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="DocGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件識別號" showName=""/>
+    <field dataField="RevGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="版本識別號" showName=""/>
+    <field dataField="BelongGroupType" typeField="STRING" lengthField="50" defaultValue="" displayName="對象" showName=""/>
+    <field dataField="BelongGroupGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="對象識別號" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+    <field dataField="KindName" typeField="STRING" lengthField="50" defaultValue="" displayName="對象" showName=""/>
+    <field dataField="id" typeField="STRING" lengthField="100" defaultValue="" displayName="歸屬群組代碼" showName=""/>
+    <field dataField="Name" typeField="STRING" lengthField="100" defaultValue="" displayName="歸屬群組名稱" showName=""/>
+    <field dataField="EffectiveDate" typeField="STRING" lengthField="50" defaultValue="" displayName="生效時間" showName=""/>
+    <field dataField="ExpiryDate" typeField="STRING" lengthField="50" defaultValue="" displayName="失效時間" showName=""/>
+    <field dataField="InsertTime" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="KindName"/>
+    <field dataField="id"/>
+    <field dataField="Name"/>
+    <field dataField="InsertTime"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="KindName"/>
+    <field dataField="id"/>
+    <field dataField="Name"/>
+    <field dataField="InsertTime"/>
+  </nonUpdateField>
+</DataObject>

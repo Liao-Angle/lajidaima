@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="EnergyMaster.master.cs" Inherits="ProjectBaseWebUI_EnergyMaster" %>
+<%@ Register Assembly="DSCWebControl" Namespace="DSCWebControl" TagPrefix="cc1" %>
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="../StyleSheet/WebFormPT.css" rel="stylesheet" type="text/css" />
+    <title>未命名頁面</title>
+       <script language=javascript>
+		var pressQuit=0;
+		var count=0;
+		function window_onbeforeunload(){
+		    if(pressQuit==0){
+	            if (count == 0) {
+		            //修正事件取法
+                    var evt = getEvent();
+		            evt.returnValue = "<%=com.dsc.locale.LocaleString.getMainFrameLocaleString("MainFrame.aspx.language.ini", "global", "string001", "感謝您使用本系統.  再見!")%>";		
+                    //FF不支援window.event.reason
+		            if (evt.reason != null && evt.reason == false){
+			            cancelBubble(evt)
+                    }
+	            }
+	        }
+        }
+        function window_onunload(e){
+           if(pressQuit==0){
+                count++;
+	            var objHTTP = createXMLHTTP() ;
+	            objHTTP.open('Get','../Logout.aspx',false);
+	            objHTTP.send();
+	            if (e == undefined) {
+	                objHTTP = createXMLHTTP() ;
+	                objHTTP.open('Get','../Logout.aspx',false);
+	                objHTTP.send();
+	            }else{
+		            window.open(e);
+		            window.close();
+	            }
+		    }
+        }
+       function RefreshOutDataList(){
+            OutDataList_ReadServer("ListTable");
+        } 
+    </script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+        <cc1:DSCTabControl ID="DSCTabControl1" runat="server" Height="409px" Width="100%">
+        <TabPages>
+               <cc1:DSCTabPage ID="queryPage" runat="server" Enabled="True" Title="查詢" ImageURL="~/Images/Search.gif">
+                    <TabBody>
+                        <cc1:QueryPage ID="QueryPages" runat="server" Width="544px" />
+                        <br />
+                        <cc1:GlassButton ID="SendButton" runat="server" OnClick="SendButton_Click" Text="重新查詢" Width="150px" ImageUrl="~/Images/OK.gif" showWaitingIcon="true" />&nbsp;
+                        <cc1:GlassButton ID="ClearButton" runat="server" OnClick="ClearButton_Click" Text="清除條件" Width="150px" ImageUrl="~/Images/NO.gif" />
+                    </TabBody> 
+               </cc1:DSCTabPage> 
+               <cc1:DSCTabPage ID="listPage" runat="server" Enabled="True" Title="清單" ImageURL="~/Images/List.gif">
+                    <TabBody>
+                        <cc1:OutDataList ID="ListTable" runat="server" Height="301px" Width="99%" NoModify="True" OnShowRowData="ListTable_ShowRowData" OnDeleteData="ListTable_DeleteData" OnSaveRowData="ListTable_SaveRowData" OnBeforeDeleteData="ListTable_BeforeDeleteData" />
+
+                    </TabBody> 
+               </cc1:DSCTabPage>
+        </TabPages> 
+        </cc1:DSCTabControl>
+
+    </div>
+    </form>
+</body>
+</html>

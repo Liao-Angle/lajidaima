@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.Sample.ProjectTEST" tableName="ProjectTEST">
+  <queryStr>
+    select GUID, ProjectID, ProjectName, LeaderGUID, id, userName, IS_DISPLAY , IS_LOCK, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME from ProjectTEST inner join Users on OID=LeaderGUID
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="ProjectID" typeField="STRING" lengthField="50" defaultValue="" displayName="專案代號" showName=""/>
+    <field dataField="ProjectName" typeField="STRING" lengthField="50" defaultValue="" displayName="專案名稱" showName=""/>
+    <field dataField="LeaderGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="主持人識別號" showName=""/>
+    <field dataField="id" typeField="STRING" lengthField="50" defaultValue="" displayName="主持人工號" showName=""/>
+    <field dataField="userName" typeField="STRING" lengthField="50" defaultValue="" displayName="主持人姓名" showName=""/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示"
+              showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定"
+              showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態"
+              showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="ProjectID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="id"/>
+    <field dataField="userName"/>
+  </nonUpdateField>
+</DataObject>

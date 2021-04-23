@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPAD005.SmpOrganization" tableName="SmpOrganization">
+  <queryStr>
+    select empGUID, empNumber, empName, empEName, empEmail, funcName, funcOID, managerId, managerName, managerOID
+	     , deptId, deptOID, deptName, deptManagerId, deptManagerName, deptManagerTitle, deptManagerEmail,  deptManagerOID
+		 , empLeaveDate, managerLeaveDate, orgId, orgOID, orgName, titleName, titleOID from EmployeeInfo
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="empGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="員工識別號" showName=""/>
+	<field dataField="empNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="員工工號" showName=""/>
+	<field dataField="empName" typeField="STRING" lengthField="50" defaultValue="" displayName="員工姓名" showName=""/>
+	<field dataField="empEName" typeField="STRING" lengthField="50" defaultValue="" displayName="員工英文名" showName=""/>
+	<field dataField="empEmail" typeField="STRING" lengthField="50" defaultValue="" displayName="員工EMAIL" showName=""/>
+	<field dataField="funcName" typeField="STRING" lengthField="50" defaultValue="" displayName="職務名稱" showName=""/>
+	<field dataField="funcOID" typeField="STRING" lengthField="50" defaultValue="" displayName="職務OID" showName=""/>
+	<field dataField="managerId" typeField="STRING" lengthField="50" defaultValue="" displayName="直屬主管工號" showName=""/>
+	<field dataField="managerName" typeField="STRING" lengthField="50" defaultValue="" displayName="直屬主管" showName=""/>
+	<field dataField="managerOID" typeField="STRING" lengthField="50" defaultValue="" displayName="直屬主管OID" showName=""/>
+	<field dataField="deptId" typeField="STRING" lengthField="50" defaultValue="" displayName="部門代號" showName=""/>
+	<field dataField="deptOID" typeField="STRING" lengthField="50" defaultValue="" displayName="部門OID" showName=""/>
+	<field dataField="deptName" typeField="STRING" lengthField="50" defaultValue="" displayName="部門名稱" showName=""/>
+	<field dataField="deptManagerId" typeField="STRING" lengthField="50" defaultValue="" displayName="部門主管工號" showName=""/>
+	<field dataField="deptManagerName" typeField="STRING" lengthField="50" defaultValue="" displayName="部門主管" showName=""/>
+	<field dataField="deptManagerTitle" typeField="STRING" lengthField="50" defaultValue="" displayName="部門主管職稱" showName=""/>
+	<field dataField="deptManagerEmail" typeField="STRING" lengthField="50" defaultValue="" displayName="部門主管Email" showName=""/>
+	<field dataField="deptManagerOID" typeField="STRING" lengthField="50" defaultValue="" displayName="部門主管OID" showName=""/>
+	<field dataField="empLeaveDate" typeField="STRING" lengthField="50" defaultValue="" displayName="員工離職日" showName=""/>
+	<field dataField="managerLeaveDate" typeField="STRING" lengthField="50" defaultValue="" displayName="主管離職日" showName=""/>
+    <field dataField="orgId" typeField="STRING" lengthField="50" defaultValue="" displayName="公司代號" showName=""/>
+	<field dataField="orgOID" typeField="STRING" lengthField="50" defaultValue="" displayName="公司OID" showName=""/>
+    <field dataField="orgName" typeField="STRING" lengthField="12" defaultValue="" displayName="公司名稱" showName=""/>
+	<field dataField="titleName" typeField="STRING" lengthField="12" defaultValue="" displayName="職稱" showName=""/>
+	<field dataField="titleOID" typeField="STRING" lengthField="12" defaultValue="" displayName="職稱OID" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="empGUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="empGUID"/>
+  </keyField>
+  <allowEmptyField>
+	<field dataField="empEName"/>
+	<field dataField="empEmail"/>
+	<field dataField="funcName"/>
+	<field dataField="funcOID"/>
+	<field dataField="managerId"/>
+	<field dataField="managerName"/>
+	<field dataField="managerOID"/>
+	<field dataField="deptId"/>
+	<field dataField="deptOID"/>
+	<field dataField="deptName"/>
+	<field dataField="deptManagerId"/>
+	<field dataField="deptManagerName"/>
+	<field dataField="deptManagerTitle"/>
+	<field dataField="deptManagerEmail"/>	
+	<field dataField="deptManagerOID"/>
+	<field dataField="empLeaveDate"/>
+	<field dataField="managerLeaveDate"/>
+	<field dataField="orgId"/>
+	<field dataField="orgOID"/>
+	<field dataField="orgName"/>
+	<field dataField="titleName"/>
+	<field dataField="titleOID"/>
+  </allowEmptyField>
+  <nonUpdateField>
+	<field dataField="empGUID"/>
+	<field dataField="empNumber"/>
+	<field dataField="empName"/>
+	<field dataField="empEName"/>
+	<field dataField="empEmail"/>
+	<field dataField="funcName"/>
+	<field dataField="funcOID"/>
+	<field dataField="managerId"/>
+	<field dataField="managerName"/>
+	<field dataField="managerOID"/>
+	<field dataField="deptId"/>
+	<field dataField="deptOID"/>
+	<field dataField="deptName"/>
+	<field dataField="deptManagerId"/>
+	<field dataField="deptManagerName"/>
+	<field dataField="deptManagerTitle"/>
+	<field dataField="deptManagerEmail"/>
+	<field dataField="deptManagerOID"/>
+	<field dataField="empLeaveDate"/>
+	<field dataField="managerLeaveDate"/>
+	<field dataField="orgId"/>
+	<field dataField="orgOID"/>
+	<field dataField="orgName"/>
+	<field dataField="titleName"/>
+	<field dataField="titleOID"/>  
+  </nonUpdateField>
+</DataObject>

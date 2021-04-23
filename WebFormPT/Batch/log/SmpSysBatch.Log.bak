@@ -1,0 +1,6 @@
+2013/9/24 下午 06:00:57 connect db  EF Database 
+2013/9/24 下午 06:00:57 // SQL Statement:select count(*) cnt from  NaNa.dbo.Users  where (leaveDate is null or leaveDate ='') and OID not in (select SMVKBAB003 from WebFormPT.dbo.SMVKBAB) 
+2013/9/24 下午 06:00:57 strInsert SQL : insert into WebFormPT.dbo.SMVKBAB  select NEWID(),(select distinct SMVKBAA001 from WebFormPT.dbo.SMVKBAA, WebFormPT.dbo.SMVKBAB where SMVKBAB002=SMVKBAA001 and SMVKBAA002='SMP'), OID, '00000000000000000000000Users0001', convert(varchar, getdate(), 111) + ' ' + convert(varchar, getdate(), 108), '00000000000000000000000Users0001', convert(varchar, getdate(), 111) + ' ' + convert(varchar, getdate(), 108)  from NaNa.dbo.Users  where (leaveDate is null or leaveDate ='')  and OID not in (select SMVKBAB003 from WebFormPT.dbo.SMVKBAB) 
+
+2013/9/25 上午 06:00:11 connect db  EF Database 
+2013/9/25 上午 06:00:11 // SQL Statement:select count(*) cnt from  NaNa.dbo.Users  where (leaveDate is null or leaveDate ='') and OID not in (select SMVKBAB003 from WebFormPT.dbo.SMVKBAB) 

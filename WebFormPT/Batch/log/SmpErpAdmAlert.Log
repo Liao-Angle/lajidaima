@@ -1,0 +1,62 @@
+2014/12/5 下午 04:26:44 // str_date1: 2014/12/20
+2014/12/5 下午 04:26:44 // str_lastmonth: 2014/10/05
+2014/12/5 下午 04:26:45 connect db 
+2014/12/5 下午 04:26:45 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2014/12/5 下午 04:26:46 ERP Adm Alert complete!
+2014/12/5 下午 04:27:43 // str_date1: 2014/12/20
+2014/12/5 下午 04:27:43 // str_lastmonth: 2014/10/05
+2014/12/5 下午 04:27:43 connect db 
+2014/12/5 下午 04:27:43 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2014/12/5 下午 04:27:43 ERP Adm Alert complete!
+2014/12/5 下午 04:28:45 // str_date1: 2014/12/20
+2014/12/5 下午 04:28:45 // str_lastmonth: 2014/10/05
+2014/12/5 下午 04:28:45 connect db 
+2014/12/5 下午 04:28:45 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2014/12/5 下午 04:28:45 ERP Adm Alert complete!
+2015/2/1 上午 07:30:00 // str_date1: 2015/02/16
+2015/2/1 上午 07:30:00 // str_lastmonth: 2014/12/01
+2015/2/1 上午 07:30:00 connect db 
+2015/2/1 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/1 上午 07:30:06 ERP Adm Alert complete!
+2015/2/2 上午 07:30:00 // str_date1: 2015/02/17
+2015/2/2 上午 07:30:00 // str_lastmonth: 2014/12/02
+2015/2/2 上午 07:30:00 connect db 
+2015/2/2 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/2 上午 07:30:00 ERP Adm Alert complete!
+2015/2/3 上午 07:30:00 // str_date1: 2015/02/18
+2015/2/3 上午 07:30:00 // str_lastmonth: 2014/12/03
+2015/2/3 上午 07:30:00 connect db 
+2015/2/3 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/3 上午 07:30:00 ERP Adm Alert complete!
+2015/2/3 上午 08:30:28 // str_date1: 2015/02/18
+2015/2/3 上午 08:30:28 // str_lastmonth: 2014/12/03
+2015/2/3 上午 08:30:28 connect db 
+2015/2/3 上午 08:30:28 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/4 上午 07:30:00 // str_date1: 2015/02/19
+2015/2/4 上午 07:30:00 // str_lastmonth: 2014/12/04
+2015/2/4 上午 07:30:00 connect db 
+2015/2/4 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/5 上午 07:30:00 // str_date1: 2015/02/20
+2015/2/5 上午 07:30:00 // str_lastmonth: 2014/12/05
+2015/2/5 上午 07:30:00 connect db 
+2015/2/5 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/6 上午 07:30:00 // str_date1: 2015/02/21
+2015/2/6 上午 07:30:00 // str_lastmonth: 2014/12/06
+2015/2/6 上午 07:30:00 connect db 
+2015/2/6 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/8 上午 07:30:00 // str_date1: 2015/02/23
+2015/2/8 上午 07:30:00 // str_lastmonth: 2014/12/08
+2015/2/8 上午 07:30:00 connect db 
+2015/2/8 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/9 上午 07:30:00 // str_date1: 2015/02/24
+2015/2/9 上午 07:30:00 // str_lastmonth: 2014/12/09
+2015/2/9 上午 07:30:00 connect db 
+2015/2/9 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/10 上午 07:30:00 // str_date1: 2015/02/25
+2015/2/10 上午 07:30:00 // str_lastmonth: 2014/12/10
+2015/2/10 上午 07:30:00 connect db 
+2015/2/10 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 
+2015/2/11 上午 07:30:00 // str_date1: 2015/02/26
+2015/2/11 上午 07:30:00 // str_lastmonth: 2014/12/11
+2015/2/11 上午 07:30:00 connect db 
+2015/2/11 上午 07:30:00 SQL Statement: select orgId, TypeCode, formId, formNum, creator, originator, convert(varchar(10),creationDate,111) as creationDate, convert(varchar(10),newStepTime,111)+' '+ convert(varchar(10),newStepTime,108) newStepTime from SmpErpAdmAlert order by orgId, formId, creationDate 

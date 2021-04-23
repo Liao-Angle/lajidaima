@@ -1,0 +1,1210 @@
+﻿body 
+{
+	font-size:10pt;
+	background-color2:rgb(228, 233, 233);
+	background-color:#EEEEEE;
+	background-imagex:url(../Images/bg.gif);
+	font-family:Arial;
+     
+}
+.ecpDialogTitle .ui-dialog-titlebar {
+        background:#B3C9D4;
+    	border-color:#66B3FF;
+}
+
+.SingleField_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:Transparent;
+    border-color:inherit;
+	font-family:Arial;
+}
+.SingleField_ReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.SingleField_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleField_AccountNormal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:Transparent;
+    border-color:inherit;
+	border-color:Black;
+	color:Red;
+	font-family:Arial;
+}
+.SingleField_AccountReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	border-color:Black;
+	color:Red;
+	font-family:Arial;
+}.SingleDateTimeField_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleDateTimeField_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	color:#A0A0A0;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.SingleDateTimeField_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	border-style:none;
+	border-width:1px;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/calendar2.gif);
+
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.SingleDateTimeField_Certificate
+{
+	font-family:Arial;
+	font-size:10pt;
+}
+.SingleDateTimeField_CalendarPanel
+{		        	  
+font-size:10pt;
+background-color2:rgb(228, 233, 233);
+background-color:#EEEEEE;
+background-imagex:url(../DSCWebControlRunTime/DSCWebControlImages/calendar/SingleDateTimeField_BG.gif);
+font-family:Arial;
+}
+.SingleDateTimeField_CalendarWeekDayZone
+{                 
+	font-size:10pt;
+text-align : center;
+background-color:WindowText;
+color:Aqua;
+overflow :visible;
+}        
+.SingleDateTimeField_CalendarControlBar_MouseOver
+{
+background-color  : Orange;
+cursor:pointer;
+}        
+.SingleDateTimeField_CalendarControlBar_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	font-family:Arial;
+}        
+.SingleDateTimeField_DayZone
+{
+	font-size:10pt;
+text-align : center;
+font-family:Arial Greek;
+}
+.SingleDateTimeField_DayZone_DayGrid
+{   
+	font-size:10pt;
+cursor:pointer;        		                                  	
+color: #0597DB;		   
+background-color:White;  				
+}       
+.SingleDateTimeField_DayZone_DayGrid_Disabled
+{
+	background: url(../DSCWebControlRunTime/DSCWebControlImages/calendar/forbidden.png) no-repeat 50% 50%;                                        	            	    
+        	
+}
+.SingleDateTimeField_DayZone_DayGrid_NotCurrentMonthDay
+{
+color : Gray;
+}        
+.SingleDateTimeField_DayZone_DayGrid_MouseOver
+{
+	text-align:center;                       
+	border-bottom-color:Black;
+	border-right-color:Black;
+	background-color  : Orange;
+}
+.SingleDateTimeField_DayZone_DayGrid_Selected
+{
+	text-align:center;            
+	border-bottom-color:Black;
+	border-right-color:Black;
+	background-color  : Lime;
+}
+.SingleDateTimeField_DayZone_DayGrid_WeekEnd
+{
+	font-size:10pt;
+	text-align:center;                        
+	border-bottom-color:Black;
+	border-right-color:Black;
+	background-color:Red;
+}    
+.SingleDateTimeField_YearMonthDialog_MonthAreaTable
+{
+width:100%;        
+text-align :center;
+line-height:30px;
+border-style:dotted;
+border:1px solid black;
+table-layout:fixed;   
+word-break:break-all;   
+word-wrap:break-word;           
+	font-size:10pt;
+}
+.SingleDateTimeField_YearMonthDialog_YearAreaTable
+{
+width:100%;
+text-align :center;
+font-family:Arial Greek;       
+border:1px 1px 1px 1px;
+border-color:Aqua;
+border-bottom-color:Black;        
+	font-size:10pt;
+}
+.SingleDateTimeField_YearMonthDialog_YearControlButton_OnMouseOver
+{
+	background-color:Orange;
+	cursor:pointer;
+}
+.SingleDateTimeField_TimeZone_TimeInput
+{
+background-color2:rgb(228, 233, 233);
+background-color:#EEEEEE;
+background-imagex:url(../Images/bg.gif);
+font-size:x-large;
+text-align:center;	
+	font-size:10pt;
+}
+.SingleDateTimeField_TimeZone_TimeSelect
+{        
+	font-size:x-large;
+	text-align:justify;
+	font-size:10pt;
+}
+.SingleDateTimeField_TimeZone_UpDownButtonOnMouseOver
+{       
+background-color:Orange;
+cursor:pointer;             
+}
+
+.SingleDateTimeField_TimeZone_Table
+{
+width:100%;
+height:20px;
+text-align:center;	
+	font-size:10pt;
+}
+.SingleDateTimeField_YearMonthDialog_CommandButton
+{
+width:80px;
+}        
+.SingleDateTimeField_YearMonthDialog_YearInput
+{
+width:75px;	
+height:40px;
+font-size:30px;
+}
+.SingleDateTimeField_YearMonthDialog_Selected
+{
+color:White;
+background-color:Orange;
+}
+.SingleDateTimeField_YearMonthDialog_MouseOver
+{
+cursor: pointer;
+background-color:ThreeDShadow;
+}
+.SingleDateTimeField_YearMonthDialog_MonthInput
+{
+	text-align:center;
+	border:2px 2px 2px 2px;
+	border-style:outset;
+	border-bottom-color:Black;
+	border-right-color:Black;
+	background-color:transparent;
+    border-color:inherit;
+}        
+.SingleDateTimeField_ConfirmButtonBar
+{           	    
+text-align:center; 
+vertical-align:middle;	        
+}
+.GlassButton_Normal
+{
+	border-style:outset;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:rgb(179,202,213);
+	line-height:20px;
+	font-family:Arial;
+    padding:0px;
+}
+.GlassButton_ReadOnly
+{
+	border-style:outset;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#CCCCCC;
+	line-height:20px;
+	font-family:Arial;
+    padding:0px;
+}
+.GlassButton_MouseDown
+{
+	border-style:inset;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:rgb(214,226,232);
+	line-height:20px;
+	font-family:Arial;
+    padding:0px;
+}
+.AdminPanel
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCCheckBox_Normal
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCCheckBox_ReadOnly
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleDropDownList_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleDropDownList_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.SingleDropDownList_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.MultiDropDownList_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	font-family:Arial;
+}
+.MultiDropDownList_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.DSCGroupBox 
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height:18px;
+    font-weight: bold;
+    color: #000000;
+	font-family:Arial;
+}
+.DSCLabel
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCLabel_Necessary
+{
+	color:Red;
+	font-family:Arial;
+}
+.DSCLabel_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCRadioButton_Normal
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCRadioButton_ReadOnly
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+
+.iTabRect
+{
+	BACKGROUND-COLOR: #EEEEEE;
+	border-top:0px;
+	border-right:1px;
+	border-left:1px;
+	border-bottom:1px;
+	BORDER-LEFT: #366F8E 1px solid;
+	BORDER-RIGHT: #366F8E 1px solid;
+	BORDER-BOTTOM: #366F8E 1px solid;
+    border-top: white 1px solid;
+	table-layout:fixed;
+	font-size:12px;
+	font-family:Arial;
+}
+
+
+.iTabSelected
+{
+	BACKGROUND-COLOR: #EEEEEE;
+	BORDER-TOP: #366F8E 1px solid;
+	BORDER-LEFT: #366F8E 1px solid;
+	BORDER-RIGHT: #366F8E 1px solid;
+	
+	font-size:12px;
+	font-weight:bold;
+	
+	text-align:center;
+	
+	color:#2E5F78;
+	cursor:pointer;
+	font-family:Arial;
+}
+
+.iTabUnSelected
+{	
+	BACKGROUND-COLOR: #EBF0F3;
+	BORDER-TOP: #94BED6 1px solid;
+	BORDER-LEFT: #94BED6 1px solid;
+	BORDER-BOTTOM: #366F8E 1px solid;
+	BORDER-RIGHT: #94BED6 1px solid;
+	
+	font-size:12px;
+	
+	text-align:center;
+	color:#387392;
+	cursor:pointer;
+	font-family:Arial;
+}
+
+.iTabDisabled
+{	
+	BACKGROUND-COLOR: #C4ECFF;
+	BORDER-TOP: #D7D7D7 1px solid;
+	BORDER-LEFT: #D7D7D7 1px solid;
+	BORDER-RIGHT: #366F8E 1px solid;
+	BORDER-BOTTOM: #D7D7D7 1px solid;
+	
+	font-size:12px;
+	
+	text-align:center;
+		
+	color:#B4B4B4;
+	font-family:Arial;
+}
+
+.iTabBorderUp
+{
+	BORDER-BOTTOM: #366F8E 1px solid;
+	font-size:12px;
+	font-family:Arial;
+}
+.GridBorder
+{
+	overflow:scroll;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF;
+	border-Style:inset;
+	border-Width:1px;
+	POSITION:relative;
+	background-color:#CCCCCC;
+	font-family:Arial;
+}
+.GridTable
+{
+	background-color:#FFFFFF;
+	font-family:Arial;
+}
+.GridTitleRow
+{
+	background-color:#B3C9D4;
+	color:#333333;
+	font-size:13px;
+	height:23px;
+	font-family:Arial;
+    position: relative; 
+    top: expression(this.offsetParent.scrollTop); 
+    z-index: 10;
+}
+.GridTitleCell
+{
+	word-wrap:break-word;
+	border-right: buttonshadow 1px solid;
+	padding-right: 1px;
+	border-top: buttonhighlight 1px solid;
+	padding-left: 1px;
+	padding-bottom: 1px;
+	border-left: buttonhighlight 1px solid;
+	padding-top: 1px;
+	border-bottom: buttonshadow 1px solid;
+	font-family:Arial;
+}
+.FixedGridTitleCell
+{
+	word-wrap:break-word;
+	border-right: buttonshadow 1px solid;
+	padding-right: 1px;
+	border-top: buttonhighlight 1px solid;
+	padding-left: 1px;
+	padding-bottom: 1px;
+	border-left: buttonhighlight 1px solid;
+	padding-top: 1px;
+	border-bottom: buttonshadow 1px solid;
+	font-family:Arial;
+    position: relative; 
+    left: expression(this.parentElement.offsetParent.scrollLeft);
+}
+.FixedGridRowCell
+{
+	border-right: solid 0px #555555;
+	border-bottom: solid 0px #555555;
+	font-family:Arial;
+	vertical-align:top;
+    position: relative;
+    left: expression(this.parentElement.offsetParent.parentElement.scrollLeft);
+}
+.GridTitleContent
+{
+	height:13px;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	vertical-align:middle;
+	font-family:Arial;
+}
+.GridResizeLine
+{
+	position:absolute;
+	z-index:5; 
+	width: 1; 
+	left: 50; 
+	top: 1; 
+	background-color:black;
+	display:none;
+	font-family:Arial;
+}
+.GridRowOdd
+{
+	font-size:13px;
+	color:#660099; 
+	height:21px; 
+	background-color:#FFFFFF;
+	font-family:Arial;
+}
+.GridRowEven
+{
+	font-size:13px;
+	color:#003399; 
+	height:21px; 
+	background-color:#EEEEFF;
+	font-family:Arial;
+}
+.GridRowHover
+{
+	font-size:13px;
+	color:#003399; 
+	height:21px; 
+	background-color:#FFDDBB;
+	font-family:Arial;
+}
+.GridStaticRow
+{
+	font-size:13px;
+	color:#FF0000; 
+	height:21px; 
+	background-color:#CECDF4;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+}
+.GridStaticCell
+{
+	font-size:13px;
+	color:#333333; 
+	height:21px; 
+	background-color:#CECDF4;
+	font-family:Arial;
+}
+.GridStaticContent
+{
+	font-size:13px;
+	cursor:default ;
+	height:15px;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	font-family:Arial;
+}
+.GridRowGroup
+{
+	font-size:13px;
+	color:#333333; 
+	height:21px; 
+	background-color:#CECDF4;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+}
+.GridRowCell
+{
+	border-right:0 solid #555555;
+	border-bottom:0 solid #555555;
+	font-family:Arial;
+	vertical-align:top;
+	cursor:pointer;
+}
+.GridRowContent
+{
+	font-size:13px;
+	cursor:pointer ;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	font-family:Arial;
+}
+.GridRowClick
+{
+	font-size:13px;
+	color:#660099; 
+	background-color:#FFFF99;
+	font-family:Arial;
+}
+.GridPageSelect
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.GridPageText
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.GridList
+{
+	font-size:10pt;
+	background-color:transparent;;border-color:inherit;
+	font-family:Arial;
+}
+.GridMenuBox
+{
+	font-size:9pt;
+	border: solid 1px #93A9C0;
+	background-color:#FFFFFF;
+}
+.GridMenuHead
+{
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#F4F4F4, endColorStr=#DBDBDB)";	
+}
+.GridMenuSelect
+{
+	background-color:#D0D0D0;
+}
+.DataListCertificateModeBorder
+{
+	border-color:rgb(188,178,147);
+	font-family:Arial;
+}
+.DataListCertificateModeHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+}
+.DataListCertificateModeDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+.SingleOpenWindowField_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:Transparent;
+	border-color:inherit;
+	font-family:Arial;
+}
+.SingleOpenWindowField_ReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.SingleOpenWindowField_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/FIND.gif);
+
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	border-style:none;
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.SingleOpenWindowField_ClearButton
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/CLEAR.gif);
+
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	border-style:none;
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.SingleOpenWindowField_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.breakline
+{
+	height:1px;
+}
+.QueryFieldValue {
+	font-family:Arial;
+	font-size:10pt;
+	line-height:14px;
+	font-weight: normal;
+	color:#000000;
+	
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	height:22px;
+	font-family:Arial;
+}
+.QueryFieldCaption 
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height:14px;
+    font-weight: bold;
+    color: #000000;
+	font-family:Arial;
+}
+.QueryLegendClass 
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height:16px;
+    font-weight: normal;
+    color: #000000;
+	font-family:Arial;
+}
+.QueryButtonType 
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	height:22px;
+	width:100px;
+	cursor:pointer;
+	font-family:Arial;
+}
+.QueryFieldReadOnly
+{
+	font-family:Arial;
+	font-size:10pt;
+	line-height:14px;
+	font-weight: normal;
+	color:#003366;
+	
+	background-color: #EEEEFF;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	height:22px;
+	font-family:Arial;
+	
+}
+.QueryLabel2
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.FileUploadContent
+{
+	font-size:9pt;
+	border-width:1px;
+	border-style:solid;
+	border-color:Blue;
+	font-family:Arial;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF ;
+}
+.FileUploadPanel
+{
+	font-size:9pt;
+	border-width:0px;
+	border-style:solid;
+	border-color:Blue;
+	font-family:Arial;
+}
+.FileUploadMenu
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+}
+.FileUploadMenuItem
+{
+	font-size:9pt;
+	padding:3pt;
+	background-color:White;
+	cursor:pointer;
+	width:100px;
+}
+.FileUploadMenuItemHover
+{
+	font-size:9pt;
+	padding:3pt;
+	background-color:#EEEEEE;
+	cursor:pointer;
+	width:100px;
+}
+.GeneralButton_Normal
+{
+	border-style:none;
+	cursor:pointer;
+	line-height:20px;
+	font-size:10pt;
+	padding-top:5px;
+	font-family:Arial;
+    padding:0px;
+}
+.GeneralButton_ReadOnly
+{
+	border-style:none;
+	cursor:pointer;
+	line-height:20px;
+	font-size:10pt;
+	padding:5px;
+	font-family:Arial;
+}
+.BYWin_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+	font-size:9pt;
+}
+.BYWin_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+	background-color:#AAAAAA;
+}
+.RoutineWizard_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.RoutineWizard_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	border-style:solid;
+	border-width:1px;
+
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.RoutineWizard_Certificate
+{
+	font-family:Arial;
+	font-size:10pt;
+}
+
+.FormHeadBorder
+{
+	border-color:rgb(188,178,147);
+}
+.FormHeadHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+}
+.FormHeadDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+.OpinionBorder
+{
+	border-color:rgb(188,178,147);
+}
+.OpinionHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+}
+.OpinionDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+.attachBackground
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#A58A45;
+	background-color:#E1D9C4;
+}
+.historyBackground
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#A58A45;
+	background-color:white;
+}
+.HistoryBorder
+{
+	border-color:rgb(188,178,147);
+}
+.HistoryHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+}
+.HistoryDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+
+.BasicFormHeadBorder
+{
+	border-color:rgb(188,178,147);
+	border-left-style:solid;
+	border-top-style:solid;
+	border-width:1px
+}
+.BasicFormHeadHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none;
+}
+.BasicFormHeadDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none
+}
+.SimSignPanel
+{
+	background-color:#EEEEEE;
+	border-color:Black;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;
+}
+.SignOpinionField
+{
+    vertical-align:middle;
+}
+.BulletinTitle
+{
+	font-size:11pt;
+	background-color:#A6A6FF;
+}
+.BulletinContent
+{
+	font-size:11pt;
+	background-color:#CECEFF;
+}
+.DSCRichEditTextArea{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:White;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF ;
+}
+.DSCRichEdit_ReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:transparent;
+	border-color:inherit;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF ;
+}
+.DSCRichEditButtonNormal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:pink;
+	filter: chroma(color=pink);
+	vertical-align:bottom;
+}
+.DSCRichEditButtonHover
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+	vertical-align:bottom;
+}
+.DSCRichEditToolbar
+{
+	width:100%;
+	height:20px;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/DSCRichEdit/retoolbar.gif);
+}
+.DSCColorChart
+{
+   width:16px;
+   height:12px;
+   cursor:pointer;
+}
+.DSCRichEditText
+{
+	font-family:新細明體;
+	font-size:9pt;
+}
+.DSCRichEditInputBox
+{
+	font-family:新細明體;
+	font-size:9pt;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+}
+.DSCRichEditFindPanel
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:#ECEAE6;
+}
+.DSCRichEditMark
+{
+	font-size:10pt;
+	width:16px;
+	height:16px;
+	border-style:solid;
+	border-width:1px;
+	border-color:pink;
+	filter: chroma(color=pink);
+}
+.DSCRichEditMarkHover
+{
+	font-size:10pt;
+	width:16px;
+	height:16px;
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+}
+.DSCScheduleItemTypeRed
+{
+	border:1px;
+	border-size:solid;
+	border-color:Black;
+	font-size:10pt;
+	color:red;
+}
+.DSCScheduleItemNormal
+{
+	border:1px;
+	border-size:solid;
+	border-color:Black;
+	font-size:10pt;
+	color:black;
+	background-color:#CC99CC
+}
+.DSCScheduleTable
+{
+	border:1px;
+	border-style:solid;
+}
+.DSCScheduleTableTitle1
+{
+	border:1px;
+	border-style:solid;
+	border-color:Black;
+}	
+.DSCScheduleTableTitle2
+{
+	border:1px;
+	border-style:solid;
+	border-color:Black;
+}
+.DSCScheduleContent1
+{
+	border:1px;
+	border-style:solid;
+	border-color:Black;
+}
+.DSCScheduleContent2
+{
+	border:1px;
+	border-style:solid;
+	border-color:Black;
+}
+.SingleField_Normal_ECNotNull
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#FCFB85;
+	font-family:Arial;
+}
+.SingleField_ReadOnly_ECIdentity
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#DEECEA;
+	font-family:Arial;
+}
+.SingleField_Normal_ECIdentity
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#A5ECE2;
+	font-family:Arial;
+}
+.SingleDropDownList_Normal_ECNotNull
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#A5ECE2;
+	font-family:Arial;
+}

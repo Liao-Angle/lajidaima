@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPKM001.SmpAttachment" tableName="SmpAttachment">
+  <queryStr>
+    select GUID, FormGUID, SheetNo, DocGUID, RevGUID, FileItemGUID, FILENAME, FILEEXT, External,DESCRIPTION, AttachmentType, UPLOADUSER, UPLOADTIME, Processed,
+    IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME
+    from (
+    select a.GUID, r.FormGUID, s.SMWYAAA002 SheetNo, r.DocGUID, r.GUID RevGUID, a.FileItemGUID, f.FILENAME, f.FILEEXT,a.External, f.DESCRIPTION,a.AttachmentType, u.userName UPLOADUSER, a.D_INSERTTIME UPLOADTIME, a.Processed,
+    a.IS_LOCK, a.IS_DISPLAY, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME
+    from SmpAttachment a
+    join FILEITEM f on f.GUID=a.FileItemGUID
+    join SmpRev r on r.GUID=a.RevGUID
+    join SMWYAAA s on s.SMWYAAA019=r.FormGUID
+    join Users u on a.D_INSERTUSER=u.OID
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="FormGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="表單識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單單號" showName=""/>
+    <field dataField="DocGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件識別號" showName=""/>
+    <field dataField="RevGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="版本識別號" showName=""/>
+    <field dataField="FileItemGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="檔案識別號" showName=""/>
+    <field dataField="FILENAME" typeField="STRING" lengthField="250" defaultValue="" displayName="檔名" showName=""/>
+    <field dataField="FILEEXT" typeField="STRING" lengthField="50" defaultValue="" displayName="檔案類型" showName=""/>
+    <field dataField="External" typeField="STRING" lengthField="1" defaultValue="" displayName="是否為外部文件" showName=""/>    
+    <field dataField="DESCRIPTION" typeField="STRING" lengthField="250" defaultValue="" displayName="檔案說明" showName=""/>
+    <field dataField="AttachmentType" typeField="STRING" lengthField="50" defaultValue="" displayName="附件類型" showName="Original:原始檔;Publish:發佈檔"/>
+    <field dataField="UPLOADUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="上傳者" showName=""/>    
+    <field dataField="UPLOADTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="上傳時間" showName=""/>    
+    <field dataField="Processed" typeField="STRING" lengthField="50" defaultValue="" displayName="是否已處理" showName=""/>   
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>    
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="FormGUID"/>
+    <field dataField="SheetNo"/>   
+    <field dataField="FILENAME"/>
+    <field dataField="FILEEXT"/>
+    <field dataField="External"/>
+    <field dataField="DESCRIPTION"/>
+    <field dataField="AttachmentType"/>
+    <field dataField="UPLOADUSER"/>
+    <field dataField="UPLOADTIME"/>
+    <field dataField="Processed"/>   
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="FormGUID"/>
+    <field dataField="SheetNo"/>
+    <field dataField="FILENAME"/>
+    <field dataField="FILEEXT"/>
+    <field dataField="DESCRIPTION"/>
+    <field dataField="UPLOADUSER"/>
+    <field dataField="UPLOADTIME"/>
+  </nonUpdateField>
+</DataObject>

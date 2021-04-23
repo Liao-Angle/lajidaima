@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EM0108.EM0108B" tableName="EM0108B">
+  <queryStr>
+    SELECT GUID,SheetNo,EmpNo,EmpName,PartNo,Note,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EM0108B
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+	  <field dataField="PartNo" typeField="STRING" lengthField="50" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="Note" typeField="STRING" lengthField="100" defaultValue="" displayName="權限說明" showName=""/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="SheetNo"/>
+  </keyField>
+  <allowEmptyField>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

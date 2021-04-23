@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM001.SmpDocument" TableName="SmpDocument"> 
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM001.FILEITEM" TableName="FILEITEM" RelationString="GUID=JOBID"></DOS>
+  
+</DOS>

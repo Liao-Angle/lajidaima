@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPERP005.SmpInvMmtForm" tableName="SmpInvMmtForm">
+  <queryStr>
+    SELECT GUID, Subject, SheetNo, OriginatorGUID, Checkby1GUID, Checkby2GUID, RdMemberGUID, MeMemberGUID, PmMemberGUID, SaleMemberGUID,
+    SaleManagerGUID, McMemberGUID, QaMemberGUID, OrgId, OrgName, EcpTrxTypeId, TrxTypeName, InvMmtNum, HeaderId, Version, RequestorName,
+    RequestorNum, RequestorDept, Comments, LineQuantity, SumQuantity, CreatorGUID, SqeMemberGUID, PurMemberGUID,
+    IS_LOCK, IS_DISPLAY,DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME, CompanyCode FROM SmpInvMmtForm
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="250" defaultValue="" displayName="主旨" showName=""/>
+	  <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>    	  
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人員" showName=""/>
+    <field dataField="Checkby1GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人1" showName=""/>
+	  <field dataField="Checkby2GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人2" showName=""/>
+	  <field dataField="RdMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="RD" showName=""/>
+	  <field dataField="MeMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="MEAME" showName=""/>
+	  <field dataField="PmMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="PM" showName=""/>
+	  <field dataField="SaleMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="Sales" showName=""/>
+	  <field dataField="SaleManagerGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="SalesManager" showName=""/>
+    <field dataField="McMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="物管" showName=""/>
+	  <field dataField="QaMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="品管" showName=""/>
+    <field dataField="OrgId" typeField="STRING" lengthField="50" defaultValue="" displayName="OrgId" showName=""/>
+    <field dataField="OrgName" typeField="STRING" lengthField="50" defaultValue="" displayName="組織" showName=""/>
+    <field dataField="EcpTrxTypeId" typeField="STRING" lengthField="50" defaultValue="" displayName="ECPTrxId" showName=""/>
+    <field dataField="TrxTypeName" typeField="STRING" lengthField="50" defaultValue="" displayName="單別" showName=""/>
+    <field dataField="InvMmtNum" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="HeaderId" typeField="STRING" lengthField="50" defaultValue="" displayName="HeaderId" showName=""/>    
+    <field dataField="Version" typeField="STRING" lengthField="50" defaultValue="" displayName="Version" showName=""/>
+    <field dataField="RequestorName" typeField="STRING" lengthField="250" defaultValue="" displayName="需求者全名" showName=""/>
+    <field dataField="RequestorNum" typeField="STRING" lengthField="50" defaultValue="" displayName="需求者工號" showName=""/>
+    <field dataField="RequestorDept" typeField="STRING" lengthField="50" defaultValue="" displayName="需求者部門" showName=""/>
+    <field dataField="Comments" typeField="STRING" lengthField="250" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="LineQuantity" typeField="STRING" lengthField="50" defaultValue="" displayName="筆數" showName=""/>
+    <field dataField="SumQuantity" typeField="STRING" lengthField="50" defaultValue="" displayName="合計數量" showName=""/>        
+	<field dataField="CreatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="送簽人員" showName=""/>	  
+	<field dataField="SqeMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="SQE" showName=""/>	  
+	<field dataField="PurMemberGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="採購" showName=""/>	  
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>	
+	<field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>    
+    <field dataField="OriginatorGUID"/>
+    <field dataField="Checkby1GUID"/>
+    <field dataField="Checkby2GUID"/>
+    <field dataField="RdMemberGUID"/>
+    <field dataField="MeMemberGUID"/>
+    <field dataField="PmMemberGUID"/>
+    <field dataField="SaleMemberGUID"/>
+    <field dataField="SaleManagerGUID"/>
+    <field dataField="McMemberGUID"/>
+    <field dataField="QaMemberGUID"/>
+    <field dataField="OrgId"/>
+    <field dataField="OrgName"/>
+    <field dataField="EcpTrxTypeId"/>
+    <field dataField="TrxTypeName"/>
+    <field dataField="InvMmtNum"/>
+    <field dataField="HeaderId"/>    
+    <field dataField="Version"/>
+	  <field dataField="RequestorName"/>
+	  <field dataField="RequestorNum"/>
+	  <field dataField="RequestorDept"/>
+	  <field dataField="Comments"/>
+	  <field dataField="LineQuantity"/>
+	  <field dataField="SumQuantity"/>
+	  <field dataField="HeaderId"/>
+	  <field dataField="CreatorGUID"/>
+	  <field dataField="CompanyCode"/>
+	  <field dataField="SqeMemberGUID"/>
+	  <field dataField="PurMemberGUID"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

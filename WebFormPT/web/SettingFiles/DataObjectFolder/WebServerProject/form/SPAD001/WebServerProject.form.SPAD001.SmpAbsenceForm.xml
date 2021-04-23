@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPAD001.SmpAbsenceForm" tableName="SmpAbsenceForm">
+  <queryStr>
+    select GUID, Subject, SheetNo, CompanyCode, OrganizationUnitGUID, OriginatorGUID, IsCustomFlow, DeputyGUID, CategoryCode, IsIncludeHoliday, IsIncludeDateEve, StartDate, StartTime, EndDate, EndTime, Hours, Description, TempSerialNo, ClassCode, Checkby1GUID, Checkby2GUID, IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,
+    CompanyCodeValue, OriginatorUserName, OriginatorDeptName, OriginatorTitle, DeputyUserName, ClassCodeValue, CategoryCodeValue, HoursDesc, Checkby1UserName, Checkby2UserName,
+    StartDateTime, EndDateTime, DayHours
+    from (
+    select GUID, Subject, a.SheetNo, a.CompanyCode, a.OrganizationUnitGUID, a.OriginatorGUID, a.IsCustomFlow, a.DeputyGUID, a.CategoryCode, a.IsIncludeHoliday, a.IsIncludeDateEve, a.StartDate, a.StartTime, a.EndDate, a.EndTime, a.Hours, a.Description, a.TempSerialNo, a.ClassCode, a.Checkby1GUID, a.Checkby2GUID, a.IS_LOCK, a.IS_DISPLAY, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME,
+    a.CompanyCodeValue, u1.userName OriginatorUserName, ou.organizationUnitName OriginatorDeptName, a.OriginatorTitle, u2.userName DeputyUserName, a.ClassCodeValue, a.CategoryCodeValue, a.HoursDesc, u3.userName Checkby1UserName, u4.userName Checkby2UserName,
+    a.StartDate + ' ' +  a.StartTime StartDateTime, a.EndDate + ' ' + a.EndTime EndDateTime, a.Hours + ' ' + a.HoursDesc DayHours
+    from SmpAbsenceForm a
+    join Users u1 on a.OriginatorGUID = u1.OID
+    join Users u2 on a.DeputyGUID = u2.OID
+    left join OrganizationUnit ou on a.OrganizationUnitGUID = ou.OID
+    left join Users u3 on a.Checkby1GUID = u3.OID
+    left join Users u4 on a.Checkby2GUID = u4.OID
+    ) v
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="200" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+    <field dataField="OrganizationUnitGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="請假人員部門" showName=""/>
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="請假人員" showName=""/>
+    <field dataField="IsCustomFlow" typeField="STRING" lengthField="1" defaultValue="" displayName="是否自定流程" showName="Y:是;N:否"/>
+    <field dataField="DeputyGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="代理人員" showName=""/>
+    <field dataField="CategoryCode" typeField="STRING" lengthField="20" defaultValue="" displayName="假別" showName=""/>
+    <field dataField="IsIncludeHoliday" typeField="STRING" lengthField="1" defaultValue="" displayName="請假含假日" showName="Y:是;N:否"/>
+	<field dataField="IsIncludeDateEve" typeField="STRING" lengthField="1" defaultValue="" displayName="是否跨天" showName="Y:是;N:否"/>
+	<field dataField="StartDate" typeField="STRING" lengthField="20" defaultValue="" displayName="起始日期" showName=""/>
+	<field dataField="StartTime" typeField="STRING" lengthField="10" defaultValue="" displayName="起始時間" showName=""/>
+    <field dataField="EndDate" typeField="STRING" lengthField="20" defaultValue="" displayName="截止日期" showName=""/>
+    <field dataField="EndTime" typeField="STRING" lengthField="10" defaultValue="" displayName="截止時間" showName=""/>
+    <field dataField="Hours" typeField="STRING" lengthField="3" defaultValue="" displayName="請假時數" showName=""/>
+    <field dataField="Description" typeField="STRING" lengthField="4000" defaultValue="" displayName="說明" showName=""/>
+    <field dataField="TempSerialNo" typeField="STRING" lengthField="4000" defaultValue="" displayName="暫存序號" showName=""/>
+    <field dataField="ClassCode" typeField="STRING" lengthField="50" defaultValue="" displayName="班別" showName=""/>
+    <field dataField="Checkby1GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人一" showName=""/>
+    <field dataField="Checkby2GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人二" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+    <field dataField="CompanyCodeValue" typeField="STRING" lengthField="100" defaultValue="" displayName="公司別" showName=""/>
+    <field dataField="OriginatorUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="請假人員" showName=""/>
+    <field dataField="OriginatorDeptName" typeField="STRING" lengthField="100" defaultValue="" displayName="請假人員部門" showName=""/>
+    <field dataField="OriginatorTitle" typeField="STRING" lengthField="100" defaultValue="" displayName="請假人員職稱" showName=""/>
+    <field dataField="DeputyUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="代理人員" showName=""/>
+    <field dataField="ClassCodeValue" typeField="STRING" lengthField="100" defaultValue="" displayName="班別" showName=""/>
+    <field dataField="CategoryCodeValue" typeField="STRING" lengthField="100" defaultValue="" displayName="假別" showName=""/>
+    <field dataField="HoursDesc" typeField="STRING" lengthField="100" defaultValue="" displayName="請假天數" showName=""/>
+    <field dataField="Checkby1UserName" typeField="STRING" lengthField="100" defaultValue="" displayName="審核人一" showName=""/>
+    <field dataField="Checkby2UserName" typeField="STRING" lengthField="100" defaultValue="" displayName="審核人二" showName=""/>
+    <field dataField="StartDateTime" typeField="STRING" lengthField="100" defaultValue="" displayName="起始時間" showName=""/>
+    <field dataField="EndDateTime" typeField="STRING" lengthField="100" defaultValue="" displayName="截止時間" showName=""/>
+    <field dataField="DayHours" typeField="STRING" lengthField="100" defaultValue="" displayName="請假時數" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+	  <field dataField="OrganizationUnitGUID"/>
+    <field dataField="IsIncludeDateEve"/>
+    <field dataField="TempSerialNo"/>
+    <field dataField="Checkby1GUID"/>
+    <field dataField="Checkby2GUID"/>
+    <field dataField="CompanyCodeValue"/>
+    <field dataField="OriginatorUserName"/>
+    <field dataField="OriginatorDeptName"/>
+    <field dataField="OriginatorTitle"/>
+    <field dataField="DeputyUserName"/>
+    <field dataField="ClassCodeValue"/>
+    <field dataField="CategoryCodeValue"/>
+    <field dataField="HoursDesc"/>
+    <field dataField="Checkby1UserName"/>
+    <field dataField="Checkby2UserName"/>
+    <field dataField="StartDateTime"/>
+    <field dataField="EndDateTime"/>
+    <field dataField="DayHours"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="OriginatorUserName"/>
+    <field dataField="OriginatorDeptName"/>
+    <field dataField="DeputyUserName"/>
+    <field dataField="Checkby1UserName"/>
+    <field dataField="Checkby2UserName"/>
+    <field dataField="StartDateTime"/>
+    <field dataField="EndDateTime"/>
+    <field dataField="DayHours"/>
+  </nonUpdateField>
+</DataObject>

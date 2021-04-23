@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EH010501.EH010501A" tableName="EH010501A">
+  <queryStr>
+    SELECT GUID,SheetNo,IssueDate,Department,Quantity,IssueType,EmpType,IssueQuantity,Reason,IssuePosition,Gender,Military,AgeMax,AgeMin,Education,Subject,Technical,JobDetail,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EH010501A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="IssueDate" typeField="STRING" lengthField="10" defaultValue="" displayName="預定錄用日期" showName=""/>
+    <field dataField="Department" typeField="STRING" lengthField="20" defaultValue="" displayName="申請部門" showName=""/>
+    <field dataField="Quantity" typeField="STRING" lengthField="5" defaultValue="" displayName="現有編制人數" showName=""/>
+    <field dataField="IssueType" typeField="STRING" lengthField="10" defaultValue="" displayName="需求類別" showName=""/>
+    <field dataField="EmpType" typeField="STRING" lengthField="3" defaultValue="" displayName="員工類別" showName="D:日班;N:夜班"/>
+    <field dataField="IssueQuantity" typeField="STRING" lengthField="3" defaultValue="" displayName="需求人數" showName=""/>
+    <field dataField="Reason" typeField="STRING" lengthField="100" defaultValue="" displayName="需求原因" showName=""/>
+    <field dataField="IssuePosition" typeField="STRING" lengthField="100" defaultValue="" displayName="需求職位" showName="D:日班;N:夜班"/>
+    <field dataField="Gender" typeField="STRING" lengthField="5" defaultValue="" displayName="性別" showName=""/>
+    <field dataField="Military" typeField="STRING" lengthField="5" defaultValue="" displayName="兵役" showName=""/>
+    <field dataField="AgeMax" typeField="STRING" lengthField="3" defaultValue="" displayName="年齡最高" showName=""/>
+    <field dataField="AgeMin" typeField="STRING" lengthField="3" defaultValue="" displayName="年齡最低" showName=""/>
+    <field dataField="Education" typeField="STRING" lengthField="3" defaultValue="" displayName="學歷" showName="Y:異常表單, N:正常表單"/>
+    <field dataField="Subject" typeField="STRING" lengthField="20" defaultValue="" displayName="科系" showName="Y:已傳送;R:要求傳送;N:未傳送"/>
+    <field dataField="Technical" typeField="STRING" lengthField="255" defaultValue="" displayName="技能與人格特質" showName=""/>
+    <field dataField="JobDetail" typeField="STRING" lengthField="255" defaultValue="" displayName="工作職務說明" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="AgeMax"/>
+    <field dataField="AgeMin"/>
+    <field dataField="JobDetail"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

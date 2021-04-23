@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EM0101.EM0101A" tableName="EM0101A">
+  <queryStr>
+    SELECT GUID,SheetNo,EmpNo,EmpName,Extension,EMail,TypeID,TypeName,Checked,Note,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EM0101A</queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人姓名" showName=""/>
+    <field dataField="Extension" typeField="STRING" lengthField="10" defaultValue="" displayName="分機" showName=""/>
+    <field dataField="EMail" typeField="STRING" lengthField="100" defaultValue="" displayName="電子郵箱" showName=""/>
+    <field dataField="TypeID" typeField="STRING" lengthField="10" defaultValue="" displayName="申請原因編號" showName=""/>
+    <field dataField="TypeName" typeField="STRING" lengthField="50" defaultValue="" displayName="申請原因名稱" showName=""/>
+    <field dataField="Checked" typeField="STRING" lengthField="20" defaultValue="" displayName="群組權限" showName=""/>
+    <field dataField="Note" typeField="STRING" lengthField="255" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="Note"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

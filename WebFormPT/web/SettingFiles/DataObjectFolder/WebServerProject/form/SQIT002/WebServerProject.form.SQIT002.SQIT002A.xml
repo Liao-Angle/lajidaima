@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SQIT002.SQIT002A" tableName="SQIT002A">
+  <queryStr>
+    SELECT GUID,SheetNo,Subject,BillNo,OrgNo,SystemNo,EmpNo,EmpName,PartNo,Rqdate,RqType,Rqxm,OwnerType,mark,Reason,fxbg,fxed,kfbg,kfed,itbg,ited,khbg,khed,jfdate,xzcs,xzbb,xgcs,xgbb,MisOwnerGUID,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.SQIT002A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="BillNo" typeField="STRING" lengthField="20" defaultValue="" displayName="編號" showName=""/>
+    <field dataField="OrgNo" typeField="STRING" lengthField="30" defaultValue="" displayName="公司名稱" showName=""/>
+    <field dataField="SystemNo" typeField="STRING" lengthField="20" defaultValue="" displayName="系統名稱" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="PartNo" typeField="STRING" lengthField="25" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="Rqdate" typeField="STRING" lengthField="20" defaultValue="" displayName="需求日期" showName=""/>
+    <field dataField="RqType" typeField="STRING" lengthField="20" defaultValue="" displayName="需求類別" showName=""/>
+    <field dataField="Rqxm" typeField="STRING" lengthField="20" defaultValue="" displayName="需求項目" showName=""/>
+    <field dataField="OwnerType" typeField="STRING" lengthField="20" defaultValue="" displayName="IT類別" showName=""/>
+    <field dataField="mark" typeField="STRING" lengthField="300" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="Reason" typeField="STRING" lengthField="500" defaultValue="" displayName="MIS回復" showName=""/>
+    <field dataField="fxbg" typeField="STRING" lengthField="20" defaultValue="" displayName="分析開始時間" showName=""/>
+    <field dataField="fxed" typeField="STRING" lengthField="20" defaultValue="" displayName="分析結束時間" showName=""/>
+    <field dataField="kfbg" typeField="STRING" lengthField="20" defaultValue="" displayName="開發開始時間" showName=""/>
+    <field dataField="kfed" typeField="STRING" lengthField="20" defaultValue="" displayName="開發結束時間" showName=""/>
+    <field dataField="itbg" typeField="STRING" lengthField="20" defaultValue="" displayName="IT開始時間" showName=""/>
+    <field dataField="ited" typeField="STRING" lengthField="20" defaultValue="" displayName="IT結束時間" showName=""/>
+    <field dataField="khbg" typeField="STRING" lengthField="20" defaultValue="" displayName="客戶開始時間" showName=""/>
+    <field dataField="khed" typeField="STRING" lengthField="20" defaultValue="" displayName="客戶結束時間" showName=""/>
+    <field dataField="jfdate" typeField="STRING" lengthField="20" defaultValue="" displayName="交付時間" showName=""/>
+    <field dataField="xzcs" typeField="STRING" lengthField="20" defaultValue="" displayName="新增程式" showName=""/>
+    <field dataField="xzbb" typeField="STRING" lengthField="20" defaultValue="" displayName="新增報表" showName=""/>
+    <field dataField="xgcs" typeField="STRING" lengthField="20" defaultValue="" displayName="修改程式" showName=""/>
+    <field dataField="xgbb" typeField="STRING" lengthField="20" defaultValue="" displayName="修改報表" showName=""/>
+    <field dataField="MisOwnerGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="MIS處理人員" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="1" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="Reason"/>
+    <field dataField="fxbg"/>
+    <field dataField="fxed"/>
+    <field dataField="kfbg"/>
+    <field dataField="kfed"/>
+    <field dataField="itbg"/>
+    <field dataField="ited"/>
+    <field dataField="khbg"/>
+    <field dataField="khed"/>
+    <field dataField="jfdate"/>
+    <field dataField="xzcs"/>
+    <field dataField="xzbb"/>
+    <field dataField="xgcs"/>
+    <field dataField="xgbb"/>
+    <field dataField="MisOwnerGUID"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

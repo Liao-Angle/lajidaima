@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<VersionRoot>
+  <Modules>
+    <Module id="SMVAA" name="系統管理模組" version="1.0.0.1 Build-2"/>
+    <Module id="SMSAA" name="權限模組" version="1.0.0.1 Build-2"/>
+    <Module id="SMWAA" name="流程引擎模組" version="1.0.0.1 Build-2"/>
+    <Module id="SMXAA" name="稽核模組" version="1.0.0.1 Build-2"/>
+    <Module id="SMTAA" name="批次管理模組" version="1.0.0.1 Build-2"/>
+  </Modules>
+</VersionRoot>

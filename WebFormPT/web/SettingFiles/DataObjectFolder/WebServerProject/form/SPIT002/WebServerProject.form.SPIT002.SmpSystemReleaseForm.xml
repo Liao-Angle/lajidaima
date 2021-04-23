@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPIT002.SmpSystemReleaseForm" tableName="SmpSystemReleaseForm">
+  <queryStr>
+    select GUID, Subject, SheetNo, CompanyCode, OriginatorGUID, CheckbyGUID, Qa1GUID, Qa2GUID, RequesterOrgUnitGUID, InfoDemandGUID, SystemName, CategoryName, ExpectReleaseDateTime, ActualReleaseDateTime, ProgramName, SdDocFilePath, UtDocFilePath, QaDocFilePath, Description, QaDescription, VssDescription, IncludeKmDoc, DocGUID,
+    IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,
+    OriginatorUserName, Qa1UserName, Qa2UserName, SystemNameValue, CategoryNameValue, RequesterOrgUnitName
+    from (
+    select a.GUID, a.Subject, a.SheetNo, a.CompanyCode, a.OriginatorGUID, a.CheckbyGUID, a.Qa1GUID, a.Qa2GUID, a.RequesterOrgUnitGUID, a.InfoDemandGUID, a.SystemName, a.CategoryName, a.ExpectReleaseDateTime, a.ActualReleaseDateTime, a.ProgramName, a.SdDocFilePath, a.UtDocFilePath, a.QaDocFilePath, a.Description, a.QaDescription, a.VssDescription, a.IncludeKmDoc, a.DocGUID,
+    a.IS_LOCK, a.IS_DISPLAY, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME,
+    u.userName OriginatorUserName, qu1.userName Qa1UserName, qu2.userName Qa2UserName, a.SystemNameValue, a.CategoryNameValue, ou.organizationUnitName RequesterOrgUnitName
+    from SmpSystemReleaseForm a
+    join Users u on u.OID = a.OriginatorGUID
+    left join Users qu1 on qu1.OID = a.Qa1GUID
+    left join Users qu2 on qu2.OID = a.Qa2GUID
+    left join OrganizationUnit ou on ou.OID = a.RequesterOrgUnitGUID
+    ) v
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人員" showName=""/>
+    <field dataField="CheckbyGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人" showName=""/>
+    <field dataField="Qa1GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="QA人員1" showName=""/>
+    <field dataField="Qa2GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="QA人員2" showName=""/>
+    <field dataField="RequesterOrgUnitGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="需求部門" showName=""/>
+    <field dataField="InfoDemandGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="資訊需求申請單" showName=""/>
+    <field dataField="SystemName" typeField="STRING" lengthField="50" defaultValue="" displayName="系統名稱" showName=""/>
+    <field dataField="CategoryName" typeField="STRING" lengthField="50" defaultValue="" displayName="模組名稱" showName=""/>
+    <field dataField="ExpectReleaseDateTime" typeField="STRING" lengthField="20" defaultValue="" displayName="預計上線日" showName=""/>
+    <field dataField="ActualReleaseDateTime" typeField="STRING" lengthField="20" defaultValue="" displayName="實際上線日" showName=""/>
+    <field dataField="ProgramName" typeField="STRING" lengthField="250" defaultValue="" displayName="程式/報表名稱" showName=""/>
+    <field dataField="SdDocFilePath" typeField="STRING" lengthField="250" defaultValue="" displayName="SA/SD Document" showName=""/>
+    <field dataField="UtDocFilePath" typeField="STRING" lengthField="250" defaultValue="" displayName="Unit Test Report" showName=""/>
+    <field dataField="QaDocFilePath" typeField="STRING" lengthField="250" defaultValue="" displayName="QA Report" showName=""/>
+    <field dataField="Description" typeField="STRING" lengthField="500" defaultValue="" displayName="說明" showName=""/>
+    <field dataField="QaDescription" typeField="STRING" lengthField="500" defaultValue="" displayName="QA說明" showName=""/>
+    <field dataField="VssDescription" typeField="STRING" lengthField="500" defaultValue="" displayName="VSS說明" showName=""/>
+    <field dataField="IncludeKmDoc" typeField="STRING" lengthField="1" defaultValue="" displayName="是否包含KM文件" showName=""/>
+    <field dataField="DocGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件編號" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+    <field dataField="OriginatorUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="Qa1UserName" typeField="STRING" lengthField="100" defaultValue="" displayName="QA人員1" showName=""/>
+    <field dataField="Qa2UserName" typeField="STRING" lengthField="100" defaultValue="" displayName="QA人員2" showName=""/>
+    <field dataField="SystemNameValue" typeField="STRING" lengthField="100" defaultValue="" displayName="系統名稱" showName=""/>
+    <field dataField="CategoryNameValue" typeField="STRING" lengthField="100" defaultValue="" displayName="模組名稱" showName=""/>
+    <field dataField="RequesterOrgUnitName" typeField="STRING" lengthField="100" defaultValue="" displayName="需求部門" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="CompanyCode"/>
+    <field dataField="CheckbyGUID"/>
+    <field dataField="Qa2GUID"/>
+    <field dataField="CategoryName"/>
+    <field dataField="ActualReleaseDateTime"/>
+    <field dataField="QaDocFilePath"/>
+    <field dataField="QaDescription"/>
+    <field dataField="VssDescription"/>
+    <field dataField="DocGUID"/>
+    <field dataField="OriginatorUserName" />
+    <field dataField="Qa1UserName" />
+    <field dataField="Qa2UserName" />
+    <field dataField="SystemNameValue" />
+    <field dataField="CategoryNameValue" />
+    <field dataField="RequesterOrgUnitName" />
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="OriginatorUserName" />
+    <field dataField="Qa1UserName" />
+    <field dataField="Qa2UserName" />
+    <field dataField="RequesterOrgUnitName" />
+  </nonUpdateField>
+</DataObject>

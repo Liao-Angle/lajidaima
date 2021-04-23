@@ -1,0 +1,3177 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DSCWebControl</name>
+    </assembly>
+    <members>
+        <member name="T:DSCWebControl.SingleOpenWindowField">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.clearUpdateData">
+            <summary>
+            清除此元件更新指標
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.isUpdateData">
+            <summary>
+            取得此元件是否需要更新
+            </summary>
+            <returns>true: 需要, false: 不需要</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.getProperty(System.String)">
+            <summary>
+            取得此元件屬性值
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns>屬性內容</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.setProperty(System.String,System.Object)">
+            <summary>
+            設定元件屬性, 此屬性不需更新至Client端
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <param name="value">屬性值</param>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.setProperty(System.String,System.Object,System.Boolean)">
+            <summary>
+            設定元件屬性, 同時決定是否更新Client端
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <param name="value">屬性值</param>
+            <param name="isRefresh">true: 需更新到Client端, false: 不需更新到Client端</param>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.getRefreshCommand">
+            <summary>
+            此元件在Client端的更新程式碼. 此方法需要被覆寫
+            </summary>
+            <returns>Client Script</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.generateRefreshScript(System.Boolean)">
+            <summary>
+            此元件在Client端執行更新的呼叫程式碼. 此方法需要被覆寫
+            </summary>
+            <returns>ClientScript</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.generateScript">
+            <summary>
+            此元件在Client的執行程式碼. 此方法需要被覆寫
+            </summary>
+            <returns>ClientScript</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.getReadData">
+            <summary>
+            取得此元件傳遞至CLIENT端的資料. 此方法需要被覆寫
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DSCWebControlBase.processEvent(System.String,System.Web.UI.Page)">
+            <summary>
+            此元件處理事件分派的方法. 此方法需要被覆寫
+            </summary>
+            <param name="controlMethod">事件名稱</param>
+            <param name="page">包含此元件的頁面物件</param>
+        </member>
+        <member name="P:DSCWebControl.DSCWebControlBase.PageUniqueID">
+            <summary>
+            記錄此元件所屬頁面的唯一識別碼
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCWebControlBase.Display">
+            <summary>
+            設定是否顯示元件. true:顯示, false:不顯示. 此屬性取代Visible, 避免.NET沒有Render到Client端.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCWebControlBase.ReadOnly">
+            <summary>
+            設定是否唯讀. 預設為false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCWebControlBase.CertificateMode">
+            <summary>
+            取得或設定是否為憑證模式. 憑証模式下不會以輸入元件來顯示內容, 也不能回復到一般模式. 預設為false
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.SingleOpenWindowField.SingleOpenWindowButtonClick">
+            <summary>
+            使用者點選開窗項目後回傳的處理事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.SingleOpenWindowField.BeforeClickButton">
+            <summary>
+            按下按鈕前的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.connectDBString">
+            <summary>
+            取得或設定I/O連線字串. 須配合clientEngineType使用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.clientEngineType">
+            <summary>
+            I/O引擎類別. 參考EngineConstants
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.ValueText">
+            <summary>
+            使用者輸入值或開窗帶回的內容值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.keyField">
+            <summary>
+            關鍵欄位名稱. 須設定成TPABYA中@參數的欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.guidField">
+            <summary>
+            GUID欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.keyFieldType">
+            <summary>
+            關鍵欄位的資料型態
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.ReadOnlyValueText">
+            <summary>
+            連動欄位的內容值，即因 ValueText 異動而改變的欄位值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.GuidValueText">
+            <summary>
+            GUID欄位的內容值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.tableName">
+            <summary>
+            指定TPABYA資料表中的BYA001欄位，識別欲開窗的資料表代號
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.serialNum">
+            <summary>
+            指定TPABYA資料表中的BYA002欄位，識別欲開窗的識別碼
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.idIndex">
+            <summary>
+            指定關鍵欄位在SQL中的位置
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.valueIndex">
+            <summary>
+            指定 ReadOnlyValue 欄位在SQL中的位置.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.guidIndex">
+            <summary>
+            指定GUID欄位在SQL中的位置
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.ReadOnly">
+            <summary>
+            取得或設定此元件是否唯讀，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.PartialReadOnly">
+            <summary>
+            部分唯讀設定，true:無法輸入，亦無法開窗選取; false:無法輸入，可開窗選取，預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.HiddenText">
+            <summary>
+            true:隱藏文字欄位，只顯示開窗按鈕; false:顯示文字欄位，預設為 false，可搭配 HiddenButton, showReadOnlyField 的設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.HiddenButton">
+            <summary>
+            true:隱藏開窗按鈕; false:顯示開窗按鈕，預設為 false，可搭配 HiddenText, showReadOnlyField 的設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.whereClause">
+            <summary>
+            附加開窗搜尋的條件字串. 不須加上where, 開頭也不須增加and
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.showReadOnlyField">
+            <summary>
+            true:隱藏連動欄位; false:顯示連動欄位，預設為 false，可搭配 HiddenText, HiddenButton 的設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.FixValueTextWidth">
+            <summary>
+            固定ValueText寬度 有值：使用此固定寬度；無值：使用該頁面元件之Width屬性，預設值 "" (無值)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.FixReadOnlyValueTextWidth">
+            <summary>
+            固定ReadOnlyValueText寬度 有值：使用此固定寬度；無值：使用該頁面元件之Width屬性，預設值 "" (無值)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.userDBString">
+            <summary>
+            客製化連線字串
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.userEngineType">
+            <summary>
+            客製化連線時的資料庫類型
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.HiddenClearButton">
+            <summary>
+            HiddenClearButton true:隱藏清除按鈕; false:顯示清除按鈕
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.DefaultPageSize">
+            <summary>
+            指定預設開窗每頁筆數
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.customOpenWinPage">
+            <summary>
+            更改預設開窗畫面
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.dialogHeight">
+            <summary>
+            開窗畫面高度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.dialogWidth">
+            <summary>
+            開窗畫面寬度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.isDialogResizable">
+            <summary>
+            開窗畫面可否調整大小
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.isAfterOpenWin">
+            <summary>
+            元件內部屬性,用途為配合DisabledCleanValue
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.DisabledCleanValue">
+            <summary>
+            輸入值不存在開窗項目時,不清空輸入欄位(後端元件ValueText將為空值狀態)        
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowField.IgnoreCase">
+            <summary>
+            設定開窗輸入條件是否需區分大小寫. true:不須區分; false:須區分. 預設為false.
+            若不區分大小寫, 需在TPABYA005中一併設定條件where upper(id)=upper(@id)
+            此屬性為靜態屬性
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.SingleOpenWindowField.SingleOpenWinButtonClickEvent">
+            <summary>
+            使用者點選開窗項目後回傳的處理事件
+            </summary>
+            <param name="values">使用者選擇的回傳值</param>
+        </member>
+        <member name="T:DSCWebControl.SingleOpenWindowField.BeforeClickButtonEvent">
+            <summary>
+            按下按鈕前的事件, 可於此修改whereClause等參數
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GlassButton">
+            <summary>
+            可使用在Server端動態變更的屬性: Enabled, Text
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.GlassButton.Click">
+            <summary>
+            ClickEvent事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.GlassButton.BeforeClicks">
+            <summary>
+            BeforeClickEvent事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.Enabled">
+            <summary>
+            是否允許按下動作
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.ReadOnly">
+            <summary>
+            設定是否唯讀. 預設為false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.Text">
+            <summary>
+            按鈕顯示值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.showWaitingIcon">
+            <summary>
+            是否顯示等待視窗
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.showPrepareIcon">
+            <summary>
+            是否顯示遮罩(霧朦朦效果) 2009/05/10 hjlin add
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.ImageUrl">
+            <summary>
+            Image url.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.BackImageUrl">
+            <summary>
+            BackImage url.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GlassButton.CssClass">
+            <summary>
+            CssClass
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GlassButton.ClickEvent">
+            <summary>
+            Click事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.GlassButton.BeforeClickEvent">
+            <summary>
+            BeforeClick事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.DSCGroupBox">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCGroupBox.ShowPanel">
+            <summary>
+            是否顯示GroupBox內容. 預設為true
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCGroupBox.ShowToggle">
+            <summary>
+            是否顯示切換顯示功能. 預設為false
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GridColumnStyle">
+            <summary>
+            DataList, OutDataList設定欄位屬性物件
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.RIGHT">
+            <summary>
+            靠右對齊
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.LEFT">
+            <summary>
+            靠左對齊
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.CENTER">
+            <summary>
+            置中對齊
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.className">
+            <summary>
+            自訂欄位CSS名稱 
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.fieldName">
+            <summary>
+            要指定的欄位名稱
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.alignment">
+            <summary>
+            指定的對齊方式. 可為GridColumnStyle.RIGHT, GridColumnStyle.LEFT, GridColumnStyle.CENTER之ㄧ. 預設為GridColumnStyle.LEFT
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.width">
+            <summary>
+            欄位寬度. 等於-1時表示由DataList, OutDataList元件自動根據內容長度計算. 預設為-1
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GridColumnStyle.excelDigit">
+            <summary>
+            匯出Excel時的小數點位數。預設為2
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.GridColumnStyle.#ctor(System.String,System.Int32,System.String)">
+            <summary>
+            建構子
+            </summary>
+            <param name="mFieldName">欄位名稱</param>
+            <param name="mColWidth">欄位寬度. 等於-1時表示由DataList, OutDataList元件自動根據內容長度計算</param>
+            <param name="mAlignment">指定的對齊方式. 可為GridColumnStyle.RIGHT, GridColumnStyle.LEFT, GridColumnStyle.CENTER之ㄧ. 預設為GridColumnStyle.LEFT</param>
+        </member>
+        <member name="M:DSCWebControl.GridColumnStyle.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            建構子 多載//20090710 Modify Eric : For Custom Grid Column Style
+            </summary>
+            <param name="mFieldName">欄位名稱</param>
+            <param name="mColWidth">欄位寬度. 等於-1時表示由DataList, OutDataList元件自動根據內容長度計算</param>
+            <param name="mAlignment">指定的對齊方式. 可為GridColumnStyle.RIGHT, GridColumnStyle.LEFT, GridColumnStyle.CENTER之ㄧ. 預設為GridColumnStyle.LEFT</param>
+        </member>
+        <member name="M:DSCWebControl.GridColumnStyle.#ctor(System.String,System.Int32,System.String,System.String,System.Int32)">
+            <summary>
+            建構子 多載//20090710 Modify Eric : For Custom Grid Column Style, mantis 0019435: 國昌
+            </summary>
+            <param name="mFieldName">欄位名稱</param>
+            <param name="mColWidth">欄位寬度. 等於-1時表示由DataList, OutDataList元件自動根據內容長度計算</param>
+            <param name="mAlignment">指定的對齊方式. 可為GridColumnStyle.RIGHT, GridColumnStyle.LEFT, GridColumnStyle.CENTER之ㄧ. 預設為GridColumnStyle.LEFT</param>
+            <param name="mClassName">自訂欄位CSS名稱 </param>
+            <param name="mExcelDigit">匯出Excel時的小數點位數。預設為2</param>
+        </member>
+        <member name="M:DSCWebControl.GridColumnStyle.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OpenWin">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.OpenWin.sptag">
+            <summary>
+            不使用
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OpenWin.openValidate(System.String,System.String,System.String,System.String[0:,0:],System.String,System.Boolean)">
+            <summary>
+            使用者輸入代碼，帶出其他相關資料
+            </summary>
+            <param name="tableName">指定TPABYA資料表中的BYA001欄位，識別欲開窗的資料表代號</param>
+            <param name="serialNum">指定TPABYA資料表中的BYA002欄位，識別欲開窗的識別碼</param>
+            <param name="identityID">開窗識別碼</param>
+            <param name="param">指定開窗SQL語法中(TPABYA005), 內部參數(@開頭)的欄位名稱</param>
+            <param name="whereClause">附加開窗搜尋的條件字串. 不須加上where, 開頭也不須增加and</param>
+            <param name="parseMode">是否將param所指定的名稱更新TPABYA005的SQL語句. true:取代; false:保留</param>
+        </member>
+        <member name="M:DSCWebControl.OpenWin.openWin(System.String,System.String,System.Boolean,System.String)">
+            <summary>
+            開啟視窗供使用者選取資料
+            </summary>
+            <param name="tableName">指定TPABYA資料表中的BYA001欄位，識別欲開窗的資料表代號</param>
+            <param name="serialNum">指定TPABYA資料表中的BYA002欄位，識別欲開窗的識別碼</param>
+            <param name="isMulti">是否為多選開窗，true:多選開窗; false:單選開窗</param>
+            <param name="identityID">開窗識別碼</param>
+        </member>
+        <member name="M:DSCWebControl.OpenWin.openWin(System.String,System.String,System.Boolean,System.String,System.Int32)">
+            <summary>
+            開啟視窗供使用者選取資料
+            </summary>
+            <param name="tableName">指定TPABYA資料表中的BYA001欄位，識別欲開窗的資料表代號</param>
+            <param name="serialNum">指定TPABYA資料表中的BYA002欄位，識別欲開窗的識別碼</param>
+            <param name="isMulti">是否為多選開窗，true:多選開窗; false:單選開窗</param>
+            <param name="identityID">開窗識別碼</param>
+            <param name="DefaultPageSize">預設開窗每頁筆數</param>
+        </member>
+        <member name="E:DSCWebControl.OpenWin.OpenWindowButtonClick">
+            <summary>
+            使用者點選開窗項目後回傳的處理事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.identityID">
+            <summary>
+            開窗識別碼
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.paramString">
+            <summary>
+            指定開窗SQL語法中(TPABYA005), 內部參數(@開頭)的欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.whereClause">
+            <summary>
+            附加開窗搜尋的條件字串. 不須加上where, 開頭也不須增加and
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.connectDBString">
+            <summary>
+            取得或設定I/O連線字串. 須配合clientEngineType使用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.userDBString">
+            <summary>
+            客製化連線字串
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.clientEngineType">
+            <summary>
+            I/O引擎類別. 參考EngineConstants
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.userEngineType">
+            <summary>
+            客製化連線時的資料庫類型
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.customOpenWinPage">
+            <summary>
+            更改預設開窗畫面
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.dialogHeight">
+            <summary>
+            開窗畫面高度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.dialogWidth">
+            <summary>
+            開窗畫面寬度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.isDialogResizable">
+            <summary>
+            開窗畫面可否調整大小
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenWin.IgnoreCase">
+            <summary>
+            設定開窗輸入條件是否需區分大小寫. true:不須區分; false:須區分. 預設為false.
+            若不區分大小寫, 需在TPABYA005中一併設定條件where upper(id)=upper(@id)
+            此屬性為靜態屬性
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OpenWin.OpenWindowButtonClickEvent">
+            <summary>
+            使用者點選開窗項目後回傳的處理事件
+            </summary>
+            <param name="identityid">開窗識別碼</param>
+            <param name="values">使用者選擇的回傳值</param>
+        </member>
+        <member name="T:DSCWebControl.DSCLabel">
+            <summary>
+            可使用在Server端動態變更的屬性: Text, TextAlign, Display
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCLabel.TextAlign">
+            <summary>
+            對齊方式: DSCLabel.LEFT, DSCLabel.CENTER, DSCLabel.RIGHT
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCLabel.IsNecessary">
+            <summary>
+            是否標示必填欄位
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GraphFileItem">
+            <summary>
+            GraphFileUpload畫面元件所處理的各上傳檔案資料物件
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.GraphFileItem.#ctor">
+            <summary>
+            建構子
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.FileName">
+            <summary>
+            檔案名稱
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.FileExt">
+            <summary>
+            副檔名
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.Description">
+            <summary>
+            說明
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.FilePath">
+            <summary>
+            檔案路徑
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.IdentityID">
+            <summary>
+            識別碼
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.level1">
+            <summary>
+            儲存路徑實體識別層級1
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GraphFileItem.level2">
+            <summary>
+            儲存路徑實體識別層級2
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.FileUpload">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.updateTable">
+            <summary>
+            更新 Grid 資料
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.CheckData(System.Int32)">
+            <summary>
+            將沒選取的資料，改為選取
+            </summary>
+            <param name="index">欲改為選取資料的索引</param>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.UnCheckData(System.Int32)">
+            <summary>
+            將已選取的資料，改為不選取
+            </summary>
+            <param name="index">欲改為不選取資料的索引</param>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.getSelectedItem">
+            <summary>
+            取得 Grid 中使用者所選擇的項目
+            </summary>
+            <returns>使用者選擇的項目</returns>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.readFile(System.String)">
+            <summary>
+            初始化此元件
+            </summary>
+            <param name="JobID">處理代號</param>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.setJobID(System.String)">
+            <summary>
+            設定所有檔案物件的JobID.
+            </summary>
+            <param name="JobID">處理代號</param>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.saveFile">
+            <summary>
+            儲存檔案紀錄. 呼叫此方法會將檔案資訊儲存到FILEITEM資料表
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.FileUpload.confirmSave(System.String,System.String)">
+            <summary>
+            確認檔案後續處理. 若儲存草稿或是尚未完成處理者, 不要呼叫此方法
+            </summary>
+            <param name="Level1">儲存實體第一層級</param>
+            <param name="Level2">儲存實體第二層級</param>
+        </member>
+        <member name="E:DSCWebControl.FileUpload.DeleteData">
+            <summary>
+            按下刪除、全部刪除鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.FileUpload.BeforeOpenUploadWindows">
+            <summary>
+            按下新增時開啟視窗之前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.FileUpload.ConfirmSaveBeforeUpdateFi">
+            <summary>
+            ConfirmSave中檔案儲存後FileItem更新之前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.FileUpload.AddOutline">
+            <summary>
+            按下新增、修改鈕後，回傳資料至 Grid 的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.FileUpload.BeforeDeleteData">
+            <summary>
+            按下刪除鈕後，刪除前的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.uploadUser">
+            <summary>
+            欲顯示上傳使用者 請初始化元件時 指定該屬性值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.displayUploadUser">
+            <summary>
+            是否顯示上傳使用者欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.displayUploadTime">
+            <summary>
+            是否顯示上傳時間欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.orderByUploadTimeDesc">
+            <summary>
+            是否改變上傳清單的排序方向
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.dataSource">
+            <summary>
+            存取畫面資料的資料物件. 僅能為DSCWebControl.FileItem資料物件
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.engine">
+            <summary>
+            I/O 引擎
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.NoAdd">
+            <summary>
+            取得或設定此元件是否禁止上傳，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.showSerial">
+            <summary>
+            true:清單欄位第一欄固定為"序號"，與清單內容來源無關，清單中此欄位依序由1開始; false:依清單內容顯示。預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.NoDelete">
+            <summary>
+            取得或設定此元件是否禁止刪除，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.tempFolder">
+            <summary>
+            上傳或下載檔案暫時路徑
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.GridTitle">
+            <summary>
+            標題字串陣列. 預設為[檔案名稱],[檔案類型],[檔案說明]
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.FileAdapter">
+            <summary>
+            上傳或下載檔案所使用的Adapter. 預設使用com.dsc.kernal.document.LocalFileAdapter
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.legalExt">
+            <summary>
+            允許合法上傳的副檔名，若為null, 表示不限制
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileUpload.maxLength">
+            <summary>
+            允許合法上傳的檔案大小，若為-1, 表示由IIS-metadata限制或是ASP.NET config限制
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.FileUpload.DeleteDataEvent">
+            <summary>
+            按下刪除、全部刪除鈕的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.FileUpload.BeforeOpenUploadWindowsEvent">
+            <summary>
+            按下新增時開啟視窗之前的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.FileUpload.ConfirmSaveBeforeUpdateFiEvent">
+            <summary>
+            ConfirmSave中檔案儲存後FileItem更新之前的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.FileUpload.AddOutlineEvent">
+            <summary>
+            上傳檔案後，回傳資料至 Grid 的事件
+            </summary>
+            <param name="objects">資料物件</param>
+            <param name="isNew">true：新增；false：修改</param>
+        </member>
+        <member name="T:DSCWebControl.FileUpload.BeforeDeleteDataEvent">
+            <summary>
+            按下刪除鈕後，刪除前的事件，可於此進行特殊檢核
+            </summary>
+            <returns>true:確定刪除; false:不刪除</returns>
+        </member>
+        <member name="T:DSCWebControl.GraphFileUpload">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.GraphFileUpload.updateTable">
+            <summary>
+            更新 Grid 資料
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.GraphFileUpload.readFile(System.String)">
+            <summary>
+            初始化此元件
+            </summary>
+            <param name="JobID">處理代號</param>
+        </member>
+        <member name="M:DSCWebControl.GraphFileUpload.setJobID(System.String)">
+            <summary>
+            設定所有檔案物件的JobID.
+            </summary>
+            <param name="JobID">處理代號</param>
+        </member>
+        <member name="M:DSCWebControl.GraphFileUpload.saveFile">
+            <summary>
+            儲存檔案紀錄. 呼叫此方法會將檔案資訊儲存到FILEITEM資料表
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.GraphFileUpload.confirmSave(System.String,System.String)">
+            <summary>
+            確認檔案後續處理. 若儲存草稿或是尚未完成處理者, 不要呼叫此方法
+            </summary>
+            <param name="Level1">儲存實體第一層級</param>
+            <param name="Level2">儲存實體第二層級</param>
+        </member>
+        <member name="E:DSCWebControl.GraphFileUpload.DeleteData">
+            <summary>
+            按下刪除鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.GraphFileUpload.AddOutline">
+            <summary>
+            檔案開窗關閉後，回傳資料至主畫面的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.GraphFileUpload.BeforeDeleteData">
+            <summary>
+            按下刪除鈕後，刪除前的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.uploadUser">
+            <summary>
+            欲顯示上傳使用者 請初始化元件時 指定該屬性值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.displayUploadUser">
+            <summary>
+            是否顯示上傳使用者欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.displayUploadTime">
+            <summary>
+            是否顯示上傳時間欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.orderByUploadTimeDesc">
+            20090617 Add Eric
+             <summary>
+             是否改變上傳清單的排序方向
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.dataSource">
+            <summary>
+            存取畫面資料的資料物件. 僅能為DSCWebControl.FileItem資料物件
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.engine">
+            <summary>
+            I/O 引擎
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.NoAdd">
+            <summary>
+            取得或設定此元件是否禁止上傳，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.showSerial">
+            <summary>
+            true:清單欄位第一欄固定為"序號"，與清單內容來源無關，清單中此欄位依序由1開始; false:依清單內容顯示。預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.NoDelete">
+            <summary>
+            取得或設定此元件是否禁止刪除，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.tempFolder">
+            <summary>
+            上傳或下載檔案暫時路徑
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.GridTitle">
+            <summary>
+            標題字串陣列. 預設為[檔案名稱],[檔案類型],[檔案說明]
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.FileAdapter">
+            <summary>
+            上傳或下載檔案所使用的Adapter. 預設使用com.dsc.kernal.document.LocalFileAdapter
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.legalExt">
+            <summary>
+            允許合法上傳的副檔名，若為null, 表示不限制
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.GraphFileUpload.maxLength">
+            <summary>
+            允許合法上傳的檔案大小，若為-1, 表示由IIS-metadata限制或是ASP.NET config限制
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GraphFileUpload.DeleteDataEvent">
+            <summary>
+            按下刪除鈕的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GraphFileUpload.AddOutlineEvent">
+            <summary>
+            檔案開窗關閉後，回傳資料至主畫面的事件
+            </summary>
+            <param name="objects">檔案資料物件</param>
+            <param name="isNew">true：新增；false：修改</param>
+        </member>
+        <member name="T:DSCWebControl.GraphFileUpload.BeforeDeleteDataEvent">
+            <summary>
+            按下刪除鈕後，刪除前的事件，可於此進行特殊檢核
+            </summary>
+            <returns>true:確定刪除; false:不刪除</returns>
+        </member>
+        <member name="T:DSCWebControl.SingleDropDownList">
+            <summary>
+            可使用在Server端動態變更的屬性:
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.SingleDropDownList.setListItem(System.String[0:,0:])">
+            <summary>
+            設定下拉選單的項目
+            </summary>
+            <param name="lis">lis[i, 0]:內容值; lis[i, 1]:顯示文字</param>
+        </member>
+        <member name="M:DSCWebControl.SingleDropDownList.selectedIndex(System.Int32)">
+            <summary>
+            設定使用者所選取的項目索引，同時啟動選取項目改變時的事件
+            </summary>
+            <param name="index">索引值</param>
+        </member>
+        <member name="M:DSCWebControl.SingleDropDownList.getListItem">
+            <summary>
+            取得下拉選單的項目
+            </summary>
+            <returns>string[i, 0]:內容值; string[i, 1]:顯示文字</returns>
+        </member>
+        <member name="M:DSCWebControl.SingleDropDownList.ConvertItemString">
+            <summary>
+            回傳下拉選單項目字串
+            </summary>
+            <returns>格式: value@@text;;value@@text</returns>
+        </member>
+        <member name="E:DSCWebControl.SingleDropDownList.SelectChanged">
+            <summary>
+            SelectChanged事件委派
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.SingleDropDownList.SelectChangedEvent">
+            <summary>
+            SelectChanged事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.IPField">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.IPField.TextChanged">
+            <summary>
+            TextChanged事件委派
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.IPField.TextChangedEvent">
+            <summary>
+            TextChanged事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.RoutineWizard">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly, DateTimeMode
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.RoutineWizard.checkRunnable(System.String,System.String,System.String,System.Decimal)">
+            <summary>
+            檢查是否該執行
+            </summary>
+            <param name="scheduleXML">排程設定xml</param>
+            <param name="lastCompleteTime">上次執行時間</param>
+            <param name="currentTime">目前檢查時間</param>
+            <param name="tolerentSecond">容許執行時間</param>
+            <returns></returns>
+        </member>
+        <member name="T:DSCWebControl.BarGraph">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.BarGraph.setData(System.String[0:,0:])">
+            <summary>
+            要顯示到餅圖的資料陣列. 此陣列第一維度為資料列數, 第二維度長度為2. data[i,0]顯示標籤; data[i,1]顯示值. 不須指定ValueField以及TagField屬性
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:DSCWebControl.BarGraph.setData(com.dsc.kernal.databean.DataObjectSet)">
+            <summary>
+            要顯示到餅圖的DataObjectSet物件. 呼叫此方法前必須設定ValueField以及TagField屬性
+            </summary>
+            <param name="dos">要顯示資料的DataObjectSet物件</param>
+        </member>
+        <member name="M:DSCWebControl.BarGraph.setData(System.Data.DataSet)">
+            <summary>
+            要顯示到餅圖的DataSet物件. 呼叫此方法前必須設定ValueField以及TagField屬性
+            </summary>
+            <param name="ds">要顯示資料的DataSet</param>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.ValueField">
+            <summary>
+            指定或取得DataSet來源中顯示為值的欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.TagField">
+            <summary>
+            指定或取得DataSet來源中顯示為標籤的欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.PieColor">
+            <summary>
+            設定圓餅圖各區塊顏色. 所設定的顏色會循環使用. 預設的顏色順序為: 紅, 藍, 綠, 粉紅, 紫, 橘, 黃, 小麥, 天空藍, 銀色
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.IsShowGrid">
+            <summary>
+            設定長條圖是否顯示格線. 預設為true
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarYOffset">
+            <summary>
+            設定長條圖與上邊界空白間隔. 預設為30pixel
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarXEnd">
+            <summary>
+            設定長條圖與右邊的空白間隔. 預設為20pixel
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarXOffset">
+            <summary>
+            設定長條圖的縱軸與左邊界間隔, 在V_BAR長條圖中亦即為縱軸刻度顯示寬度. 預設為60pixel
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.YCount">
+            <summary>
+            設定長條圖值軸顯示的刻度個數. 預設為10個
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.LabelOffset">
+            <summary>
+            設定長條圖的顯示標籤寬度. 預設為100pixel
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarSpace">
+            <summary>
+            設定長條圖的每條Bar最小間隔. 預設為20pixel
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarWidth">
+            <summary>
+            設定長條圖的每條Bar寬度. 預設為20pixel
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarOffset">
+            <summary>
+            取得或設定畫長條圖時, 計算值的大小時是否先取掉一定值在計算. 此設定僅對長條圖有用, 預設為0
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.IsShowValue">
+            <summary>
+            取得或設定是否直接顯示值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BarColor">
+            <summary>
+            設定長條圖區塊顏色
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.mode">
+            <summary>
+            設定顯示方式, BarGraph.V_BAR: 直長條圖, BarGraph.PIE: 圓餅圖, BarGraph.H_BAR: 橫長條圖
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BarGraph.BackGroundColor">
+            <summary>
+            取得或設定背景顏色
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.updateQuery">
+            <summary>
+            更新欄位項目
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.AddCondition(System.String[])">
+            <summary>
+            增加一個查詢條件
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.addCondition(System.String,System.String,System.String,System.String)">
+            <summary>
+            新增預設條件。 
+            例如：addCondition("GUID@@識別碼",DataObjectConstants.LIKE+"@@包含","00","and@@且");
+            </summary>
+            <param name="fieldName">欄位。以@@分隔兩部份，0:欄位名稱(DB欄位);1:顯示文字</param>
+            <param name="operation">運算子。以@@分隔兩部份，0:運算符號（例如：DataObjectConstants.LIKE);1:顯示文字</param>
+            <param name="content">比對值</param>
+            <param name="conjunction">連接詞。若為第一個條件，則可傳入零長度字串。為此條件與先前條件的連結符號，以@@分隔兩部份。0:(僅能為and/or其中之一);1:顯示文字</param>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.RemoveCondition(System.String)">
+            <summary>
+            移除一個查詢條件
+            </summary>
+            <param name="data">要移除的值</param>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.AddSort(System.String[])">
+            <summary>
+            增加一個排序項目
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.arrayTostring(System.String[0:,0:])">
+            <summary>
+            把二維陣列組成字串
+            </summary>
+            <param name="ary"></param>
+            <returns>格式為: value@@text!!value@@text</returns>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.OperationOptions">
+            <summary>
+            回傳條件運算子的選項字串
+            </summary>
+            <returns>select控制項的option選項字串</returns>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.addOperator(DSCWebControl.QueryPage.OperatorType)">
+            <summary>
+            增加查詢條件–運算子(依加入先後順序呈現)
+            </summary>
+            <param name="sOperator">運算子，如：OperatorType.EQUAL、OperatorType.LIKE...</param>
+        </member>
+        <member name="M:DSCWebControl.QueryPage.clearOperator">
+            <summary>
+            清除所有查詢條件–運算子
+            若清除運算子系統則以預設運算子呈現
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.QueryPage.HiddenField">
+            <summary>
+            隱藏欄位陣列
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.QueryPage.whereClause">
+            <summary>
+            查詢條件陣列
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.QueryPage.OperatorType">
+            <summary>
+            運算子的類型
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OpenFileUpload.openFileUploadDialog">
+            <summary>
+            彈出檔案上傳視窗
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OpenFileUpload.saveFile">
+            <summary>
+            儲存檔案紀錄. 呼叫此方法會將檔案資訊儲存到FILEITEM資料表
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OpenFileUpload.setJobID(System.String)">
+            <summary>
+            設定所有檔案物件的JobID.
+            </summary>
+            <param name="JobID">處理代號</param>
+        </member>
+        <member name="M:DSCWebControl.OpenFileUpload.confirmSave(System.String,System.String)">
+            <summary>
+            確認檔案後續處理. 若儲存草稿或是尚未完成處理者, 不要呼叫此方法
+            </summary>
+            <param name="Level1">儲存實體第一層級</param>
+            <param name="Level2">儲存實體第二層級</param>
+        </member>
+        <member name="M:DSCWebControl.OpenFileUpload.openFile(System.String)">
+            <summary>
+            檢視附件
+            </summary>
+            <param name="IDENTITYID"></param>
+        </member>
+        <member name="M:DSCWebControl.OpenFileUpload.deleteFile(System.String)">
+            <summary>
+            將目前元件上傳清單的特定檔案物件註記刪除
+            </summary>
+            <param name="IDENTITYID"></param>
+        </member>
+        <member name="P:DSCWebControl.OpenFileUpload.tempFolder">
+            <summary>
+            上傳或下載檔案暫時路徑
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenFileUpload.uploadUser">
+            <summary>
+            欲顯示上傳使用者 請初始化元件時 指定該屬性值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenFileUpload.uploadedList">
+            <summary>
+            存取畫面資料的資料物件. 僅能為DSCWebControl.FileItem資料物件
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenFileUpload.FileAdapter">
+            <summary>
+            上傳或下載檔案所使用的Adapter. 預設使用com.dsc.kernal.document.LocalFileAdapter
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OpenFileUpload.engine">
+            <summary>
+            I/O 引擎
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OpenFileUpload.AddOutline">
+            <summary>
+            按下新增、修改鈕後，回傳資料至 Grid 的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OpenFileUpload.BeforeOpenUploadWindows">
+            <summary>
+            按下新增時開啟視窗之前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OpenFileUpload.ConfirmSaveBeforeUpdateFi">
+            <summary>
+            ConfirmSave中檔案儲存後FileItem更新之前的事件委派
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OpenFileUpload.AddOutlineEvent">
+            <summary>
+            上傳檔案後，回傳資料至 Grid 的事件
+            </summary>
+            <param name="objects">資料物件</param>
+            <param name="isNew">true：新增；false：修改</param>
+        </member>
+        <member name="T:DSCWebControl.OpenFileUpload.BeforeOpenUploadWindowsEvent">
+            <summary>
+            按下新增時開啟視窗之前的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OpenFileUpload.ConfirmSaveBeforeUpdateFiEvent">
+            <summary>
+            ConfirmSave中檔案儲存後FileItem更新之前的事件
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.GUID">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.JOBID">
+             <summary>
+            處理代號
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.IDENTITYID">
+             <summary>
+            檔案識別碼
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.FILENAME">
+             <summary>
+            檔案名稱
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.FILEEXT">
+             <summary>
+            延伸檔名
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.FILEPATH">
+             <summary>
+            檔案暫存路徑
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.DESCRIPTION">
+             <summary>
+            檔案說明
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.LEVEL1">
+             <summary>
+            層級一
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.FileItem.LEVEL2">
+             <summary>
+            層級二
+             </summary>
+        </member>
+        <member name="T:DSCWebControl.DataListBase">
+            <summary>
+             DataList基底元件，所有DataList系列元件皆需繼承此底層元件
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.removeGroupField(System.String)">
+            <summary>
+            移除分群欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.removeSumField(System.String)">
+            <summary>
+            移除小計欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addSortCondition2(System.String,System.String)">
+            <summary>
+            加入排序規則. 若所加入的欄位顯示名稱重複, 則會根據order作修改
+            </summary>
+            <param name="fieldName">欄位顯示名稱</param>
+            <param name="order">排序方向. 合法的值為DataObjectConstants.ASC以及DataObjectConstants.DESC</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.reSortCondition(System.String,System.String)">
+            <summary>
+            重新排序規則. 將之前所有排序規則皆清除，20100825 hjlin mantis 18114
+            </summary>
+            <param name="fieldName">欄位顯示名稱</param>
+            <param name="order">排序方向. 合法的值為DataObjectConstants.ASC以及DataObjectConstants.DESC</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.UnCheckAllData">
+            <summary>
+            將勾選清除
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.updateTable">
+            <summary>
+            更新 Grid 資料
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.CheckData(System.Int32)">
+            <summary>
+            將沒選取的資料，改為選取
+            </summary>
+            <param name="index">欲改為選取資料的索引</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.UnCheckData(System.Int32)">
+            <summary>
+            將已選取的資料，改為不選取
+            </summary>
+            <param name="index">欲改為不選取資料的索引</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.CheckData(System.Int32,System.Int32)">
+            <summary>
+            將指定頁數的特定選取資料改為選取
+            </summary>
+            <param name="page">指定頁數</param>
+            <param name="index">遇改為選取的資料的索引</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.UnCheckData(System.Int32,System.Int32)">
+            <summary>
+            將指定頁數的特定選取資料改為不選取
+            </summary>
+            <param name="page">指定頁數</param>
+            <param name="index">遇改為不選取的資料的索引</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.getSelectedItem">
+            <summary>
+            取得 Grid 中使用者所選擇的項目
+            </summary>
+            <returns>使用者選擇的項目</returns>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.saveExcel(System.String,System.Int32[],System.Boolean)">
+            <summary>
+            將 Grid 資料儲存成 Excel 檔
+            </summary>
+            <param name="fileName">檔案名稱</param>
+            <param name="HiddenIndex">隱藏欄位索引</param>
+            <param name="onlyCheck">是否只輸出勾選之資料</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.renderOutputHtml(System.Boolean,System.String,System.String)">
+            <summary>
+            將 Grid 資料撰寫成 OutputHtml
+            </summary>
+            <param name="onlyCheck">是否只輸出勾選之資料</param>
+            <param name="headerRow">輸出至表頭的列語法</param>
+            <param name="footerRow">輸出至表尾的列語法</param>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.saveHtml(System.String,System.Boolean,System.String)">
+            <summary>
+            將 Grid 資料儲存成 HTML 檔
+            </summary>
+            <param name="fileName">檔案名稱</param>
+            <param name="onlyCheck">是否只輸出勾選之資料</param>
+            <param name="customizeHtml">客製的HTMLCode</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.setData(System.String,System.String[],System.Collections.ArrayList)">
+            <summary>
+            將資料寫入檔案(Excel檔，以XML的方式寫入)
+            </summary>
+            <param name="fileName">檔案名稱(Excel檔)</param>
+            <param name="header">欄位標題</param>
+            <param name="datas">資料內容</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addSortCondition(System.String,System.String)">
+            <summary>
+            加入排序規則. 若所加入的欄位顯示名稱重複, 則會忽略order屬性, 直接將現有order做反向排序
+            </summary>
+            <param name="fieldName">欄位顯示名稱</param>
+            <param name="order">排序方向. 合法的值為DataObjectConstants.ASC以及DataObjectConstants.DESC</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllSortCondition">
+            <summary>
+            清除所有排序設定
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addGroupField(System.String)">
+            <summary>
+            加入分群欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllGroupField">
+            <summary>
+            移除所有分群欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addSumField(System.String)">
+            <summary>
+            加入加總欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllSumField">
+            <summary>
+            移除所有加總欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addAverageField(System.String)">
+            <summary>
+            加入平均欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllAverageField">
+            <summary>
+            移除所有平均欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addSTDEVField(System.String)">
+            <summary>
+            加入標準差欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllSTDEVField">
+            <summary>
+            移除所有標準差欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addMaxField(System.String)">
+            <summary>
+            加入最大值欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllMaxField">
+            <summary>
+            移除所有最大值欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addMinField(System.String)">
+            <summary>
+            加入最小值欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllMinField">
+            <summary>
+            移除所有最小值欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addMedField(System.String)">
+            <summary>
+            加入中位數欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllMedField">
+            <summary>
+            移除所有中位數欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.addMoneyField(System.String,System.Int32,System.Boolean)">
+            <summary>
+            加入金額表示欄位
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+            <param name="digit">小數點表示位數</param>
+            <param name="isAccount">負值金額是否以()顯示</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.clearAllMoneyField">
+            <summary>
+            移除所有金額表示欄位
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.setColumnStyle(System.String,System.Int32,System.String)">
+            <summary>
+            設定欄位屬性
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+            <param name="columnWidth">欄位寬度</param>
+            <param name="colAlignment">對齊方式</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.setColumnStyle(DSCWebControl.GridColumnStyle)">
+            <summary>
+            設定欄位屬性
+            </summary>
+            <param name="gcs">代表欄位屬性的GridColumnStyle類別</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.getCurrentColumnName">
+            <summary>
+            2009/04/25 hjlin 新增，取得 user 點選 cell 欄位的名稱
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.setFrozenField(System.String)">
+            <summary>
+            指定凍結窗格的欄位名稱。若設定為null，表示取消凍結
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+        </member>
+        <member name="M:DSCWebControl.DataListBase.reOrderField(System.String[])">
+            <summary>
+            重新設定欄位顯示順序。此方法必須將所有欄位(包含隱藏)依照所定順序建立欄位名稱陣列後傳入。
+            </summary>
+            <param name="orderField"></param>
+        </member>
+        <member name="E:DSCWebControl.DataListBase.CustomDisplayTitle">
+            <summary>
+            客製化Grid標題顯示內容的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataListBase.CustomDisplayField">
+            <summary>
+            客製化Grid欄位顯示內容的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.dataSource">
+            <summary>
+            存取畫面資料的資料物件
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.connectDBString">
+            <summary>
+            取得或設定 I/O 連線字串. 須配合 clientEngineType 使用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.clientEngineType">
+            <summary>
+            I/O 引擎類別. 參考 EngineConstants
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.HiddenField">
+            <summary>
+            Grid 中隱藏的欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.ReadOnlyField">
+            <summary>
+            Grid中編輯資料時(InlineEdit=true)，唯讀的欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.DesignTitle">
+            <summary>
+            prototype 模式(DesignModes=true)，Grid 的欄位標題
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.DesignValue">
+            <summary>
+            prototype 模式(DesignModes=true)，Grid 的欄位值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showSerial">
+            <summary>
+            true:清單欄位第一欄固定為"序號"，與清單內容來源無關，清單中此欄位依序由1開始; false:依清單內容顯示。預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.NoAdd">
+            <summary>
+            取得或設定此元件是否禁止新增，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.NoModify">
+            <summary>
+            取得或設定此元件是否禁止修改，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.NoDelete">
+            <summary>
+            取得或設定此元件是否禁止刪除，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.IsOpenWinUse">
+            <summary>
+            取得或設定此元件是否為開窗元件使用，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.IsShowCheckBox">
+            <summary>
+            取得或設定此元件是否顯示checkbox，預設 true.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showTotalRowCount">
+            <summary>
+            取得或設定此元件是否顯示總筆數，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showExcel">
+            <summary>
+            取得或設定此元件是否顯示下載Excel，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.IsExcelWithMultiType">
+            <summary>
+            下載Excel輸出資料是否區分多型態別，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showPrint">
+            <summary>
+            取得或設定此元件是否顯示列印清單，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showSetup">
+            <summary>
+            取得或設定此元件是否顯示設定按鈕，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.aggregateDigit">
+            <summary>
+            取得或設定統計函數小數位數. 預設為2
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.aggregateInTitle">
+            <summary>
+            取得或設定此元件彙總結果是否顯示在群組標題，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.multiLine">
+            <summary>
+            取得或設定此元件文字內容是否顯示多行，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.IsHideSelectAllButton">
+            <summary>
+            取得或設定此元件是否隱藏全選/全不選按鈕，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.IsHideShowAllPageButton">
+            <summary>
+            取得或設定此元件是否隱藏分頁/不分頁按鈕，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.multiLineRowCount">
+            <summary>
+            取得或設定多行顯示時的最大行數.若為-1, 表示不限行數. 預設為-1
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.WidthMode">
+            <summary>
+            設定欄位寬度顯示的模式. 0:百分比; 1:像素
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.moneyFieldColor">
+            <summary>
+            取得或設定金額表示欄位負值以()表示時, 顯示的欄位顏色. 預設為紅色#FF0000
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.EnableGroupMenu">
+            <summary>
+            取得或設定此元件標題選單中是否允許分組相關功能，預設 false.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showSettingPages">
+            <summary>
+            取得或設定開啟設定窗時允許使用的頁籤。陣列順序依次為:一般設定、顯示欄位、欄位順序、金額欄位、分群欄位、小計欄位、平均欄位、標準差欄位、最大值欄位、最小值欄位。
+            當未設定此屬性時，預設僅開啟:一般設定、顯示欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.showAdminColumn">
+            <summary>
+            取得或設定是否顯示系統管理欄位，格式為Y/N,Y/N，
+            依序決定D_INSERTTIME,D_MODIFYTIME顯示與否，預設為N,N，為全不顯示。
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.isShowAll">
+            <summary>
+            取得或設定此元件是否不分頁，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataListBase.currentColumnName">
+            <summary>
+            2009/04/25 hjlin 新增，記錄 user 點選 cell 欄位的名稱
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DataListBase.CustomDisplayTitleEvent">
+            <summary>
+            客製化Grid標題顯示內容
+            </summary>
+            <param name="objects">資料物件</param>
+        </member>
+        <member name="T:DSCWebControl.DataListBase.CustomDisplayFieldEvent">
+            <summary>
+            客製化Grid欄位顯示內容
+            </summary>
+            <param name="fieldName">欄位名稱</param>
+            <param name="fieldData">內容值</param>
+            <returns>須顯示的內容</returns>
+        </member>
+        <member name="T:DSCWebControl.TagObject">
+            <summary>
+            用於分群時紀錄分群相關資訊的物件
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.TagObject.dataObj">
+            <summary>
+            該TagObject所實際儲存的DataObject資料
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.TagObject.GUID">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.TagObject.MODE">
+             <summary>
+            起始S/結束E/總和U/平均A/標準差D/最大X/最小N
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.TagObject.TITLE">
+             <summary>
+            分類名稱
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.TagObject.VALUE">
+             <summary>
+            分類值
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.TagObject.ID">
+             <summary>
+            ID
+             </summary>
+        </member>
+        <member name="P:DSCWebControl.TagObject.COUNT">
+            <summary>
+            該項分群(類)之筆數
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.GroupNode">
+            <summary>
+            群組節點物件
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.groupTagTitle">
+            <summary>
+            群組名稱
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.groupTagValue">
+            <summary>
+            群組值
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.dataCount">
+            <summary>
+            資料筆數
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.dataSum">
+            <summary>
+            資料總和
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.dataAverage">
+            <summary>
+            資料平均
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.dataSTDEV">
+            <summary>
+            資料標準差
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.dataMax">
+            <summary>
+            資料最大值
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.dataMin">
+            <summary>
+            資料最小值
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.childGroup">
+            <summary>
+            子群組
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.GroupNode.childNode">
+            <summary>
+            子節點
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.GroupNode.initSumField(com.dsc.kernal.databean.DataObjectSet,System.String[],System.Collections.ArrayList,System.Collections.ArrayList,System.Collections.ArrayList,System.Collections.ArrayList,System.Collections.ArrayList,System.Collections.ArrayList)">
+            <summary>
+            初始化總和欄位
+            </summary>
+            <param name="dataSource">資料來源</param>
+            <param name="HiddenField">隱藏欄位</param>
+            <param name="sumField">總和欄位陣列</param>
+            <param name="averageField">平均欄位陣列</param>
+            <param name="STDEVField">標準差欄位陣列</param>
+            <param name="MaxField">最大值欄位陣列</param>
+            <param name="MinField">最小值欄位陣列</param>
+            <param name="MedField">中數欄位陣列</param>
+            <returns>合法的欄位陣列</returns>
+        </member>
+        <member name="T:DSCWebControl.BYWin">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.BYWin.getSelectedData">
+            <summary>
+            取得主畫面使用者所選擇的項目, 欄位為包含在TPABYA中的SQL select子句
+            </summary>
+            <returns>使用者選擇的項目</returns>
+        </member>
+        <member name="M:DSCWebControl.BYWin.setSelectedData(System.Collections.ArrayList)">
+            <summary>
+            根據輸入的ArrayList設定顯示畫面的內容. 此ArrayList每項元素為一維陣列, 且須相同於getSelectedData之回傳格式. 
+            </summary>
+            <param name="ary">輸入內容</param>
+        </member>
+        <member name="M:DSCWebControl.BYWin.setSelectedDataArray(System.String[0:,0:])">
+            <summary>
+            根據輸入的二維陣列設定顯示畫面的內容.
+            </summary>
+            <param name="data">輸入內容</param>
+        </member>
+        <member name="M:DSCWebControl.BYWin.getSelectedDataArray">
+            <summary>
+            取得主畫面使用者所選擇的項目, 欄位為包含在TPABYA中的SQL select子句. 回傳內容以二維陣列呈現
+            </summary>
+            <returns>使用者選擇的項目</returns>
+        </member>
+        <member name="M:DSCWebControl.BYWin.clearAll">
+            <summary>
+            刪除所有的項目
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.BYWin.getWhereClause">
+            <summary>
+            根據設定的outputIndex取得串成in (...)子句的字串
+            </summary>
+            <returns>條件子句</returns>
+        </member>
+        <member name="M:DSCWebControl.BYWin.inHiddenIndex(System.Int32)">
+            <summary>
+            判斷索引項目j是否在隱藏欄位陣列中
+            </summary>
+            <param name="j">索引值</param>
+            <returns>true: 隱藏; false: 不隱藏</returns>
+        </member>
+        <member name="E:DSCWebControl.BYWin.BeforeClickButton">
+            <summary>
+            按下新增鈕前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.BYWin.AfterClickButton">
+            <summary>
+            按下新增鈕後的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.connectDBString">
+            <summary>
+            取得或設定I/O連線字串. 須配合clientEngineType使用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.clientEngineType">
+            <summary>
+            I/O引擎類別. 參考EngineConstants
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.keyField">
+            <summary>
+            關鍵欄位名稱. 須設定成TPABYA中@參數的欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.guidField">
+            <summary>
+            GUID欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.keyFieldType">
+            <summary>
+            關鍵欄位的資料型態
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.ReadOnlyValueText">
+            <summary>
+            連動欄位的內容值，即因 ValueText 異動而改變的欄位值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.GuidValueText">
+            <summary>
+            GUID欄位的內容值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.outputType">
+            <summary>
+            設定所串出來的whereClause值是否須用單引號框住
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.tableName">
+            <summary>
+            指定TPABYA資料表中的BYA001欄位，識別欲開窗的資料表代號
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.serialNum">
+            <summary>
+            指定TPABYA資料表中的BYA002欄位，識別欲開窗的識別碼
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.idIndex">
+            <summary>
+            指定關鍵欄位在SQL中的位置
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.valueIndex">
+            <summary>
+            指定 ReadOnlyValue 欄位在SQL中的位置.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.outputIndex">
+            <summary>
+            指定串出的SQL指令須取得的值位於SQL中的第幾個欄位
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.guidIndex">
+            <summary>
+            指定GUID欄位在SQL中的位置
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.whereClause">
+            <summary>
+            附加開窗搜尋的條件字串. 不須加上where, 開頭也不須增加and
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.HiddenIndex">
+            <summary>
+            設定或取得開窗視窗中指定隱藏搜尋結果的欄位索引陣列
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.sepField">
+            <summary>
+            設定或取得主畫面呈現時各欄位的分隔字元符號
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.sepData">
+            <summary>
+            設定或取得主畫面呈現時各筆資料的分隔字元符號. 此欄位無使用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.valueData">
+            <summary>
+            取得或設定開窗元件的內容值. 此欄位須在predefined=true時設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.titleData">
+            <summary>
+            取得或設定開窗元件的標題. 此欄位須在predefined=true時設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.predefined">
+            <summary>
+            取得或設定開窗是否讀取TPABYA資料或者使用titleData以及valueData. false時使用TPABYA設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.userDBString">
+            <summary>
+            客製化連線字串
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.userEngineType">
+            <summary>
+            客製化連線時的資料庫類型
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.DefaultPageSize">
+            <summary>
+            指定預設開窗每頁筆數
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.IgnoreCase">
+            <summary>
+            設定開窗輸入條件是否需區分大小寫. true:不須區分; false:須區分. 預設為false.
+            若不區分大小寫, 需在TPABYA005中一併設定條件where upper(id)=upper(@id)
+            此屬性為靜態屬性
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.BYWin.innerData">
+            <summary>
+            選定資料
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.BYWin.BeforeClickButtonEvent">
+            <summary>
+            按下新增鈕前的事件, 可於此修改whereClause等參數
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.BYWin.AfterClickButtonEvent">
+            <summary>
+            按下新增鈕後的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.SingleOpenWindowInputField">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.SingleOpenWindowInputField.SingleOpenWindowButtonClick">
+            <summary>
+            使用者點選開窗項目後回傳的處理事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.SingleOpenWindowInputField.BeforeClickButton">
+            <summary>
+            按下按鈕前的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.connectDBString">
+            <summary>
+            取得或設定I/O連線字串. 須配合clientEngineType使用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.clientEngineType">
+            <summary>
+            I/O引擎類別. 參考EngineConstants
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.ValueText">
+            <summary>
+            使用者輸入值或開窗帶回的內容值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.keyField">
+            <summary>
+            關鍵欄位名稱. 須設定成TPABYA中@參數的欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.guidField">
+            <summary>
+            GUID欄位名稱
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.keyFieldType">
+            <summary>
+            關鍵欄位的資料型態
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.ReadOnlyValueText">
+            <summary>
+            連動欄位的內容值，即因 ValueText 異動而改變的欄位值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.GuidValueText">
+            <summary>
+            GUID欄位的內容值
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.tableName">
+            <summary>
+            指定TPABYA資料表中的BYA001欄位，識別欲開窗的資料表代號
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.serialNum">
+            <summary>
+            指定TPABYA資料表中的BYA002欄位，識別欲開窗的識別碼
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.idIndex">
+            <summary>
+            指定關鍵欄位在SQL中的位置
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.valueIndex">
+            <summary>
+            指定 ReadOnlyValue 欄位在SQL中的位置.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.guidIndex">
+            <summary>
+            指定GUID欄位在SQL中的位置
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.ReadOnly">
+            <summary>
+            取得或設定此元件是否唯讀，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.PartialReadOnly">
+            <summary>
+            部分唯讀設定，true:無法輸入，亦無法開窗選取; false:無法輸入，可開窗選取，預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.HiddenText">
+            <summary>
+            true:隱藏文字欄位，只顯示開窗按鈕; false:顯示文字欄位，預設為 false，可搭配 HiddenButton, showReadOnlyField 的設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.HiddenButton">
+            <summary>
+            true:隱藏開窗按鈕; false:顯示開窗按鈕，預設為 false，可搭配 HiddenText, showReadOnlyField 的設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.whereClause">
+            <summary>
+            附加開窗搜尋的條件字串. 不須加上where, 開頭也不須增加and
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.showReadOnlyField">
+            <summary>
+            true:隱藏連動欄位; false:顯示連動欄位，預設為 false，可搭配 HiddenText, HiddenButton 的設定
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.FixValueTextWidth">
+            <summary>
+            固定ValueText寬度 有值：使用此固定寬度；無值：使用該頁面元件之Width屬性，預設值 "" (無值)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.FixReadOnlyValueTextWidth">
+            <summary>
+            固定ReadOnlyValueText寬度 有值：使用此固定寬度；無值：使用該頁面元件之Width屬性，預設值 "" (無值)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.userDBString">
+            <summary>
+            客製化連線字串
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.userEngineType">
+            <summary>
+            客製化連線時的資料庫類型
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.HiddenClearButton">
+            <summary>
+            HiddenClearButton true:隱藏清除按鈕; false:顯示清除按鈕
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.DefaultPageSize">
+            <summary>
+            指定預設開窗每頁筆數
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.customOpenWinPage">
+            <summary>
+            更改預設開窗畫面
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.dialogHeight">
+            <summary>
+            開窗畫面高度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.dialogWidth">
+            <summary>
+            開窗畫面寬度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.isDialogResizable">
+            <summary>
+            開窗畫面可否調整大小
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.isAfterOpenWin">
+            <summary>
+            元件內部屬性,用途為配合DisabledCleanValue
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleOpenWindowInputField.DisabledCleanValue">
+            <summary>
+            輸入值不存在開窗項目時,不清空輸入欄位(後端元件ValueText將為空值狀態)        
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.SingleOpenWindowInputField.SingleOpenWinButtonClickEvent">
+            <summary>
+            使用者點選開窗項目後回傳的處理事件
+            </summary>
+            <param name="values">使用者選擇的回傳值</param>
+        </member>
+        <member name="T:DSCWebControl.SingleOpenWindowInputField.BeforeClickButtonEvent">
+            <summary>
+            按下按鈕前的事件, 可於此修改whereClause等參數
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DSCRadioButton">
+            <summary>
+            可使用在Server端動態變更的屬性: Text, Checked, ReadOnly, Display
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DSCRadioButton.Click">
+            <summary>
+            Click事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCRadioButton.Checked">
+            <summary>
+            是否勾選，true:是; false:否，預設為 false
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DSCRadioButton.ClickEvent">
+            <summary>
+            Click事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.MultiDropDownList">
+            <summary>
+            可使用在Server端動態變更的屬性:
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.MultiDropDownList.setListItem(System.String[0:,0:])">
+            <summary>
+            設定下拉選單的項目
+            </summary>
+            <param name="lis">lis[i, 0]:內容值; lis[i, 1]:顯示文字</param>
+        </member>
+        <member name="M:DSCWebControl.MultiDropDownList.selectedIndex(System.Int32[])">
+            <summary>
+            設定使用者所選取的項目索引，同時啟動選取項目改變時的事件
+            </summary>
+            <param name="index">索引值</param>
+        </member>
+        <member name="M:DSCWebControl.MultiDropDownList.getListItem">
+            <summary>
+            取得下拉選單的項目
+            </summary>
+            <returns>string[i, 0]:內容值; string[i, 1]:顯示文字</returns>
+        </member>
+        <member name="M:DSCWebControl.MultiDropDownList.ConvertItemString">
+            <summary>
+            回傳下拉選單項目字串
+            </summary>
+            <returns>格式: value@@text;;value@@text</returns>
+        </member>
+        <member name="E:DSCWebControl.MultiDropDownList.SelectChanged">
+            <summary>
+            SelectChanged事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.MultiDropDownList.isMultiple">
+            <summary>
+            是否多選，true:是; false:否，預設為 true
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.MultiDropDownList.SelectChangedEvent">
+            <summary>
+            SelectChanged事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.SingleDateTimeField">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly, DateTimeMode
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.SingleDateTimeField.DateTimeClick">
+            <summary>
+            按下開窗鈕後的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.ForbiddenDate">
+            <summary>
+            月曆起始日
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.FirstDayOfWeek">
+            <summary>
+            月曆起始日
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.DateTimeMode">
+            <summary>
+            日期時間模式，
+                0:YYYY/MM/DD
+                1:YYYY/MM/DD HH:MM:SS
+                2:HH:MM:SS
+                3:YYYY/MM/DD HH:MM
+                4:HH:MM
+                5:YYYY/MM
+            預設為 0
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.FixedTime">
+            <summary>
+            固定時間陣列
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.YearMode">
+            <summary>
+            0 : 西元年
+            1:  民國年
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.ReadOnlyValueText">
+            <summary>
+            Text部份ReadOnly設定 如果ReadOnly屬性設為true 此屬性將無作用
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.InputAreaVisible">
+            <summary>
+            Text部份是否顯示。預設為true
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleDateTimeField.DisabledAdjustDate">
+            <summary>
+            輸入不合法日期時,不要自動修正時間
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.SingleDateTimeField.DateTimeClickEvent">
+            <summary>
+            按下開窗鈕後的事件，可於此對日期時間做特殊處理、檢核...等
+            </summary>
+            <param name="values">日期時間</param>
+        </member>
+        <member name="T:DSCWebControl.OutDataList">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OutDataList.KeepCList(System.String,System.String)">
+            <summary>
+            保留最後n個使用者所點擊的清單資料
+            </summary>
+            <param name="CList">YNNNNNNNNN</param>
+            <param name="time">2011/1/2 13:57:16.446</param>
+        </member>
+        <member name="M:DSCWebControl.OutDataList.addNewRow">
+            <summary>
+            此方法提供開發人員客製化[新增鈕]功能, 呼叫此方法可達到在OutDataList按下[新增]按鈕的相同動作
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OutDataList.editRow">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.OutDataList.clearCheckers">
+            <summary>
+            清除checkbox的勾選
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.setEnhancedRow">
+            <summary>
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要以粗體字呈現
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.setShowRowCheckBox">
+            <summary>
+            20121105 hjlin add
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要顯示checkbox
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.ShowRowData">
+            <summary>
+            使用者點選資料列的顯示資料事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.SaveRowData">
+            <summary>
+            按下新增、修改鈕的儲存事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.RefilterData">
+            <summary>
+            按下全部刪除鈕，重新過濾資料的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.AddOutline">
+            <summary>
+            按下新增、修改鈕後，回傳資料至 Grid 的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.DeleteData">
+            <summary>
+            按下刪除鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.BeforeDeleteData">
+            <summary>
+            按下刪除鈕後，刪除前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.OutDataList.BeforePrintList">
+            <summary>
+            按下刪除鈕後，刪除前的事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OutDataList.NoAllDelete">
+            <summary>
+            取得或設定此元件是否禁止全部刪除，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.OutDataList.CurPageUID">
+            <summary>
+            設定此DataList所位於的頁面在Portal中的PageUniqueID. 此屬性僅能在Portal中使用. 此屬性會在OpenPanelWindow時送至所開窗的頁面. IsPanelWindow=true時才有效
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.setEnhancedRowEvent">
+            <summary>
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要以粗體字呈現
+            </summary>
+            <param name="currentPageObjects">目前頁面的資料物件陣列</param>
+            <returns>指明目前頁面各筆資料是否應以粗體字呈現的boolean陣列</returns>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.setShowRowCheckBoxEvent">
+            <summary>
+            20121105 hjlin add
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要顯示checkbox
+            此方法僅在IsShowCheckBox=true時有效
+            </summary>
+            <param name="currentPageObjects">目前頁面的資料物件陣列</param>
+            <returns>指明目前頁面各筆資料是否應顯示checkbox的boolean陣列</returns>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.ShowRowDataEvent">
+            <summary>
+            使用者點選資料列的顯示資料事件
+            </summary>
+            <param name="objects">資料物件</param>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.SaveRowDataEvent">
+            <summary>
+            按下新增、修改鈕的儲存事件
+            </summary>
+            <param name="objects">資料物件</param>
+            <param name="isNew">true：新增；false：修改</param>
+            <returns>true:確定儲存; false:不儲存</returns>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.RefilterDataEvent">
+            <summary>
+            按下全部刪除鈕，重新過濾資料的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.AddOutlineEvent">
+            <summary>
+            按下新增、修改鈕後，回傳資料至 Grid 的事件
+            </summary>
+            <param name="objects">資料物件</param>
+            <param name="isNew">true：新增；false：修改</param>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.DeleteDataEvent">
+            <summary>
+            按下刪除鈕的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.BeforeDeleteDataEvent">
+            <summary>
+            按下刪除鈕後，刪除前的事件，可於此進行特殊檢核
+            </summary>
+            <returns>true:確定刪除; false:不刪除</returns>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.BeforePrintListEvent">
+            <summary>
+            按下列印鈕後，列印前的事件，可於此進行客製化格式
+            </summary>
+            <param name="dosPrint">目前DataList使用之DataSource</param>
+            <param name="onlyCheck">是否僅匯出勾選之項目</param>
+            <returns>客製化的頁面碼</returns>
+        </member>
+        <member name="T:DSCWebControl.OutDataList.BeforeExcelExportEvent">
+            <summary>
+            匯出Excel前事件
+            </summary>
+            <param name="dosPrint"></param>
+            <param name="onlyCheck"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DSCTabControl.getProperty(System.String)">
+            <summary>
+            取得此元件屬性值
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <returns>屬性內容</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCTabControl.setProperty(System.String,System.Object)">
+            <summary>
+            設定元件屬性, 此屬性不需更新至Client端
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <param name="value">屬性值</param>
+        </member>
+        <member name="M:DSCWebControl.DSCTabControl.setProperty(System.String,System.Object,System.Boolean)">
+            <summary>
+            設定元件屬性, 同時決定是否更新Client端
+            </summary>
+            <param name="propertyName">屬性名稱</param>
+            <param name="value">屬性值</param>
+            <param name="isRefresh">true: 需更新到Client端, false: 不需更新到Client端</param>
+        </member>
+        <member name="M:DSCWebControl.DSCTabControl.clearUpdateData">
+            <summary>
+            清除此元件更新指標
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DSCTabControl.isUpdateData">
+            <summary>
+            取得此元件是否需要更新
+            </summary>
+            <returns>true: 需要, false: 不需要</returns>
+        </member>
+        <member name="P:DSCWebControl.DSCTabControl.CurrentDesignTab">
+            <summary>
+            Get or set the deesign time active tab.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCTabControl.SelectedTab">
+            <summary>
+            Get or set the runtime active tab.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCTabControl.Display">
+            <summary>
+            設定是否顯示元件. true:顯示, false:不顯示. 此屬性取代Visible, 避免.NET沒有Render到Client端.
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCTabControl.CertificateMode">
+            <summary>
+            取得或設定是否為憑證模式. 憑証模式下不會以輸入元件來顯示內容, 也不能回復到一般模式. 預設為false
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DataList">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DataList.getCurrentPage">
+            <summary>
+            取得目前頁數
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DataList.setCurrentPage(System.Int32)">
+            <summary>
+            設定目前頁數
+            </summary>
+            <param name="pageIndex">頁數</param>
+        </member>
+        <member name="M:DSCWebControl.DataList.getPageSize">
+            <summary>
+            取得目前每頁大小
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DataList.KeepCList(System.String,System.String)">
+            <summary>
+            保留最後n個使用者所點擊的清單資料
+            </summary>
+            <param name="CList">YNNNNNNNNN</param>
+            <param name="time">2011/1/2 13:57:16.446</param>
+        </member>
+        <member name="M:DSCWebControl.DataList.clearCheckers">
+            <summary>
+            清除checkbox的勾選
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.setEnhancedRow">
+            <summary>
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要以粗體字呈現
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.RefreshButtonClick">
+            <summary>
+            按下Refresh鍵的事件委派, 通常撰寫重新讀取資料庫更新清單的程式碼
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.ShowRowData">
+            <summary>
+            使用者點選資料列的顯示資料事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.setShowRowCheckBox">
+            <summary>
+            20121105 hjlin add
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要顯示checkbox
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.FirstPageClick">
+            <summary>
+            按下首頁鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.PrevPageClick">
+            <summary>
+            按下前一頁鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.NextPageClick">
+            <summary>
+            按下下一頁鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.LastPageClick">
+            <summary>
+            按下下一頁鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.showAllPageClick">
+            <summary>
+            按下下一頁鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.showPagingClick">
+            <summary>
+            按下下一頁鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.ChangePageSizeClick">
+            <summary>
+            改變每頁顯示資料筆數的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.BeforeOpenWindow">
+            <summary>
+            執行開窗前動作的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.GetFlowStatusString">
+            <summary>
+            流程相關操作的參數取得事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.setClickData">
+            <summary>
+            畫面按下CheckBox或是全選全不選時的事件
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.AddOutline">
+            <summary>
+            按下新增、修改鈕後，回傳資料至 Grid 的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.DeleteData">
+            <summary>
+            按下刪除鈕的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.BeforeDeleteData">
+            <summary>
+            按下刪除鈕後，刪除前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.BeforePrintList">
+            <summary>
+            按下刪除鈕後，刪除前的事件委派
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DataList.BeforeExcelExport">
+            <summary>
+            匯出Excel前事件
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.InputForm">
+            <summary>
+            取得或設定開窗時的URL
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.FormTitle">
+            <summary>
+            取得或設定開窗時的視窗標題
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.DialogWidth">
+            <summary>
+            取得或設定開窗時的視窗寬度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.DialogHeight">
+            <summary>
+            取得或設定開窗時的視窗高度
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.IsPanelWindow">
+            <summary>
+            取得或設定此元件點選新增或資料時打開PanelWindow. true:使用PanelWindow, false:WindowDialog，預設 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.CurPanelID">
+            <summary>
+            設定此DataList所位於的頁面在Portal中的PanelID. 此屬性僅能在Portal中使用. 此屬性會在OpenPanelWindow時送至所開窗的頁面. IsPanelWindow=true時才有效
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.CurPageUID">
+            <summary>
+            設定此DataList所位於的頁面在Portal中的PageUniqueID. 此屬性僅能在Portal中使用. 此屬性會在OpenPanelWindow時送至所開窗的頁面. IsPanelWindow=true時才有效
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.IsGeneralUse">
+            <summary>
+            取得或設定此DataList所處理的資料是否送流程處理. 
+            若為true, 則會在開窗時帶入UIType=General, UIStatus=GeneralNew or GeneralModify. 
+            若為false, 則會在開窗時帶入UIType=Process, UIStatus=InitNew or InitModify or ProcessNew or ProcessModify.
+            IsPanelWindow=true時才有效. 預設為true
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DataList.IsMaintain">
+            <summary>
+            取得或設定此DataList所處理的資料是否為維護作業模式. 
+            若為true, 則會在開窗時帶入IsMaintain=Y
+            若為false, 則會在開窗時帶入IsMaintain=N
+            IsPanelWindow=true時才有效. 預設為false
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DataList.setEnhancedRowEvent">
+            <summary>
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要以粗體字呈現
+            </summary>
+            <param name="currentPageObjects">目前頁面的資料物件陣列</param>
+            <returns>指明目前頁面各筆資料是否應以粗體字呈現的boolean陣列</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.RefreshButtonClickEvent">
+            <summary>
+            按下Refresh鍵的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DataList.ShowRowDataEvent">
+            <summary>
+            使用者點選資料列的顯示資料事件. 此方法僅在IsOpenWinUse=true時使用
+            </summary>
+            <param name="objects">資料物件</param>
+        </member>
+        <member name="T:DSCWebControl.DataList.setShowRowCheckBoxEvent">
+            <summary>
+            20121105 hjlin add
+            判定顯示Grid資料內容時, 目前頁面物件每筆資料是否要顯示checkbox
+            此方法僅在IsShowCheckBox=true時有效
+            </summary>
+            <param name="currentPageObjects">目前頁面的資料物件陣列</param>
+            <returns>指明目前頁面各筆資料是否應顯示checkbox的boolean陣列</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.FirstPageEvent">
+            <summary>
+            按下首頁鈕的事件
+            </summary>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.PrevPageEvent">
+            <summary>
+            按下前一頁鈕的事件
+            </summary>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.NextPageEvent">
+            <summary>
+            按下下一頁鈕的事件
+            </summary>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.LastPageEvent">
+            <summary>
+            按下最後一頁鈕的事件
+            </summary>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.showAllPageEvent">
+            <summary>
+            按下顯示所有頁數的事件
+            </summary>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.showPagingEvent">
+            <summary>
+            按下分頁顯示的事件
+            </summary>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.ChangePageSizeEvent">
+            <summary>
+            改變每頁顯示資料筆數的事件
+            </summary>
+            <param name="pagesize">每頁顯示資料筆數</param>
+            <returns>true:成功; false:失敗</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.BeforeOpenWindowEvent">
+            <summary>
+            按下新增鈕或是某一筆資料, 開窗前所執行的事件
+            如果回傳false, 會停止後續動作. throw exception也會停止後續動作
+            </summary>
+            <param name="objects">如果isAddNew=true, 代表按下新增鈕, 此時DataObject是DataList裡面的DataObjectSet所create出來的一個沒有內容的DataObject, 可轉型.如果isAddNew=false, 代表按下某一筆資料, 此時DataObject為該筆按下按鈕的資料物件, 可轉型後取得內容作判斷</param>
+            <param name="isAddNew">如果isAddNew=true, 代表按下新增鈕; 如果isAddNew=false, 代表按下某一筆資料</param>
+            <returns>true: 允許執行後續動作; false: 不允許執行後續動作</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.GetFlowStatusStringEvent">
+            <summary>
+            在流程相關操作(IsPanelWindow=true且IsGeneralUse=false)中, 撰寫此事件以便回傳流程相關參數
+            </summary>
+            <param name="objects">目前點選的資料物件</param>
+            <param name="isAddNew">是否為按下新增鈕</param>
+            <returns>需回傳DSCWebControl.FlowStatusData物件類別</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.setClickDataEvent">
+            <summary>
+            畫面按下CheckBox或是全選全不選時的事件呼叫. 僅在IsOpenWinUse=true時呼叫.
+            </summary>
+            <param name="clickList"></param>
+        </member>
+        <member name="T:DSCWebControl.DataList.AddOutlineEvent">
+            <summary>
+            按下新增、修改鈕後，回傳資料至 Grid 的事件
+            </summary>
+            <param name="objects">資料物件</param>
+            <param name="isNew">true：新增；false：修改</param>
+        </member>
+        <member name="T:DSCWebControl.DataList.DeleteDataEvent">
+            <summary>
+            按下刪除鈕的事件
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DataList.BeforeDeleteDataEvent">
+            <summary>
+            按下刪除鈕後，刪除前的事件，可於此進行特殊檢核
+            </summary>
+            <returns>true:確定刪除; false:不刪除</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.BeforePrintListEvent">
+            <summary>
+            按下列印鈕後，列印前的事件，可於此進行客製化格式
+            </summary>
+            <param name="dosPrint">目前DataList使用之DataSource</param>
+            <param name="onlyCheck">是否僅匯出勾選之項目</param>
+            <returns>客製化的頁面碼</returns>
+        </member>
+        <member name="T:DSCWebControl.DataList.BeforeExcelExportEvent">
+            <summary>
+            匯出Excel前事件
+            </summary>
+            <param name="dosPrint"></param>
+            <param name="onlyCheck"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DSCWebControl.DSCCheckBox">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.DSCCheckBox.Click">
+            <summary>
+            Click事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCCheckBox.Checked">
+            <summary>
+            是否勾選，true:是; false:否，預設為 false
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DSCCheckBox.ClickEvent">
+            <summary>
+            Click事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="T:DSCWebControl.AdminPanel">
+            <summary>
+            可使用在Server端動態變更的屬性: connectDBString, clientEngineType, currentObject. 需要呼叫updateValue方法
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.AdminPanel.updateValue">
+            <summary>
+            更新畫面資料
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DSCTabPageCollection">
+            <summary>
+            Summary description for DSCTabPageCollection.
+            </summary>
+            
+        </member>
+        <member name="M:DSCWebControl.DSCTabPageCollection.IndexOf(System.Object)">
+            <summary>
+            Find index of tapPage control based on ID
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DSCWebControl.SingleField">
+            <summary>
+            可使用在Server端動態變更的屬性: ValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="E:DSCWebControl.SingleField.TextChanged">
+            <summary>
+            TextChanged事件委派
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.DecimalPointChar">
+            <summary>
+            當isMoney設置為True時 ; 自訂代表小數點之字符
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.ThousandDigitChar">
+            <summary>
+            當isMoney設置為True時 ; 自訂代表千分位符之字符
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.onKeyPressClientScript">
+            <summary>
+            註冊onKeyPress瀏覽器端命令(JavaScript)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.onKeyDownClientScript">
+            <summary>
+            註冊onKeyDown瀏覽器端命令(JavaScript)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.onKeyUpClientScript">
+            <summary>
+            註冊onKeyUp瀏覽器端命令(JavaScript)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.alignRight">
+            <summary>
+            是否靠右對齊，true:靠右對齊; false:靠左對齊，預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.MultiLine">
+            <summary>
+            是否為多行資料，true:多行; false:單行，預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.Fractor">
+            <summary>
+            若為數值時，顯示至小數第幾位，預設為 2
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.isMoney">
+            <summary>
+            資料型態是否為金額格式，true:金額; false:非金額，預設為 false
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.isAccount">
+            <summary>
+            顯示資料型態是否為會計帳務格式(不顯示"負號"，將以左右括號取代)，true:需要取代; false:不取代，預設為 false
+            此功能必須 isMoney=true 才會發動      
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.SingleField.isPassword">
+            <summary>
+            是否以遮罩文字顯示（例如密碼輸入欄位）。預設為false。此為靜態屬性
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.SingleField.TextChangedEvent">
+            <summary>
+            TextChanged事件
+            </summary>
+            <param name="sender">呼叫者物件</param>
+            <param name="e">事件參數</param>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.ObjectGUID">
+            <summary>
+            資料物件識別碼
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.HistoryGUID">
+            <summary>
+            歷史資料識別碼
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.FlowGUID">
+            <summary>
+            流程實例序號
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.ACTID">
+            <summary>
+            活動代號
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.PDID">
+            <summary>
+            流程定義代號
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.PDVer">
+            <summary>
+            流程版號
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.ACTName">
+            <summary>
+            流程角色（活動名稱）
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.UIStatus">
+            <summary>
+            流程狀態
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.WorkItemOID">
+            <summary>
+            工作項目識別號
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.TargetWorkItemOID">
+            <summary>
+            轉派後工作項目識別
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.IsAllowWithDraw">
+            <summary>
+            是否允許撤銷
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.workAssignmentOID">
+            <summary>
+            工作指派識別號
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.assignmentType">
+            <summary>
+            工作類型
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.reassignmentType">
+            <summary>
+            轉派後工作類型
+            </summary>
+        </member>
+        <member name="F:DSCWebControl.FlowStatusData.manualReassignType">
+            <summary>
+            允許轉派類型
+            </summary>
+        </member>
+        <member name="T:DSCWebControl.DSCRichEdit">
+            <summary>
+            可使用在Server端動態變更的屬性: OriValueText, ReadOnly
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.clearListItemSetting">
+            <summary>
+            清除所有項目選單內容
+            </summary>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.addListItemSetting(System.String,System.String,System.String)">
+            <summary>
+            新增項目清單設定值
+            </summary>
+            <param name="prefix">項目前置字元</param>
+            <param name="postfix">項目後置字元</param>
+            <param name="indexary">列舉項目，使用;做分隔</param>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.addFontArray(System.String)">
+            <summary>
+            新增字型
+            </summary>
+            <param name="fontName"></param>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.setStandardButtonControl(System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            設定標準工具列按鈕/功能顯示與否。預設全部顯示
+            </summary>
+            <param name="allClear">全部清除</param>
+            <param name="refresh">重新整理</param>
+            <param name="fullScreen">全螢幕顯示</param>
+            <param name="cut">剪下</param>
+            <param name="copy">複製</param>
+            <param name="paste">貼上</param>
+            <param name="pasteText">貼成純文字</param>
+            <param name="undo">復原</param>
+            <param name="selectAll">全選</param>
+            <param name="clearFormat">清除格式</param>
+            <param name="bold">粗體</param>
+            <param name="italic">斜體</param>
+            <param name="underline">底線</param>
+            <param name="strike">刪除線</param>
+            <param name="super">上標文字</param>
+            <param name="sub">下標文字</param>
+            <param name="quote">引用文字</param>
+            <param name="leftjustify">靠左對齊</param>
+            <param name="rightjustify">靠右對齊</param>
+            <param name="centerjustify">置中對齊</param>
+            <param name="hr">加入分隔線</param>
+            <param name="fontname">字型</param>
+            <param name="fontsize">字體大小</param>
+            <param name="fontcolor">字體顏色</param>
+            <param name="backcolor">背景顏色</param>
+            <param name="indent">增加縮排</param>
+            <param name="outdent">減少縮排</param>
+            <param name="find">尋找</param>
+            <param name="replace">取代</param>
+            <param name="itemList">項目編號</param>
+            <param name="upgrade">昇階</param>
+            <param name="downgrade">降階</param>
+            <param name="delItem">刪除項目</param>
+            <param name="setting">參數設定</param>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.getInnerValueText">
+            <summary>
+            取得編輯區域內的DHTML內容(不包含DSCRichEdit標籤)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.getDIValueText">
+            <summary>
+            取得DI檔的格式。此格式回傳建議用於[段落]標籤內(不包含[段落]標籤)
+            此方法會濾過所有格式標籤，僅保留[文字]/[條列]
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.getFilterText(System.String)">
+            <summary>
+            將ValueText格式(DSCRichEdit標籤以及HTML標籤)過濾掉變成一般文字。用於縮文時。
+            </summary>
+            <param name="valueText">原ValueText格式內容</param>
+            <returns>plain text</returns>
+        </member>
+        <member name="M:DSCWebControl.DSCRichEdit.getDIText(System.String)">
+            <summary>
+            將ValueText格式(DSCRichEdit標籤以及HTML標籤)過濾掉變成DI格式。
+            </summary>
+            <param name="valueText">原ValueText格式內容</param>
+            <returns>DI格式</returns>
+        </member>
+        <member name="P:DSCWebControl.DSCRichEdit.indentValue">
+            <summary>
+            取得/設定縮排的距離。預設為40px
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCRichEdit.isShowStandardBar">
+            <summary>
+            設定是否顯示標準工具列。預設為顯示(true)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCRichEdit.isShowMarkBar">
+            <summary>
+            設定是否顯示一般符號列。預設為顯示(true)
+            </summary>
+        </member>
+        <member name="P:DSCWebControl.DSCRichEdit.isShowMarkBar2">
+            <summary>
+            設定是否顯示特殊符號列。預設為顯示(true)
+            </summary>
+        </member>
+    </members>
+</doc>

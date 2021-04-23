@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM002.SmpDocChangeForm" TableName="SmpDocChangeForm">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM002.SmpDocBelongGroup" TableName="SmpDocBelongGroup" RelationString="RevGUID=RevGUID"></DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM002.SmpAttachment" TableName="SmpAttachment" RelationString="RevGUID=RevGUID"></DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM002.SmpReference" TableName="SmpReference" RelationString="RevGUID=RevGUID"></DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM002.SmpReader" TableName="SmpReader" RelationString="RevGUID=RevGUID"></DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPKM002.SmpHistory" TableName="SmpHistory" RelationString="DocGUID=DocGUID"></DOS>
+</DOS>

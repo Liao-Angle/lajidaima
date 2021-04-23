@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPAD008.SmpBusinessCard" tableName="SmpBusinessCard">
+  <queryStr>select GUID, Subject, SheetNo, OriginatorGUID, EngName, DeptName, EngDeptName, Title, EngTitle, Email, Ext, PhoneNumber, Address, Fax, NumberOfApply, DeliveryDate, CompleteDate, OriginatorComment, 
+  IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME, SpecialRequire,CompanyCode , FORMSTATUS
+  from SmpBusinessCard
+  left join SmpFormStatus on GUID=FORMGUID
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="200" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>    
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人" showName=""/>      
+    <field dataField="EngName" typeField="STRING" lengthField="50" defaultValue="" displayName="英文姓名" showName=""/>
+    <field dataField="DeptName" typeField="STRING" lengthField="50" defaultValue="" displayName="中文部門" showName=""/>
+    <field dataField="EngDeptName" typeField="STRING" lengthField="50" defaultValue="" displayName="英文部門" showName=""/>
+    <field dataField="Title" typeField="STRING" lengthField="50" defaultValue="" displayName="中文職稱" showName=""/>
+    <field dataField="EngTitle" typeField="STRING" lengthField="50" defaultValue="" displayName="英文職稱" showName=""/>  
+    <field dataField="Email" typeField="STRING" lengthField="50" defaultValue="" displayName="Email" showName=""/>
+    <field dataField="Ext" typeField="STRING" lengthField="20" defaultValue="" displayName="分機號碼" showName=""/>
+    <field dataField="PhoneNumber" typeField="STRING" lengthField="20" defaultValue="" displayName="行動電話" showName=""/>
+    <field dataField="Address" typeField="STRING" lengthField="200" defaultValue="" displayName="廠區地址" showName=""/>
+    <field dataField="Fax" typeField="STRING" lengthField="20" defaultValue="" displayName="傳真電話" showName=""/>
+    <field dataField="NumberOfApply" typeField="STRING" lengthField="10" defaultValue="" displayName="申請盒數" showName=""/>
+    <field dataField="DeliveryDate" typeField="STRING" lengthField="20" defaultValue="" displayName="名片稿回覆日期" showName=""/>
+    <field dataField="CompleteDate" typeField="STRING" lengthField="20" defaultValue="" displayName="名片預計送達日期" showName=""/> 
+    <field dataField="OriginatorComment" typeField="STRING" lengthField="250" defaultValue="" displayName="申請人校槁意見" showName=""/>  
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+    <field dataField="SpecialRequire" typeField="STRING" lengthField="400" defaultValue="" displayName="申請人特殊要求" showName=""/>
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+	<field dataField="FORMSTATUS" typeField="STRING" lengthField="50" defaultValue="" displayName="表單狀態" showName="I:進行中;Y:已結案;N:已終止;W:已撤銷"/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="PhoneNumber"/>
+    <field dataField="DeliveryDate"/>
+    <field dataField="CompleteDate"/>
+    <field dataField="OriginatorComment"/>
+    <field dataField="SpecialRequire"/>
+	<field dataField="FORMSTATUS"/>
+  </allowEmptyField>  
+  <nonUpdateField>
+	<field dataField="FORMSTATUS"/>
+  </nonUpdateField>
+  <smpQueryHideField>
+	<field dataField="GUID"/>
+	<field dataField="OriginatorGUID"/>
+	<field dataField="IS_LOCK"/>
+	<field dataField="IS_DISPLAY"/>
+	<field dataField="DATA_STATUS"/>
+	<field dataField="D_INSERTUSER"/>
+	<field dataField="D_MODIFYUSER"/>
+	<field dataField="D_MODIFYTIME"/>
+  </smpQueryHideField>
+</DataObject>

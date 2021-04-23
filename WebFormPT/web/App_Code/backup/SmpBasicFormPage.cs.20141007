@@ -1,0 +1,1445 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Data.OracleClient;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Xml;
+
+using WebServerProject;
+using WebServerProject.auth;
+using WebServerProject.flow.SMWP;
+
+using com.dsc.flow.server;
+using com.dsc.flow.data;
+using com.dsc.kernal.factory;
+using com.dsc.kernal.utility;
+using com.dsc.kernal.databean;
+
+
+/// <summary>
+/// BasicFormPage 的摘要描述
+/// </summary>
+public class SmpBasicFormPage : BasicFormPage
+{
+    #region 私有變數
+    private ArrayList errMsg = new ArrayList();
+    #endregion
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="objects"></param>
+    protected override void initUI(AbstractEngine engine, DataObject objects)
+    {
+        string tempUIStatus = fixNull(Request.QueryString["UIStatus"]);
+        if (tempUIStatus.Equals("5")) //處理中
+        { 
+            this.Controls.Remove(RejectButton);
+            this.Controls.AddAt(7, RejectButton);
+            RejectButton.Display = true;
+        }
+        
+        Session.Remove("isKM");
+        //已保留表單不能簽核
+        if (base.isNew() == false)
+        {
+            string objectGUID = (string)getSession("ObjectGUID");
+            if (objectGUID != null)
+            {
+                string sql = "select SMWYAAA022 from SMWYAAA where SMWYAAA019='" + objectGUID + "'";
+                string flag = (string)engine.executeScalar(sql);
+                if (flag != null && flag.Equals("D"))
+                {
+                    AgreeButton.Display = false;
+                    DisagreeButton.Display = false;
+                    SignButton.Display = false;
+                    AddSignButton.Display = false;
+                    RejectButton.Display = false;
+                    ForwardButton.Display = false;
+                    RedirectButton.Display = false;
+                }
+            }
+        }
+
+        string userGUID = (string)Session["UserGUID"];
+        string afterSignProcess = (string)engine.executeScalar("select AfterSignProcess from SmpUserConf where UserGUID='" + userGUID + "'");
+        if (afterSignProcess != null && !afterSignProcess.Equals(""))
+        {
+            setSession("AfterSignProcess", afterSignProcess);
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="objects"></param>
+    protected override void showData(AbstractEngine engine, DataObject objects)
+    {
+        string sheetNo = objects.getData("SheetNo");
+        if (!sheetNo.Equals("")) //單號有值
+        {
+            if (Request.QueryString["IsCopyForm"] == null) //非複製表單 
+            {
+                string draftguid = Convert.ToString(getSession("READDRAFTGUID")); //讀取草稿
+                if (draftguid.Equals(""))
+                {
+                    //若有單號則放入Session
+                    setSession(base.PageUniqueID, "SheetNo", sheetNo);
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="objects"></param>
+    protected override void saveData(AbstractEngine engine, DataObject objects)
+    {
+        //取得Session單號
+        string sheetNo = Convert.ToString(getSession(base.PageUniqueID, "SheetNo"));
+        if (sheetNo.Equals(""))
+        {
+            string autoCodeGUID = getAutoCodeGUID(engine);
+            sheetNo = base.getSheetNoProcedure(engine, autoCodeGUID);
+            setSession(base.PageUniqueID, "SheetNo", sheetNo);
+            try
+            {
+                objects.setData("SheetNo", sheetNo);
+            }
+            catch (Exception e)
+            {
+                base.writeLog(e);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="autoCodeGUID"></param>
+    /// <returns></returns>
+    protected override string getSheetNoProcedure(AbstractEngine engine, string autoCodeGUID)
+    {
+        string sheetNo = Convert.ToString(getSession(base.PageUniqueID, "SheetNo"));
+        if (sheetNo.Equals(""))
+        {
+            sheetNo = base.getSheetNoProcedure(engine, autoCodeGUID);
+            try
+            {
+                DataObject currentObject = (DataObject)getSession("currentObject");
+                currentObject.setData("SheetNo", sheetNo);
+                engine.updateData(currentObject);
+            }
+            catch (Exception e)
+            {
+                base.writeLog(e);
+            }
+        }
+        return sheetNo;
+    }
+
+    /// <summary>
+    /// 儲存草稿
+    /// </summary>
+    /// <returns></returns>
+    protected override string saveDraftProcedure()
+    {
+        setSession(base.PageUniqueID, "SheetNo", "");
+        return base.saveDraftProcedure();
+    }
+
+    /// <summary>
+    /// 簽核處理程序
+    /// </summary>
+    protected override void signProcedure()
+    {
+        //Jack
+        //writeLog(new Exception("signProcedure_Star/" + com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null) + "/" + (string)Session["UserID"]));
+        //Timestep(DateTimeUtility.getSystemTime2(null), (string)Session["UserID"], this.PageUniqueID, (string)getSession("FlowGUID"), "S", "signProcedure");
+        //checkPoint("SignProcedure Start", modeSignProc);
+        AbstractEngine engine = null;
+        string flowOID = (string)getSession("FlowGUID"); //流程實例序號
+        try
+        {
+            string connectString = (string)Session["connectString"];
+            string engineType = (string)Session["engineType"];
+
+            IOFactory factory = new IOFactory();
+            engine = factory.getEngine(engineType, connectString);
+            setSession("progressEngine", engine);
+            engine.startTransaction(IsolationLevel.ReadCommitted);
+
+            com.dsc.kernal.global.GlobalCache.setValue(flowOID, engine);
+
+            com.dsc.kernal.databean.DataObject currentObject = (com.dsc.kernal.databean.DataObject)getSession("currentObject");
+            com.dsc.kernal.databean.DataObject oriObject = (com.dsc.kernal.databean.DataObject)getSession("oriObject");
+
+            string UIStatus = (string)getSession("UIStatus");
+
+            //start: 模擬EasyFlow 05/26 edward
+            string simMode = (string)getSession("SIMMODE");
+            if (simMode.Equals("1"))
+            {
+                string tempSignType = (string)getSession("tempSignType");
+                if (tempSignType.Equals("0"))
+                {
+                    if (SignResultField.ValueText.Split(new char[] { ';' })[0].Equals("Y"))
+                    {
+                        Session["signProcess"] = "Y";
+                    }
+                    else
+                    {
+                        Session["signProcess"] = "N";
+                    }
+                }
+                else
+                {
+                    Session["signProcess"] = "Y";
+                }
+
+                Session["tempSignResult"] = SignResultField.ReadOnlyText;
+                Session["tempSignOpinion"] = SignOpinionField.ValueText;
+
+                bool signCheckResult = (bool)Session["signCheckResult"];
+                if (!signCheckResult)
+                {
+                    return;
+                }
+            }
+            else if (simMode.Equals("2"))
+            {
+                Session["tempSignOpinion"] = SignOpinionField.ValueText;
+            }
+            //end: 模擬EasyFlow 05/26 edward
+
+            string signProcessResult = (string)Session["signProcess"];
+
+            //送單程序
+
+            string afterSendMode = (string)getSession("AfterSignProcess"); //送簽後動作
+            string flowid = (string)getSession("PDID"); //流程定義代號
+            string flowname = ""; //流程定義名稱
+
+            if (signProcessResult.Equals("Y"))
+            {
+                errMsg = new ArrayList();
+                //bool ans = checkFieldData(engine, currentObject);
+
+                //if (!ans)
+                //{
+                //    throw new Exception(showErrorMessage());
+                //}
+
+                saveData(engine, currentObject);
+                //checkPoint("Save Data Done", modeSignProc);
+                //Jack
+                //writeLog(new Exception("signProcedure_saveData_End/" + com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null) + "/" + (string)Session["UserID"]));
+                //Timestep(DateTimeUtility.getSystemTime2(null), (string)Session["UserID"], this.PageUniqueID, (string)getSession("FlowGUID"), "E", "signProcedure_saveData");
+
+                if (UIStatus.Equals(ProcessNew))
+                {
+                    bool isProcessNewRepeat = (bool)getSession("ProcessNewRepeat");
+                    if (!isProcessNewRepeat)
+                    {
+                        currentObject.INSERTUSER = (string)Session["UserGUID"];
+                        currentObject.INSERTTIME = com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null);
+                        currentObject.setData("IS_LOCK", "A");
+                    }
+                }
+                else if ((UIStatus.Equals(ProcessModify)) || (UIStatus.Equals(ProcessDelete)))
+                {
+                    //這裡直接修改內容, 不用改狀態
+                }
+                string returnValue = currentObject.checkData();
+
+                if (!returnValue.Equals(""))
+                {
+                    throw new Exception(returnValue);
+                }
+
+                saveDB(engine, currentObject, oriObject, UIStatus);
+                //checkPoint("Save DB Done", modeSignProc);
+                //Jack
+                //writeLog(new Exception("signProcedure_saveDB_End/" + com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null) + "/" + (string)Session["UserID"]));
+                //Timestep(DateTimeUtility.getSystemTime2(null), (string)Session["UserID"], this.PageUniqueID, (string)getSession("FlowGUID"), "E", "signProcedure_saveDB");
+
+
+
+                //這裡要檢查此關卡是否設定所有參考流程結束
+                string checkWaitForReference = (string)getSession("WaitForReference");
+                if (checkWaitForReference.Equals("Y"))
+                {
+                    //檢查是否有參考流程
+                    string sch = "select FORMRELATION.GUID from FORMRELATION left outer join DATARELATION on CURGUID=CURRENTGUID where ORIGUID='" + currentObject.getData(getObjectGUIDField()) + "' and RELATIONTYPE='1' and isnull(DATA_STATUS,'N')<>'Y'";
+                    DataSet che = engine.getDataSet(sch, "TEMP");
+                    if (che.Tables[0].Rows.Count > 0)
+                    {
+                        //throw new Exception("所發起的參考流程尚未全部簽核完畢");
+                        throw new Exception(com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError15", "所發起的參考流程尚未全部簽核完畢"));
+                    }
+                }
+
+                //處理附件
+                //要注意如果找不到對應的資料物件, 那就在FORMRELATION中找
+                string ssf = "select SMWYAAA002 from SMWYAAA where SMWYAAA005='" + (string)getSession("FlowGUID") + "'";
+                DataSet atf = engine.getDataSet(ssf, "TEMP");
+
+                attachFile.engine = engine;
+                attachFile.setJobID(currentObject.getData(getObjectGUIDField()));
+                //若atf有資料, 代表為一般流程, 若無資料, 代表為參考流程, 無單號, 直接以流程實力序號
+                if (atf.Tables[0].Rows.Count > 0)
+                {
+                    attachFile.confirmSave(ProcessPageID, atf.Tables[0].Rows[0][0].ToString());
+                }
+                else
+                {
+                    attachFile.confirmSave(ProcessPageID, (string)getSession("FlowGUID"));
+                }
+                attachFile.saveFile();
+
+                string sql = "";
+                DataSet ds = null;
+
+                //處理DATARELATION
+                if (UIStatus.Equals(ProcessNew))
+                {
+                    bool isProcessNewRepeat = (bool)getSession("ProcessNewRepeat");
+                    if (!isProcessNewRepeat)
+                    {
+                        sql = "select SMWAAAA001 from SMWAAAA where SMWAAAA002='" + ProcessPageID + "'";
+                        ds = engine.getDataSet(sql, "TEMP");
+                        if (ds.Tables[0].Rows.Count == 0)
+                        {
+                            //throw new Exception("找不到此作業畫面設定檔");
+                            throw new Exception(com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError13", "找不到此作業畫面設定檔"));
+                        }
+
+                        string processGUID = ds.Tables[0].Rows[0][0].ToString();
+
+                        //新增
+                        sql = "insert into DATARELATION(GUID, LASTGUID, CURRENTGUID, PROCESSGUID, FLOWGUID, FLOWID, AGENTSCHEMA, DATA_STATUS, UPDATEUSER, UPDATETIME) values(";
+                        sql += "'" + IDProcessor.getID("") + "',";
+                        sql += "'',";
+                        sql += "'" + currentObject.getData("GUID") + "',";
+                        sql += "'" + processGUID + "',";
+                        sql += "'" + flowOID + "',";
+                        sql += "'" + flowid + "',";
+                        sql += "'" + AgentSchema + "',";
+                        sql += "'A',";
+                        sql += "'" + (string)Session["UserGUID"] + "',";
+                        sql += "'" + DateTimeUtility.getSystemTime2(null) + "')";
+                        if (!engine.executeSQL(sql))
+                        {
+                            throw new Exception(engine.errorString);
+                        }
+
+                        //寫到FORMRELATION
+                        sql = "select SMWYAAA019, SMWAAAA003, SMWAAAA002 from SMWYAAA inner join SMWAAAA on SMWYAAA018=SMWAAAA001 where SMWYAAA005='" + (string)getSession("FlowGUID") + "'";
+                        DataSet gst = engine.getDataSet(sql, "TEMP");
+
+                        sql = "select SMWAAAA003 from SMWAAAA where SMWAAAA002='" + ProcessPageID + "'";
+                        DataSet curset = engine.getDataSet(sql, "TEMP");
+
+                        //若gst有資料, 代表為正常流程的ProcessNew, 否則為發起參考流程後的ProcessNew
+                        if (gst.Tables[0].Rows.Count > 0)
+                        {
+                            sql = "insert into FORMRELATION(GUID, ORIGUID, CURGUID, FLOWGUID, RELATIONTYPE, ORIFORMNAME, CURFORMNAME, CREATETIME, ORIPAGETYPE, CURPAGETYPE, FLOWID) values(";
+                            sql += "'" + IDProcessor.getID("") + "',";
+                            sql += "'" + gst.Tables[0].Rows[0][0].ToString() + "',";
+                            sql += "'" + currentObject.getData(getObjectGUIDField()) + "',";
+                            sql += "'" + (string)getSession("FlowGUID") + "',";
+                            sql += "'0',";
+                            sql += "'" + gst.Tables[0].Rows[0][1].ToString() + "',";
+                            sql += "'" + curset.Tables[0].Rows[0][0].ToString() + "',";
+                            sql += "'" + DateTimeUtility.getSystemTime2(null) + "',";
+                            sql += "'" + gst.Tables[0].Rows[0][2].ToString() + "',";
+                            sql += "'" + ProcessPageID + "',";
+                            sql += "'" + (string)getSession("PDID") + "')";
+                            if (!engine.executeSQL(sql))
+                            {
+                                throw new Exception(engine.errorString);
+                            }
+                        }
+                        else
+                        {
+                            sql = "select * from FORMRELATION where FLOWGUID='" + (string)getSession("FlowGUID") + "' and CURGUID=''";
+                            DataSet dsr = engine.getDataSet(sql, "TEMP");
+                            if (dsr.Tables[0].Rows.Count > 0)
+                            {
+                                dsr.Tables[0].Rows[0]["CURGUID"] = currentObject.getData(getObjectGUIDField());
+                                dsr.Tables[0].Rows[0]["CURFORMNAME"] = curset.Tables[0].Rows[0][0].ToString();
+                                dsr.Tables[0].Rows[0]["CURPAGETYPE"] = ProcessPageID;
+                                if (!engine.updateDataSet(dsr))
+                                {
+                                    throw new Exception(engine.errorString);
+                                }
+                            }
+                            else
+                            {
+                                //throw new Exception("並未找到發起參考流程的資料");
+                                throw new Exception(com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError16", "並未找到發起參考流程的資料"));
+                            }
+                        }
+                    }
+                }
+
+                //代理轉派動作
+                reassignmentSubstitute(engine);
+                //checkPoint("reassignmentSubstitute", modeSignProc);
+                string addSignXml = "";
+                string IsAddSign = (string)getSession("IsAddSign");
+                if (IsAddSign.Equals("AFTER"))
+                {
+                    addSignXml = getAddSignXml();
+
+                    //簽核前呼叫: 可以在此新增或修改加簽的資料等等
+                    addSignXml = beforeSign(engine, true, addSignXml);
+
+                    //加簽
+                    if (addSignXml.Length > 0)
+                    {
+                        addCustomActivity(engine, (string)getSession("WorkItemOID"), true, addSignXml, "", "");
+                    }
+                }
+
+                //取得流程定義代號, 要注意ProcessNew
+                sql = "select SMWBAAA001, SMWYAAA001 from SMWBAAA inner join SMWYAAA on SMWBAAA003=SMWYAAA003 where SMWYAAA005='" + (string)getSession("FlowGUID") + "'";
+                ds = engine.getDataSet(sql, "TEMP");
+                if (ds.Tables[0].Rows.Count == 0)
+                {
+                    //有可能是發起參考流程, 此時會有PDID
+                    sql = "select SMWBAAA001 from SMWBAAA where SMWBAAA003='" + (string)getSession("PDID") + "'";
+                    ds = engine.getDataSet(sql, "TEMP");
+                    if (ds.Tables[0].Rows.Count == 0)
+                    {
+                        //throw new Exception("找不到此作業畫面所要發起的流程定義");
+                        throw new Exception(com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError12", "找不到此作業畫面所要發起的流程定義"));
+                    }
+                }
+
+                //取得流程預設參數
+                Hashtable param = getProcessParameter(engine, ds.Tables[0].Rows[0][0].ToString());
+
+                //取得流程參數
+                string firstParam = setFlowVariables(engine, param, currentObject);
+
+                //取得表單參數--直接使用流程參數方式設定表單變數
+                //string formXML = setFormVariables(engine, currentObject);
+
+                //發起流程
+                if (!firstParam.Equals(""))
+                {
+                    IDictionaryEnumerator ie = param.GetEnumerator();
+                    while (ie.MoveNext())
+                    {
+                        string pID = (string)ie.Key;
+                        string pValue = (string)ie.Value;
+                        if (!pID.Equals("processSerialNumber"))
+                        {
+                            assignRelevantDataBySerialNo(engine, flowOID, pID, pValue);
+                            //checkPoint("assignRelevantDataBySerialNo", modeSignProc);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                //代理轉派動作
+                reassignmentSubstitute(engine);
+                //checkPoint("reassignmentSubstitute", modeSignProc);
+            }
+            /*--直接使用流程參數方式設定表單變數
+            if (!formXML.Equals(""))
+            {
+                XMLProcessor xmlp = new XMLProcessor(formXML, 1);
+                string formID = xmlp.doc.ChildNodes[0].Name;
+                assignRelevantDataBySerialNo(engine, flowOID, formID, formXML);
+            }
+            */
+            //engine.close();
+
+            //簽核程序
+            //engine = factory.getEngine(engineType, connectString);
+
+            //國昌20091217: 先將目前使用者儲存到GlobalCache中，這樣在afterApprove時才可以取得使用者代號
+            com.dsc.kernal.global.GlobalCache.setValue(flowOID + "USERID", base.systemInfo.UserID);
+
+            string signProcess = (string)Session["signProcess"];
+            string signResult = (string)Session["tempSignResult"];
+            string signOpinion = (string)Session["tempSignOpinion"];
+            //checkPoint("Call EFGP ", modeSignProc);
+            try
+            {
+                if (signProcess.Equals("Y"))
+                {
+                    completeWorkItem(engine, (string)getSession("WorkItemOID"), signResult, signOpinion);
+                }
+                else
+                {
+                    terminateProcess(engine, flowOID, signResult, signOpinion);
+                }
+                //Jack
+                //writeLog(new Exception("signProcedure_C/T_End/" + com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null) + "/" + (string)Session["UserID"]));
+                //Timestep(DateTimeUtility.getSystemTime2(null), (string)Session["UserID"], this.PageUniqueID, (string)getSession("FlowGUID"), "E", "signProcedure_C/T");
+                //checkPoint("Call EFGP Done ", modeSignProc);
+            }
+            catch (Exception gpe)
+            {
+                processErrorMessage(errorLevel, gpe, true);
+                throw new Exception("GPError");
+            }
+
+            //國昌20091217: 最後一關時，確認afterApprove後才能執行afterSign，所以先不要呼叫afterSign，移至afterApprove前呼叫。
+
+            string sqsl = "select SMWYAAA020 from SMWYAAA where SMWYAAA005='" + flowOID + "'";
+            DataSet dsaf = engine.getDataSet(sqsl, "TEMP");
+            if (dsaf.Tables[0].Rows.Count > 0) //國昌20100402 mantis 0016688
+            {
+                if (dsaf.Tables[0].Rows[0][0].ToString().Equals("I"))
+                {
+                    //簽核後呼叫
+                    afterSign(engine, currentObject, signResult);
+                    //checkPoint("afterSign Done ", modeSignProc);
+                }
+            }
+            //Jack
+            //writeLog(new Exception("signProcedure_afterSign_End/" + com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null) + "/" + (string)Session["UserID"]));
+            //Timestep(DateTimeUtility.getSystemTime2(null), (string)Session["UserID"], this.PageUniqueID, (string)getSession("FlowGUID"), "E", "signProcedure_afterSign");
+
+
+            engine.commit();
+            engine.close();
+            com.dsc.kernal.global.GlobalCache.setValue(flowOID, null);
+            //checkPoint("Engine Commit and Close ", modeSignProc);
+
+
+            //儲存成功
+            //Response.Write("alert('" + SignSuccessMsg + "');");
+
+            string isShowFlowChart = (string)getSession("IsShowFlowChart");
+            bool isShowFlow = false;
+            if (isShowFlowChart.Equals("Y"))
+            {
+                isShowFlow = true;
+            }
+            else
+            {
+                isShowFlow = false;
+            }
+
+            //參數化決定是否顯示SignSuccessMsg Jack
+            bool showSignSuccessMsg = true;
+            SysParam sp = new SysParam(engine);
+            try
+            {
+                if (Convert.ToString(sp.getParam("showSignSuccessMsg")).ToUpper().Equals("FALSE"))
+                {
+                    showSignSuccessMsg = false;
+                }
+            }
+            catch { }
+
+            if (afterSendMode.Equals("1"))
+            {
+                //要顯示流程圖
+                string imageURL = "";
+
+                engine = factory.getEngine(engineType, connectString);
+                if (isShowFlow)
+                {
+
+                    string filename = IDProcessor.getID("") + ".jpg";
+                    string localFilePath = Server.MapPath("~/tempFolder/" + filename);
+
+                    fetchFlowDiagram(engine, (string)getSession("FlowGUID"), localFilePath);
+
+                    imageURL = Server.UrlEncode(Request.ApplicationPath + "/tempFolder/" + filename);
+
+
+                }
+                else
+                {
+                    imageURL = "";
+                }
+
+                DataRow opSetting = (DataRow)getSession("SignOpinionSetting");
+                string opinionHTML = "";
+                if (opSetting["SMWDAAA017"].ToString().Equals("Y"))
+                {
+                    opinionHTML = getSignOpinion(Page.Server, debugPage, engine, (string)getSession("FlowGUID"), SignOpinion.SHOW_ALL, (DataRow)getSession("SignOpinionSetting"));
+                }
+                engine.close();
+                setSession("OpinionHTML", opinionHTML);
+
+                string urls = Page.ResolveUrl("~/Program/DSCGPFlowService/Public/ViewOpinion.aspx?ImageURL=" + imageURL + "&processSerialNumber=" + flowOID + "&opinionType=SHOW_ALL&SourceURL=" + Request.ServerVariables["PATH_INFO"] + "&PGID=" + this.PageUniqueID);
+                base.showPanelWindow(com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError17", "流程圖"), urls, 0, 0, "", true, true);
+                //base.showOpenWindow(urls, "流程圖", "", "", "", "", "", "1", "1", "", "", "", "", "", "", true);
+                //base.showOpenWindow(urls, com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError17", "流程圖"), "", "", "", "", "", "1", "1", "", "", "", "", "", "", true);
+                //Response.Write("window.location.href='" + urls + "';");
+
+            }
+            else if (afterSendMode.Equals("0"))
+            {
+                if (showSignSuccessMsg)
+                {
+                    MessageBox(SignSuccessMsg);
+                }
+            }
+
+            string ParentPanelID = (string)getSession("ParentPanelID");
+            if (ParentPanelID.Equals(""))
+            {
+                closeSilence();
+                //Edit by Jack 20110420 Mantis-0018996 
+                if (afterSendMode.Equals("2"))
+                {
+                    if (showSignSuccessMsg)
+                    {
+                        MessageBox(SignSuccessMsg);
+                    }
+                }
+            }
+            else
+            {
+                if (afterSendMode.Equals("2"))
+                {
+                    if (showSignSuccessMsg)
+                    {
+                        MessageBox(SignSuccessMsg);
+                    }
+                    //自動帶下一張簽核表單
+                    closeRefreshClick();
+                    //checkPoint("closeRefreshClick", modeSignProc);
+
+                }
+                else
+                {
+                    closeRefresh();
+                }
+            }
+            //checkPoint("END", modeSignProc);
+        }
+        catch (Exception ue)
+        {
+            try
+            {
+                engine.rollback();
+            }
+            catch { };
+            try
+            {
+                engine.close();
+                com.dsc.kernal.global.GlobalCache.setValue(flowOID, null);
+            }
+            catch { };
+            if (!ue.Message.Equals("GPError"))
+            {
+                processErrorMessage(0, ue);
+            }
+        }
+        //Jack
+        //writeLog(new Exception("signProcedure_End/" + com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null) + "/" + (string)Session["UserID"]));
+        //Timestep(DateTimeUtility.getSystemTime2(null), (string)Session["UserID"], this.PageUniqueID, (string)getSession("FlowGUID"), "E", "signProcedure");
+
+    }
+
+    /// <summary>
+    /// 將加簽的資料串成xml
+    /// </summary>
+    /// <returns>加簽的xml</returns>
+    private string getAddSignXml()
+    {
+        DataObjectSet dos = (DataObjectSet)getSession("AddSignGroup");
+        if (dos.getAvailableDataObjectCount() > 0)
+        {
+            string xml = "<list>";
+            //xml += "<list>";
+
+            for (int i = 0; i < dos.getAvailableDataObjectCount(); i++)
+            {
+                SMWPAAA aa = (SMWPAAA)dos.getAvailableDataObject(i);
+                xml += "<com.dsc.nana.data_transfer.ActivityDefinitionForClientListDTO>";
+                xml += "<performers>";
+                string[] tag = aa.SMWPAAA004.Split(new char[] { '#' });
+                for (int j = 0; j < tag.Length; j++)
+                {
+                    string[] ztag = tag[j].Split(new char[] { ';' });
+                    xml += "<com.dsc.nana.data_transfer.ActivityDefPerformerForClientListDTO>";
+                    xml += "<OID>" + ztag[1] + "</OID>";
+                    xml += "<participantType><value>" + ztag[0] + "</value></participantType>";
+                    xml += "</com.dsc.nana.data_transfer.ActivityDefPerformerForClientListDTO>";
+                }
+                xml += "</performers>";
+
+                xml += "<multiUserMode><value>" + aa.SMWPAAA005 + "</value></multiUserMode>";
+                xml += "<name>" + aa.SMWPAAA003 + "</name>";
+                xml += "<performType><value>" + aa.SMWPAAA006 + "</value></performType>";
+
+                xml += "</com.dsc.nana.data_transfer.ActivityDefinitionForClientListDTO>";
+            }
+
+            //xml += "</list>";
+            xml += "</list>";
+
+            return xml;
+        }
+        else
+        {
+            return "";
+        }
+    }
+
+    /// <summary>
+    /// 執行代理轉派動作
+    /// </summary>
+    protected void reassignmentSubstitute(com.dsc.kernal.factory.AbstractEngine engine)
+    {
+        //檢查是否為被代理之流程
+        if (isSubstituteSign)
+        {
+            //進行轉派動作
+            SysParam sp = new SysParam(engine);
+            string flowType = sp.getParam("FlowAdapter");
+            string con1 = sp.getParam("NaNaWebService");
+            string con2 = sp.getParam("DotJWebService");
+            string account = sp.getParam("FlowAccount");
+            string password = sp.getParam("FlowPassword");
+
+            FlowFactory ff = new FlowFactory();
+            AbstractFlowAdapter adp = ff.getAdapter(flowType);
+            adp.retryTimes = int.Parse(Session["FlowProcessCount"].ToString());
+            adp.retryWaitingTime = int.Parse(Session["FlowProcessWaiting"].ToString());
+
+            string fname = DateTimeUtility.getSystemTime2(null).Substring(0, 13).Replace("/", "").Replace(" ", "_");
+            fname = Server.MapPath("~/LogFolder/" + fname + "_flowdata.log");
+
+            adp.init(con1, con2, account, password, "", "127.0.0.1", "127.0.0.1:8080", "EF2KWeb", fname, (bool)Session["DebugPage"]);
+
+
+            //Mantis0020030 
+            string getOrgPerformer = "";
+            getOrgPerformer += "Select Users.id from WorkAssignment ";
+            getOrgPerformer += "join Users on assigneeOID =Users.OID ";
+            getOrgPerformer += "where WorkAssignment.OID='" + com.dsc.kernal.utility.Utility.filter((string)getSession("workAssignmentOID")) + "' ";
+
+            Object objResult = engine.executeScalar(getOrgPerformer);
+            if (objResult != null)
+            {
+                acceptWorkItem(engine, (string)objResult, (string)getSession("WorkItemOID"));
+            }
+            adp.managementReassignWorkItem((string)Session["UserGUID"], (string)getSession("WorkItemOID"), "系統自動轉派至代理人");
+            adp.logout();
+        }
+    }
+
+    private void acceptWorkItem(AbstractEngine engine, string pUserID, string pWorkItemOID)
+    {
+        SysParam sp = new SysParam(engine);
+        string flowType = sp.getParam("FlowAdapter");
+        string con1 = sp.getParam("NaNaWebService");
+        string con2 = sp.getParam("DotJWebService");
+        string account = sp.getParam("FlowAccount");
+        string password = sp.getParam("FlowPassword");
+
+        FlowFactory ff = new FlowFactory();
+        AbstractFlowAdapter adp = ff.getAdapter(flowType);
+        adp.retryTimes = int.Parse(Session["FlowProcessCount"].ToString());
+        adp.retryWaitingTime = int.Parse(Session["FlowProcessWaiting"].ToString());
+
+        string fname = DateTimeUtility.getSystemTime2(null).Substring(0, 13).Replace("/", "").Replace(" ", "_");
+        fname = Server.MapPath("~/LogFolder/" + fname + "_flowdata.log");
+
+        adp.init(con1, con2, account, password, "", "127.0.0.1", "127.0.0.1:8080", "EF2KWeb", fname, (bool)Session["DebugPage"]);
+
+        adp.acceptWorkItem(pUserID, pWorkItemOID);
+
+        adp.logout();
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="currentObject"></param>
+    /// <param name="result"></param>
+    protected override void afterSign(AbstractEngine engine, DataObject currentObject, string result)
+    {
+        base.afterSign(engine, currentObject, result);
+        refreshInbox();
+    }
+
+    /// <summary>
+    /// 退回重辦程序
+    /// </summary>
+    protected override void rejectProcedure()
+    {
+        AbstractEngine engine = null;
+        try
+        {
+            string connectString = (string)Session["connectString"];
+            string engineType = (string)Session["engineType"];
+
+            IOFactory factory = new IOFactory();
+            engine = factory.getEngine(engineType, connectString);
+
+            //代理轉派動作
+            reassignmentSubstitute(engine);
+
+            //送單程序
+
+            string flowOID = (string)getSession("FlowGUID"); //流程實例序號
+            string WorkItemOID = (string)getSession("WorkItemOID");//工作項目識別號
+
+
+            string ACTID = fetchActivityIDFromWorkItemOID(engine, WorkItemOID, (string)getSession("PDID"), (string)Session["UserID"]);
+
+            //簽核程序
+            engine = factory.getEngine(engineType, connectString);
+
+            string backActID = (string)Session["tempBackActID"];
+            string backOpinion = (string)Session["tempBackOpinion"];
+            string backType = (string)Session["tempBackType"];
+
+            reexecuteActivity(engine, (string)Session["UserID"], flowOID, WorkItemOID, ACTID, backActID, backOpinion, backType);
+
+            //儲存成功
+            //Response.Write("alert('" + RejectSuccessMsg + "');");
+            MessageBox(RejectSuccessMsg);
+
+            string userGUID = (string)Session["UserGUID"];
+            string afterRejectProcess = (string)engine.executeScalar("select AfterRejectProcess from SmpUserConf where UserGUID='" + userGUID + "'");
+            if (afterRejectProcess != null && !afterRejectProcess.Equals(""))
+            {
+                if (afterRejectProcess.Equals("3"))
+                {
+                    closeRefresh();
+                }
+                else
+                {
+                    closeRefreshClick();
+                }
+            }
+            else
+            {
+                string needCloseRefreshClick = Convert.ToString(getSession("closeRefreshClick")); //送簽後動作
+                if (needCloseRefreshClick.Equals("N"))
+                {
+                    //closeRefreshClick();
+                }
+                else
+                {
+                    closeRefreshClick();
+                }
+            }
+
+            engine.close();
+            refreshInbox();
+        }
+        catch (Exception ue)
+        {
+            try
+            {
+                engine.close();
+            }
+            catch { };
+            processErrorMessage(errorLevel, ue);
+        }
+    }
+
+	/// <summary>
+    /// 轉寄程序
+    /// </summary>
+    protected override void forwardProcedure()
+    {
+        AbstractEngine engine = null;
+        try
+        {
+            string connectString = (string)Session["connectString"];
+            string engineType = (string)Session["engineType"];
+
+            IOFactory factory = new IOFactory();
+            engine = factory.getEngine(engineType, connectString);
+
+            //送單程序
+
+            string workItemOID = (string)getSession("WorkItemOID"); //工作項目識別號
+
+            //程序
+            engine = factory.getEngine(engineType, connectString);
+
+            string[] acceptorOID = (string[])Session["tempAcceptorOID"];
+            string noticeType = (string)Session["tempNoticeType"];
+
+            //客製轉寄意見 20130430 CL_Chang
+            string userId = (string)Session["UserID"];
+            string flowOID = (string)getSession("FlowGUID"); //流程實例序號
+            string forwardComment = (string)Session["forwardComment"];//轉寄意見
+            
+            if (!Convert.ToString(forwardComment).Equals(""))
+            {
+                string[] userGUIDInfo = getUserGUID(engine, userId);
+                string userGUID = userGUIDInfo[0];
+                
+                DataRow dsr = null;
+                string sql = "select * from SmpForwardNotice where (1=2)";
+                DataSet tsd = engine.getDataSet(sql, "TEMP");
+
+                sql = "select * from SMWYAAA where SMWYAAA005='" + (string)getSession("FlowGUID") + "'";
+                DataSet usd = engine.getDataSet(sql, "TEMP");
+                string flowname = usd.Tables[0].Rows[0]["SMWYAAA004"].ToString();
+                string subject = usd.Tables[0].Rows[0]["SMWYAAA006"].ToString();
+                dsr = usd.Tables[0].Rows[0];
+
+                for (int i = 0; i < acceptorOID.Length; i++)
+                {
+                    DataRow dr = tsd.Tables[0].NewRow();
+                    dr["GUID"] = IDProcessor.getID("");
+                    dr["ObjectGUID"] = (string)getSession("ObjectGUID");
+                    dr["PDID"] = (string)getSession("PDID");
+                    dr["ProcessSerialNumber"] = (string)getSession("FlowGUID");
+                    dr["ViewTimes"] = "U";
+                    dr["SenderId"] = (string)Session["UserID"];
+                    dr["SenderName"] = (string)Session["UserName"];
+                    dr["SendTime"] = com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null);
+                    dr["ReceiverId"] = acceptorOID[i];
+                    dr["ProcessName"] = flowname;
+                    dr["Subject"] = subject;
+                    dr["ProcessType"] = "INFO";
+                    dr["RelatedState"] = "";
+                    dr["WorkItemOID"] = workItemOID;
+                    dr["Comment"] = forwardComment;
+                    dr["D_INSERTUSER"] = userGUID;
+                    dr["D_INSERTTIME"] = DateTimeUtility.getSystemTime2(null);
+                    dr["D_MODIFYUSER"] = "";
+                    dr["D_MODIFYTIME"] = "";
+                    tsd.Tables[0].Rows.Add(dr);
+                }
+
+                if (!engine.updateDataSet(tsd))
+                {
+                    throw new Exception(engine.errorString);
+                }
+            }
+
+            if (!workItemOID.Equals(""))
+            {
+                forwardWorkItem(engine, (string)Session["UserID"], workItemOID, acceptorOID, noticeType);
+            }
+            else
+            {
+                //國昌20100614:自訂的通知（原稿發起）打開
+                DataRow dsr = null;
+                string sql = "select * from CUSTOMENOTICE where (1=2)";
+                DataSet tsd = engine.getDataSet(sql, "TEMP");
+
+                sql = "select * from SMWYAAA where SMWYAAA005='" + (string)getSession("FlowGUID") + "'";
+                DataSet usd = engine.getDataSet(sql, "TEMP");
+                string flowname = usd.Tables[0].Rows[0]["SMWYAAA004"].ToString();
+                string subject = usd.Tables[0].Rows[0]["SMWYAAA006"].ToString();
+                dsr = usd.Tables[0].Rows[0];
+
+                for (int i = 0; i < acceptorOID.Length; i++)
+                {
+                    DataRow dr = tsd.Tables[0].NewRow();
+                    dr["GUID"] = IDProcessor.getID("");
+                    dr["OBJECTGUID"] = (string)getSession("ObjectGUID");
+                    dr["PDID"] = (string)getSession("PDID");
+                    dr["PROCESSSERIALNUMBER"] = (string)getSession("FlowGUID");
+                    dr["VIEWTIMES"] = "U";
+                    dr["SENDERID"] = (string)Session["UserID"];
+                    dr["SENDERNAME"] = (string)Session["UserName"];
+                    dr["SENDTIME"] = com.dsc.kernal.utility.DateTimeUtility.getSystemTime2(null);
+                    dr["RECEIVERID"] = acceptorOID[i];
+                    dr["PROCESSNAME"] = flowname;
+                    dr["SUBJECT"] = subject;
+                    dr["PROCESSTYPE"] = "INFO";
+                    dr["RELATEDSTATE"] = "";
+                    tsd.Tables[0].Rows.Add(dr);
+                }
+
+                if (!engine.updateDataSet(tsd))
+                {
+                    throw new Exception(engine.errorString);
+                }
+
+                customAfterForward(engine, dsr, acceptorOID);
+            }
+            engine.close();
+
+            //儲存成功
+            //Response.Write("alert('" + ForwardSuccessMsg + "');");
+            MessageBox(ForwardSuccessMsg);
+
+            closeRefresh();
+        }
+        catch (Exception ue)
+        {
+            try
+            {
+                engine.close();
+            }
+            catch { };
+            processErrorMessage(errorLevel, ue);
+        }
+    }
+
+    /// <summary>
+    /// 刷新收件資料匣
+    /// </summary>
+    protected void refreshInbox()
+    {
+        string js = "";
+        js += "var outlookWindow = window.parent.getPanelWindowObject('0') ;";
+        js += "try {";
+        js += "     outlookWindow.refreshInbox();";
+        js += "}";
+        js += "    catch(e) {alert(e.message);};";
+        js += "";
+        //20141006
+        //Response.Write(js);
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="workItemOID"></param>
+    /// <param name="signResult"></param>
+    /// <param name="signOpinion"></param>
+    protected void completeWorkItem(AbstractEngine engine, string workItemOID, string signResult, string signOpinion)
+    {
+        //completeWorkItem(engine, workItemOID, signResult, signOpinion);
+    }
+
+    //===========================================================================================================
+    // 共用方法
+    //===========================================================================================================
+
+	/// <summary>
+    /// 取得使用者資訊, [0]: id, [1]: userName
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="userGUID"></param>
+    /// <returns>string[]</returns>
+    protected string[] getUserInfo(AbstractEngine engine, string userGUID)
+    {
+        string sql = "select empNumber, empName, orgId from EmployeeInfo where empGUID='" + Utility.filter(userGUID) + "'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[3];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][1].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+        }
+
+        return result;
+    }
+	
+	/// <summary>
+    /// 查詢使用者之相關資料,包含職位,直屬主管,所屬部門!
+    /// [0]:UserID, [1]:UserName, [2]: UserADAccount, [3]:UserTitle
+    /// </summary>
+    /// <param name="engine"></param> default engine
+    /// <param name="userGUID"></param> User GUID
+    /// <returns>string[]</returns> 僅回傳一筆, 值為 Array! Array[0]為人員工號, Array[1]為中文名, Array[2]為英文名,  Array[3]為職稱!
+    protected string[] getUserInfoById(AbstractEngine engine, string userId)
+    {
+        //string sql = "select id,userName,substring(mailAddress, 1 ,( charindex('@', mailAddress)-1)), a.UserTitle,mailAddress from Users u, Functions f , UserFunctions a where  f.occupantOID = u.OID and f.isMain='1' and id='" + Utility.filter(userId) + "'  and UserOID = u.OID ";
+        string sql = "select u.id,userName,substring(mailAddress, 1 ,( charindex('@', mailAddress)-1)), a.UserTitle,mailAddress, o.id from Users u, Functions f , UserFunctions a, Organization o, OrganizationUnit ou where  f.occupantOID = u.OID and f.isMain='1' and u.id='" + Utility.filter(userId) + "'  and UserOID = u.OID and f.organizationUnitOID = ou.OID and ou.organizationOID=o.OID "; 
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[9];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][2].ToString();
+            result[3] = ds.Tables[0].Rows[0][3].ToString();
+            result[4] = ds.Tables[0].Rows[0][4].ToString();
+            result[5] = ds.Tables[0].Rows[0][5].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+            result[3] = "";
+            result[4] = "";
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 取得使用者主管資訊, [0]:OID, [1]: id, [2]: userName
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="userGUID"></param>
+    /// <returns>string[]</returns>
+    protected string[] getUserManagerInfo(AbstractEngine engine, string userGUID)
+    {
+        string[] result = new string[3];
+        string sql = "select u.OID, u.id, u.userName from Functions f, Users u where f.occupantOID = '" + Utility.filter(userGUID) + "' and f.specifiedManagerOID = u.OID and f.isMain='1'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][2].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 取得群組人員, [][]: [id][userName]
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="groupName"></param>
+    /// <returns>string[][]</returns>
+    protected string[][] getGroupdUser (AbstractEngine engine, string groupId)
+    {
+        string sql = "select u.id, userName from Groups g, Users u, Group_User gu where g.id='" + Utility.filter(groupId) + "' and gu.GroupOID = g.OID and gu.UserOID = u.OID";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        int rows = ds.Tables[0].Rows.Count;
+        string[][] result = new string[rows][];
+        for (int i = 0; i < rows; i++)
+        {
+            result[i] = new string[2];
+            result[i][0] = ds.Tables[0].Rows[i][0].ToString();
+            result[i][1] = ds.Tables[0].Rows[i][1].ToString();
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// 取得使用者OID, [0]: OID, [1]: userName
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="userId"></param>
+    /// <returns>string[]</returns>
+    protected string[] getUserGUID(AbstractEngine engine, string userId)
+    {
+        string sql = "select OID, userName from Users where id='" + Utility.filter(userId) + "'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[2];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// 取得群組OID, [0]: OID, [1]: groupName
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="groupId"></param>
+    /// <returns>string[]</returns>
+    protected string[] getGroupGUID(AbstractEngine engine, string groupId)
+    {
+        string sql = "select OID, groupName from Groups where id='" + Utility.filter(groupId) + "'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[2];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// 查詢使用者之相關資料,包含職位,直屬主管,所屬部門!
+    /// [0]:UserID, [1]:UserOID, [2]: UserName, [3]:UserTitle, [4]:UnitName, [5]:UnitOID, [6]:ManagerID, [7]:ManagerOID, [8]:ManagerName
+    /// </summary>
+    /// <param name="engine"></param> default engine
+    /// <param name="userGUID"></param> User GUID
+    /// <returns>string[]</returns> 僅回傳一筆, 值為 Array! Array[6]為直屬主管 ID, Array[7]為主屬主管之OID, Array[8]為主管名稱
+    ///                                            Array[3]為職稱, Array[4]為部門名稱!! 注意若無直屬主管,資料將不會帶出來!
+    protected string[] getUserFunctions(AbstractEngine engine, string userGUID)
+    {
+        string sql = "select UserID,UserOID,UserName,UserTitle,UnitName,UnitOID,ManagerID,ManagerOID,ManagerName from UserFunctions where UserOID='" + Utility.filter(userGUID) + "'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[9];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][2].ToString();
+            result[3] = ds.Tables[0].Rows[0][3].ToString();
+            result[4] = ds.Tables[0].Rows[0][4].ToString();
+            result[5] = ds.Tables[0].Rows[0][5].ToString();
+            result[6] = ds.Tables[0].Rows[0][6].ToString();
+            result[7] = ds.Tables[0].Rows[0][7].ToString();
+            result[8] = ds.Tables[0].Rows[0][8].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+            result[3] = "";
+            result[4] = "";
+            result[5] = "";
+            result[6] = "";
+            result[7] = "";
+            result[8] = "";
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 尋找某個部門中某個角色之人員代號, 例如:尋找 ME 部門的收發人員角色!
+    /// [0]:RoleName, [1]:UserOID, [2]:UserID, [3]:UserName, [4]:DetpOID, [5]:DeptID, [6]:DeptName
+    /// </summary>
+    /// <param name="engine"></param> default engine
+    /// <param name="userRoles"></param> 角色名稱, 如: 部門收發
+    /// <param name="deptID"></param> 部門代號, 如: C2200
+    /// <returns>string[]</returns> 僅回傳一筆資料, 回傳值為一 Array! Array[1] 是 UserOID, Array[2]是 UserID (使用者代號)
+    protected string[] getUserRoles(AbstractEngine engine, string userRoles, string deptID)
+    {
+        string sql = "select RoleName, UserOID, UserID, UserName, DetpOID, DeptID, DeptName from UserRoles where RoleName='" + Utility.filter(userRoles) + "' and DeptID='" + Utility.filter(deptID) + "'";
+        //MessageBox(sql);
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[7];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][2].ToString();
+            result[3] = ds.Tables[0].Rows[0][3].ToString();
+            result[4] = ds.Tables[0].Rows[0][4].ToString();
+            result[5] = ds.Tables[0].Rows[0][5].ToString();
+            result[6] = ds.Tables[0].Rows[0][6].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+            result[3] = "";
+            result[4] = "";
+            result[5] = "";
+            result[6] = "";
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 取得使用者代理人(通用代理)資訊, [0]: OID, [1]: id, [2]: userName
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="userGUID"></param>
+    /// <returns>string[]</returns>
+    protected string[] getSubstituteUserInfo(AbstractEngine engine, string userGUID)
+    {
+        //通用代理人
+        string sql = "select Users.OID, id, userName from DefaultSubstituteDefinition inner join Users on substituteOID=Users.OID where ownerOID='" + Utility.filter(userGUID) + "' order by substitutiveOrder";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[3];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][2].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 取得表單單號
+    /// </summary>
+    /// <param name="engine"></param> default engine
+    /// <param name="flowGUID"></param> 傳入 Session 的 flowGUID getSession("FlowGUID")
+    /// <returns></returns> 回傳表單單號
+    protected string getSheetNo(AbstractEngine engine, string flowGUID)
+    {
+        string sql = "select SMWYAAA002 from SMWYAAA where SMWYAAA005='" + Utility.filter(flowGUID) + "'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string result = "";
+
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result = ds.Tables[0].Rows[0][0].ToString();
+        }
+        else
+        {
+            result = "";
+        }
+        return result;
+    }
+
+	
+	/// <summary>
+    /// 終止目前表單流程
+    /// </summary>
+    /// <param name="ownerID"></param>
+    protected void terminateThisProcess(string ownerID)
+    {
+        AbstractEngine engine = null;
+        try
+        {
+            string flowType = getGPParam("FlowAdapter");
+            string con1 = getGPParam("NaNaWebService");
+            string con2 = getGPParam("DotJWebService");
+            string account = getGPParam("FlowAccount");
+            string password = getGPParam("FlowPassword");
+            string flowOID = (string)getSession("FlowGUID");
+
+            FlowFactory ff = new FlowFactory();
+            AbstractFlowAdapter adp = ff.getAdapter(flowType);
+            adp.retryTimes = int.Parse(Session["FlowProcessCount"].ToString());
+            adp.retryWaitingTime = int.Parse(Session["FlowProcessWaiting"].ToString());
+
+            string fname = DateTimeUtility.getSystemTime2(null).Substring(0, 13).Replace("/", "").Replace(" ", "_");
+            fname = Server.MapPath("~/LogFolder/" + fname + "_flowdata.log");
+            adp.init(con1, con2, account, password, "", "127.0.0.1", "127.0.0.1:8080", "EF2KWeb", fname, debugPage);
+            adp.terminateProcess(ownerID, flowOID, "不同意  ", "自動終止流程");
+            adp.logout();
+        }
+        catch (Exception e)
+        {
+            MessageBox(e.Message);
+
+        }
+        finally
+        {
+            if (engine != null) engine.close();
+        }
+    }
+	
+    /// <summary>
+    /// 終止目前表單流程
+    /// </summary>
+	protected void terminateThisProcess()
+    {
+        AbstractEngine engine = null;
+        try
+        {
+            string connectString = (string)Session["connectString"];
+            string engineType = (string)Session["engineType"];
+            IOFactory factory = new IOFactory();
+            engine = factory.getEngine(engineType, connectString);
+			
+			//代理轉派動作
+            reassignmentSubstitute(engine);
+				
+			string signResult = "不同意";
+			string backOpinion = (string)Session["tempBackOpinion"];
+            //string signOpinion = (string)Session["tempSignOpinion"];
+            string flowOID = (string)getSession("FlowGUID");
+            base.terminateProcess(engine, flowOID, signResult, backOpinion);
+			
+			MessageBox("退件成功");
+			refreshInbox();
+			closeRefreshClick();
+        }
+        catch (Exception e)
+        {
+            MessageBox(e.Message);
+        }
+        finally
+        {
+            if (engine != null) engine.close();
+        }
+    }
+
+    /// <summary>
+    /// 取得AutoCodeGUID
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="ProcessPageID"></param>
+    /// <returns></returns>
+    protected string getAutoCodeGUID(AbstractEngine engine)
+    {
+        string sql = "select SMWBAAA003, SMWDAAA001, SMWDAAA011,SMWDAAA012,SMWBAAA004, SMWAAAA001,SMWDAAA018, SMWBAAA001, SMWDAAA024 from SMWAAAA inner join SMWDAAA on SMWAAAA001=SMWDAAA005 inner join SMWBAAA on SMWBAAA004=SMWDAAA003 where SMWAAAA002='" + ProcessPageID + "' and SMWDAAA006='Init'";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        if (ds.Tables[0].Rows.Count == 0)
+        {
+            throw new Exception(com.dsc.locale.LocaleString.getKernalLocaleString("BaseWebUI.dll.language.ini", "message", "QueryError7", "找不到此作業畫面所要發起的流程定義"));
+        }
+        else
+        {
+            return ds.Tables[0].Rows[0][3].ToString();
+        }
+    }
+
+    /// <summary>
+    /// 取得部門主管人員資訊
+    /// [0]: orgUnitId, [1]: orgInitName, [2]: userOID, [3]: userId, [4]: userName
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="orgUnitGUID"></param>
+    /// <returns></returns>
+    protected string[] getOrgUnitInfo(AbstractEngine engine, string orgUnitGUID)
+    {
+        string sql = "select o.id, o.organizationUnitName, u.OID, u.id, u.userName ";
+        sql += "from OrganizationUnit o, Users u where o.OID='" + Utility.filter(orgUnitGUID) + "' and o.managerOID = u.OID";
+        DataSet ds = engine.getDataSet(sql, "TEMP");
+        string[] result = new string[5];
+        if (ds.Tables[0].Rows.Count > 0)
+        {
+            result[0] = ds.Tables[0].Rows[0][0].ToString();
+            result[1] = ds.Tables[0].Rows[0][1].ToString();
+            result[2] = ds.Tables[0].Rows[0][2].ToString();
+            result[3] = ds.Tables[0].Rows[0][3].ToString();
+            result[4] = ds.Tables[0].Rows[0][4].ToString();
+        }
+        else
+        {
+            result[0] = "";
+            result[1] = "";
+            result[2] = "";
+            result[3] = "";
+            result[4] = "";
+        }
+
+        return result;
+    }
+}

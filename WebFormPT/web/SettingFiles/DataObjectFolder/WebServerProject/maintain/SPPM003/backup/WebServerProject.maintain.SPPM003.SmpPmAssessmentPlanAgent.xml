@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPPM003.SmpPmAssessmentPlan" TableName="SmpPmAssessmentPlan">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPPM003.SmpPmAssessmentMembersDraft" TableName="SmpPmAssessmentMembersDraft" RelationString="GUID=AssessmentPlanGUID">
+  </DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPPM003.SmpPmAssessmentMembers" TableName="SmpPmAssessmentMembers" RelationString="GUID=AssessmentPlanGUID">
+  </DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPPM003.SmpPmAssessmentManager" TableName="SmpPmAssessmentManager" RelationString="GUID=AssessmentPlanGUID">
+  </DOS>
+</DOS>

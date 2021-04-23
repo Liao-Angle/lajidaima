@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="getGraph.aspx.cs" Inherits="DSCWebControlRunTime_DSCWebControlUI_BarGraph_getGraph" %>

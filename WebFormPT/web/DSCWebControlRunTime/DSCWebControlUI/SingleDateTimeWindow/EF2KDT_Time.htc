@@ -1,0 +1,524 @@
+﻿<public:component>
+<PUBLIC:METHOD NAME="getValue" />
+<PUBLIC:METHOD NAME="setFixedTime" />
+<script language="javascript">
+//==================================================================================
+//==================================================================================
+//專案名稱: EasyFlow Fassade
+//程式名稱: ActiveX\EF2KDT_Time.htc
+//原始版本: 10.01.0001
+//　撰寫者: 余英蘭
+//撰寫日期: 2004/01/01
+//
+//版權聲明: Copyright(c) 1999-2001, 鼎新電腦股份有限公司  版權所有 (02)8667-2776
+//　　　　 本電腦程式受著作權法及國際公約保護。
+//　　　　 凡未經授權擅自複製或散佈本程式的全部或部分，將遭受最嚴厲的民、刑事處分。
+//
+//修正摘要:
+//
+//==================================================================================
+//==================================================================================
+
+//if(navigator.userLanguage == "zh-tw") {
+	var msgTime = "時間";
+//} else {
+//	var msgTime = "Time";
+//}
+var gFixTimeTag="";
+var isFixTimeSet=false;
+var serverTime;
+
+element.innerHTML=checkMode(element.dateMode);
+        
+var strTime="";
+var initHour;
+var initMin;
+var initSec;
+var windowInterval;		//程式執行間隔的指標
+today2=new Date(element.serverTime);
+var initHour=today2.getHours();
+var initMin=today2.getMinutes();
+var initSec=today2.getSeconds();
+
+initHour = LZ(initHour);
+initMin = LZ(initMin);
+initSec = LZ(initSec);
+
+setFixedTime(element.fixTimeTag);
+
+if(element.initTime)
+{
+	//去首尾空白
+	var strttmp = element.initTime;
+	//alert('0 ' +  element.initTime);
+	strttmp = strttmp.replace(/^[\s　]+/g, "");
+	strttmp = strttmp.replace(/[\s　]+$/g, "");
+	//alert('1 ' + strttmp);
+	gFixTimeTag=element.fixTimeTag;
+	//alert('2 ' + gFixTimeTag);
+	if(strttmp != "")
+	{
+	    //alert('3 ' + strttmp);
+	    var hasF=false;
+	    var fInd=-1;
+	    if(gFixTimeTag.length>0){
+	        tagAry=gFixTimeTag.split(';');
+	        for(var z=0;z<tagAry.length;z++){
+	            if(tagAry[z]==strttmp){
+	                hasF=true;
+	                fInd=z;
+	                break;
+	            }
+	        }
+	    }
+
+        if((!hasF) && (gFixTimeTag.length>0)){
+            if((strttmp=='00:00:00') || (strttmp=='00:00')){
+                hasF=true;
+                fInd=0;
+            }
+        }
+	    if(!hasF){
+	            //alert(strttmp);
+		    element.document.all.hours.value = strttmp.substring(0,2);
+		    element.document.all.minutes.value = strttmp.substring(3,5);
+		    element.document.all.seconds.value = strttmp.substring(6,8);
+            element.document.all.DropDownList.disabled = true;
+            element.document.all.hours.readOnly = false;
+            element.document.all.minutes.readOnly = false;
+            element.document.all.seconds.readOnly = false;   
+            element.document.all.select2.checked=true;
+
+		}else{
+
+		element.document.all.DropDownList.selectedIndex=fInd;
+            element.document.all.hours.readOnly = true;
+            element.document.all.minutes.readOnly = true;
+            element.document.all.seconds.readOnly = true;  
+            element.document.all.select1.checked=true;
+
+		}
+	}
+	else
+	{
+		element.document.all.hours.value=initHour;
+		element.document.all.minutes.value=initMin;
+		element.document.all.seconds.value=initSec;
+	}
+}
+else
+{
+	element.document.all.hours.value=initHour;
+	element.document.all.minutes.value=initMin;
+	element.document.all.seconds.value=initSec;
+}
+
+
+
+strTime= element.document.all.hours.value + ":" + element.document.all.minutes.value + ":" + element.document.all.seconds.value;
+
+element.document.all.hours.attachEvent('onkeypress',keyfilter);
+element.document.all.hours.attachEvent('onkeydown',funcKeydown);
+element.document.all.hours.attachEvent('onkeyup',funcKeyup);
+element.document.all.minutes.attachEvent('onkeypress',keyfilter);
+element.document.all.minutes.attachEvent('onkeydown',funcKeydown);
+element.document.all.minutes.attachEvent('onkeyup',funcKeyup);
+element.document.all.seconds.attachEvent('onkeypress',keyfilter);
+element.document.all.seconds.attachEvent('onkeydown',funcKeydown);
+element.document.all.seconds.attachEvent('onkeyup',funcKeyup);
+
+element.document.all.hours.attachEvent('onblur',checkData);
+element.document.all.minutes.attachEvent('onblur',checkData);
+element.document.all.seconds.attachEvent('onblur',checkData);
+
+element.document.all.hours.attachEvent('onfocus',onclickEventCenter);
+element.document.all.minutes.attachEvent('onfocus',onclickEventCenter);
+element.document.all.seconds.attachEvent('onfocus',onclickEventCenter);
+element.document.all.select1.attachEvent('onfocus',onclickEventCenter);
+element.document.all.select2.attachEvent('onfocus',onclickEventCenter);
+
+var strfocusID="";
+
+
+
+//處理滑鼠左鍵點選動作的判斷/*function clickradioEvent()
+{
+    if (element.document.all.select1.checked)
+    {
+        element.document.all.DropDownList.disabled = false;
+    }
+    else
+    {
+        element.document.all.DropDownList.disabled = true;
+    } 
+}*/
+
+
+function onclickEventCenter()
+{//alert("focus")
+	if(event.srcElement.id!='')
+	{
+		
+		var eventElementID = event.srcElement.id;
+		if(eventElementID == "tdhours" || eventElementID == "hours" )
+		{
+			strfocusID=eventElementID;
+			element.document.all.hours.select();
+		}
+		else if(eventElementID == "tdminutes" || eventElementID == "minutes")
+		{
+			strfocusID=eventElementID;
+			element.document.all.minutes.select();
+		}
+		else if(eventElementID == "tdseconds" || eventElementID == "seconds")
+		{
+			strfocusID=eventElementID;
+			element.document.all.seconds.select();
+		}
+		else if(eventElementID == "select1")
+		{
+		    if (element.document.all.select1.checked)
+            {
+                element.document.all.DropDownList.disabled = false;
+                element.document.all.hours.readOnly = true;
+                element.document.all.minutes.readOnly = true;
+                element.document.all.seconds.readOnly = true;  
+            }
+            else
+            {
+                element.document.all.DropDownList.disabled = false;
+                element.document.all.hours.readOnly = true;
+                element.document.all.minutes.readOnly = true;
+                element.document.all.seconds.readOnly = true;  
+            } 
+		}
+		else if (eventElementID == "select2")
+		{
+		    if (element.document.all.select2.checked)
+            {
+                element.document.all.DropDownList.disabled = true;
+                element.document.all.hours.readOnly = false;
+                element.document.all.minutes.readOnly = false;
+                element.document.all.seconds.readOnly = false;   
+            }
+            else
+            {
+                element.document.all.DropDownList.disabled = true;
+                element.document.all.hours.readOnly = false;
+                element.document.all.minutes.readOnly = false;
+                element.document.all.seconds.readOnly = false;   
+            } 
+		}
+		else
+		{
+			//bodyClick();
+		}
+	}
+
+}
+
+function funcKeyup()
+{
+	if(element.document.all.hours.value.length==2)
+	 {
+		window.clearInterval(windowInterval);	 
+	 }
+	 
+	 if(event.srcElement.value.length==2){
+	    if(event.srcElement.id=='hours'){
+	        element.document.all.minutes.focus();
+	    }else if(event.srcElement.id=='minutes'){
+		if (element.dateMode!='3' && element.dateMode!='4'){	     	
+		element.document.all.seconds.focus();
+		}
+	    }
+	 }
+	strfocusID = event.srcElement.id;
+	windowInterval=window.setInterval(checkData, 1200);
+	
+}
+
+function funcKeydown()
+{	
+	window.clearInterval(windowInterval);
+}
+
+function LZ(x) {return(x<0||x>9?"":"0")+x}
+
+function checkData()
+{
+	var tmpTime;
+	tmpTime = element.document.all(strfocusID).value;
+	//tmpTime = element.document.all[strfocusID].value
+	//tmpTime = setActiveValue();
+	if (tmpTime=="")
+	{
+		tmpTime="0";
+	}
+	
+	tmpTime=LZ(eval(tmpTime));
+	if(strfocusID=="hours")
+	{
+		if(tmpTime>23)
+		{
+			tmpTime=23;
+		}
+		else if(tmpTime=="00")
+		{
+			if(element.document.all.minutes.value =="00" && element.document.all.seconds.value =="00")
+			{
+				element.document.all.seconds.value="00";
+			}
+		}
+
+	}
+	else if(strfocusID=="minutes" || strfocusID=="seconds")
+	{
+		if(tmpTime>59)
+		{
+			tmpTime=59;
+		}
+		
+		
+		if(strfocusID=="seconds")
+		{
+			if(tmpTime=="00")
+			{
+				if(element.document.all.hours.value =="00" && element.document.all.minutes.value =="00")
+				{
+					tmpTime="00";
+				}
+			}
+		}
+		else
+		{
+			if(tmpTime=="00")
+			{
+				if(element.document.all.hours.value =="00" && element.document.all.seconds.value =="00")
+				{
+					element.document.all.seconds.value="00";
+				}
+			}
+		}
+	}
+	
+	setActiveValue2(tmpTime);
+	//element.document.all[strfocusID].value=tmpTime;
+	element.document.all(strfocusID).value=tmpTime;
+	window.clearInterval(windowInterval);
+	
+	//if (element.document.all.seconds.value =='') 
+	//	{  strTime = element.document.all.hours.value + ":" + element.document.all.minutes.value ; }
+	//else 
+	//	{  strTime = element.document.all.hours.value + ":" + element.document.all.minutes.value + ":" + element.document.all.seconds.value;}
+	strTime = element.document.all.hours.value + ":" + element.document.all.minutes.value + ":" + element.document.all.seconds.value;
+
+	//returnValue= element.document.all.hours.value + ":" + element.document.all.minutes.value;
+}
+
+function keyfilter()
+{
+        window.clearInterval(windowInterval);
+	if (((event.keyCode >=48) && (event.keyCode <=57) )  || ((event.keyCode>=96) && (event.keyCode<=105)))
+	{
+	    if((event.keyCode>96) && (event.keyCode<105))
+	    {
+	        event.keyCode-=48;
+	        return;
+	    }
+	}
+	else{
+		event.keyCode =0;
+		return;
+	}
+	
+	
+}
+
+function getValue()
+{
+   if(element.document.all.select1.checked)
+   {
+	
+        return element.document.all.DropDownList.options[element.document.all.DropDownList.selectedIndex].value;
+
+   }
+   else
+   { 
+	    
+	    return strTime;
+   }
+}
+
+
+function setFixedTime(tag)
+{
+   for(var i=0;i<element.document.all.DropDownList.options.length;i++)
+   {
+        element.document.all.DropDownList.options.remove(0);
+   } 
+   if(tag.length>0){
+       tagAry=tag.split(';');
+       for(var i=0;i<tagAry.length;i++)
+       {
+            oOpt=element.document.createElement("OPTION");
+            oOpt.value=tagAry[i];
+            oOpt.text =tagAry[i];
+            element.document.all.DropDownList.options.add(oOpt);  
+       }
+        element.document.all.select1.checked=true;
+        element.document.all.DropDownList.disabled = false;
+        element.document.all.hours.readOnly = true;
+        element.document.all.minutes.readOnly = true;
+        element.document.all.seconds.readOnly = true;  
+   }else{
+        element.document.all.SS1.style.display='none';
+        element.document.all.select2.checked=true;
+   }
+   gFixTimeTag=tag;
+}
+
+function setActiveValue()
+{
+	switch(strfocusID)
+	{
+		case "hours":	return (element.document.all.hours.value);
+				break;
+		case "minutes" : return (element.document.all.minutes.value);
+				break;
+		case "seconds" : return (element.document.all.seconds.value);
+				break;
+	}
+}
+function setActiveValue2(tt)
+{
+	switch(strfocusID)
+	{
+		case "hours":	element.document.all.hours.value=tt;
+				break;
+		case "minutes" :element.document.all.minutes.value=tt;
+				break;
+		case "seconds" : element.document.all.seconds.value=tt;
+				break;
+	}
+}
+
+function checkMode(mode){
+			switch (mode){
+					case '3':  return "<table border=0 ><td width='215px'><hr class='breakline'><tr></td><td>" +
+"<table border=0 >"+
+  "<tr>"+
+    "<td width='60px' rowspan=2>" + msgTime + "：</td>"+
+    "<td>"+
+        "<table border=0 cellspacing=0 cellpadding=0>"+
+        "<tbody id=SS1>"+
+        "<tr>"+
+            "<td><input name=radio id='select1' type=radio value=radiobutton></td><td height=27><select name=select id=DropDownList width='80px' style={width:85px;} disabled></select></td>"+
+        "</tr>"+
+        "</tbody>"+
+        "<tr>"+
+            "<td><input name=radio id='select2' type=radio value=radiobutton checked='checked'></td>"+
+  	        "<td>"+
+              "<table width='80px' cellpadding=0 cellspacing=0 border=1 bordercolorlight='#C0C0C0' bordercolordark='#808080' style={border-width:1px;font-size:6pt;}>"+
+                "<tr>"+
+                  "<td>"+
+                    "<table width='40px' cellpadding=0 cellspacing=0 border=0 style={border-width:1px;font-size:7pt;}>"+
+                      "<tr>"+
+                        "<td width='28%' height=1  align=center nowrap id='tdhours'>"+
+                        "<input type='text' id='hours' style='color:#6666FF;font-size:15px; width=90%;  border=0;' maxlength='2'></td>"+
+                        "<td  align=center height=2 width='3%'><font color='#808080' size='3px'>:</font></td>"+
+                        "<td id='tdminutes' align=center height=2 width='28%'><input type='text' id='minutes' style='color:#6666FF;font-size:15px; width=100%;  border=0;' maxlength='2'></td>"+
+                        "<td  align=center style='display:none' height=2 width='3%'><font color='#808080' size='3px'>:</font></td>"+
+                        "<td id='tdseconds' style='display:none' align=center height=2 width='28%'><input type='text' id='seconds' style='color:#6666FF;font-size:15px; width=100%;  border=0;' maxlength='2'></td>"+
+                      "</tr>"+
+                  "</table></td>"+
+                "</tr>"+
+            "</table></td>"+
+            "</td>"+ 
+         "</tr>"+
+         "</table>"+
+    "</td>"+
+  "</tr>"+
+"</table>"
+
+
+case '4':  return "<table border=0 ><td width='215px'><hr class='breakline'><tr></td><td>" +
+"<table border=0 >"+
+  "<tr>"+
+    "<td width='60px' rowspan=2>" + msgTime + "：</td>"+
+    "<td>"+
+        "<table border=0 cellspacing=0 cellpadding=0>"+
+        "<tbody id=SS1>"+
+        "<tr>"+
+            "<td><input name=radio id='select1' type=radio value=radiobutton></td><td height=27><select name=select id=DropDownList width='80px' style={width:85px;} disabled></select></td>"+
+        "</tr>"+
+        "</tbody>"+
+        "<tr>"+
+            "<td><input name=radio id='select2' type=radio value=radiobutton checked='checked'></td>"+
+  	        "<td>"+
+              "<table width='80px' cellpadding=0 cellspacing=0 border=1 bordercolorlight='#C0C0C0' bordercolordark='#808080' style={border-width:1px;font-size:6pt;}>"+
+                "<tr>"+
+                  "<td>"+
+                    "<table width='40px' cellpadding=0 cellspacing=0 border=0 style={border-width:1px;font-size:7pt;}>"+
+                      "<tr>"+
+                        "<td width='28%' height=1  align=center nowrap id='tdhours'>"+
+                        "<input type='text' id='hours' style='color:#6666FF;font-size:15px; width=90%;  border=0;' maxlength='2'></td>"+
+                        "<td  align=center height=2 width='3%'><font color='#808080' size='3px'>:</font></td>"+
+                        "<td id='tdminutes' align=center height=2 width='28%'><input type='text' id='minutes' style='color:#6666FF;font-size:15px; width=100%;  border=0;' maxlength='2'></td>"+
+                        "<td  align=center style='display:none' height=2 width='3%'><font color='#808080' size='3px'>:</font></td>"+
+                        "<td id='tdseconds' style='display:none' align=center height=2 width='28%'><input type='text' id='seconds' style='color:#6666FF;font-size:15px; width=100%;  border=0;' maxlength='2'></td>"+
+                      "</tr>"+
+                  "</table></td>"+
+                "</tr>"+
+            "</table></td>"+
+            "</td>"+ 
+         "</tr>"+
+         "</table>"+
+    "</td>"+
+  "</tr>"+
+"</table>"
+
+
+
+
+default: return "<table border=0 ><td width='215px'><hr class='breakline'><tr></td><td>" +
+"<table border=0 >"+
+  "<tr>"+
+    "<td width='60px' rowspan=2>" + msgTime + "：</td>"+
+    "<td>"+
+        "<table border=0 cellspacing=0 cellpadding=0>"+
+        "<tbody id=SS1>"+
+        "<tr>"+
+            "<td><input name=radio id='select1' type=radio value=radiobutton></td><td height=27><select name=select id=DropDownList width='80px' style={width:85px;} disabled></select></td>"+
+        "</tr>"+
+        "</tbody>"+
+        "<tr>"+
+            "<td><input name=radio id='select2' type=radio value=radiobutton checked='checked'></td>"+
+  	        "<td>"+
+              "<table width='80px' cellpadding=0 cellspacing=0 border=1 bordercolorlight='#C0C0C0' bordercolordark='#808080' style={border-width:1px;font-size:6pt;}>"+
+                "<tr>"+
+                  "<td>"+
+                    "<table width='80px' cellpadding=0 cellspacing=0 border=0 style={border-width:1px;font-size:7pt;}>"+
+                      "<tr>"+
+                        "<td width='28%' height=1  align=center nowrap id='tdhours'>"+
+                        "<input type='text' id='hours' style='color:#6666FF;font-size:15px; width=90%;  border=0;' maxlength='2'></td>"+
+                        "<td  align=center height=2 width='3%'><font color='#808080' size='3px'>:</font></td>"+
+                        "<td id='tdminutes' align=center height=2 width='28%'><input type='text' id='minutes' style='color:#6666FF;font-size:15px; width=100%;  border=0;' maxlength='2'></td>"+
+                        "<td  align=center height=2 width='3%'><font color='#808080' size='3px'>:</font></td>"+
+                        "<td id='tdseconds'  align=center height=2 width='28%'><input type='text' id='seconds' style='color:#6666FF;font-size:15px; width=100%;  border=0;' maxlength='2'></td>"+
+                      "</tr>"+
+                  "</table></td>"+
+                "</tr>"+
+            "</table></td>"+
+            "</td>"+ 
+         "</tr>"+
+         "</table>"+
+    "</td>"+
+  "</tr>"+
+"</table>"
+				
+	}
+}
+
+</script>
+</public:component>

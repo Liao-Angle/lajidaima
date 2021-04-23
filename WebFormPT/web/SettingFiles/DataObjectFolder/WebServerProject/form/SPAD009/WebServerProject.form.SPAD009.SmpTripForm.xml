@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPAD009.SmpTripForm" tableName="SmpTripForm">
+  <queryStr>select  GUID, Subject , SheetNo, OriginatorGUID, DeptGUID, CheckByGUID, TripDate, StartTime, EndTime, IsHrForm,IsTripFee, TripSite,Notes,
+            TrafficFee, EatFee, ParkingFee, OtherFee, CompanyCode,TempSerialNo, Hours,  ClassCode, CategoryCode , IsIncludeHoliday, 
+			MeetingMinute, StartMileage, EndMileage, EtagFee, MileageSum, PayeeFlag, OilFee, EtcStart, EtcEnd, RefEtagFee, 
+            IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,  
+			ei.empNumber ,ei.empName , ei.deptName as DeptName, cu.userName as CheckByName, 
+			StartTime+'~'+EndTime as TripTime from SmpTripForm  st
+			left join EmployeeInfo ei on ei.empGUID=st.OriginatorGUID
+			left join Users cu on cu.OID=CheckByGUID 
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="250" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="SheetNo" showName=""/>
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="出差人員" showName=""/>
+    <field dataField="DeptGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請單位" showName=""/>
+    <field dataField="CheckByGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人" showName=""/>
+	<field dataField="TripDate" typeField="STRING" lengthField="50" defaultValue="" displayName="出差日期" showName=""/>
+	<field dataField="StartTime" typeField="STRING" lengthField="50" defaultValue="" displayName="起始時間" showName=""/>
+    <field dataField="EndTime" typeField="STRING" lengthField="50" defaultValue="" displayName="截止時間" showName=""/>
+	<field dataField="IsHrForm" typeField="STRING" lengthField="1" defaultValue="" displayName="是否產生假單" showName="Y:是;N:否"/>
+	<field dataField="IsTripFee" typeField="STRING" lengthField="1" defaultValue="" displayName="是否申請出差費" showName="Y:是;N:否"/>
+	<field dataField="TripSite" typeField="STRING" lengthField="200" defaultValue="" displayName="出差地點" showName=""/>
+	<field dataField="Notes" typeField="STRING" lengthField="4000" defaultValue="" displayName="擬辦事項" showName=""/>
+	<field dataField="TrafficFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="交通費" showName=""/>
+	<field dataField="EatFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="繕雜費" showName=""/>
+	<field dataField="ParkingFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="停車費" showName=""/>
+	<field dataField="OtherFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="其他" showName=""/>
+	
+	<field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+	<field dataField="TempSerialNo" typeField="STRING" lengthField="4000" defaultValue="" displayName="暫存序號" showName=""/>
+	<field dataField="Hours" typeField="STRING" lengthField="50" defaultValue="" displayName="出差時數" showName=""/>
+	<field dataField="ClassCode" typeField="STRING" lengthField="50" defaultValue="" displayName="班別" showName=""/>
+	<field dataField="CategoryCode" typeField="STRING" lengthField="50" defaultValue="" displayName="假別" showName=""/>
+	<field dataField="IsIncludeHoliday" typeField="STRING" lengthField="1" defaultValue="" displayName="請假含假日" showName="Y:是;N:否"/>
+	<field dataField="MeetingMinute" typeField="STRING" lengthField="1024" defaultValue="" displayName="出差會議記" showName=""/>
+	
+	<field dataField="StartMileage" typeField="STRING" lengthField="50" defaultValue="0" displayName="去公里數" showName=""/>
+	<field dataField="EndMileage" typeField="STRING" lengthField="50" defaultValue="0" displayName="回公里數" showName=""/>
+	<field dataField="EtagFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="ETAG" showName=""/>
+	<field dataField="MileageSum" typeField="STRING" lengthField="50" defaultValue="0" displayName="里程數" showName=""/>	
+	<field dataField="PayeeFlag" typeField="STRING" lengthField="1" defaultValue="0" displayName="是否已請款" showName="Y:是;N:否"/>	
+	<field dataField="OilFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="油資" showName=""/>
+	
+	<field dataField="EtcStart" typeField="STRING" lengthField="50" defaultValue="0" displayName="ETC起" showName=""/>
+	<field dataField="EtcEnd" typeField="STRING" lengthField="50" defaultValue="0" displayName="ETC訖" showName=""/>
+	<field dataField="RefEtagFee" typeField="STRING" lengthField="50" defaultValue="0" displayName="ETC最大請款金額" showName=""/>
+	
+	<field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+	
+	<field dataField="empNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="出差員工號" showName=""/>
+	<field dataField="empName" typeField="STRING" lengthField="50" defaultValue="" displayName="出差員姓名" showName=""/>
+	<field dataField="DeptName" typeField="STRING" lengthField="50" defaultValue="" displayName="申請單位名稱" showName=""/>
+	<field dataField="CheckByName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人姓名" showName=""/>
+	<field dataField="TripTime" typeField="STRING" lengthField="50" defaultValue="" displayName="出差時間" showName=""/>
+	
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+	<field dataField="Subject"/>
+    <field dataField="SheetNo"/>
+    <field dataField="CheckByGUID"/>
+	<field dataField="IsHrForm"/>
+	<field dataField="IsTripFee"/>
+	<field dataField="CompanyCode" />
+	<field dataField="TempSerialNo" />
+	<field dataField="Hours" />
+	<field dataField="ClassCode" />
+	<field dataField="CategoryCode" />	
+	<field dataField="TrafficFee" />
+	<field dataField="EatFee" />
+	<field dataField="ParkingFee" />
+	<field dataField="OtherFee" />
+	<field dataField="StartMileage" />
+	<field dataField="EndMileage" />
+	<field dataField="EtagFee" />
+	<field dataField="MileageSum" />
+	<field dataField="MeetingMinute" />
+	<field dataField="PayeeFlag" />
+	<field dataField="OilFee" />
+	<field dataField="EtcStart" />
+	<field dataField="EtcEnd" />
+	<field dataField="RefEtagFee" />
+	<field dataField="empNumber" />
+	<field dataField="empName" />
+	<field dataField="DeptName" />
+	<field dataField="CheckByName" />
+	<field dataField="TripTime" />
+  </allowEmptyField>
+  <nonUpdateField>
+	<field dataField="empNumber" />
+	<field dataField="empName" />
+	<field dataField="DeptName" />
+	<field dataField="CheckByName" />  
+	<field dataField="TripTime" />
+  </nonUpdateField>
+  <smpQueryHideField>
+	<field dataField="GUID"/>
+	<field dataField="OriginatorGUID"/>
+	<field dataField="DeptGUID"/>
+	<field dataField="CheckByGUID"/>
+	<field dataField="IsHrForm"/>
+	<field dataField="IsTripFee"/>
+	<field dataField="CompanyCode"/>
+	<field dataField="TempSerialNo"/>
+	<field dataField="Hours"/>
+	<field dataField="ClassCode"/>
+	<field dataField="CategoryCode"/>
+	<field dataField="IsIncludeHoliday"/>
+	<field dataField="IS_LOCK"/>
+	<field dataField="IS_DISPLAY"/>
+	<field dataField="DATA_STATUS"/>
+	<field dataField="D_INSERTUSER"/>
+	<field dataField="D_MODIFYUSER"/>
+	<field dataField="D_MODIFYTIME"/>
+  </smpQueryHideField>
+</DataObject>

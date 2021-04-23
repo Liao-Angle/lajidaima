@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD002.SMVKAAA" TableName="SMVKAAA">
+    <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD002.SMVKAAB" TableName="SMVKAAB" RelationString="SMVKAAA001=SMVKAAB002">
+  </DOS>
+</DOS>

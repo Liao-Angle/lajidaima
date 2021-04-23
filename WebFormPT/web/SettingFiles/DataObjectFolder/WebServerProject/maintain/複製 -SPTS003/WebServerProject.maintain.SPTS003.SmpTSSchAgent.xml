@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPTS003.SmpTSSchForm" TableName="SmpTSSchForm">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPTS003.SmpTSSchDetail" TableName="SmpTSSchDetail" RelationString="GUID=SchFormGUID">
+  </DOS>
+</DOS>
+

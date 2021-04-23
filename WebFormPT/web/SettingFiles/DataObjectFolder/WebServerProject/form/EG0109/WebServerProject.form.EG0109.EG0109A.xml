@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EG0109.EG0109A" tableName="EG0109A">
+  <queryStr>
+    SELECT GUID,SheetNo,Subject,Rqtype,Company,EmpNo,EmpName,sfEmpName,Sex,PartNo,ccSDate,ccEDate,ts,DtName,EmpType,Jdm,Gyi,Jdx,ZS,YC,PID,CardID,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EG0109A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="Rqtype" typeField="STRING" lengthField="50" defaultValue="" displayName="申請類型" showName=""/>
+    <field dataField="Company" typeField="STRING" lengthField="50" defaultValue="" displayName="歸屬公司" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="50" defaultValue="" displayName="工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="50" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="sfEmpName" typeField="STRING" lengthField="50" defaultValue="" displayName="中文名" showName=""/>
+    <field dataField="Sex" typeField="STRING" lengthField="50" defaultValue="" displayName="性別" showName=""/>
+    <field dataField="PartNo" typeField="STRING" lengthField="50" defaultValue="" displayName="常駐支援部門" showName=""/>
+    <field dataField="ccSDate" typeField="STRING" lengthField="50" defaultValue="" displayName="支援時間起" showName=""/>
+    <field dataField="ccEDate" typeField="STRING" lengthField="50" defaultValue="" displayName="支援時間止" showName=""/>
+    <field dataField="ts" typeField="STRING" lengthField="50" defaultValue="" displayName="天數" showName=""/>
+    <field dataField="DtName" typeField="STRING" lengthField="50" defaultValue="" displayName="職務" showName=""/>
+    <field dataField="EmpType" typeField="STRING" lengthField="50" defaultValue="" displayName="人員類別" showName=""/>
+    <field dataField="Jdm" typeField="STRING" lengthField="50" defaultValue="" displayName="靜電帽" showName=""/>
+    <field dataField="Gyi" typeField="STRING" lengthField="50" defaultValue="" displayName="工衣" showName=""/>
+    <field dataField="Jdx" typeField="STRING" lengthField="50" defaultValue="" displayName="靜電鞋" showName=""/>
+    <field dataField="ZS" typeField="STRING" lengthField="50" defaultValue="" displayName="是否住宿" showName=""/>
+    <field dataField="YC" typeField="STRING" lengthField="50" defaultValue="" displayName="是否用餐" showName=""/>
+    <field dataField="PID" typeField="STRING" lengthField="50" defaultValue="" displayName="物理卡號" showName=""/>
+    <field dataField="CardID" typeField="STRING" lengthField="50" defaultValue="" displayName="台胞證或身份證" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="Company"/>
+    <field dataField="EmpNo"/>
+    <field dataField="EmpName"/>
+    <field dataField="sfEmpName"/>
+    <field dataField="PID"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

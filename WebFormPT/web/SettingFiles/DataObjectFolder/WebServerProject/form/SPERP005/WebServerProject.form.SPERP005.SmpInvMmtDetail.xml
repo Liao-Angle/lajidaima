@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPERP005.SmpInvMmtDetail" tableName="SmpInvMmtDetail">
+  <queryStr>
+    SELECT GUID, HeaderGUID, ItemCode, ItemDesc, ItemRev, Subinventory, Quantity, SubOnhandQty, TransferSubinventory, Locator, TransferLocator, TransactionUom, ReasonDesc, TransactionReference,
+    ProjectCode, IS_LOCK, IS_DISPLAY,DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME From SmpInvMmtDetail
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="HeaderGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="單頭關聯" showName=""/>
+    <field dataField="ItemCode" typeField="STRING" lengthField="50" defaultValue="" displayName="料號" showName=""/>
+    <field dataField="ItemDesc" typeField="STRING" lengthField="250" defaultValue="" displayName="品名規格" showName=""/>
+    <field dataField="ItemRev" typeField="STRING" lengthField="50" defaultValue="" displayName="版本" showName=""/>
+    <field dataField="Subinventory" typeField="STRING" lengthField="50" defaultValue="" displayName="庫別" showName=""/>
+    <field dataField="Quantity" typeField="STRING" lengthField="50" defaultValue="" displayName="數量" showName=""/>
+	<field dataField="SubOnhandQty" typeField="STRING" lengthField="50" defaultValue="" displayName="庫存數量" showName=""/>
+    <field dataField="TransferSubinventory" typeField="STRING" lengthField="50" defaultValue="" displayName="Transfer倉庫" showName=""/>
+    <field dataField="Locator" typeField="STRING" lengthField="50" defaultValue="" displayName="儲位" showName=""/>
+    <field dataField="TransferLocator" typeField="STRING" lengthField="50" defaultValue="" displayName="Transfer儲位" showName=""/>
+    <field dataField="TransactionUom" typeField="STRING" lengthField="50" defaultValue="" displayName="單位" showName=""/>
+    <field dataField="ReasonDesc" typeField="STRING" lengthField="120" defaultValue="" displayName="原因" showName=""/>
+    <field dataField="TransactionReference" typeField="STRING" lengthField="50" defaultValue="" displayName="參考" showName=""/>
+    <field dataField="ProjectCode" typeField="STRING" lengthField="50" defaultValue="" displayName="ProjectCode" showName=""/>    
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="ItemCode"/>
+    <field dataField="ItemDesc"/>
+    <field dataField="ItemRev"/>
+    <field dataField="Subinventory"/>
+    <field dataField="TransferSubinventory"/>
+    <field dataField="Locator"/>
+    <field dataField="TransferLocator"/>
+    <field dataField="TransactionUom"/>
+    <field dataField="ReasonDesc"/>
+    <field dataField="TransactionReference"/>
+    <field dataField="ProjectCode"/>
+    <field dataField="Quantity"/>
+	<field dataField="SubOnhandQty"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

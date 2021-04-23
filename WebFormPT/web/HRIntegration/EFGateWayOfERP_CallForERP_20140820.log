@@ -1,0 +1,50 @@
+BeforeApprove - DoCheck ..... 
+Start Time = 2014/8/20 上午 08:51:57
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4019
+strWfSheetNo = 20140820
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP_TEST
+strUserID = 2308
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = Caroline_Hsieh
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoCheck 
+確認可否回寫ERP      => Y
+確認可否回寫狀態描述 => 
+
+
+AfterApprove - DoIt
+Start Time = 2014/8/20 上午 08:51:59
+lngERPVersion = 3
+lngReturnType = 2
+strWfFormID = 4019
+strWfSheetNo = 20140820
+lngAction = 0
+strProgID = PALI12
+strCompID = SMP_TEST
+strUserID = 2308
+strParameter3 = 0001
+strParameter4 = 
+lngKeyNumber = 3
+strComfirmObject = TransManager.TxnManager
+strComPRID = PALI12
+strComDate = 
+strUserNTID = Caroline_Hsieh
+strERPServerIP = 192.168.2.22
+
+呼叫 ERPCoordinatorOfEF 元件成功 
+呼叫 ERP 3.X版的 DoEasy 
+回寫ERP      => N
+回寫狀態描述 => 無符合資料或無此作業權限!!
+
+

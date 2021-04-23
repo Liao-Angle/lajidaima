@@ -1,0 +1,107 @@
+.WindowTitlePanel
+{
+	cursor:move;
+	border-style:solid;
+	border-color:#E4E9E9;
+	border-width:1px;
+	background-color:#E4E9E9;
+	font-size:9pt;
+}
+.WindowContentPanel
+{
+	border-style:dotted;
+	border-color:rgb(31,88,194);
+	border-width:0px;
+	border-top-width:1px;
+}
+.WindowContentBorder
+{
+	border-style:solid;
+	border-color:rgb(31,88,194);
+	border-width:1px;
+}
+.WindowResizeCell
+{
+	background-color:rgb(31,88,194);
+}
+.WindowToolBar
+{
+	font-size:9pt;
+	background-color:#E4E9E9;
+	background-image:url(Images/ToolBarBG.jpg);
+}
+.WorkSpaceBackground
+{
+	background-color:#F0F0F0;
+}
+A:link
+{
+	font-size:9pt;
+	color:rgb(38,102,137);
+	text-decoration:none;
+}
+A:visited
+{
+	font-size:9pt;
+	color:rgb(38,102,137);
+	text-decoration:none;
+}
+A:hover
+{
+	font-size:9pt;
+	color:rgb(24,28,158);
+}
+.MainMenuItem
+{
+	font-size:9pt;
+	color:rgb(30,30,30);
+	cursor:pointer;
+	height:20px;
+	padding-top:3px;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+.MenuList
+{
+	border-width:1px;
+	border-style:solid;
+	border-color:rgb(38,102,137);
+}
+.MenuHead
+{
+	background-image:url(Images/MenuHeadBg.gif);
+	
+}
+.MenuLine
+{
+	background-color:rgb(38,102,137);
+	
+}
+.MenuContent
+{
+	background-color:White;
+	font-size:9pt;
+}
+.LoginInfo
+{
+	font-size:9pt;
+	color:rgb(60,60,60);
+}
+
+.AlertBorder
+{
+	border-width:1px;
+	border-style:solid;
+	border-color:rgb(160,149,130);
+}
+.AlertHead
+{
+	font-size:9pt;
+	color:black;
+}
+.AlertContent
+{
+	font-size:9pt;
+	background-color:Transparent;
+}

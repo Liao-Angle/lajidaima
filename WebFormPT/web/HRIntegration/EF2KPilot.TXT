@@ -1,0 +1,47 @@
+
+'*******************************************
+'* EasyFlow 2000 Web Plus 系統參數設定檔   *
+'*                                         *
+'* 請修改下列各相關參數來符合您的系統需求  *
+'*                                         *
+'* 注意: 請勿修改在等號(=)左邊的參數名稱   *
+'*       以及參數的順序                    *
+'*                                         *
+'*******************************************
+'資料庫OLEDB驅動程式名稱
+'例如: Driver_Name={SQL Server}
+'
+Driver_Name={SQL Server}
+
+'存放EasyFlow 2000系統資料的資料庫主機名稱或IP位址
+'
+'例如: DB_Server=(local)
+'      DB_Server=MyServer
+'      DB_Server=127.0.0.1
+'
+
+'DB_Server=192.168.2.17;UID=sa;PWD=sa
+'DB_Server=192.168.2.38;UID=sa;PWD=SMPADMEF2K
+DB_Server=192.168.2.38;UID=sa;PWD=SMPADMEF2K
+'DB_Server=192.168.2.17;UID=efadm;PWD=easyflowdbo
+
+
+'
+'存放EasyFlow 2000系統資料的資料庫名稱
+'
+'例如: Database=MyDatabase
+'
+Database=EF2KPilot
+'Database=EF2KPilot2
+
+'系統管理者電子郵件帳號,標準的Internet郵件位址
+'請不要使用MailBox的顯示名稱(Display Name)
+'
+'例如: AdminMailbox=user@company.com.tw
+'      AdminMailbox=username@ms1.hinet.net
+'
+AdminMailbox=eva_fan@simplo.com.tw
+'AdminMailbox=administrator@simplo.com.tw
+
+LtVersion=2003.11.30
+

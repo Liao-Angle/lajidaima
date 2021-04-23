@@ -1,0 +1,1438 @@
+﻿body 
+{
+	font-size:10pt;
+	background-color2:rgb(228, 233, 233);
+	background-color:#FFFFFF;
+	background-imagex:url(../Images/bg.gif);
+	font-family:Arial;
+    border-color:inherit;
+}
+.ecpDialogTitle .ui-dialog-titlebar {
+        	background: rgb(253,253,253); /* Old browsers */
+	        background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	        background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	        background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	        background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	        background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+    	border-color:inherit;
+        color:Black
+}
+.SingleField_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FCFCFC, endColorStr=#FFFFFF)";
+	font-size:10pt;
+	background-color:Transparent;
+	font-family:Arial;
+		background: rgb(252,252,252); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+}
+.SingleField_ReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#E0E0E0, endColorStr=#F2F2F2)";
+	font-size:10pt;
+	oobackground-color:#E0E0E0;
+	font-family:Arial;
+	background: rgb(224,224,224); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(242,242,242,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* W3C */
+	
+}
+.SingleField_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleField_AccountNormal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FCFCFC, endColorStr=#FFFFFF)";
+	font-size:10pt;
+	background-color:Transparent;
+	border-color:Black;
+	color:Red;
+	font-family:Arial;
+}
+.SingleField_AccountReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#E0E0E0, endColorStr=#F2F2F2)";
+	font-size:10pt;
+	oobackground-color:#E0E0E0;
+	ooborder-color:Black;
+	color:Red;
+	font-family:Arial;
+	background: rgb(224,224,224); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(242,242,242,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* W3C */
+}.SingleDateTimeField_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FCFCFC, endColorStr=#FFFFFF)";
+	font-size:10pt;
+	font-family:Arial;
+	background: rgb(252,252,252); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+}
+.SingleDateTimeField_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#E0E0E0, endColorStr=#F2F2F2)";
+	font-size:10pt;
+	color:#A0A0A0;
+	oobackground-color:#E0E0E0;
+	font-family:Arial;
+	background: rgb(224,224,224); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(242,242,242,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* W3C */
+}
+.SingleDateTimeField_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	border-style:none;
+	border-width:1px;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/calendar2.gif);
+
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.SingleDateTimeField_Certificate
+{
+	font-family:Arial;
+	font-size:10pt;
+}
+.SingleDateTimeField_CalendarPanel
+{		        	  
+    font-size:10pt;
+	background-color2:rgb(228, 233, 233);
+	background-color:#EEEEEE;
+	background-imagex:url(../DSCWebControlRunTime/DSCWebControlImages/calendar/SingleDateTimeField_BG.gif);
+	font-family:Arial;
+}
+.SingleDateTimeField_CalendarWeekDayZone
+{                 
+	font-size:10pt;
+    text-align : center;
+    background-color:WindowText;
+    color:Aqua;
+    overflow :visible;
+}        
+.SingleDateTimeField_CalendarControlBar_MouseOver
+{
+    background-color  : Orange;
+    cursor:pointer;
+}        
+.SingleDateTimeField_CalendarControlBar_Normal
+{
+        border-style:solid;
+		border-width:1px;
+		font-size:10pt;
+		font-family:Arial;
+}        
+.SingleDateTimeField_DayZone
+{
+	font-size:10pt;
+    text-align : center;
+    font-family:Arial Greek;
+}
+.SingleDateTimeField_DayZone_DayGrid
+{   
+	font-size:10pt;
+    cursor:pointer;        		                                  	
+	color: #0597DB;		   
+	background-color:White;  				
+}       
+.SingleDateTimeField_DayZone_DayGrid_Disabled
+{
+        background: url(../DSCWebControlRunTime/DSCWebControlImages/calendar/forbidden.png) no-repeat 50% 50%;                                        	            	    
+        	
+}
+.SingleDateTimeField_DayZone_DayGrid_NotCurrentMonthDay
+{
+    color : Gray;
+}        
+.SingleDateTimeField_DayZone_DayGrid_MouseOver
+{
+        text-align:center;                       
+        border-bottom-color:Black;
+        border-right-color:Black;
+        background-color  : Orange;
+    }
+    .SingleDateTimeField_DayZone_DayGrid_Selected
+{
+        text-align:center;            
+        border-bottom-color:Black;
+        border-right-color:Black;
+        background-color  : Lime;
+}
+.SingleDateTimeField_DayZone_DayGrid_WeekEnd
+{
+	font-size:10pt;
+        text-align:center;                        
+        border-bottom-color:Black;
+        border-right-color:Black;
+        background-color:Red;
+    }    
+.SingleDateTimeField_YearMonthDialog_MonthAreaTable
+{
+	width:100%;        
+    text-align :center;
+    line-height:30px;
+    border-style:dotted;
+    border:1px solid black;
+    table-layout:fixed;   
+	word-break:break-all;   
+	word-wrap:break-word;           
+	font-size:10pt;
+}
+.SingleDateTimeField_YearMonthDialog_YearAreaTable
+{
+    width:100%;
+    text-align :center;
+    font-family:Arial Greek;       
+    border:1px 1px 1px 1px;
+    border-color:Aqua;
+    border-bottom-color:Black;        
+	font-size:10pt;
+}
+    .SingleDateTimeField_YearMonthDialog_YearControlButton_OnMouseOver
+{
+        background-color:Orange;
+        cursor:pointer;
+}
+.SingleDateTimeField_TimeZone_TimeInput
+{
+	background-color2:rgb(228, 233, 233);
+	background-color:#EEEEEE;
+	background-imagex:url(../Images/bg.gif);
+	font-size:x-large;
+	text-align:center;	
+	font-size:10pt;
+}
+.SingleDateTimeField_TimeZone_TimeSelect
+{        
+        font-size:x-large;
+        text-align:justify;
+	font-size:10pt;
+}
+.SingleDateTimeField_TimeZone_UpDownButtonOnMouseOver
+{       
+    background-color:Orange;
+    cursor:pointer;             
+}
+
+.SingleDateTimeField_TimeZone_Table
+{
+	width:100%;
+	height:20px;
+	text-align:center;	
+	font-size:10pt;
+}
+.SingleDateTimeField_YearMonthDialog_CommandButton
+{
+    width:80px;
+}        
+.SingleDateTimeField_YearMonthDialog_YearInput
+{
+    width:75px;	
+    height:40px;
+    font-size:30px;
+}
+.SingleDateTimeField_YearMonthDialog_Selected
+{
+	color:White;
+	background-color:Orange;
+}
+.SingleDateTimeField_YearMonthDialog_MouseOver
+{
+    cursor: pointer;
+    background-color:ThreeDShadow;
+}
+.SingleDateTimeField_YearMonthDialog_MonthInput
+{
+        text-align:center;
+        border:2px 2px 2px 2px;
+        border-style:outset;
+        border-bottom-color:Black;
+        border-right-color:Black;
+        background-color:transparent;
+}        
+.SingleDateTimeField_ConfirmButtonBar
+{           	    
+	text-align:center; 
+	vertical-align:middle;	        
+}
+.GlassButton_Normal
+{
+	padding:0px;
+	border-style:solid;
+	border-width:1pt;
+	border-color:#A6ABB4;
+	font-size:10pt;
+	oobackground-color:rgb(179,202,213);
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";
+	line-height:20px;
+	font-family:Arial;
+	background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+}
+.GlassButton_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	oobackground-color:#CCCCCC;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#DBDBDB, endColorStr=#B7B7B7)";
+	line-height:20px;
+	font-family:Arial;
+		background: rgb(219,219,219); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(219,219,219,1) 0%, rgba(183,183,183,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(219,219,219,1)), color-stop(100%,rgba(183,183,183,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(183,183,183,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(183,183,183,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(183,183,183,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(219,219,219,1) 0%,rgba(183,183,183,1) 100%); /* W3C */
+}
+.GlassButton_MouseDown
+{
+	border-style:inset;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:rgb(214,226,232);
+	line-height:20px;
+	font-family:Arial;
+}
+.AdminPanel
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCCheckBox_Normal
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCCheckBox_ReadOnly
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleDropDownList_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	font-family:Arial;
+}
+.SingleDropDownList_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.SingleDropDownList_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.MultiDropDownList_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	font-family:Arial;
+}
+.MultiDropDownList_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.DSCGroupBox 
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height:18px;
+    font-weight: bold;
+    color: #000000;
+	font-family:Arial;
+}
+.DSCLabel
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCLabel_Necessary
+{
+	color:Red;
+	font-family:Arial;
+}
+.DSCLabel_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCRadioButton_Normal
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.DSCRadioButton_ReadOnly
+{
+	border-style:none;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+
+.iTabRect
+{
+	BACKGROUND-COLOR: #FFFFFF;
+	border-top:1px;
+	border-top-color:#FFFFFF;
+	border-right:1px;
+	border-left:1px;
+	border-bottom:1px;
+	BORDER-LEFT: #C0C3C7 1px solid;
+	BORDER-RIGHT: #C0C3C7 1px solid;
+	BORDER-BOTTOM: #C0C3C7 1px solid;
+	table-layout:fixed;
+	font-size:12px;
+	font-family:Arial;
+}
+
+
+.iTabSelected
+{
+	ooBACKGROUND-COLOR: #EEEEEE;
+	BORDER-TOP: #C0C3C7 1px solid;
+	BORDER-LEFT: #C0C3C7 1px solid;
+	BORDER-RIGHT: #C0C3C7 1px solid;
+	border-bottom-style:none;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#F3F4F5, endColorStr=#FFFFFF)";
+
+	font-size:12px;
+	font-weight:bold;
+	
+	text-align:center;
+	
+	color:#2E5F78;
+	cursor:default;
+	font-family:Arial;
+	background: rgb(243,244,245); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(243,244,245,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,244,245,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(243,244,245,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(243,244,245,1) 0%,rgba(255,255,255,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(243,244,245,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(243,244,245,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+}
+
+.iTabUnSelected
+{	
+	ooBACKGROUND-COLOR: #EBF0F3;
+	BORDER-TOP: #C0C3C7 1px solid;
+	BORDER-LEFT: #C0C3C7 1px solid;
+	BORDER-BOTTOM: #C0C3C7 1px solid;
+	BORDER-RIGHT: #C0C3C7 1px solid;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";
+	
+	font-size:12px;
+	
+	text-align:center;
+	color:#387392;
+	cursor:pointer;
+	font-family:Arial;
+	background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+}
+
+.iTabDisabled
+{	
+	ooBACKGROUND-COLOR: #C4ECFF;
+	BORDER-TOP: #C0C3C7 1px solid;
+	BORDER-LEFT: #C0C3C7 1px solid;
+	BORDER-RIGHT: #C0C3C7 1px solid;
+	BORDER-BOTTOM: #C0C3C7 1px solid;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#DBDBDB, endColorStr=#BDBDBD)";
+	
+	font-size:12px;
+	
+	text-align:center;
+		
+	color:#9A9A9A;
+	font-family:Arial;
+	background: rgb(219,219,219); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(219,219,219,1) 0%, rgba(189,189,189,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(219,219,219,1)), color-stop(100%,rgba(189,189,189,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(189,189,189,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(189,189,189,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(189,189,189,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(219,219,219,1) 0%,rgba(189,189,189,1) 100%); /* W3C */
+}
+
+.iTabBorderUp
+{
+	BORDER-BOTTOM: #C0C3C7 1px solid;
+	font-size:12px;
+	font-family:Arial;
+}
+.GridBorder
+{
+	overflow:scroll;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF;
+	border-Style:inset;
+	border-Width:1px;
+	POSITION:relative;
+	background-color:#FFFFFF;
+	font-family:Arial;
+}
+.GridTable
+{
+	background-color:#FFFFFF;
+	font-family:Arial;
+}
+.GridTitleRow
+{
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(198,201,206,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(198,201,206,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(198,201,206,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(198,201,206,1) 100%); /* Opera11.10+ */	
+	background: -ms-linear-gradient(top, rgba(219,219,219,1) 0%,rgba(198,201,206,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(255,255,255,1) 0%,rgba(198,201,206,1) 100%); /* W3C */  
+	background-color:#B3C9D4;
+	color:#333333;
+	font-size:13px;
+	height:23px;
+	font-family:Arial;
+    position: relative; 
+    top: expression(this.offsetParent.scrollTop); 
+    z-index: 10;
+    
+}
+.GridTitleCell
+{
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FFFFFF, endColorStr=#C6C9CE)";
+	word-wrap:break-word;
+	border-right: buttonshadow 1px solid;
+	padding-right: 1px;
+	
+	ooborder-top: buttonhighlight 1px solid;
+	padding-top: 1px;
+	
+	border-left: buttonhighlight 1px solid;
+	padding-left: 1px;
+	
+	border-bottom: buttonshadow 1px solid;
+	padding-bottom: 1px;
+	
+	font-family:Arial;
+	
+}
+.FixedGridTitleCell
+{    
+	filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FFFFFF, endColorStr=#C6C9CE)"; 
+	word-wrap:break-word;
+	border-right: buttonshadow 1px solid;
+	padding-right: 1px;
+	
+	ooborder-top: buttonhighlight 1px solid;
+	padding-top: 1px;
+	
+	border-left: buttonhighlight 1px solid;
+	padding-left: 1px;
+	
+	border-bottom: buttonshadow 1px solid;
+	padding-bottom: 1px;
+
+	font-family:Arial;
+    position: relative; 
+    left: expression(this.parentElement.offsetParent.scrollLeft);
+
+}
+.FixedGridRowCell
+{
+	border-right: solid 0px #555555;
+	border-bottom: solid 0px #555555;
+	font-family:Arial;
+	vertical-align:top;
+    position: relative;
+	border-bottom:solid 1px #EDEDED;
+    left: expression(this.parentElement.offsetParent.parentElement.scrollLeft);
+}
+.GridTitleContent
+{
+	height:13px;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	vertical-align:middle;
+	font-family:Arial;
+}
+.GridResizeLine
+{
+	position:absolute;
+	z-index:5; 
+	width: 1px; 
+	left: 50px; 
+	top: 1px; 
+	background-color:black;
+	display:none;
+	font-family:Arial;
+}
+.GridRowOdd
+{
+	font-size:13px;
+	color:#660099; 
+	height:21px; 
+	background-color:#FFFFFF;
+	font-family:Arial;
+}
+.GridRowEven
+{
+	font-size:13px;
+	color:#003399; 
+	height:21px; 
+	background-color:#FFFFFF;
+	font-family:Arial;
+}
+.GridRowHover
+{
+	font-size:13px;
+	color:#003399; 
+	height:21px; 
+	background-color:#E5E5E5;
+	font-family:Arial;
+}
+.GridStaticRow
+{
+	font-size:13px;
+	color:#FF0000; 
+	height:21px; 
+	background-color:#F5F6F7;
+	font-family:Arial;
+	ooborder-style:solid;
+	ooborder-width:1px;
+	ooborder-color:Black;
+	border-bottom:solid 1px #C0C0C0;
+}
+.GridStaticCell
+{
+	font-size:13px;
+	color:#333333; 
+	height:21px; 
+	background-color:#F5F6F7;
+	font-family:Arial;
+}
+.GridStaticContent
+{
+	font-size:13px;
+	cursor:default ;
+	height:15px;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	font-family:Arial;
+}
+.GridRowGroup
+{
+	font-size:13px;
+	color:#333333; 
+	height:21px; 
+	background-color:#F5F6F7;
+	font-family:Arial;
+	ooborder-style:solid;
+	ooborder-width:1px;
+	ooborder-color:Black;
+	border-bottom:solid 1px #C0C0C0;
+}
+.GridRowCell
+{
+	border-right:0 solid #555555;
+	border-bottom:0 solid #555555;
+	font-family:Arial;
+	border-bottom:solid 1px #EDEDED;
+	vertical-align:top;
+	cursor:pointer;
+}
+.GridRowContent
+{
+	font-size:13px;
+	cursor:pointer ;
+	overflow:hidden; 
+	text-overflow:ellipsis;
+	font-family:Arial;
+}
+.GridRowClick
+{
+	font-size:13px;
+	color:#660099; 
+	background-color:#C0C0C0;
+	font-family:Arial;
+}
+.GridPageSelect
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.GridPageText
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	font-family:Arial;
+}
+.GridList
+{
+	font-size:10pt;
+	background-color:transparent;
+	font-family:Arial;
+}
+.GridMenuBox
+{
+	font-size:9pt;
+	border: solid 1px #93A9C0;
+	background-color:#FFFFFF;
+}
+.GridMenuHead
+{
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=1, startColorStr=#F4F4F4, endColorStr=#DBDBDB)";	
+    background: rgb(244,244,244); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(244,244,244,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(244,244,244,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(244,244,244,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(244,244,244,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(244,244,244,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(244,244,244,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+}
+.GridMenuSelect
+{
+	background-color:#DBDBDB;
+}
+.GridMenuNormal
+{
+	background-color:#FFFFFF;
+}
+.DataListCertificateModeBorder
+{
+	border-color:rgb(188,178,147);
+	font-family:Arial;
+}
+.DataListCertificateModeHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+}
+.DataListCertificateModeDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+.SingleOpenWindowField_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FCFCFC, endColorStr=#FFFFFF)";
+	font-size:10pt;
+	background-color:Transparent;
+	font-family:Arial;
+	background: rgb(252,252,252); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(252,252,252,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(252,252,252,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+}
+.SingleOpenWindowField_ReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#9CB0CE;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#E0E0E0, endColorStr=#F2F2F2)";
+	font-size:10pt;
+	oobackground-color:#E0E0E0;
+	font-family:Arial;
+	background: rgb(224,224,224); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224,224,224,1) 0%, rgba(242,242,242,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(242,242,242,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(224,224,224,1) 0%,rgba(242,242,242,1) 100%); /* W3C */
+}
+.SingleOpenWindowField_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/FIND.gif);
+
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	border-style:none;
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.SingleOpenWindowField_ClearButton
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/CLEAR.gif);
+
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	border-style:none;
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.SingleOpenWindowField_Certificate
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.breakline
+{
+	height:1px;
+}
+.QueryFieldValue {
+	font-family:Arial;
+	font-size:10pt;
+	line-height:14px;
+	font-weight: normal;
+	color:#000000;
+	
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	height:22px;
+	font-family:Arial;
+}
+.QueryFieldCaption 
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height:14px;
+    font-weight: bold;
+    color: #000000;
+	font-family:Arial;
+}
+.QueryLegendClass 
+{
+    font-family:Arial;
+    font-size:10pt;
+    line-height:16px;
+    font-weight: normal;
+    color: #000000;
+	font-family:Arial;
+}
+.QueryButtonType 
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	height:22px;
+	width:100px;
+	cursor:pointer;
+	font-family:Arial;
+}
+.QueryFieldReadOnly
+{
+	font-family:Arial;
+	font-size:10pt;
+	line-height:14px;
+	font-weight: normal;
+	color:#003366;
+	
+	background-color: #EEEEFF;
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	height:22px;
+	font-family:Arial;
+	
+}
+.QueryLabel2
+{
+	font-size:10pt;
+	font-family:Arial;
+}
+.FileUploadContent
+{
+	font-size:9pt;
+	border-width:1px;
+	border-style:solid;
+	border-color:Blue;
+	font-family:Arial;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF ;
+}
+.FileUploadPanel
+{
+	font-size:9pt;
+	border-width:0px;
+	border-style:solid;
+	border-color:Blue;
+	font-family:Arial;
+}
+.FileUploadMenu
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+}
+.FileUploadMenuItem
+{
+	font-size:9pt;
+	padding:3pt;
+	background-color:White;
+	cursor:pointer;
+	width:100px;
+}
+.FileUploadMenuItemHover
+{
+	font-size:9pt;
+	padding:3pt;
+	background-color:#EEEEEE;
+	cursor:pointer;
+	width:100px;
+}
+.GeneralButton_Normal
+{
+	border-style:none;
+	cursor:pointer;
+	line-height:20px;
+	font-size:10pt;
+	padding-top:5px;
+	font-family:Arial;
+	padding:0px;
+}
+.GeneralButton_ReadOnly
+{
+	border-style:none;
+	cursor:pointer;
+	line-height:20px;
+	font-size:10pt;
+	padding:5px;
+	font-family:Arial;
+}
+.BYWin_Normal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:Black;
+	font-size:9pt;
+}
+.BYWin_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	
+	border-top:1px solid #999999;
+	border-bottom:1px solid #999999;
+	border-left:1px solid #999999;
+	border-right:1px solid #999999;
+	width:20px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+	background-color:#AAAAAA;
+}
+.RoutineWizard_ReadOnly
+{
+	border-style:solid;
+	border-width:1pt;
+	font-size:10pt;
+	background-color:#E0E0E0;
+	font-family:Arial;
+}
+.RoutineWizard_Button
+{
+	font-size:12px;
+	line-height:16px;
+	font-weight: normal;
+	color:#000000;
+	border-style:solid;
+	border-width:1px;
+
+	width:22px;
+	height:20px;
+	cursor:pointer;
+	vertical-align:middle;
+	margin-top:0px;
+	font-family:Arial;
+}
+.RoutineWizard_Certificate
+{
+	font-family:Arial;
+	font-size:10pt;
+}
+
+.FormHeadBorder
+{
+	border-color:#B6B9C1;
+}
+.FormHeadHead
+{	
+	border-color:#B6B9C1;
+	oobackground-color:rgb(225,217,196);
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";
+	font-size:9pt;
+	font-family:Arial;
+	background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+}
+.FormHeadDetail
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+.OpinionBorder
+{
+	border-color:#B6B9C1;
+}
+.OpinionHead
+{
+	border-color:#B6B9C1;
+	oobackground-color:rgb(225,217,196);
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";
+	font-size:9pt;
+	font-family:Arial;
+		background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+}
+.OpinionDetail
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+.attachBackground
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#B6B9C1;
+	background-color:#DBDBDB;
+}
+.historyBackground
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:#B6B9C1;
+	background-color:white;
+}
+.HistoryBorder
+{
+	border-color:#B6B9C1;
+}
+.HistoryHead
+{
+	border-color:#B6B9C1;
+	oobackground-color:rgb(225,217,196);
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";
+	font-size:9pt;
+	font-family:Arial;
+		background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */
+}
+.HistoryDetail
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+}
+
+.BasicFormHeadBorder
+{
+	border-color:#B6B9C1;
+	border-left-style:solid;
+	border-top-style:solid;
+	border-width:1px
+}
+.BasicFormHeadHead
+{
+	border-color:#B6B9C1;
+	oobackground-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";    
+	background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */    
+}
+.BasicFormHeadDetail
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none
+}
+.SimSignPanel
+{
+	background-color:#EEEEEE;
+	border-color:Black;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;
+}
+.SignOpinionField
+{
+    vertical-align:middle;
+}
+.BulletinTitle
+{
+	font-size:11pt;
+	background-color:#A6A6FF;
+}
+.BulletinContent
+{
+	font-size:11pt;
+	background-color:#CECEFF;
+}
+.DSCRichEditTextArea{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:White;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF ;
+}
+.DSCRichEdit_ReadOnly
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:transparent;
+	scrollbar-face-color:white;
+	scrollbar-highlight-color:#CCCCFF ;
+}
+.DSCRichEditButtonNormal
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:pink;
+	filter: chroma(color=pink);
+	vertical-align:bottom;
+}
+.DSCRichEditButtonHover
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+	vertical-align:bottom;
+}
+.DSCRichEditToolbar
+{
+	width:100%;
+	height:20px;
+	background-image:url(../DSCWebControlRunTime/DSCWebControlImages/DSCRichEdit/retoolbar.gif);
+}
+.DSCColorChart
+{
+   width:16px;
+   height:12px;
+   cursor:pointer;
+}
+.DSCRichEditText
+{
+	font-family:新細明體;
+	font-size:9pt;
+}
+.DSCRichEditInputBox
+{
+	font-family:新細明體;
+	font-size:9pt;
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+}
+.DSCRichEditFindPanel
+{
+	border-style:solid;
+	border-width:1px;
+	border-color:black;
+	background-color:#ECEAE6;
+}
+.DSCRichEditMark
+{
+	font-size:10pt;
+	width:16px;
+	height:16px;
+	border-style:solid;
+	border-width:1px;
+	border-color:pink;
+	filter: chroma(color=pink);
+}
+.DSCRichEditMarkHover
+{
+	font-size:10pt;
+	width:16px;
+	height:16px;
+	border-style:solid;
+	border-width:1px;
+	border-color:blue;
+}
+
+
+/*SMP ERP Start #byEva Start*/
+.ERP_TD_Header
+{
+	border-color:#B6B9C1;
+	oobackground-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+	font-weight: bold;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none;
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";    
+	background: rgb(253,253,253); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(253,253,253,1) 0%, rgba(219,219,219,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(253,253,253,1)), color-stop(100%,rgba(219,219,219,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* IE10+ */	
+	background: linear-gradient(top, rgba(253,253,253,1) 0%,rgba(219,219,219,1) 100%); /* W3C */    
+}
+.ERP_TD_BL
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	/*border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;*/
+	text-align:LEFT;
+	border-right:1 solid;
+}
+.ERP_TD_RL
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	color:#FF0000;
+	border-style:solid;
+	border-width:1px;
+	/*border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;*/
+	text-align:LEFT;
+	border-right:1 solid;
+}
+.ERP_TD_BR
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	/*border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;*/
+	text-align:RIGHT;
+	border-right:1 solid;
+}
+.ERP_TD_RR
+{
+	border-color:#B6B9C1;
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	color:#FF0000;
+	border-style:solid;
+	border-width:1px;
+	/*border-top-style:none;
+	border-left-style:none;
+	border-right-style:none;*/
+	text-align:RIGHT;
+	border-right:1 solid;
+}
+.ERP_Table
+{
+	border-color:#B6B9C1;
+	font-size: 9pt;
+	font-family: Arial;
+	border-style: solid;
+	border-collapse: collapse;
+	border-width: 1px;
+	border-spacing : 1px;
+	border-top-style:solid;
+	border-left-style:solid;
+	border-right-style:solid;
+	border-bottom-style: 1 solid;
+	border-style:solid;
+	border-right:1 solid;
+}
+
+/*SMP ERP Start #byEva End*/
+
+.SingleField_Normal_ECNotNull
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#FCFB85;
+	font-family:Arial;
+}
+.SingleField_ReadOnly_ECIdentity
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#DEECEA;
+	font-family:Arial;
+}
+.SingleField_Normal_ECIdentity
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#A5ECE2;
+	font-family:Arial;
+}
+.SingleDropDownList_Normal_ECNotNull
+{
+	border-style:solid;
+	border-width:1px;
+	font-size:10pt;
+	background-color:#A5ECE2;
+	font-family:Arial;
+}	

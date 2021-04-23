@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPTS005.SmpTSCourseForm" tableName="SmpTSCourseForm">
+  <queryStr>
+    select GUID, CompanyCode, CompanyName, SchDetailGUID, CourseYear, BriefIntro, LecturerGUID, DeptGUID, UndertakerGUID,          
+	StartDate, Hours, Way, Status, CloseDate, WrittenTest, Implement, Satisfaction, InOther, InOtherDesc,          
+	Presentation, Certificate, Report, OJT, OutOther,OutOtherDesc, RecordSource , RecordNo, Remark,          
+	SchNo, SubjectNo, SubjectName, InOut, SubjectType, TTQS, SchSource, DeptId, DeptName,           
+	LecturerSource, Lecturer, LecturerUnit, UndertakerName,          
+    IS_DISPLAY,IS_LOCK, DATA_STATUS,D_INSERTUSER, D_INSERTTIME,D_MODIFYUSER, D_MODIFYTIME  
+	From SmpTSCourseFormV
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>    
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="開課記錄識別號" showName=""/>	
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName="SMP:新普科技;TP:中普科技"/>
+	<field dataField="CompanyName" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+	<field dataField="SchDetailGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="年度開課計劃單身識別號" showName=""/>
+    <field dataField="CourseYear" typeField="STRING" lengthField="4" defaultValue="" displayName="開課年度" showName=""/>	
+	<field dataField="BriefIntro" typeField="STRING" lengthField="250" defaultValue="" displayName="課程簡介" showName=""/>
+    <field dataField="LecturerGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="講師識別號" showName=""/>
+	<field dataField="DeptGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="開課部門識別號" showName=""/>
+	<field dataField="UndertakerGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="承辦人員識別號" showName=""/>	
+	<field dataField="StartDate" typeField="STRING" lengthField="10" defaultValue="" displayName="上課日期" showName=""/>
+	<field dataField="Hours" typeField="STRING" lengthField="10" defaultValue="" displayName="上課時數" showName=""/>
+	<field dataField="Way" typeField="STRING" lengthField="50" defaultValue="" displayName="教授方式" showName=""/>
+	<field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="課程狀態" showName=""/>
+    <field dataField="CloseDate" typeField="STRING" lengthField="10" defaultValue="" displayName="結案日期" showName=""/>
+	<field dataField="WrittenTest" typeField="STRING" lengthField="50" defaultValue="" displayName="筆試" showName="Y:Y;N:N"/>
+	<field dataField="Implement" typeField="STRING" lengthField="50" defaultValue="" displayName="實作" showName="Y:Y;N:N"/>	
+	<field dataField="Satisfaction" typeField="STRING" lengthField="50" defaultValue="" displayName="課程滿意度調查" showName="Y:Y;N:N"/>	
+	<field dataField="InOther" typeField="STRING" lengthField="50" defaultValue="" displayName="內訓其他評核方式" showName="Y:Y;N:N"/>
+	<field dataField="InOtherDesc" typeField="STRING" lengthField="50" defaultValue="" displayName="內訓其他評核方式說明" showName=""/>
+	<field dataField="Presentation" typeField="STRING" lengthField="50" defaultValue="" displayName="發表開課" showName="Y:Y;N:N"/>
+	<field dataField="Certificate" typeField="STRING" lengthField="50" defaultValue="" displayName="證書" showName="Y:Y;N:N"/>
+	<field dataField="Report" typeField="STRING" lengthField="50" defaultValue="" displayName="受訓心得報告" showName="Y:Y;N:N"/>  
+	<field dataField="OJT" typeField="STRING" lengthField="50" defaultValue="" displayName="OJT" showName="Y:Y;N:N"/>
+	<field dataField="OutOther" typeField="STRING" lengthField="50" defaultValue="" displayName="外訓其他評核方式" showName="Y:Y;N:N"/>
+	<field dataField="OutOtherDesc" typeField="STRING" lengthField="50" defaultValue="" displayName="外訓其他評核方式說明" showName=""/>
+	<field dataField="RecordSource" typeField="STRING" lengthField="50" defaultValue="" displayName="登錄來源" showName="1:管理單位新增;2:流程申請"/>
+	<field dataField="RecordNo" typeField="STRING" lengthField="50" defaultValue="" displayName="登錄單號" showName=""/>
+	<field dataField="Remark" typeField="STRING" lengthField="250" defaultValue="" displayName="備註" showName=""/>
+	<field dataField="SchNo" typeField="STRING" lengthField="50" defaultValue="" displayName="計劃代號" showName=""/>
+	<field dataField="SubjectNo" typeField="STRING" lengthField="50" defaultValue="" displayName="課程代號" showName=""/>
+	<field dataField="SubjectName" typeField="STRING" lengthField="255" defaultValue="" displayName="課程名稱" showName=""/>
+	<field dataField="InOut" typeField="STRING" lengthField="50" defaultValue="" displayName="內外訓" showName="I:內訓;O:外訓"/>
+	<field dataField="SubjectType" typeField="STRING" lengthField="50" defaultValue="" displayName="課程類別" showName="1:新人訓練;2:專業職能;3:管理職能;4:品質管理;5:安全衛生"/>
+	<field dataField="TTQS" typeField="STRING" lengthField="50" defaultValue="" displayName="TTQS" showName="Y:Y;N:N"/>
+	<field dataField="SchSource" typeField="STRING" lengthField="50" defaultValue="" displayName="課程來源" showName="1:年度計劃;2:新增申請"/>  
+	<field dataField="DeptId" typeField="STRING" lengthField="50" defaultValue="" displayName="開課部門" showName=""/>
+	<field dataField="DeptName" typeField="STRING" lengthField="50" defaultValue="" displayName="開課部門名稱" showName=""/>
+  <field dataField="LecturerSource" typeField="STRING" lengthField="50" defaultValue="" displayName="講師來源" showName="I:內部;O:外部"/>
+  <field dataField="Lecturer" typeField="STRING" lengthField="50" defaultValue="" displayName="講師" showName=""/>	
+	<field dataField="LecturerUnit" typeField="STRING" lengthField="50" defaultValue="" displayName="講師單位" showName=""/>	
+	<field dataField="UndertakerName" typeField="STRING" lengthField="50" defaultValue="" displayName="承辦人員姓名" showName=""/>
+	<field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="" displayName="是否顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="50" defaultValue="" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>   
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>   
+	<field dataField="GUID"/>  
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField> 
+	<field dataField="BriefIntro"/>
+  <field dataField="LecturerGUID"/>
+  <field dataField="UndertakerGUID"/>
+	<field dataField="CloseDate"/>
+	<field dataField="WrittenTest"/>
+	<field dataField="Implement"/>
+	<field dataField="Satisfaction"/>
+	<field dataField="Presentation"/>
+	<field dataField="InOther"/>
+	<field dataField="InOtherDesc"/>
+	<field dataField="Certificate"/>
+	<field dataField="Report"/>
+	<field dataField="OJT"/>		
+	<field dataField="OutOther"/>
+	<field dataField="OutOtherDesc"/>
+	<field dataField="Remark"/>
+	<field dataField="SchNo"/> 
+	<field dataField="SubjectNo"/>  
+	<field dataField="SubjectName"/> 
+	<field dataField="InOut"/>
+	<field dataField="SubjectType"/>
+	<field dataField="TTQS"/>
+	<field dataField="SchSource"/>
+	<field dataField="DeptId"/>
+	<field dataField="DeptName"/>
+  <field dataField="LecturerSource"/>
+  <field dataField="Lecturer"/>	 
+	<field dataField="LecturerUnit"/>
+	<field dataField="UndertakerName"/>	
+  </allowEmptyField>
+  <nonUpdateField> 
+	<field dataField="CompanyName"/> 
+	<field dataField="SchNo"/>  
+	<field dataField="SubjectNo"/>  
+	<field dataField="SubjectName"/> 
+	<field dataField="UndertakerGUID"/>
+	<field dataField="InOut"/>
+	<field dataField="SubjectType"/>
+	<field dataField="TTQS"/>
+	<field dataField="SchSource"/>
+	<field dataField="DeptId"/>
+	<field dataField="DeptName"/>
+  <field dataField="LecturerSource"/>
+	<field dataField="Lecturer"/>	
+	<field dataField="LecturerUnit"/>	
+	<field dataField="UndertakerName"/>	
+  </nonUpdateField>
+</DataObject>

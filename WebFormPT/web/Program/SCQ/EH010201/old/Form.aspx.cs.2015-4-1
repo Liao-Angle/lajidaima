@@ -1,0 +1,651 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Collections;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using com.dsc.kernal.databean;
+using com.dsc.kernal.factory;
+using com.dsc.kernal.utility;
+using com.dsc.kernal.agent;
+using com.dsc.flow.data;
+
+public partial class Program_SCQ_Form_EH010201_Form : SmpBasicFormPage
+{
+    private string Responsible = "N";
+
+    protected override void init()
+    {
+        ProcessPageID = "EH010201";
+        AgentSchema = "WebServerProject.form.EH010201.EH010201Agent";
+        ApplicationID = "SYSTEM";
+        ModuleID = "EASYFLOW";
+    }
+
+    /// <summary>
+    /// 初始化畫面元件。初始化資料物件。
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="objects"></param>
+    protected override void initUI(AbstractEngine engine, DataObject objects)
+    {
+        SubmitInfo si = (SubmitInfo)getSession("SubmitInfo");
+
+        WebServerProject.SysParam sp = new WebServerProject.SysParam(engine);
+        string connectString = (string)Session["connectString"];
+        string engineType = (string)Session["engineType"];
+
+        EmpNo.clientEngineType = engineType;
+        EmpNo.connectDBString = connectString;
+        if (si.fillerOrgID != "")
+        {
+            EmpNo.whereClause = "PartNo like '%" + si.fillerOrgID + "%' and EmpTypeName like '不限%'";
+        }
+        else
+        {
+            EmpNo.whereClause = "1=2";
+        }
+        EmpNo.DoEventWhenNoKeyIn = false;
+
+        string[,] hids = new string[24, 2];
+        for (int i = 0; i < 24; i++)
+        {
+            hids[i, 0] = i.ToString("00");
+            hids[i, 1] = i.ToString("00");
+        }
+        STime1.setListItem(hids);
+        ETime1.setListItem(hids);
+        STime1.ValueText = "17";
+
+        string[,] mids = new string[4, 2] { { "00", "00" }, { "15", "15" }, { "30", "30" }, { "45", "45" } };
+        STime3.setListItem(mids);
+        ETime3.setListItem(mids);
+
+        if (base.isNew())
+        {
+            DataObjectSet dos = new DataObjectSet();
+            dos.isNameLess = true;
+            dos.setAssemblyName("WebServerProject");
+            dos.setChildClassString("WebServerProject.form.EH010201.EH010201B");
+            dos.setTableName("EH010201B");
+            dos.loadFileSchema();
+            objects.setChild("EH010201B", dos);
+            OverTimeList.dataSource = dos;
+            OverTimeList.updateTable();
+        }
+
+        OverTimeList.clientEngineType = engineType;
+        OverTimeList.connectDBString = connectString;
+        OverTimeList.HiddenField = new string[] { "GUID", "SheetNo" };
+
+
+          
+          //--------------------------以下页面2
+        string sqlbm = @"select PartNo from [10.3.11.92\SQL2008].SCQHRDB.DBO.PEREMPLOYEE where PartNo not like'%支援%' and PartNo not like '%駐廠%' and EmpNo='" + Session["UserID"].ToString() + "'";
+
+              DataTable dtbm = engine.getDataSet(sqlbm, "bmE").Tables["bmE"];
+              if (dtbm.Rows.Count > 0)
+              {
+
+                    int j = dtbm.Rows.Count;
+                    string[,] strs = new string[j+1, 2];
+                    strs[0, 0] = "-1";
+                    strs[0, 1] = "未选择";
+
+                    for (int i = 0; i < j; i++)
+                    {
+                          strs[i + 1, 0] = dtbm.Rows[i][0].ToString();
+                          strs[i + 1, 1] = dtbm.Rows[i][0].ToString();
+                    }
+                    SingleDropDownList1.setListItem(strs);
+              }
+              else
+              {
+                    SingleDropDownList1.setListItem(new string[1, 2] { { "0", "未查询到部门" } });
+              }
+
+          //--------------------------以下页面3
+             string sqlxb = @"select distinct PerField6 from [10.3.11.92\SQL2008].SCQHRDB.DBO.PEREMPLOYEE";
+
+
+              DataTable dt = engine.getDataSet(sqlxb, "PEREMPLOYEE").Tables["PEREMPLOYEE"];
+              if (dt.Rows.Count > 0)
+              {
+                    int j = dt.Rows.Count;
+                    string[,] str3 = new string[j+1, 2];
+                    str3[0, 0] = "-1";
+                    str3[0, 1] = "未选择";
+                    for (int i = 0; i < dt.Rows.Count; i++)
+                    {
+                          str3[i+1, 0] = dt.Rows[i][0].ToString();
+                          str3[i+1, 1] = dt.Rows[i][0].ToString();
+                    }
+                    SingleDropDownList2.setListItem(str3);
+              }
+              else
+              {
+                    SingleDropDownList2.setListItem(new string[1, 2] { { "0", "未查询到线别" } });
+              }
+
+
+
+              setSession("Gengine", engine);
+             
+              //改變工具列順序
+              base.initUI(engine, objects);
+    }
+
+    /// <summary>
+    /// 將資料由資料物件填入畫面元件。
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="objects"></param>
+    protected override void showData(AbstractEngine engine, DataObject objects)
+    {
+        //顯示單號
+        base.showData(engine, objects);
+        if (objects.getData("Responsible").ToString() == Responsible)
+        {
+            OverTimeList.dataSource = objects.getChild("EH010201B");
+            OverTimeList.dataSource.sort(new string[,] { { "WorkDate", DataObjectConstants.ASC }, { "EmpNo", DataObjectConstants.ASC } });
+            OverTimeList.updateTable();
+        }
+        LBEmpNo.Visible = false;
+        EmpNo.Visible = false;
+        LBWorkDate.Visible = false;
+        WorkDate.Visible = false;
+        STime1.Visible = false;
+        STime3.Visible = false;
+        ETime1.Visible = false;
+        ETime3.Visible = false;
+        LBHours.Visible = false;
+        Hours.Visible = false;
+        LBReason.Visible = false;
+        Reason.Visible = false;
+        LBNote.Visible = false;
+        Note.Visible = false;
+        AddData.Visible = false;
+
+        OverTimeList.IsShowCheckBox = false;
+        OverTimeList.ReadOnly = true;
+    }
+
+    /// <summary>
+    /// 資料由畫面元件填入資料物件。
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="objects"></param>
+    protected override void saveData(AbstractEngine engine, DataObject objects)
+    {
+        SubmitInfo si = (SubmitInfo)getSession("SubmitInfo");
+        bool isAddNew = base.isNew();
+        if (isAddNew)
+        {
+            //產生單號並儲存至資料物件
+            base.saveData(engine, objects);
+
+            objects.setData("GUID", IDProcessor.getID(""));
+            objects.setData("Responsible", Responsible);
+            objects.setData("ForwardHR", "N");
+            objects.setData("IS_DISPLAY", "Y");
+            objects.setData("DATA_STATUS", "Y");            
+
+            //將B表匯進來
+            foreach (DataObject obj in OverTimeList.dataSource.getAllDataObjects())
+            {
+                obj.setData("SheetNo", objects.getData("SheetNo"));
+            }
+            objects.setChild("EH010201B", OverTimeList.dataSource);
+        }
+    }
+
+    /// <summary>
+    /// 畫面資料稽核。
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="objects"></param>
+    /// <returns></returns>
+    protected override bool checkFieldData(AbstractEngine engine, DataObject objects)
+    {
+        bool result = true;
+        if (OverTimeList.dataSource.getAvailableDataObjectCount() == 0)
+        {
+            pushErrorMessage("必須填寫加班資料");
+            result = false;
+        }
+        return result;
+    }
+
+    /// <summary>
+    /// 初始化SubmitInfo資料結構。
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="objects"></param>
+    /// <param name="si"></param>
+    /// <returns></returns>
+    protected override SubmitInfo initSubmitInfo(AbstractEngine engine, DataObject objects, SubmitInfo si)
+    {
+        return getSubmitInfo(engine, objects, si);
+    }
+    
+    /// <summary>
+    /// 設定SubmitInfo資料結構。
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="objects"></param>
+    /// <param name="si"></param>
+    /// <returns></returns>
+    protected override SubmitInfo getSubmitInfo(AbstractEngine engine, DataObject objects, SubmitInfo si)
+    {
+        string[] depData = getDeptInfo(engine, (string)Session["UserGUID"]);
+
+        si.fillerID = (string)Session["UserID"];//填表人
+        si.fillerName = (string)Session["UserName"];
+        si.fillerOrgID = depData[0];
+        si.fillerOrgName = depData[1];
+        si.ownerID = (string)Session["UserID"];//表單關系人
+        si.ownerName = (string)Session["UserName"];
+        si.ownerOrgID = depData[0];
+        si.ownerOrgName = depData[1];
+        si.submitOrgID = depData[0];
+        si.objectGUID = objects.getData("GUID");
+
+        return si;
+    }
+
+    /// <summary>
+    /// 設定自動編碼格式所需變數值。
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="autoCodeID"></param>
+    /// <returns></returns>
+    protected override Hashtable getSheetNoParam(AbstractEngine engine, string autoCodeID)
+    {
+        Hashtable hs = new Hashtable();
+        hs.Add("FORMID", ProcessPageID);
+        return hs;
+    }
+
+    /// <summary>
+    /// 設定流程變數。目前主要是用來傳遞流程所需要的變數值。
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="param"></param>
+    /// <param name="currentObject"></param>
+    /// <returns></returns>
+    protected override string setFlowVariables(AbstractEngine engine, Hashtable param, DataObject currentObject)
+    {
+        return "";
+    }
+
+
+    /// <summary>
+    /// 發起流程後呼叫此方法
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="currentObject"></param>
+    protected override void afterSend(AbstractEngine engine, DataObject currentObject)
+    {
+        base.afterSend(engine, currentObject);
+    }
+
+    /// <summary>
+    /// 若有加簽，送簽核前呼叫。
+    /// 加簽時系統會設定Session("IsAddSign")，所以必需在saveData時執行 setSession("IsAddSign", "AFTER");
+    /// AFTER 代表往後簽核
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="isAfter"></param>
+    /// <param name="addSignXml"></param>
+    /// <returns></returns>
+    protected override string beforeSign(AbstractEngine engine, bool isAfter, string addSignXml)
+    {
+            return base.beforeSign(engine, isAfter, addSignXml);
+    }
+
+    /// <summary>
+    /// 按下送簽按鈕後呼叫此方法。
+    /// </summary>
+    /// <param name="engine"></param>
+    /// <param name="currentObject"></param>
+    /// <param name="result"></param>
+    protected override void afterSign(AbstractEngine engine, DataObject currentObject, string result)
+    {
+        base.afterSign(engine, currentObject, result);
+    }
+
+    /// <summary>
+    /// 重辦程序
+    /// </summary>
+    protected override void rejectProcedure()
+    {
+        //退回填表人終止流程
+        String backActID = Convert.ToString(Session["tempBackActID"]); //退回後關卡ID
+        if (backActID.ToUpper().Equals("CREATOR"))
+        {
+            try
+            {
+                base.terminateThisProcess();
+            }
+            catch (Exception e)
+            {
+                base.writeLog(e);
+            }
+        }
+        else
+        {
+            base.rejectProcedure();
+        }
+    }
+
+    /// <summary>
+    /// 流程結束後會執行此方法，系統會傳入result代表結果，其中Y：同意結案；N：不同意結案；W：撤銷（抽單）。
+    /// </summary>
+    /// <param name="engine">WebFormPT</param>
+    /// <param name="currentObject"></param>
+    /// <param name="result"></param>
+    protected override void afterApprove(AbstractEngine engine, DataObject currentObject, string result)
+    {
+        if (result == "Y")
+        {
+            //將ForwardHR改為R
+            currentObject.setData("ForwardHR", "R");
+            string id = currentObject.getData("SheetNo");
+            if (!engine.updateData(currentObject))
+            {
+                throw new Exception("更新EH010201 ForwardHR資料錯誤. 單號: " + id);
+            }
+        }
+    }
+
+
+
+      //--------------------------------待添加
+    protected void AddData_Click(object sender, EventArgs e)
+    {
+          try
+          {
+
+
+                if (WorkDate.ValueText.Equals(""))
+                {
+                      MessageBox("必須輸入加班日期");
+                      return;
+                }
+                if (Reason.ValueText.Equals(""))
+                {
+                      MessageBox("必須填寫加班理由");
+                      return;
+                }
+                if (Hours.ValueText.Equals(""))
+                {
+                      MessageBox("必須填寫加班時數");
+                      return;
+                }
+                double db = 0;
+                double.TryParse(Hours.ValueText, out db);
+                if (db == 0)
+                {
+                      MessageBox("加班時數錯誤");
+                      return;
+                }
+
+
+                //----------------个人
+                if (EmpNo.GuidValueText.Equals(""))
+                { }
+                else
+                {
+                      DataObject obj = new DataObject();
+                      obj.loadFileSchema(OverTimeList.dataSource.getChildClassString());
+                      obj.setData("GUID", IDProcessor.getID(""));
+                      obj.setData("SheetNo", base.PageUniqueID);
+                      obj.setData("EmpNo", EmpNo.ValueText);
+                      obj.setData("EmpName", EmpNo.ReadOnlyValueText);
+                      obj.setData("WorkDate", WorkDate.ValueText);
+                      obj.setData("STime", STime1.ValueText + ":" + STime3.ValueText);
+                      obj.setData("ETime", ETime1.ValueText + ":" + ETime3.ValueText);
+                      obj.setData("Hours", Hours.ValueText);
+                      obj.setData("Reason", Reason.ValueText);
+                      obj.setData("Note", Note.ValueText);
+                      OverTimeList.dataSource.add(obj);
+                      OverTimeList.dataSource.sort(new string[,] { { "WorkDate", DataObjectConstants.ASC }, { "EmpNo", DataObjectConstants.ASC } });
+
+
+                }
+
+                //-----------------部门
+                string bmxz = SingleDropDownList1.ValueText;
+                if (bmxz != "-1")
+                {
+                      SingleField5.ValueText = "进来了!";
+                      string connectString = (string)Session["connectString"];
+                      string engineType = (string)Session["engineType"];
+
+                      IOFactory factory = new IOFactory();
+                      AbstractEngine engine = factory.getEngine(engineType, connectString);
+
+
+                      string strSql = @"select EmpNo,EmpName from [10.3.11.92\SQL2008].SCQHRDB.DBO.PEREMPLOYEE  
+WHERE PartNo='" + bmxz + "' and (LeaveDate is null or LeaveDate>convert(nvarchar(10),getdate()-30,23))";
+
+                      DataTable dt = engine.getDataSet(strSql, "bmxz").Tables["bmxz"];
+                      if (dt.Rows.Count > 0)
+                      {
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                  DataObject obj = new DataObject();
+                                  obj.loadFileSchema(OverTimeList.dataSource.getChildClassString());
+                                  obj.setData("GUID", IDProcessor.getID(""));
+                                  obj.setData("SheetNo", base.PageUniqueID);
+                                  obj.setData("EmpNo", dt.Rows[i][0].ToString());
+                                  obj.setData("EmpName", dt.Rows[i][1].ToString());
+                                  obj.setData("WorkDate", WorkDate.ValueText);
+                                  obj.setData("STime", STime1.ValueText + ":" + STime3.ValueText);
+                                  obj.setData("ETime", ETime1.ValueText + ":" + ETime3.ValueText);
+                                  obj.setData("Hours", Hours.ValueText);
+                                  obj.setData("Reason", Reason.ValueText);
+                                  obj.setData("Note", Note.ValueText);
+                                  OverTimeList.dataSource.add(obj);
+                            }                                  OverTimeList.dataSource.sort(new string[,] { { "WorkDate", DataObjectConstants.ASC }, { "EmpNo", DataObjectConstants.ASC } });
+                      }
+                      engine.close();
+                }
+
+
+                //-----------------线别
+                string xbxz = SingleDropDownList2.ValueText;
+                if (xbxz != "-1")
+                {
+                      string connectString = (string)Session["connectString"];
+                      string engineType = (string)Session["engineType"];
+
+                      IOFactory factory = new IOFactory();
+                      AbstractEngine engine = factory.getEngine(engineType, connectString);
+
+
+                      string strSql = @"select EmpNo,EmpName from [10.3.11.92\SQL2008].SCQHRDB.DBO.PEREMPLOYEE WHERE PerField6='" + xbxz + "'";
+
+                      DataTable dt = engine.getDataSet(strSql, "bmxz").Tables["bmxz"];
+                      if (dt.Rows.Count > 0)
+                      {
+                            for (int i = 0; i < dt.Rows.Count; i++)
+                            {
+                                  DataObject obj = new DataObject();
+                                  obj.loadFileSchema(OverTimeList.dataSource.getChildClassString());
+                                  obj.setData("GUID", IDProcessor.getID(""));
+                                  obj.setData("SheetNo", base.PageUniqueID);
+                                  obj.setData("EmpNo", dt.Rows[i][0].ToString());
+                                  obj.setData("EmpName", dt.Rows[i][1].ToString());
+                                  obj.setData("WorkDate", WorkDate.ValueText);
+                                  obj.setData("STime", STime1.ValueText + ":" + STime3.ValueText);
+                                  obj.setData("ETime", ETime1.ValueText + ":" + ETime3.ValueText);
+                                  obj.setData("Hours", Hours.ValueText);
+                                  obj.setData("Reason", Reason.ValueText);
+                                  obj.setData("Note", Note.ValueText);
+                                  OverTimeList.dataSource.add(obj);
+                            }
+                            OverTimeList.dataSource.sort(new string[,] { { "WorkDate", DataObjectConstants.ASC }, { "EmpNo", DataObjectConstants.ASC } });
+                      }
+                      engine.close();
+                }
+
+
+          }
+          catch (Exception ES)
+          {
+               // SingleField1.ValueText = ES.Message;
+          }
+          finally { OverTimeList.updateTable(); }
+
+         
+    }
+
+
+
+     
+    protected void OverTimeList_setClickData(string clickList)
+    {
+          try
+          {
+
+                if (System.Text.RegularExpressions.Regex.Matches(clickList, "Y", System.Text.RegularExpressions.RegexOptions.IgnoreCase).Count < 2)
+                {
+                      SingleField9.ValueText = "";
+                      DataObject[] objs = OverTimeList.dataSource.getAllDataObjects();
+                      for (int i = 0; i < objs.Length; i++)
+                      {
+                            if (clickList.Substring(i, 1) == "Y")
+                            {
+                                  SingleField1.ValueText = objs[i].getData("EmpNo").ToString();
+                                  SingleField2.ValueText = objs[i].getData("EmpName").ToString();
+                                  SingleField3.ValueText = objs[i].getData("WorkDate").ToString();
+                                  SingleField4.ValueText = objs[i].getData("STime").ToString();
+                                  SingleField5.ValueText = objs[i].getData("ETime").ToString();
+                                  SingleField6.ValueText = objs[i].getData("Hours").ToString();
+                                  SingleField7.ValueText = objs[i].getData("Reason").ToString();
+                                  SingleField8.ValueText = objs[i].getData("Note").ToString();
+
+                            }
+                      }
+
+                      SingleField9.ValueText = clickList;
+                }
+                else
+                {
+                      MessageBox("只能選擇一筆數據進行修改!");
+                      OverTimeList.updateTable();
+                      SingleField2.ValueText = "";
+                      SingleField3.ValueText = "";
+                      SingleField4.ValueText = "";
+                      SingleField5.ValueText = "";
+                      SingleField6.ValueText = "";
+                      SingleField7.ValueText = "";
+                      SingleField8.ValueText = "";
+                      SingleField9.ValueText = "";
+                      SingleField1.ValueText = "";
+                }
+          }
+          catch (Exception sa) { }
+    }
+
+
+
+      protected void STime1_SelectChanged(string value)
+      {
+            try
+            {
+                  string s1 = STime1.ValueText;
+                  string s3 = STime3.ValueText;
+                  string e1 = ETime1.ValueText;
+                  string E3 = ETime3.ValueText;
+
+                  if (Convert.ToInt32(e1) >= Convert.ToInt32(s1))
+                  {
+                        if (Convert.ToInt32(E3) >= Convert.ToInt32(s3))
+                        {
+                              DateTime dt1 = Convert.ToDateTime(s1 + ":" + s3);
+                              DateTime dt2 = Convert.ToDateTime(e1 + ":" + E3);
+                              TimeSpan st = (dt2 - dt1);
+                              Hours.ValueText = st.Hours.ToString() + "." + Convert.ToInt32(Convert.ToDouble(st.Minutes) / (Double)60 * 100).ToString();
+
+                        }
+                  }
+            }
+            catch (Exception w) { Hours.ValueText = ""; }
+      }
+
+
+
+      protected void GlassButton1_Click(object sender, EventArgs e)
+      {
+            try
+            {
+                  string clickList = SingleField9.ValueText;
+                  DataObject[] objs = OverTimeList.dataSource.getAllDataObjects();
+                  for (int i = 0; i < objs.Length; i++)
+                  {
+                        if (clickList.Substring(i, 1) == "Y")
+                        {
+                              OverTimeList.dataSource.delete(objs[i]);
+                        }
+                  }
+
+                  DataObject obj = new DataObject();
+                  obj.loadFileSchema(OverTimeList.dataSource.getChildClassString());
+
+                  obj.setData("GUID", IDProcessor.getID(""));
+                  obj.setData("SheetNo", base.PageUniqueID);
+                  obj.setData("EmpNo", SingleField1.ValueText);
+                  obj.setData("EmpName", SingleField2.ValueText);
+                  obj.setData("WorkDate", SingleField3.ValueText);
+                  obj.setData("STime", SingleField4.ValueText);
+                  obj.setData("ETime", SingleField5.ValueText);
+                  obj.setData("Hours", SingleField6.ValueText);
+                  obj.setData("Reason", SingleField7.ValueText);
+                  obj.setData("Note", SingleField8.ValueText);
+                  OverTimeList.dataSource.add(obj);
+                  OverTimeList.dataSource.sort(new string[,] { { "WorkDate", DataObjectConstants.ASC }, { "EmpNo", DataObjectConstants.ASC } });
+                  OverTimeList.updateTable();
+
+                  OverTimeList.dataSource.compact();
+                  OverTimeList.updateTable();
+
+                  SingleField2.ValueText = "";
+                  SingleField3.ValueText = "";
+                  SingleField4.ValueText = "";
+                  SingleField5.ValueText = "";
+                  SingleField6.ValueText = "";
+                  SingleField7.ValueText = "";
+                  SingleField8.ValueText = "";
+                  SingleField9.ValueText = "";
+                  SingleField1.ValueText = "";
+            }
+            catch (Exception a) { }
+      }
+
+
+      protected void GlassButton2_Click(object sender, EventArgs e)
+      {
+            try
+            {
+                  string clickList = SingleField9.ValueText;
+                  DataObject[] objs = OverTimeList.dataSource.getAllDataObjects();
+                  for (int i = 0; i < objs.Length; i++)
+                  {
+                        if (clickList.Substring(i, 1) == "Y")
+                        {
+                              OverTimeList.dataSource.delete(objs[i]);
+                        }
+                  }
+                  OverTimeList.dataSource.compact();
+                  OverTimeList.updateTable();
+                  SingleField9.ValueText = "";
+            }
+            catch (Exception sa) { }
+      }
+}

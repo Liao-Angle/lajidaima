@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EG0103.EG0103A" tableName="EG0103A">
+  <queryStr>
+    SELECT GUID,SheetNo,Subject,Uname,CName,Mobile,Department,Departure,Destination,Peers,DepartureTime,Reason,Remark,Modus,Genre,Hitch,UserName,UserMobile,Plate,Goout,Goback,StartKm,EndKm,Usermessage,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EG0103A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+  <field dataField="Uname" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="CName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="Mobile" typeField="STRING" lengthField="20" defaultValue="" displayName="行動電話" showName=""/>
+    <field dataField="Department" typeField="STRING" lengthField="20" defaultValue="" displayName="用車部門" showName=""/>
+    <field dataField="Departure" typeField="STRING" lengthField="200" defaultValue="" displayName="出發地點" showName=""/>
+    <field dataField="Destination" typeField="STRING" lengthField="200" defaultValue="" displayName="目的地" showName=""/>
+    <field dataField="Peers" typeField="STRING" lengthField="10" defaultValue="" displayName="同行人數" showName=""/>
+    <field dataField="DepartureTime" typeField="STRING" lengthField="30" defaultValue="" displayName="去程時間" showName=""/>
+    <field dataField="Reason" typeField="STRING" lengthField="500" defaultValue="" displayName="申請原因" showName=""/>
+    <field dataField="Remark" typeField="STRING" lengthField="500" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="Modus" typeField="STRING" lengthField="20" defaultValue="" displayName="派車方式" showName=""/>
+    <field dataField="Genre" typeField="STRING" lengthField="20" defaultValue="" displayName="用車類型" showName=""/>
+    <field dataField="Hitch" typeField="STRING" lengthField="5" defaultValue="" displayName="拼車" showName="Y：可以拼車;N：不可以拼車"/>
+    <field dataField="UserName" typeField="STRING" lengthField="20" defaultValue="" displayName="駕駛員姓名" showName=""/>
+    <field dataField="UserMobile" typeField="STRING" lengthField="20" defaultValue="" displayName="駕駛員行動電話" showName=""/>
+    <field dataField="Goout" typeField="STRING" lengthField="20" defaultValue="" displayName="出廠保安確認" showName=""/>
+    <field dataField="Goback" typeField="STRING" lengthField="20" defaultValue="" displayName="回廠保安確認" showName=""/>
+    <field dataField="Plate" typeField="STRING" lengthField="50" defaultValue="" displayName="車牌號碼" showName=""/>
+    <field dataField="StartKm" typeField="STRING" lengthField="10" defaultValue="" displayName="開始里程" showName=""/>
+    <field dataField="EndKm" typeField="STRING" lengthField="10" defaultValue="" displayName="結束里程" showName=""/>
+    <field dataField="Usermessage" typeField="STRING" lengthField="1" defaultValue="" displayName="短信通知" showName="N：未發送;R：待發送;A：已發送"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="DepartureTime" />
+    <field dataField="Remark" />
+    <field dataField="UserName" />
+    <field dataField="UserMobile" />
+    <field dataField="Goout" />
+    <field dataField="Goback" />
+    <field dataField="Plate" />
+    <field dataField="StartKm" />
+    <field dataField="EndKm" /> 
+<field dataField="Uname" /> 
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,616 @@
+2014/10/30 下午 01:30:16 // str_date1: 2014/10/14
+2014/10/30 下午 01:30:16 // str_lastmonth: 2014/08/30
+2014/10/30 下午 01:30:16 connect db ERP Database 
+2014/10/30 下午 01:30:16 connect db  EF Database 
+2014/10/30 下午 01:30:16 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/10/30 下午 01:30:16 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/08/25' where id='00003'
+2014/10/30 下午 01:30:17 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/10/27' where id='00046'
+2014/10/30 下午 01:30:17 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/09/18' where id='00057'
+2014/10/30 下午 01:30:17 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/08/08' where id='00019'
+2014/10/30 下午 01:30:18 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/10/27' where id='00047'
+2014/10/30 下午 01:30:18 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/09/11' where id='00093'
+2014/10/30 下午 01:30:18 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/10/17' where id='00095'
+2014/10/30 下午 01:30:18 End........ 
+
+
+2014/10/30 下午 06:00:01 // str_date1: 2014/10/14
+2014/10/30 下午 06:00:01 // str_lastmonth: 2014/08/30
+2014/10/30 下午 06:00:01 connect db ERP Database 
+2014/10/30 下午 06:00:01 connect db  EF Database 
+2014/10/30 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/10/30 下午 06:00:02 End........ 
+
+
+2014/10/31 下午 06:00:03 // str_date1: 2014/10/15
+2014/10/31 下午 06:00:03 // str_lastmonth: 2014/08/31
+2014/10/31 下午 06:00:03 connect db ERP Database 
+2014/10/31 下午 06:00:03 connect db  EF Database 
+2014/10/31 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/10/31 下午 06:00:03 End........ 
+
+
+2014/11/3 下午 06:00:09 // str_date1: 2014/11/18
+2014/11/3 下午 06:00:09 // str_lastmonth: 2014/09/03
+2014/11/3 下午 06:00:10 connect db ERP Database 
+2014/11/3 下午 06:00:10 connect db  EF Database 
+2014/11/3 下午 06:00:10 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/3 下午 06:00:10 End........ 
+
+
+2014/11/4 下午 06:00:08 // str_date1: 2014/11/19
+2014/11/4 下午 06:00:08 // str_lastmonth: 2014/09/04
+2014/11/4 下午 06:00:08 connect db ERP Database 
+2014/11/4 下午 06:00:08 connect db  EF Database 
+2014/11/4 下午 06:00:08 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/4 下午 06:00:09 End........ 
+
+
+2014/11/5 下午 06:00:01 // str_date1: 2014/11/20
+2014/11/5 下午 06:00:01 // str_lastmonth: 2014/09/05
+2014/11/5 下午 06:00:01 connect db ERP Database 
+2014/11/5 下午 06:00:01 connect db  EF Database 
+2014/11/5 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/5 下午 06:00:01 End........ 
+
+
+2014/11/6 下午 06:00:01 // str_date1: 2014/11/21
+2014/11/6 下午 06:00:01 // str_lastmonth: 2014/09/06
+2014/11/6 下午 06:00:01 connect db ERP Database 
+2014/11/6 下午 06:00:01 connect db  EF Database 
+2014/11/6 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/6 下午 06:00:01 End........ 
+
+
+2014/11/7 下午 06:00:01 // str_date1: 2014/11/22
+2014/11/7 下午 06:00:01 // str_lastmonth: 2014/09/07
+2014/11/7 下午 06:00:01 connect db ERP Database 
+2014/11/7 下午 06:00:01 connect db  EF Database 
+2014/11/7 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/7 下午 06:00:01 End........ 
+
+
+2014/11/10 下午 06:00:08 // str_date1: 2014/11/25
+2014/11/10 下午 06:00:08 // str_lastmonth: 2014/09/10
+2014/11/10 下午 06:00:08 connect db ERP Database 
+2014/11/10 下午 06:00:08 connect db  EF Database 
+2014/11/10 下午 06:00:08 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/10 下午 06:00:08 End........ 
+
+
+2014/11/11 下午 06:00:01 // str_date1: 2014/11/26
+2014/11/11 下午 06:00:01 // str_lastmonth: 2014/09/11
+2014/11/11 下午 06:00:01 connect db ERP Database 
+2014/11/11 下午 06:00:01 connect db  EF Database 
+2014/11/11 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/11 下午 06:00:01 End........ 
+
+
+2014/11/12 下午 06:00:01 // str_date1: 2014/11/27
+2014/11/12 下午 06:00:01 // str_lastmonth: 2014/09/12
+2014/11/12 下午 06:00:01 connect db ERP Database 
+2014/11/12 下午 06:00:01 connect db  EF Database 
+2014/11/12 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/12 下午 06:00:01 End........ 
+
+
+2014/11/13 下午 06:00:01 // str_date1: 2014/11/28
+2014/11/13 下午 06:00:01 // str_lastmonth: 2014/09/13
+2014/11/13 下午 06:00:01 connect db ERP Database 
+2014/11/13 下午 06:00:01 connect db  EF Database 
+2014/11/13 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/13 下午 06:00:01 End........ 
+
+
+2014/11/14 下午 06:00:07 // str_date1: 2014/11/29
+2014/11/14 下午 06:00:07 // str_lastmonth: 2014/09/14
+2014/11/14 下午 06:00:07 connect db ERP Database 
+2014/11/14 下午 06:00:07 connect db  EF Database 
+2014/11/14 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/14 下午 06:00:08 End........ 
+
+
+2014/11/17 下午 06:00:11 // str_date1: 2014/11/02
+2014/11/17 下午 06:00:11 // str_lastmonth: 2014/09/17
+2014/11/17 下午 06:00:11 connect db ERP Database 
+2014/11/17 下午 06:00:11 connect db  EF Database 
+2014/11/17 下午 06:00:11 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/17 下午 06:00:11 End........ 
+
+
+2014/11/18 下午 06:00:01 // str_date1: 2014/11/03
+2014/11/18 下午 06:00:01 // str_lastmonth: 2014/09/18
+2014/11/18 下午 06:00:01 connect db ERP Database 
+2014/11/18 下午 06:00:01 connect db  EF Database 
+2014/11/18 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/18 下午 06:00:01 End........ 
+
+
+2014/11/19 下午 06:00:08 // str_date1: 2014/11/04
+2014/11/19 下午 06:00:08 // str_lastmonth: 2014/09/19
+2014/11/19 下午 06:00:08 connect db ERP Database 
+2014/11/19 下午 06:00:08 connect db  EF Database 
+2014/11/19 下午 06:00:08 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/19 下午 06:00:08 End........ 
+
+
+2014/11/20 下午 06:00:01 // str_date1: 2014/11/05
+2014/11/20 下午 06:00:01 // str_lastmonth: 2014/09/20
+2014/11/20 下午 06:00:01 connect db ERP Database 
+2014/11/20 下午 06:00:01 connect db  EF Database 
+2014/11/20 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/20 下午 06:00:01 End........ 
+
+
+2014/11/21 下午 06:00:01 // str_date1: 2014/11/06
+2014/11/21 下午 06:00:01 // str_lastmonth: 2014/09/21
+2014/11/21 下午 06:00:01 connect db ERP Database 
+2014/11/21 下午 06:00:01 connect db  EF Database 
+2014/11/21 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/21 下午 06:00:01 End........ 
+
+
+2014/11/24 下午 06:00:09 // str_date1: 2014/11/09
+2014/11/24 下午 06:00:09 // str_lastmonth: 2014/09/24
+2014/11/24 下午 06:00:09 connect db ERP Database 
+2014/11/24 下午 06:00:09 connect db  EF Database 
+2014/11/24 下午 06:00:09 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/24 下午 06:00:09 End........ 
+
+
+2014/11/25 下午 06:00:08 // str_date1: 2014/11/10
+2014/11/25 下午 06:00:08 // str_lastmonth: 2014/09/25
+2014/11/25 下午 06:00:08 connect db ERP Database 
+2014/11/25 下午 06:00:08 connect db  EF Database 
+2014/11/25 下午 06:00:08 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/25 下午 06:00:08 End........ 
+
+
+2014/11/26 下午 06:00:06 // str_date1: 2014/11/11
+2014/11/26 下午 06:00:06 // str_lastmonth: 2014/09/26
+2014/11/26 下午 06:00:06 connect db ERP Database 
+2014/11/26 下午 06:00:06 connect db  EF Database 
+2014/11/26 下午 06:00:06 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/26 下午 06:00:07 End........ 
+
+
+2014/11/27 下午 06:00:03 // str_date1: 2014/11/12
+2014/11/27 下午 06:00:03 // str_lastmonth: 2014/09/27
+2014/11/27 下午 06:00:03 connect db ERP Database 
+2014/11/27 下午 06:00:03 connect db  EF Database 
+2014/11/27 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/27 下午 06:00:03 End........ 
+
+
+2014/11/28 下午 06:00:01 // str_date1: 2014/11/13
+2014/11/28 下午 06:00:01 // str_lastmonth: 2014/09/28
+2014/11/28 下午 06:00:01 connect db ERP Database 
+2014/11/28 下午 06:00:01 connect db  EF Database 
+2014/11/28 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/11/28 下午 06:00:01 End........ 
+
+
+2014/12/1 下午 06:00:07 // str_date1: 2014/12/16
+2014/12/1 下午 06:00:07 // str_lastmonth: 2014/10/01
+2014/12/1 下午 06:00:07 connect db ERP Database 
+2014/12/1 下午 06:00:07 connect db  EF Database 
+2014/12/1 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/1 下午 06:00:08 End........ 
+
+
+2014/12/2 下午 06:00:01 // str_date1: 2014/12/17
+2014/12/2 下午 06:00:01 // str_lastmonth: 2014/10/02
+2014/12/2 下午 06:00:01 connect db ERP Database 
+2014/12/2 下午 06:00:01 connect db  EF Database 
+2014/12/2 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/2 下午 06:00:01 End........ 
+
+
+2014/12/3 下午 06:00:09 // str_date1: 2014/12/18
+2014/12/3 下午 06:00:09 // str_lastmonth: 2014/10/03
+2014/12/3 下午 06:00:09 connect db ERP Database 
+2014/12/3 下午 06:00:09 connect db  EF Database 
+2014/12/3 下午 06:00:09 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/3 下午 06:00:09 End........ 
+
+
+2014/12/4 下午 06:00:14 // str_date1: 2014/12/19
+2014/12/4 下午 06:00:14 // str_lastmonth: 2014/10/04
+2014/12/4 下午 06:00:14 connect db ERP Database 
+2014/12/4 下午 06:00:14 connect db  EF Database 
+2014/12/4 下午 06:00:14 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/4 下午 06:00:14 End........ 
+
+
+2014/12/5 下午 06:00:08 // str_date1: 2014/12/20
+2014/12/5 下午 06:00:08 // str_lastmonth: 2014/10/05
+2014/12/5 下午 06:00:08 connect db ERP Database 
+2014/12/5 下午 06:00:08 connect db  EF Database 
+2014/12/5 下午 06:00:08 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/5 下午 06:00:09 End........ 
+
+
+2014/12/8 下午 06:00:06 // str_date1: 2014/12/23
+2014/12/8 下午 06:00:06 // str_lastmonth: 2014/10/08
+2014/12/8 下午 06:00:06 connect db ERP Database 
+2014/12/8 下午 06:00:06 connect db  EF Database 
+2014/12/8 下午 06:00:06 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/8 下午 06:00:07 End........ 
+
+
+2014/12/9 下午 06:00:07 // str_date1: 2014/12/24
+2014/12/9 下午 06:00:07 // str_lastmonth: 2014/10/09
+2014/12/9 下午 06:00:07 connect db ERP Database 
+2014/12/9 下午 06:00:07 connect db  EF Database 
+2014/12/9 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/9 下午 06:00:07 End........ 
+
+
+2014/12/10 下午 06:00:07 // str_date1: 2014/12/25
+2014/12/10 下午 06:00:07 // str_lastmonth: 2014/10/10
+2014/12/10 下午 06:00:07 connect db ERP Database 
+2014/12/10 下午 06:00:07 connect db  EF Database 
+2014/12/10 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/10 下午 06:00:07 End........ 
+
+
+2014/12/11 下午 06:00:02 // str_date1: 2014/12/26
+2014/12/11 下午 06:00:02 // str_lastmonth: 2014/10/11
+2014/12/11 下午 06:00:02 connect db ERP Database 
+2014/12/11 下午 06:00:02 connect db  EF Database 
+2014/12/11 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/11 下午 06:00:02 End........ 
+
+
+2014/12/12 下午 06:00:03 // str_date1: 2014/12/27
+2014/12/12 下午 06:00:03 // str_lastmonth: 2014/10/12
+2014/12/12 下午 06:00:03 connect db ERP Database 
+2014/12/12 下午 06:00:03 connect db  EF Database 
+2014/12/12 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/12 下午 06:00:03 End........ 
+
+
+2014/12/15 下午 06:00:07 // str_date1: 2014/12/30
+2014/12/15 下午 06:00:07 // str_lastmonth: 2014/10/15
+2014/12/15 下午 06:00:07 connect db ERP Database 
+2014/12/15 下午 06:00:07 connect db  EF Database 
+2014/12/15 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/15 下午 06:00:07 End........ 
+
+
+2014/12/16 下午 06:00:07 // str_date1: 2014/12/31
+2014/12/16 下午 06:00:07 // str_lastmonth: 2014/10/16
+2014/12/16 下午 06:00:07 connect db ERP Database 
+2014/12/16 下午 06:00:07 connect db  EF Database 
+2014/12/16 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/16 下午 06:00:08 End........ 
+
+
+2014/12/17 下午 06:00:02 // str_date1: 2014/12/01
+2014/12/17 下午 06:00:02 // str_lastmonth: 2014/10/17
+2014/12/17 下午 06:00:02 connect db ERP Database 
+2014/12/17 下午 06:00:02 connect db  EF Database 
+2014/12/17 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/17 下午 06:00:02 End........ 
+
+
+2014/12/18 下午 06:00:01 // str_date1: 2014/12/02
+2014/12/18 下午 06:00:01 // str_lastmonth: 2014/10/18
+2014/12/18 下午 06:00:01 connect db ERP Database 
+2014/12/18 下午 06:00:01 connect db  EF Database 
+2014/12/18 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/18 下午 06:00:01 End........ 
+
+
+2014/12/19 下午 06:00:02 // str_date1: 2014/12/03
+2014/12/19 下午 06:00:02 // str_lastmonth: 2014/10/19
+2014/12/19 下午 06:00:02 connect db ERP Database 
+2014/12/19 下午 06:00:02 connect db  EF Database 
+2014/12/19 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/19 下午 06:00:02 End........ 
+
+
+2014/12/22 下午 06:00:02 // str_date1: 2014/12/06
+2014/12/22 下午 06:00:02 // str_lastmonth: 2014/10/22
+2014/12/22 下午 06:00:03 connect db ERP Database 
+2014/12/22 下午 06:00:03 connect db  EF Database 
+2014/12/22 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/22 下午 06:00:03 End........ 
+
+
+2014/12/23 下午 06:00:01 // str_date1: 2014/12/07
+2014/12/23 下午 06:00:01 // str_lastmonth: 2014/10/23
+2014/12/23 下午 06:00:01 connect db ERP Database 
+2014/12/23 下午 06:00:01 connect db  EF Database 
+2014/12/23 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/23 下午 06:00:01 End........ 
+
+
+2014/12/24 下午 06:00:06 // str_date1: 2014/12/08
+2014/12/24 下午 06:00:06 // str_lastmonth: 2014/10/24
+2014/12/24 下午 06:00:06 connect db ERP Database 
+2014/12/24 下午 06:00:06 connect db  EF Database 
+2014/12/24 下午 06:00:06 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/24 下午 06:00:07 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/12/24' where id='00100'
+2014/12/24 下午 06:00:08 End........ 
+
+
+2014/12/25 下午 06:00:06 // str_date1: 2014/12/09
+2014/12/25 下午 06:00:06 // str_lastmonth: 2014/10/25
+2014/12/25 下午 06:00:06 connect db ERP Database 
+2014/12/25 下午 06:00:06 connect db  EF Database 
+2014/12/25 下午 06:00:06 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/25 下午 06:00:07 End........ 
+
+
+2014/12/26 下午 06:00:07 // str_date1: 2014/12/10
+2014/12/26 下午 06:00:07 // str_lastmonth: 2014/10/26
+2014/12/26 下午 06:00:07 connect db ERP Database 
+2014/12/26 下午 06:00:07 connect db  EF Database 
+2014/12/26 下午 06:00:07 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/26 下午 06:00:08 End........ 
+
+
+2014/12/29 下午 06:00:02 // str_date1: 2014/12/13
+2014/12/29 下午 06:00:02 // str_lastmonth: 2014/10/29
+2014/12/29 下午 06:00:02 connect db ERP Database 
+2014/12/29 下午 06:00:02 connect db  EF Database 
+2014/12/29 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/29 下午 06:00:04 End........ 
+
+
+2014/12/30 下午 06:00:03 // str_date1: 2014/12/14
+2014/12/30 下午 06:00:03 // str_lastmonth: 2014/10/30
+2014/12/30 下午 06:00:03 connect db ERP Database 
+2014/12/30 下午 06:00:03 connect db  EF Database 
+2014/12/30 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/30 下午 06:00:04 End........ 
+
+
+2014/12/31 下午 06:00:02 // str_date1: 2014/12/15
+2014/12/31 下午 06:00:02 // str_lastmonth: 2014/10/31
+2014/12/31 下午 06:00:02 connect db ERP Database 
+2014/12/31 下午 06:00:02 connect db  EF Database 
+2014/12/31 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2014/12/31 下午 06:00:02 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/12/31' where id='00066'
+2014/12/31 下午 06:00:03 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/12/31' where id='00067'
+2014/12/31 下午 06:00:03 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/12/31' where id='00068'
+2014/12/31 下午 06:00:04 // SQL Statement:update NaNa.dbo.Users set leaveDate='2014/12/31' where id='00096'
+2014/12/31 下午 06:00:04 End........ 
+
+
+2015/1/1 下午 06:00:00 // str_date1: 2015/01/16
+2015/1/1 下午 06:00:00 // str_lastmonth: 2014/11/01
+2015/1/1 下午 06:00:00 connect db ERP Database 
+2015/1/1 下午 06:00:00 connect db  EF Database 
+2015/1/1 下午 06:00:00 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/1 下午 06:00:00 End........ 
+
+
+2015/1/2 下午 06:00:00 // str_date1: 2015/01/17
+2015/1/2 下午 06:00:00 // str_lastmonth: 2014/11/02
+2015/1/2 下午 06:00:00 connect db ERP Database 
+2015/1/2 下午 06:00:00 connect db  EF Database 
+2015/1/2 下午 06:00:00 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/2 下午 06:00:00 End........ 
+
+
+2015/1/5 下午 06:00:02 // str_date1: 2015/01/20
+2015/1/5 下午 06:00:02 // str_lastmonth: 2014/11/05
+2015/1/5 下午 06:00:02 connect db ERP Database 
+2015/1/5 下午 06:00:02 connect db  EF Database 
+2015/1/5 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/5 下午 06:00:03 End........ 
+
+
+2015/1/6 下午 06:00:03 // str_date1: 2015/01/21
+2015/1/6 下午 06:00:03 // str_lastmonth: 2014/11/06
+2015/1/6 下午 06:00:03 connect db ERP Database 
+2015/1/6 下午 06:00:03 connect db  EF Database 
+2015/1/6 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/6 下午 06:00:04 End........ 
+
+
+2015/1/7 下午 06:00:02 // str_date1: 2015/01/22
+2015/1/7 下午 06:00:02 // str_lastmonth: 2014/11/07
+2015/1/7 下午 06:00:02 connect db ERP Database 
+2015/1/7 下午 06:00:02 connect db  EF Database 
+2015/1/7 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/7 下午 06:00:03 End........ 
+
+
+2015/1/8 下午 06:00:01 // str_date1: 2015/01/23
+2015/1/8 下午 06:00:01 // str_lastmonth: 2014/11/08
+2015/1/8 下午 06:00:01 connect db ERP Database 
+2015/1/8 下午 06:00:01 connect db  EF Database 
+2015/1/8 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/8 下午 06:00:01 End........ 
+
+
+2015/1/9 下午 06:00:00 // str_date1: 2015/01/24
+2015/1/9 下午 06:00:00 // str_lastmonth: 2014/11/09
+2015/1/9 下午 06:00:00 connect db ERP Database 
+2015/1/9 下午 06:00:00 connect db  EF Database 
+2015/1/9 下午 06:00:00 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/9 下午 06:00:00 End........ 
+
+
+2015/1/12 下午 06:00:01 // str_date1: 2015/01/27
+2015/1/12 下午 06:00:01 // str_lastmonth: 2014/11/12
+2015/1/12 下午 06:00:01 connect db ERP Database 
+2015/1/12 下午 06:00:01 connect db  EF Database 
+2015/1/12 下午 06:00:01 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/12 下午 06:00:01 End........ 
+
+
+2015/1/13 下午 06:00:00 // str_date1: 2015/01/28
+2015/1/13 下午 06:00:00 // str_lastmonth: 2014/11/13
+2015/1/13 下午 06:00:00 connect db ERP Database 
+2015/1/13 下午 06:00:00 connect db  EF Database 
+2015/1/13 下午 06:00:00 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/13 下午 06:00:00 End........ 
+
+
+2015/1/14 下午 06:00:02 // str_date1: 2015/01/29
+2015/1/14 下午 06:00:02 // str_lastmonth: 2014/11/14
+2015/1/14 下午 06:00:02 connect db ERP Database 
+2015/1/14 下午 06:00:02 connect db  EF Database 
+2015/1/14 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/14 下午 06:00:03 End........ 
+
+
+2015/1/15 下午 06:00:02 // str_date1: 2015/01/30
+2015/1/15 下午 06:00:02 // str_lastmonth: 2014/11/15
+2015/1/15 下午 06:00:02 connect db ERP Database 
+2015/1/15 下午 06:00:02 connect db  EF Database 
+2015/1/15 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/15 下午 06:00:03 End........ 
+
+
+2015/1/16 下午 06:00:02 // str_date1: 2015/01/31
+2015/1/16 下午 06:00:02 // str_lastmonth: 2014/11/16
+2015/1/16 下午 06:00:02 connect db ERP Database 
+2015/1/16 下午 06:00:02 connect db  EF Database 
+2015/1/16 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/16 下午 06:00:03 End........ 
+
+
+2015/1/19 下午 06:00:02 // str_date1: 2015/01/03
+2015/1/19 下午 06:00:02 // str_lastmonth: 2014/11/19
+2015/1/19 下午 06:00:02 connect db ERP Database 
+2015/1/19 下午 06:00:02 connect db  EF Database 
+2015/1/19 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/19 下午 06:00:03 End........ 
+
+
+2015/1/20 下午 06:00:03 // str_date1: 2015/01/04
+2015/1/20 下午 06:00:03 // str_lastmonth: 2014/11/20
+2015/1/20 下午 06:00:03 connect db ERP Database 
+2015/1/20 下午 06:00:03 connect db  EF Database 
+2015/1/20 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/20 下午 06:00:04 End........ 
+
+
+2015/1/21 下午 06:00:00 // str_date1: 2015/01/05
+2015/1/21 下午 06:00:00 // str_lastmonth: 2014/11/21
+2015/1/21 下午 06:00:00 connect db ERP Database 
+2015/1/21 下午 06:00:00 connect db  EF Database 
+2015/1/21 下午 06:00:00 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('4960','4251','4632','4747') 
+2015/1/21 下午 06:00:00 End........ 
+
+
+2015/1/22 下午 06:00:00 // str_date1: 2015/01/06
+2015/1/22 下午 06:00:00 // str_lastmonth: 2014/11/22
+2015/1/22 下午 06:00:00 connect db ERP Database 
+2015/1/22 下午 06:00:00 connect db  EF Database 
+2015/1/22 下午 06:00:00 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/22 下午 06:00:00 End........ 
+
+
+2015/1/23 下午 06:00:02 // str_date1: 2015/01/07
+2015/1/23 下午 06:00:02 // str_lastmonth: 2014/11/23
+2015/1/23 下午 06:00:02 connect db ERP Database 
+2015/1/23 下午 06:00:02 connect db  EF Database 
+2015/1/23 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/23 下午 06:00:03 End........ 
+
+
+2015/1/26 下午 06:00:02 // str_date1: 2015/01/10
+2015/1/26 下午 06:00:02 // str_lastmonth: 2014/11/26
+2015/1/26 下午 06:00:02 connect db ERP Database 
+2015/1/26 下午 06:00:02 connect db  EF Database 
+2015/1/26 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/26 下午 06:00:03 End........ 
+
+
+2015/1/27 下午 06:00:02 // str_date1: 2015/01/11
+2015/1/27 下午 06:00:02 // str_lastmonth: 2014/11/27
+2015/1/27 下午 06:00:02 connect db ERP Database 
+2015/1/27 下午 06:00:02 connect db  EF Database 
+2015/1/27 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/27 下午 06:00:03 // SQL Statement:update NaNa.dbo.Users set leaveDate='2015/01/27' where id='00037'
+2015/1/27 下午 06:00:03 // SQL Statement:update NaNa.dbo.Users set leaveDate='2015/01/27' where id='00098'
+2015/1/27 下午 06:00:03 End........ 
+
+
+2015/1/28 下午 06:00:02 // str_date1: 2015/01/12
+2015/1/28 下午 06:00:02 // str_lastmonth: 2014/11/28
+2015/1/28 下午 06:00:02 connect db ERP Database 
+2015/1/28 下午 06:00:02 connect db  EF Database 
+2015/1/28 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/28 下午 06:00:03 End........ 
+
+
+2015/1/29 下午 06:00:02 // str_date1: 2015/01/13
+2015/1/29 下午 06:00:02 // str_lastmonth: 2014/11/29
+2015/1/29 下午 06:00:02 connect db ERP Database 
+2015/1/29 下午 06:00:02 connect db  EF Database 
+2015/1/29 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/29 下午 06:00:02 End........ 
+
+
+2015/1/30 下午 06:00:03 // str_date1: 2015/01/14
+2015/1/30 下午 06:00:03 // str_lastmonth: 2014/11/30
+2015/1/30 下午 06:00:03 connect db ERP Database 
+2015/1/30 下午 06:00:03 connect db  EF Database 
+2015/1/30 下午 06:00:03 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/1/30 下午 06:00:03 End........ 
+
+
+2015/2/2 下午 06:00:02 // str_date1: 2015/02/17
+2015/2/2 下午 06:00:02 // str_lastmonth: 2014/12/02
+2015/2/2 下午 06:00:02 connect db ERP Database 
+2015/2/2 下午 06:00:02 connect db  EF Database 
+2015/2/2 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/2 下午 06:00:02 // SQL Statement:update NaNa.dbo.Users set leaveDate='2015/01/27' where id='00098'
+2015/2/2 下午 06:00:02 End........ 
+
+
+2015/2/3 下午 06:00:02 // str_date1: 2015/02/18
+2015/2/3 下午 06:00:02 // str_lastmonth: 2014/12/03
+2015/2/3 下午 06:00:02 connect db ERP Database 
+2015/2/3 下午 06:00:02 connect db  EF Database 
+2015/2/3 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/3 下午 06:00:02 // SQL Statement:update NaNa.dbo.Users set leaveDate='2015/01/27' where id='00098'
+2015/2/3 下午 06:00:03 End........ 
+
+
+2015/2/4 下午 06:00:02 // str_date1: 2015/02/19
+2015/2/4 下午 06:00:02 // str_lastmonth: 2014/12/04
+2015/2/4 下午 06:00:02 connect db ERP Database 
+2015/2/4 下午 06:00:02 connect db  EF Database 
+2015/2/4 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/4 下午 06:00:02 End........ 
+
+
+2015/2/5 下午 06:00:02 // str_date1: 2015/02/20
+2015/2/5 下午 06:00:02 // str_lastmonth: 2014/12/05
+2015/2/5 下午 06:00:02 connect db ERP Database 
+2015/2/5 下午 06:00:02 connect db  EF Database 
+2015/2/5 下午 06:00:02 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/5 下午 06:00:03 End........ 
+
+
+2015/2/6 下午 06:00:04 // str_date1: 2015/02/21
+2015/2/6 下午 06:00:04 // str_lastmonth: 2014/12/06
+2015/2/6 下午 06:00:04 connect db ERP Database 
+2015/2/6 下午 06:00:04 connect db  EF Database 
+2015/2/6 下午 06:00:04 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/6 下午 06:00:04 End........ 
+
+
+2015/2/9 下午 06:00:04 // str_date1: 2015/02/24
+2015/2/9 下午 06:00:04 // str_lastmonth: 2014/12/09
+2015/2/9 下午 06:00:04 connect db ERP Database 
+2015/2/9 下午 06:00:04 connect db  EF Database 
+2015/2/9 下午 06:00:04 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/9 下午 06:00:06 End........ 
+
+
+2015/2/10 下午 06:00:04 // str_date1: 2015/02/25
+2015/2/10 下午 06:00:04 // str_lastmonth: 2014/12/10
+2015/2/10 下午 06:00:04 connect db ERP Database 
+2015/2/10 下午 06:00:04 connect db  EF Database 
+2015/2/10 下午 06:00:04 // SQL Statement:select MV001,MV022,MV002,MV004 from CMSMV where MV022 > (getdate()-180) and MV022<=getdate() and MV001 not in ('00066','00067','00068','00096') 
+2015/2/10 下午 06:00:04 End........ 
+
+

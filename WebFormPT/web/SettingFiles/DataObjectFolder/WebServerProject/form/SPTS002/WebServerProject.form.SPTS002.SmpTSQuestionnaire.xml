@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPTS002.SmpTSQuestionnaire" tableName="SmpTSQuestionnaire">                                                              
+  <queryStr>    
+    SELECT GUID, Subject, SheetNo, CourseFormGUID, StartDate, SchDetailGUID, LecturerGUID, TraineeGUID, Q11, Q12, Q13, Q14
+     , Q15, Q16, Q17, Q21, Q22, Q23, Q31, Q32, Q33, Q41, Q42, Q43, Remark, IS_DISPLAY, IS_LOCK, DATA_STATUS
+	 , D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME FROM SmpTSQuestionnaire
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>    
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>	
+	<field dataField="Subject" typeField="STRING" lengthField="250" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="CourseFormGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="開課記錄單頭GUID" showName=""/>
+	<field dataField="StartDate" typeField="STRING" lengthField="50" defaultValue="" displayName="上課日期 " showName=""/>
+	<field dataField="SchDetailGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="課程主檔單頭GUID" showName=""/>	
+	<field dataField="LecturerGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="講師代號" showName=""/>	
+	<field dataField="TraineeGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="學員GUID" showName=""/>	
+	<field dataField="Q11" typeField="STRING" lengthField="50" defaultValue="" displayName="教師對授課時間掌握情況" showName=""/>
+	<field dataField="Q12" typeField="STRING" lengthField="50" defaultValue="" displayName="教師能掌握我課程的學習方向" showName=""/>	
+	<field dataField="Q13" typeField="STRING" lengthField="50" defaultValue="" displayName="教師專業知識的能力" showName=""/>
+	<field dataField="Q14" typeField="STRING" lengthField="50" defaultValue="" displayName="教師的授課技巧與表達能力" showName=""/>
+	<field dataField="Q15" typeField="STRING" lengthField="10" defaultValue="" displayName="教師授課時的教學態度" showName=""/>
+	<field dataField="Q16" typeField="STRING" lengthField="10" defaultValue="" displayName="教師對學員課程上問題之解決能力" showName=""/>
+	<field dataField="Q17" typeField="STRING" lengthField="10" defaultValue="" displayName="教師對授課內容組織條理" showName=""/>
+	<field dataField="Q21" typeField="STRING" lengthField="10" defaultValue="" displayName="課程內容明確易懂" showName=""/>	
+	<field dataField="Q22" typeField="STRING" lengthField="10" defaultValue="" displayName="課程內容豐富具有多樣性" showName=""/>
+	<field dataField="Q23" typeField="STRING" lengthField="50" defaultValue="" displayName="課程內容具有實用性" showName=""/>  
+	<field dataField="Q31" typeField="STRING" lengthField="50" defaultValue="" displayName="我認為上完此課程對我有實質的幫助" showName=""/>
+	<field dataField="Q32" typeField="STRING" lengthField="50" defaultValue="" displayName="本次訓練有助於提昇自己的工作能力" showName=""/>
+	<field dataField="Q33" typeField="STRING" lengthField="50" defaultValue="" displayName="對工作環境中所運用所學的新知識更具信心" showName=""/>
+	<field dataField="Q41" typeField="STRING" lengthField="50" defaultValue="" displayName="對上課環境的滿意度" showName=""/>
+    <field dataField="Q42" typeField="STRING" lengthField="50" defaultValue="" displayName="課程時間安排" showName=""/>
+	<field dataField="Q43" typeField="STRING" lengthField="50" defaultValue="" displayName="對本次課程總體評估" showName=""/>
+	<field dataField="Remark" typeField="STRING" lengthField="250" defaultValue="" displayName="其他建議及意見" showName=""/>
+	<field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="" displayName="是否顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="50" defaultValue="" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>   
+		
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>   
+	<field dataField="GUID"/>  
+    <field dataField="IS_LOCK"/>
+  </keyField>
+    <allowEmptyField> 
+	<field dataField="SheetNo"/>
+	<field dataField="Subject"/>
+	<field dataField="CourseFormGUID"/>
+	<field dataField="TraineeGUID"/>
+	<field dataField="Remark"/>
+	<field dataField="Q11"/>
+	<field dataField="Q12"/>
+	<field dataField="Q13"/>
+	<field dataField="Q14"/>
+	<field dataField="Q15"/>
+	<field dataField="Q16"/>
+	<field dataField="Q17"/>
+	<field dataField="Q21"/>
+	<field dataField="Q22"/>
+	<field dataField="Q23"/>
+	<field dataField="Q31"/>
+	<field dataField="Q32"/>
+	<field dataField="Q33"/>
+	<field dataField="Q41"/>
+	<field dataField="Q42"/>
+	<field dataField="Q43"/>
+  </allowEmptyField>
+  <nonUpdateField> 	
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EH0109.EH0109A" tableName="EH0109A">
+  <queryStr>
+    SELECT GUID,SheetNo,Subject,EmpName,PartName,zszg,DtName,Dt,EmpType,bx,zgjg,zwjg,zyjg,jbbt,qx,jbfjs,IS_LOCK,zhize,ComeDateY,TryDateB,TryDateE,password,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EH0109A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="PartName" typeField="STRING" lengthField="20" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="zszg" typeField="STRING" lengthField="20" defaultValue="" displayName="直屬主管" showName=""/>
+    <field dataField="DtName" typeField="STRING" lengthField="20" defaultValue="" displayName="職位" showName=""/>
+    <field dataField="Dt" typeField="STRING" lengthField="20" defaultValue="" displayName="職等" showName=""/>
+    <field dataField="EmpType" typeField="STRING" lengthField="20" defaultValue="" displayName="員工類別" showName=""/>
+    <field dataField="bx" typeField="STRING" lengthField="20" defaultValue="" displayName="本薪" showName=""/>
+    <field dataField="zgjg" typeField="STRING" lengthField="20" defaultValue="" displayName="主管加給" showName=""/>
+    <field dataField="zwjg" typeField="STRING" lengthField="20" defaultValue="" displayName="職務加給" showName=""/>
+    <field dataField="zyjg" typeField="STRING" lengthField="20" defaultValue="" displayName="專業加給" showName=""/>
+    <field dataField="jbbt" typeField="STRING" lengthField="20" defaultValue="" displayName="加班補貼" showName=""/>
+    <field dataField="qx" typeField="STRING" lengthField="20" defaultValue="" displayName="全薪" showName=""/>
+    <field dataField="jbfjs" typeField="STRING" lengthField="20" defaultValue="" displayName="加班費基數" showName=""/>
+    <field dataField="zhize" typeField="STRING" lengthField="300" defaultValue="" displayName="預計入職日" showName=""/>
+    <field dataField="ComeDateY" typeField="STRING" lengthField="300" defaultValue="" displayName="職責" showName=""/>
+    <field dataField="TryDateB" typeField="STRING" lengthField="50" defaultValue="" displayName="試用開始日期" showName=""/>
+    <field dataField="TryDateE" typeField="STRING" lengthField="50" defaultValue="" displayName="試用結束日期" showName=""/>
+    <field dataField="password" typeField="STRING" lengthField="20" defaultValue="" displayName="密碼" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="jbfjs"/>
+    <field dataField="qx"/>
+    <field dataField="zgjg"/>
+    <field dataField="zwjg"/>
+    <field dataField="zyjg"/>
+    <field dataField="jbbt"/>
+    <field dataField="zhize"/>
+    <field dataField="password"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

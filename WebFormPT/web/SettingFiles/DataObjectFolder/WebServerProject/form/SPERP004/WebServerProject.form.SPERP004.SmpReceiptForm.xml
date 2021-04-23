@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPERP004.SmpReceiptForm" tableName="SmpReceiptForm">
+  <queryStr>
+    SELECT GUID, SheetNo, Subject, OriginatorGUID, CheckbyGUID, ReceptNum, VatCode, VatRegistrationNum, DueDate, PaymentName, PackingSlip, VendorName, Rate, ShippedDate, Comments, WaybillAirbillNum, CurrencyCode, ShipmentHeaderId, FlowId,
+    IS_LOCK, IS_DISPLAY,DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME, AccepterId,
+    Accepter1GUID, Accepter2GUID, Accepter3GUID, Accepter4GUID, Accepter5GUID,SetOfBookName,
+    OriginatorUserName, AccepterUserName, Accepter1UserName, Accepter2UserName, Accepter3UserName, Accepter4UserName, Accepter5UserName
+    from (
+    SELECT a.GUID, a.SheetNo, a.Subject, a.OriginatorGUID, a.CheckbyGUID, a.ReceptNum, a.VatCode, a.VatRegistrationNum, a.DueDate, a.PaymentName, a.PackingSlip, a.VendorName, a.Rate, a.ShippedDate, a.Comments, a.WaybillAirbillNum, a.CurrencyCode, a.ShipmentHeaderId, a.FlowId,
+    a.IS_LOCK, a.IS_DISPLAY, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME, a.AccepterId,
+    a.Accepter1GUID, a.Accepter2GUID, a.Accepter3GUID, a.Accepter4GUID, a.Accepter5GUID, a.SetOfBookName,
+    b.userName OriginatorUserName, u.userName AccepterUserName, u1.userName Accepter1UserName, u2.userName Accepter2UserName, u3.userName Accepter3UserName, u4.userName Accepter4UserName, u5.userName Accepter5UserName
+    FROM SmpReceiptForm a
+    left join Users b on a.OriginatorGUID = b.OID
+    left join Users u on a.AccepterId = u.id
+    left join Users u1 on a.Accepter1GUID = u1.OID
+    left join Users u2 on a.Accepter2GUID = u2.OID
+    left join Users u3 on a.Accepter3GUID = u3.OID
+    left join Users u4 on a.Accepter4GUID = u4.OID
+    left join Users u5 on a.Accepter5GUID = u5.OID
+    ) v
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="250" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人員" showName=""/>
+    <field dataField="CheckbyGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人" showName=""/>
+    <field dataField="ReceptNum" typeField="STRING" lengthField="50" defaultValue="" displayName="進貨單號" showName=""/>
+    <field dataField="VatCode" typeField="STRING" lengthField="50" defaultValue="" displayName="課稅別" showName=""/>
+    <field dataField="VatRegistrationNum" typeField="STRING" lengthField="50" defaultValue="" displayName="統一編號" showName=""/>
+    <field dataField="DueDate" typeField="STRING" lengthField="50" defaultValue="" displayName="進貨日期" showName=""/>
+    <field dataField="PaymentName" typeField="STRING" lengthField="50" defaultValue="" displayName="付款條件" showName=""/>
+    <field dataField="PackingSlip" typeField="STRING" lengthField="50" defaultValue="" displayName="發票號碼" showName=""/>
+    <field dataField="VendorName" typeField="STRING" lengthField="250" defaultValue="" displayName="供應商" showName=""/>
+    <field dataField="Rate" typeField="STRING" lengthField="50" defaultValue="" displayName="匯率" showName=""/>
+    <field dataField="ShippedDate" typeField="STRING" lengthField="50" defaultValue="" displayName="發票日期" showName=""/>
+    <field dataField="Comments" typeField="STRING" lengthField="250" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="WaybillAirbillNum" typeField="STRING" lengthField="50" defaultValue="" displayName="進口報單" showName=""/>
+    <field dataField="CurrencyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="幣別" showName=""/>
+    <field dataField="ShipmentHeaderId" typeField="STRING" lengthField="50" defaultValue="" displayName="收料單識別號" showName=""/>
+    <field dataField="FlowId" typeField="STRING" lengthField="50" defaultValue="" displayName="流程識別號" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+    <field dataField="AccepterId" typeField="STRING" lengthField="50" defaultValue="" displayName="驗收人員" showName=""/>
+    <field dataField="Accepter1GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人一" showName=""/>
+    <field dataField="Accepter2GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人二" showName=""/>
+    <field dataField="Accepter3GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人三" showName=""/>
+    <field dataField="Accepter4GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人四" showName=""/>
+    <field dataField="Accepter5GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人五" showName=""/>
+    <field dataField="SetOfBookName" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+    <field dataField="OriginatorUserName" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="AccepterUserName" typeField="STRING" lengthField="50" defaultValue="" displayName="驗收人員" showName=""/>
+    <field dataField="Accepter1UserName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人一" showName=""/>
+    <field dataField="Accepter2UserName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人二" showName=""/>
+    <field dataField="Accepter3UserName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人三" showName=""/>
+    <field dataField="Accepter4UserName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人四" showName=""/>
+    <field dataField="Accepter5UserName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人五" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="OriginatorGUID"/>
+    <field dataField="CheckbyGUID"/>
+    <field dataField="ReceptNum"/>
+    <field dataField="VatCode"/>
+    <field dataField="VatRegistrationNum"/>
+    <field dataField="DueDate"/>
+    <field dataField="PaymentName"/>
+    <field dataField="PackingSlip"/>
+    <field dataField="VendorName"/>
+    <field dataField="Rate"/>
+    <field dataField="ShippedDate"/>
+    <field dataField="Comments"/>
+    <field dataField="WaybillAirbillNum"/>
+    <field dataField="CurrencyCode"/>
+    <field dataField="ShipmentHeaderId"/>
+    <field dataField="FlowId"/>
+    <field dataField="AccepterId"/>
+    <field dataField="Accepter1GUID"/>
+    <field dataField="Accepter2GUID"/>
+    <field dataField="Accepter3GUID"/>
+    <field dataField="Accepter4GUID"/>
+    <field dataField="Accepter5GUID"/>
+    <field dataField="SetOfBookName"/>
+    <field dataField="OriginatorUserName"/>
+    <field dataField="AccepterUserName"/>
+    <field dataField="Accepter1UserName"/>
+    <field dataField="Accepter2UserName"/>
+    <field dataField="Accepter3UserName"/>
+    <field dataField="Accepter4UserName"/>
+    <field dataField="Accepter5UserName"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="OriginatorUserName"/>
+    <field dataField="AccepterUserName"/>
+    <field dataField="Accepter1UserName"/>
+    <field dataField="Accepter2UserName"/>
+    <field dataField="Accepter3UserName"/>
+    <field dataField="Accepter4UserName"/>
+    <field dataField="Accepter5UserName"/>
+  </nonUpdateField>
+</DataObject>

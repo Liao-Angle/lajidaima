@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MOfficeLibrary</name>
+    </assembly>
+    <members>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getuserInfo(System.String)">
+            <summary>
+            取得使用者OID、ID欄位 (有用吧!)
+            </summary>
+            <param name="UserID"></param>
+            <returns>ret[0]:OID
+            ret[1]:id
+            </returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getaction(System.String,System.String,System.String,System.String)">
+            <summary>
+            取得action區塊
+            </summary>
+            <param name="ProcessserialNumber">ProcessserialNumber</param>
+            <param name="WorkitemOID">WorkitemOID</param>
+            <param name="UserID">UserID</param>
+            <param name="UserOID">UserOID</param>
+            <returns>XML</returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getForm(System.String,System.String,System.String,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            取得Form區塊
+            </summary>
+            <param name="ProcessserialNumber">ProcessserialNumber</param>
+            <param name="WorkitemOID">WorkitemOID</param>
+            <param name="UserID">UserID</param>
+            <param name="UserOID">UserOID</param>
+            <returns>XML</returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getDetailForm(System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            取得DetailForm區塊
+            </summary>
+            <param name="GUID">ECP.表單GUID or GP.OID</param>
+            <param name="GridID">GridID 單身別</param>
+            <returns>XML</returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getAttachement(System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            取得Attachement區塊
+            </summary>
+            <param name="GUID">GUID</param>
+            <param name="WorkitemOID">WorkitemOID</param>
+            <returns>XML</returns>
+        </member>
+        <!-- 忽略成員 "M:MOfficeLibrary.MOfficeLibrary.getProcess(System.String,System.String,System.String,System.Web.HttpContext)" 中格式錯誤的 XML 註解 -->
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getlistSimpleWorkItem(System.String,System.String,System.String,System.String,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            取得 list 跟 SimpleWorkItem 區塊
+            </summary>
+            <param name="TargetFormKind">TargetFormKind 顯示類型 PerformableWorkItems、NoticeWorkItems、CreatedWorkItems、SignedWorkItems、RejectableProcess</param>
+            <param name="UserID">UserID</param>
+            <param name="UserOID">UserOID</param>
+            <param name="ProcessIds">ProcessIds</param>
+            <param name="pageSize">pageSize 每頁筆數</param>
+            <param name="pageNo">pageNo 目前頁數</param>
+            <returns></returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getContentText(System.String,System.String,System.String,System.String,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            簽核同意 或 不同意 以取得ContentText區塊
+            </summary>
+            <param name="UserID">UserID</param>
+            <param name="UserOID">UserOID</param>
+            <param name="WorkitemOID">WorkitemOID</param>
+            <param name="ProcessSerialNumber">ProcessSerialNumber</param>
+            <param name="Comments"></param>
+            <param name="WebMethodName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getPhrase(System.String,System.Web.HttpContext)">
+            <summary>
+            取得 簽核意見 區塊
+            </summary>
+            <param name="UserOID">UserOID</param>
+            <param name="httpContext">httpContext</param>
+            <returns></returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getList(System.String,System.Web.HttpContext,System.String)">
+            <summary>
+            取得 表單聯絡人資料 / 簽核歷程 區塊
+            </summary>
+            <param name="ProcessInstanceOID">ProcessInstanceOID</param>
+            <param name="httpContext">httpContext</param>
+            <param name="Locale">Locale</param>
+            <returns></returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getListData(System.String,System.Data.DataRow)">
+             <summary>
+             
+             </summary>
+             <param name="xml"></param>
+             <param name="opinionSetting"></param>
+             <returns>
+                    ret[i, 0] = "";//目前關卡ID
+                    ret[i, 1] = pd.activityName;//目前關卡名稱
+                    ret[i, 2] = pd.comment;//意見
+                    ret[i, 3] = pd.performerName;//人員ID
+                    ret[i, 4] = "";//人員名稱
+                    ret[i, 5] = "";//電話
+                    ret[i, 6] = "";//E-Mail
+                    ret[i, 7] = pd.state;//簽核狀態 
+            </returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.fetchrequesterName(System.String,com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            依processInstanceOID 查找requesterName
+            </summary>
+            <param name="processInstanceOID"></param>
+            <param name="NaNaengine"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.completeWorkItem(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            准
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="UserID">UserID</param>
+            <param name="workItemOID">工作項目識別</param>
+            <param name="executiveResult">簽核結果</param>
+            <param name="executiveComment">簽核意見</param>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.terminateProcess(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            不准
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <param name="executiveResult">簽核結果</param>
+            <param name="executiveComment">簽核意見</param>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.reassignmentSubstitute(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            執行代理轉派動作
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="UserOID">使用者識別碼</param>
+            <param name="workItemOID">工作項目識別碼</param>
+            <param name="httpContext"></param>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.acceptWorkItem(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.Web.HttpContext)">
+            <summary>
+            在單一簽核狀態下，取出待辦事項
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="UserID">使用者代號</param>
+            <param name="workItemOID">工作項目識別碼</param>
+            <param name="httpContext"></param>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.decode(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="str">欲解密的字串，尾碼為Y表示需要解密</param>
+            <returns></returns>
+        </member>
+        <member name="M:MOfficeLibrary.MOfficeLibrary.getPerformableWorkItems(System.String,System.String,com.dsc.kernal.factory.AbstractEngine,System.Web.HttpContext)">
+            <summary>
+            依據SMVOAAA設定方式取得有權限的待處理工作項目
+            </summary>
+            <param name="processDefinitionId">流程實例所參考的流程定義之代號</param>
+            <param name="UserID">使用者代號</param>
+            <param name="engine">資料庫連線物件</param>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

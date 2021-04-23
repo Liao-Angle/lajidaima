@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SCQKM01.SCQKM01A" tableName="SCQKM01A">
+  <queryStr>
+    SELECT GUID,SheetNo,Subject,Uname,CName,mobileuser,partNouser,kh,jz,bt,jd,lb,qy,zt,DocGUID,bm,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.SCQKM01A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="Uname" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="CName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="mobileuser" typeField="STRING" lengthField="20" defaultValue="" displayName="行動電話" showName=""/>
+    <field dataField="partNouser" typeField="STRING" lengthField="20" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="kh" typeField="STRING" lengthField="20" defaultValue="" displayName="客戶" showName=""/>
+    <field dataField="jz" typeField="STRING" lengthField="20" defaultValue="" displayName="機種" showName=""/>
+    <field dataField="bt" typeField="STRING" lengthField="100" defaultValue="" displayName="標題" showName=""/>
+    <field dataField="jd" typeField="STRING" lengthField="20" defaultValue="" displayName="階段" showName=""/>
+    <field dataField="lb" typeField="STRING" lengthField="20" defaultValue="" displayName="類別" showName=""/>
+    <field dataField="qy" typeField="STRING" lengthField="20" defaultValue="" displayName="區域" showName=""/>
+    <field dataField="zt" typeField="STRING" lengthField="20" defaultValue="" displayName="狀態" showName=""/>
+    <field dataField="DocGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="id" showName=""/>
+    <field dataField="bm" typeField="STRING" lengthField="20" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

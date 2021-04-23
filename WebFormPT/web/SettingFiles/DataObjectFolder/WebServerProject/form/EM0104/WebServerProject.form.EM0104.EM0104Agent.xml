@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.EM0104.EM0104A" TableName="EM0104A">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.EM0104.EM0104B" TableName="EM0104B" RelationString="SheetNo=SheetNo">
+  </DOS>
+</DOS>

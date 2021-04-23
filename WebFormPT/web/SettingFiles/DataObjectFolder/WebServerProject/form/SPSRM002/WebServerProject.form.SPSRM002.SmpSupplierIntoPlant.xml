@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPSRM002.SmpSupplierIntoPlant" tableName="SmpSupplierIntoPlant">
+  <queryStr>SELECT GUID, Subject, SheetNo, OriginatorGUID, DeptGUID, SourceId, HtmlContent, SrmNumber, CheckByGUID
+             , Countersign1GUID, Countersign2GUID, Countersign3GUID, IsType, IS_LOCK, IS_DISPLAY, DATA_STATUS
+             , D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME FROM SmpSupplierIntoPlant
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+	<field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人員" showName=""/>
+	<field dataField="DeptGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請部門" showName=""/>
+	<field dataField="SourceId" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號(eSRM)" showName=""/>
+    <field dataField="HtmlContent" typeField="STRING" lengthField="20000" defaultValue="" displayName="HTML內容" showName=""/>
+	<field dataField="SrmNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="eSRM Number" showName=""/>
+	<field dataField="CheckByGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人員" showName=""/>
+	<field dataField="Countersign1GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="會簽1" showName=""/>
+	<field dataField="Countersign2GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="會簽2" showName=""/>
+	<field dataField="Countersign3GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="會簽3" showName=""/>	
+	<field dataField="IsType" typeField="STRING" lengthField="1" defaultValue="" displayName="IsType" showName=""/>	
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="SourceId"/>    
+    <field dataField="HtmlContent"/>
+	<field dataField="SrmNumber"/>
+	<field dataField="CheckByGUID"/>	
+	<field dataField="Countersign1GUID"/>
+	<field dataField="Countersign2GUID"/>
+	<field dataField="Countersign3GUID"/>
+	<field dataField="IsType"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

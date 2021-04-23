@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPKM005.SMWYAAA" tableName="SMWYAAA">
+  <queryStr>
+    select
+    GUID,
+    DocGUID, DocNumber, Name,
+    RevGUID, RevNumber, FormGUID, IndexCardGUID, Released, LatestFlag, ReleaseDate,
+    Status, MajorTypeGUID, MajorTypeName, SubTypeGUID, SubTypeName, DocTypeGUID, DocTypeName, DocPropertyGUID, ConfidentialLevel,
+    AuthorGUID, AuthorId, AuthorName, AuthorOrgUnitGUID, AuthorOrgUnitId, AuthorOrgUnitName, Abstract, Site, KeyWords, EffectiveDate, ExpiryDate, D_INSERTUSER,
+    SheetNo, External, IS_LOCK, D_MODIFYUSER, D_MODIFYTIME
+    from (
+    select
+    r.GUID,
+    d.GUID DocGUID, d.DocNumber, i.Name,
+    r.GUID RevGUID, r.RevNumber, r.FormGUID, r.IndexCardGUID,  r.Released, r.LatestFlag, substring(r.ReleaseDate, 0, 11) ReleaseDate,
+    i.Status, i.MajorTypeGUID, m.Name MajorTypeName, i.SubTypeGUID, s.Name SubTypeName, i.DocTypeGUID, t.Name DocTypeName, i.DocPropertyGUID, i.ConfidentialLevel,
+    d.AuthorGUID, u.id AuthorId, u.userName AuthorName, d.AuthorOrgUnitGUID, o.id AuthorOrgUnitId, o.organizationUnitName AuthorOrgUnitName,  i.Abstract, d.Site, i.KeyWords, i.EffectiveDate, i.ExpiryDate,d.D_INSERTUSER,
+    r.SheetNo,
+    i.External,
+    r.IS_LOCK, r.IS_DISPLAY, r.DATA_STATUS, r.D_INSERTTIME, r.D_MODIFYUSER, r.D_MODIFYTIME
+    from SmpRev r
+    join SmpDocument d on d.GUID=r.DocGUID
+    join SmpIndexCard i on i.GUID=r.IndexCardGUID
+    join SmpMajorType m on m.GUID=i.MajorTypeGUID
+    join SmpSubType s on s.GUID=i.SubTypeGUID
+    join SmpDocType t on t.GUID=i.DocTypeGUID
+    left join Users u on u.OID=d.AuthorGUID
+    left join OrganizationUnit o on o.OID=d.AuthorOrgUnitGUID
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="DocGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件識別號" showName=""/>
+    <field dataField="DocNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="文件編號" showName=""/>
+    <field dataField="Name" typeField="STRING" lengthField="255" defaultValue="" displayName="文件名稱" showName=""/>
+    <field dataField="RevGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="版本識別號" showName=""/>
+    <field dataField="RevNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="版本" showName=""/>
+    <field dataField="FormGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="表單識別號" showName=""/>
+    <field dataField="IndexCardGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="索引卡識別號" showName=""/>
+    <field dataField="Released" typeField="STRING" lengthField="50" defaultValue="" displayName="是否生效" showName=""/>
+    <field dataField="LatestFlag" typeField="STRING" lengthField="50" defaultValue="" displayName="是否最後一版" showName=""/>
+    <field dataField="ReleaseDate" typeField="STRING" lengthField="50" defaultValue="" displayName="生效日期" showName=""/>
+    <field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="狀態" showName="Create:新增中;Closed:已結案;Review:變更中;Cancel:作廢中;Cancelled:已作廢;Access:調閱中"/>
+    <field dataField="MajorTypeGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="主分類識別號" showName=""/>
+    <field dataField="MajorTypeName" typeField="STRING" lengthField="50" defaultValue="" displayName="主分類" showName=""/>
+    <field dataField="SubTypeGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="子分類識別號" showName=""/>
+    <field dataField="SubTypeName" typeField="STRING" lengthField="50" defaultValue="" displayName="子分類" showName=""/>
+    <field dataField="DocTypeGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件類別識別號" showName=""/>
+    <field dataField="DocTypeName" typeField="STRING" lengthField="50" defaultValue="" displayName="文件類別" showName=""/>
+    <field dataField="DocPropertyGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件性質識別號" showName=""/>
+    <field dataField="ConfidentialLevel" typeField="STRING" lengthField="50" defaultValue="" displayName="機密等級" showName="0:一般;1:機密;2:極機密"/>
+    <field dataField="AuthorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="作者識別號" showName=""/>
+    <field dataField="AuthorId" typeField="STRING" lengthField="50" defaultValue="" displayName="作者工號" showName=""/>
+    <field dataField="AuthorName" typeField="STRING" lengthField="50" defaultValue="" displayName="作者" showName=""/>
+    <field dataField="AuthorOrgUnitGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="製定部門識別號" showName=""/>
+    <field dataField="AuthorOrgUnitId" typeField="STRING" lengthField="50" defaultValue="" displayName="製定部門代號" showName=""/>
+    <field dataField="AuthorOrgUnitName" typeField="STRING" lengthField="50" defaultValue="" displayName="製定部門" showName=""/>
+    <field dataField="Abstract" typeField="STRING" lengthField="2000" defaultValue="" displayName="文件摘要" showName=""/>
+    <field dataField="Site" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+    <field dataField="KeyWords" typeField="STRING" lengthField="255" defaultValue="" displayName="關鍵字" showName=""/>
+    <field dataField="EffectiveDate" typeField="STRING" lengthField="50" defaultValue="" displayName="生效日" showName=""/>
+    <field dataField="ExpiryDate" typeField="STRING" lengthField="50" defaultValue="" displayName="失效日" showName=""/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="250" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="External" typeField="STRING" lengthField="1" defaultValue="" displayName="是否為外部文件" showName="Y:是;N:否"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="GUID"/>
+    <field dataField="SheetNo"/>
+    <field dataField="RevGUID"/>
+    <field dataField="RevNumber"/>
+    <field dataField="FormGUID"/>
+    <field dataField="IndexCardGUID"/>
+    <field dataField="Released"/>
+    <field dataField="LatestFlag"/>
+    <field dataField="ReleaseDate"/>
+    <field dataField="Status"/>
+    <field dataField="MajorTypeGUID"/>
+    <field dataField="MajorTypeName"/>
+    <field dataField="SubTypeGUID"/>
+    <field dataField="SubTypeName"/>
+    <field dataField="DocTypeGUID"/>
+    <field dataField="DocTypeName"/>
+    <field dataField="DocPropertyGUID"/>
+    <field dataField="ConfidentialLevel"/>
+    <field dataField="DocGUID"/>
+    <field dataField="DocNumber"/>
+    <field dataField="Name"/>
+    <field dataField="AuthorGUID"/>
+    <field dataField="AuthorId"/>
+    <field dataField="AuthorName"/>
+    <field dataField="AuthorOrgUnitGUID"/>
+    <field dataField="AuthorOrgUnitId"/>
+    <field dataField="AuthorOrgUnitName"/>
+    <field dataField="Abstract"/>
+    <field dataField="Site"/>
+    <field dataField="KeyWords"/>
+    <field dataField="EffectiveDate"/>
+    <field dataField="ExpiryDate"/>
+    <field dataField="D_INSERTUSER"/>
+    <field dataField="External"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="GUID"/>
+    <field dataField="SheetNo"/>
+    <field dataField="RevGUID"/>
+    <field dataField="RevNumber"/>
+    <field dataField="FormGUID"/>
+    <field dataField="IndexCardGUID"/>
+    <field dataField="Released"/>
+    <field dataField="LatestFlag"/>
+    <field dataField="ReleaseDate"/>
+    <field dataField="Status"/>
+    <field dataField="MajorTypeGUID"/>
+    <field dataField="MajorTypeName"/>
+    <field dataField="SubTypeGUID"/>
+    <field dataField="SubTypeName"/>
+    <field dataField="DocTypeGUID"/>
+    <field dataField="DocTypeName"/>
+    <field dataField="DocPropertyGUID"/>
+    <field dataField="ConfidentialLevel"/>
+    <field dataField="DocGUID"/>
+    <field dataField="DocNumber"/>
+    <field dataField="Name"/>
+    <field dataField="AuthorGUID"/>
+    <field dataField="AuthorId"/>
+    <field dataField="AuthorName"/>
+    <field dataField="AuthorOrgUnitGUID"/>
+    <field dataField="AuthorOrgUnitId"/>
+    <field dataField="AuthorOrgUnitName"/>
+    <field dataField="Abstract"/>
+    <field dataField="Site"/>
+    <field dataField="KeyWords"/>
+    <field dataField="EffectiveDate"/>
+    <field dataField="ExpiryDate"/>
+    <field dataField="D_INSERTUSER"/>
+    <field dataField="External"/>
+    <field dataField="IS_LOCK"/>
+    <field dataField="D_MODIFYUSER"/>
+    <field dataField="D_MODIFYTIME"/>
+  </nonUpdateField>
+</DataObject>

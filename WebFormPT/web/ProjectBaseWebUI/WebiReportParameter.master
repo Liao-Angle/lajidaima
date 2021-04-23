@@ -1,0 +1,63 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="WebiReportParameter.master.cs" Inherits="ProjectBaseWebUI_WebiReportParameter" %>
+<%@ Register Assembly="DSCWebControl" Namespace="DSCWebControl" TagPrefix="cc1" %>
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="../StyleSheet/WebFormPT.css" rel="stylesheet" type="text/css" />
+    <title>未命名頁面</title>
+    <script language=javascript>
+		var pressQuit=0;
+		var count=0;
+		function window_onbeforeunload(){
+		    if(pressQuit==0){
+	            if (count == 0) {
+		            //修正事件取法
+                    var evt = getEvent();
+		            evt.returnValue = "<%=com.dsc.locale.LocaleString.getMainFrameLocaleString("MainFrame.aspx.language.ini", "global", "string001", "感謝您使用本系統.  再見!")%>";		
+                    //FF不支援window.event.reason
+		            if (evt.reason != null && evt.reason == false){
+			            cancelBubble(evt)
+                    }
+	            }
+	        }
+        }
+        function window_onunload(e){
+           if(pressQuit==0){
+                count++;
+	            var objHTTP = createXMLHTTP() ;
+	            objHTTP.open('Get','../Logout.aspx',false);
+	            objHTTP.send();
+	            if (e == undefined) {
+	                objHTTP = createXMLHTTP() ;
+	                objHTTP.open('Get','../Logout.aspx',false);
+	                objHTTP.send();
+	            }else{
+		            window.open(e);
+		            window.close();
+	            }
+		    }
+        }
+
+    </script>
+    
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Panel ID="Panel1" runat="server" BackColor="White" BorderColor="#0000C0" BorderStyle="Outset"
+            BorderWidth="1px" Height="25px" Width="100%">
+            <table border=0 cellpadding=0 cellspacing=1><tr>
+                <td><cc1:dsclabel id="DSCLabel1" runat="server" text="報表格式:" width="92px"></cc1:dsclabel></td>
+                <td><cc1:singledropdownlist id="ReportFormat" runat="server" width="123px"></cc1:singledropdownlist></td>
+                <td><cc1:glassbutton id="ViewReportButton" runat="server" text="檢視報表" width="73px" OnClick="ViewReportButton_Click"></cc1:glassbutton></td>
+            </tr></table>
+        </asp:Panel>
+        <br />
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+        </asp:contentplaceholder>
+    </div>
+    </form>
+</body>
+</html>

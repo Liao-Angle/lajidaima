@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.APMONEY.APMONEY" TableName="APMONEY">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.APMONEY.APDETAIL" TableName="APDETAIL" RelationString="GUID=APDETAIL001">
+  </DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.APMONEY.APLOCATION" TableName="APLOCATION" RelationString="GUID=APLOCATION001">
+  </DOS>
+</DOS>

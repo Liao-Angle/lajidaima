@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPPM003.SmpPmAssessmentPlan" tableName="SmpPmAssessmentPlan">
+  <queryStr>
+    select GUID, CompanyCode, AssessYear, AssessStartDate, AssessEndDate, PlanStartDate, PlanEndDate, AssessmentName, EvaluationGUID, EvaluationName, Remark
+    ,Status, StartDate, CloseDate, CancelDate
+    ,IS_DISPLAY , IS_LOCK, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME
+    from (
+      select a.GUID, a.CompanyCode, a.AssessYear, a.AssessStartDate, a.AssessEndDate, a.PlanStartDate, a.PlanEndDate, a.AssessmentName, a.EvaluationGUID, c.Name EvaluationName, a.Remark
+      ,a.Status, a.StartDate, a.CloseDate, a.CancelDate
+      ,a.IS_DISPLAY , a.IS_LOCK, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME from SmpPmAssessmentPlan a
+      join SmpPmEvaluation c on c.GUID = a.EvaluationGUID
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName="SMP:新普科技;TP:中普科技;TE:嘉普科技"/>
+    <field dataField="AssessYear" typeField="STRING" lengthField="50" defaultValue="" displayName="考核年度" showName=""/>
+    <field dataField="AssessStartDate" typeField="STRING" lengthField="50" defaultValue="" displayName="考評期間-起" showName=""/>
+    <field dataField="AssessEndDate" typeField="STRING" lengthField="50" defaultValue="" displayName="考評期間-迄" showName=""/>
+    <field dataField="PlanStartDate" typeField="STRING" lengthField="50" defaultValue="" displayName="計畫預計開始日" showName=""/>
+    <field dataField="PlanEndDate" typeField="STRING" lengthField="50" defaultValue="" displayName="計畫預計截止日" showName=""/>
+    <field dataField="AssessmentName" typeField="STRING" lengthField="120" defaultValue="" displayName="考評名稱" showName=""/>
+    <field dataField="EvaluationGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核表識別碼" showName=""/>
+    <field dataField="EvaluationName" typeField="STRING" lengthField="50" defaultValue="" displayName="考核表名稱" showName=""/>
+    <field dataField="Remark" typeField="STRING" lengthField="120" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="狀態" showName="DRAFT:未開始;OPEN:進行中;CLOSE:已結案;CANCEL:取消"/>
+    <field dataField="StartDate" typeField="STRING" lengthField="50" defaultValue="" displayName="開始日期" showName=""/>
+    <field dataField="CloseDate" typeField="STRING" lengthField="50" defaultValue="" displayName="結案日期" showName=""/>
+    <field dataField="CancelDate" typeField="STRING" lengthField="50" defaultValue="" displayName="取消日期" showName=""/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" 
+              showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" 
+              showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" 
+              showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="PlanStartDate"/>
+    <field dataField="PlanEndDate"/>
+    <field dataField="EvaluationName"/>
+    <field dataField="Remark"/>
+    <field dataField="StartDate"/>
+    <field dataField="CloseDate"/>
+    <field dataField="CancelDate"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="EvaluationName"/>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPERP003.SPPOA" tableName="SPPOA">
+  <queryStr>
+    select GUID, SheetNo, Subject, SPPOA001,SPPOA002,SPPOA003,SPPOA004,SPPOA005,SPPOA006,SPPOA007,SPPOA008,SPPOA009,SPPOA010,SPPOA011,SPPOA012,SPPOA013,SPPOA014,SPPOA015,SPPOA016,SPPOA017,SPPOA018,SPPOA019,SetOfBookName,
+    IS_LOCK, IS_DISPLAY,DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,
+    OriginatorUserName, OriginatorDeptName, RequisitionCategory, ReviewerUserName, CcbUserName, NotifierUserName
+    from (
+    SELECT a.GUID, a.SheetNo, a.Subject, a.SPPOA001, a.SPPOA002, a.SPPOA003, a.SPPOA004, a.SPPOA005, a.SPPOA006, a.SPPOA007, a.SPPOA008, a.SPPOA009, a.SPPOA010, a.SPPOA011, a.SPPOA012, a.SPPOA013, a.SPPOA014, a.SPPOA015, a.SPPOA016, a.SPPOA017, a.SPPOA018, a.SPPOA019, a.SetOfBookName,
+    a.IS_LOCK, a.IS_DISPLAY, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME,
+    u1.userName OriginatorUserName, ou.organizationUnitName OriginatorDeptName, a.RequisitionCategory, u2.userName ReviewerUserName, u3.userName CcbUserName, u4.userName NotifierUserName
+    FROM SPPOA a
+    join Users u1 on a.SPPOA004 = u1.id
+    left join OrganizationUnit ou on a.SPPOA005 = ou.id
+    left join Users u2 on a.SPPOA012 = u2.id
+    left join Users u3 on a.SPPOA013 = u3.id
+    left join Users u4 on a.SPPOA019 = u4.id
+    ) v
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="250" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SPPOA001" typeField="STRING" lengthField="30" defaultValue="" displayName="EF單別" showName=""/>
+    <field dataField="SPPOA002" typeField="STRING" lengthField="10" defaultValue="" displayName="EF單號" showName=""/>
+    <field dataField="SPPOA003" typeField="STRING" lengthField="20" defaultValue="" displayName="申請日期" showName=""/>
+    <field dataField="SPPOA004" typeField="STRING" lengthField="50" defaultValue="" displayName="送審人員" showName=""/>
+    <field dataField="SPPOA005" typeField="STRING" lengthField="50" defaultValue="" displayName="請購部門" showName=""/>
+    <field dataField="SPPOA006" typeField="STRING" lengthField="50" defaultValue="" displayName="請購單單號" showName=""/>
+    <field dataField="SPPOA007" typeField="STRING" lengthField="1" defaultValue="" displayName="是否有附件" showName=""/>
+    <field dataField="SPPOA008" typeField="STRING" lengthField="10" defaultValue="" displayName="幣別" showName=""/>
+    <field dataField="SPPOA009" typeField="STRING" lengthField="50" defaultValue="" displayName="預估金額" showName=""/>
+    <field dataField="SPPOA010" typeField="STRING" lengthField="250" defaultValue="" displayName="說明" showName=""/>
+    <field dataField="SPPOA011" typeField="STRING" lengthField="50" defaultValue="" displayName="狀態" showName=""/>
+    <field dataField="SPPOA012" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人員" showName=""/>
+    <field dataField="SPPOA013" typeField="STRING" lengthField="50" defaultValue="" displayName="會簽人員" showName=""/>
+    <field dataField="SPPOA014" typeField="STRING" lengthField="50" defaultValue="" displayName="會簽人員" showName=""/>
+    <field dataField="SPPOA015" typeField="STRING" lengthField="250" defaultValue="" displayName="會簽人員意見" showName=""/>
+    <field dataField="SPPOA016" typeField="STRING" lengthField="50" defaultValue="" displayName="HEADER_ID" showName=""/>
+    <field dataField="SPPOA017" typeField="STRING" lengthField="30" defaultValue="" displayName="PO_REQUISITION_HEADER_ID" showName=""/>
+    <field dataField="SPPOA018" typeField="STRING" lengthField="1" defaultValue="" displayName="請購類別" showName=""/>
+    <field dataField="SPPOA019" typeField="STRING" lengthField="50" defaultValue="" displayName="通知人員" showName=""/>
+    <field dataField="SetOfBookName" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+    <field dataField="OriginatorUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="請購人員" showName=""/>
+    <field dataField="OriginatorDeptName" typeField="STRING" lengthField="100" defaultValue="" displayName="請購部門" showName=""/>
+    <field dataField="RequisitionCategory" typeField="STRING" lengthField="100" defaultValue="" displayName="請購類別" showName=""/>
+    <field dataField="ReviewerUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="審核人員" showName=""/>
+    <field dataField="CcbUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="會簽人員" showName=""/>
+    <field dataField="NotifierUserName" typeField="STRING" lengthField="100" defaultValue="" displayName="通知人員" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="Subject"/>
+    <field dataField="SPPOA001"/>
+    <field dataField="SPPOA002"/>
+    <field dataField="SPPOA003"/>
+    <field dataField="SPPOA004"/>
+    <field dataField="SPPOA005"/>
+    <field dataField="SPPOA006"/>
+    <field dataField="SPPOA007"/>
+    <field dataField="SPPOA008"/>
+    <field dataField="SPPOA009"/>
+    <field dataField="SPPOA010"/>
+    <field dataField="SPPOA011"/>
+    <field dataField="SPPOA012"/>
+    <field dataField="SPPOA013"/>
+    <field dataField="SPPOA014"/>
+    <field dataField="SPPOA015"/>
+    <field dataField="SPPOA016"/>
+    <field dataField="SPPOA017"/>
+    <field dataField="SPPOA018"/>
+    <field dataField="SPPOA019"/>
+    <field dataField="SetOfBookName"/>
+    <field dataField="OriginatorUserName"/>
+    <field dataField="OriginatorDeptName"/>
+    <field dataField="RequisitionCategory"/>
+    <field dataField="ReviewerUserName"/>
+    <field dataField="CcbUserName"/>
+    <field dataField="NotifierUserName"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="OriginatorUserName"/>
+    <field dataField="OriginatorDeptName"/>
+    <field dataField="ReviewerUserName"/>
+    <field dataField="CcbUserName"/>
+    <field dataField="NotifierUserName"/>
+  </nonUpdateField>
+</DataObject>

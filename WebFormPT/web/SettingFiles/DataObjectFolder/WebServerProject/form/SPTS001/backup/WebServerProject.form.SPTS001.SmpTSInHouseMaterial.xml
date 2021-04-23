@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPTS001.SmpTSInHouseMaterial" tableName="SmpTSInHouseMaterial">
+  <queryStr>
+    
+	select C.GUID, C.InHouseFormGUID, C.Source, C.MaterialGUID, D.DocNumber, I.Name as DocName, C.IS_LOCK, C.IS_DISPLAY, C.DATA_STATUS
+	     , C.D_INSERTUSER,C.D_INSERTTIME,C.D_MODIFYUSER,C.D_MODIFYTIME from SmpTSInHouseMaterial C    
+    JOIN SmpDocument   D on C.MaterialGUID = D.GUID    
+    JOIN SmpRev R on D.GUID =  R.DocGUID  and R.LatestFlag= 'Y' and R.Released ='Y'  
+    JOIN SmpIndexCard I on R.IndexCardGUID = I.GUID  
+	
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="InHouseFormGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="單頭識別號" showName=""/>
+    <field dataField="Source" typeField="STRING" lengthField="50" defaultValue="" displayName="來源" showName="KM:KM"/>
+    <field dataField="MaterialGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="參考值識別號" showName=""/>   
+	<field dataField="DocNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="文件編號" showName=""/>    
+    <field dataField="DocName" typeField="STRING" lengthField="150" defaultValue="" displayName="文件名稱" showName=""/>	
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+	<field dataField="InHouseFormGUID"/>
+	<field dataField="DocNumber"/>	
+    <field dataField="DocName"/>	
+  </allowEmptyField>
+  <nonUpdateField>
+	<field dataField="DocNumber"/>	
+    <field dataField="DocName"/>	
+  </nonUpdateField>
+</DataObject>

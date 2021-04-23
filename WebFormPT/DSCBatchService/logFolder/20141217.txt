@@ -1,0 +1,15 @@
+2014/12/17 01:00:01
+
+d:\ECP\WebFormPT\DSCBatchService\BatchFolder\SubmitNotification\SubmitNotification.dll
+2014/12/17 01:00:02
+
+d:\ECP\WebFormPT\DSCBatchService\BatchFolder\DelTempFolder\DelTempFolder.dll
+2014/12/17 18:00:19
+
+complete
+2014/12/17 18:13:38
+
+complete
+2014/12/17 18:18:06
+
+complete

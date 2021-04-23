@@ -1,0 +1,55 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="EnergyDetailMaster.master.cs" Inherits="ProjectBaseWebUI_EnergyDetailMaster" %>
+<%@ Register Assembly="DSCWebControl" Namespace="DSCWebControl" TagPrefix="cc1" %>
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <link href="../StyleSheet/WebFormPT.css" rel="stylesheet" type="text/css" />
+   <style type="text/css">
+   body
+   {
+   	scrollbar-face-color:#EEEEEE;
+	scrollbar-highlight-color:#CCCCFF ;
+   }
+   </style> 
+ 
+    <title>未命名頁面</title>
+    <script language=javascript>
+    function setPageStatus(pStatus)
+   {
+        //var objx=eval('document.all.S_<%=TransferValue.ClientID %>');
+        var objx=eval('document.getElementById(\'S_<%=TransferValue.ClientID %>\');');
+        objx.value='CHANGESTATUS:'+pStatus;
+        SingleField_WriteServer('<%=TransferValue.ClientID %>');
+   }  
+   function saveDB(parentPGID, FK, GUID)
+   {
+        var objHTTP = new createXMLHTTP();
+        objHTTP.open('POST','<%=Page.Request.RawUrl.Split(new char[]{'?'})[0] %>',false); 
+        objHTTP.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        objHTTP.send('SavePage=1&DetailPageUniqueID='+getPuid()+'&CurrentPageUniqueID='+parentPGID+'&FK='+FK+'&GUID='+GUID);
+        return objHTTP.responseText; 
+   }
+   
+   function test()
+   {
+    alert('here');
+   }
+    </script>
+    
+</head>
+<body topmargin=0 leftmargin=0>
+    <form id="form1" runat="server">
+    <div>
+        <cc1:GlassButton ID="QueryButton" runat="server" ImageUrl="~/Images/imgFind.gif" OnClick="QueryButton_Click" Text="查詢" /><cc1:GlassButton ID="SaveButton" runat="server" ImageUrl="~/DSCWebControlRunTime/DSCWebControlImages/save_on.gif" OnClick="SaveButton_Click" Text="新增" /><cc1:GlassButton ID="EditButton" runat="server" ImageUrl="~/Images/EnergyEdit.gif" OnClick="EditButton_Click" Text="修改" /><cc1:GlassButton ID="DeleteButton" runat="server" ImageUrl="~/DSCWebControlRunTime/DSCWebControlImages/GridDelete.gif" OnClick="DeleteButton_Click" Text="刪除" /><cc1:GlassButton ID="CancelButton" runat="server" ImageUrl="~/DSCWebControlRunTime/DSCWebControlImages/reset_on.gif" OnClick="CancelButton_Click" Text="取消" Display="false"  /><cc1:GlassButton ID="ClearButton" runat="server" ImageUrl="~/DSCWebControlRunTime/DSCWebControlImages/GridDeSelectAll.gif" OnClick="ClearButton_Click" Text="清除" Display="true"  />
+        <cc1:SingleField ID="TransferValue" runat="server" OnTextChanged="TransferValue_TextChanged" Display="False" />
+        <hr /> 
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <cc1:OutDataList ID="DetailList" runat="server" Height="202px" NoAdd="True" NoAllDelete="True"
+            NoDelete="True" NoModify="True" Width="601px" OnSaveRowData="DetailList_SaveRowData" OnShowRowData="DetailList_ShowRowData" OnAddOutline="DetailList_AddOutline" OnDeleteData="DetailList_DeleteData" />
+    </div>
+    </form>
+</body>
+</html>

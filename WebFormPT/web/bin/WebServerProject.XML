@@ -1,0 +1,3746 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebServerProject</name>
+    </assembly>
+    <members>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB002">
+             <summary>
+            所屬班別識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB003">
+             <summary>
+            上班日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB004">
+             <summary>
+            上班時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB005">
+             <summary>
+            下班時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB006">
+             <summary>
+            時數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB007">
+             <summary>
+            午休開始時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAB.SMVRAAB008">
+             <summary>
+            午休結束時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAB.SMVKBAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAB.SMVKBAB002">
+             <summary>
+            群組識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAB.SMVKBAB003">
+             <summary>
+            員工識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAB.userId">
+             <summary>
+            員工編號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAB.userName">
+             <summary>
+            員工姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA002">
+             <summary>
+            單號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA003">
+             <summary>
+            流程實例識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA005">
+             <summary>
+            流程實例序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA006">
+             <summary>
+            主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA007">
+             <summary>
+            處理者
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA008">
+             <summary>
+            轉派方式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWO.SMWOAAA.SMWOAAA009">
+             <summary>
+            建立時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAB.SMWIAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAB.SMWIAAB002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAB.SMWIAAB003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAB.SMWIAAB004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB003">
+             <summary>
+            列印者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB004">
+             <summary>
+            列印者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB005">
+             <summary>
+            列印位置
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB006">
+             <summary>
+            列印時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAB.SMXDAAB007">
+             <summary>
+            瀏覽器版本
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA002">
+             <summary>
+            使用者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.userName">
+             <summary>
+            使用者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA003">
+             <summary>
+            帳戶長度比對長度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA004">
+             <summary>
+            密碼最小長度限制
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA005">
+             <summary>
+            密碼最大長度限制
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA006">
+             <summary>
+            是否需包含英文大寫
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA007">
+             <summary>
+            是否需包含英文小寫
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA008">
+             <summary>
+            是否需包含數字
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA009">
+             <summary>
+            密碼有效天數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVU.SMVUAAA.SMVUAAA010">
+             <summary>
+            是否可與前次密碼相同
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAA.SMVRAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAA.SMVRAAA002">
+             <summary>
+            班別代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAA.SMVRAAA003">
+             <summary>
+            班別名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAA.SMVRAAA004">
+             <summary>
+            說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAA.SMXDAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAA.SMXDAAA002">
+             <summary>
+            列印名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAA.SMXDAAA003">
+             <summary>
+            列印標的
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXD.SMXDAAA.SMXDAAA004">
+             <summary>
+            列印次數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAA.SMVKBAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAA.SMVKBAA002">
+             <summary>
+            群組代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKB.SMVKBAA.SMVKBAA003">
+             <summary>
+            群組名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAC.SMVIAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAC.SMVIAAC002">
+             <summary>
+            所屬格式識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAC.SMVIAAC003">
+             <summary>
+            參數名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC002">
+             <summary>
+            主檔GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC003">
+             <summary>
+            分段執行順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC004">
+             <summary>
+            區段名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC007">
+             <summary>
+            錯誤嘗試執行次數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC005">
+             <summary>
+            ApplicationID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAC.SMTAAAC006">
+             <summary>
+            ModuleID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA002">
+             <summary>
+            資料夾代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA003">
+             <summary>
+            資料夾名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA004">
+             <summary>
+            流程選擇
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA005">
+             <summary>
+            角色選擇
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA006">
+             <summary>
+            允許群簽
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA007">
+             <summary>
+            類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SMWIAAA008">
+             <summary>
+            意見表達類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.CURRENTSTATE">
+             <summary>
+            是否顯示流程狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.PROCESSNAME">
+             <summary>
+            是否顯示流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SHEETNO">
+             <summary>
+            是否顯示單號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.WORKITEMNAME">
+             <summary>
+            是否顯示角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.SUBJECT">
+             <summary>
+            是否顯示主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.USERNAME">
+             <summary>
+            是否顯示填表人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.CREATETIME">
+             <summary>
+            是否顯示填表時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.VIEWTIMES">
+             <summary>
+            是否顯示讀取次數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.IMPORTANT">
+             <summary>
+            是否顯示重要性
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.ATTACH">
+             <summary>
+            是否顯示附件
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAA.FIELDORDER">
+             <summary>
+            欄位顯示順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWC.SMWCAAA.SMWCAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWC.SMWCAAA.SMWCAAA002">
+             <summary>
+            角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWC.SMWCAAA.SMWCAAA003">
+             <summary>
+            引擎/系統自訂
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVO.SMVOAAA.SMVOAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVO.SMVOAAA.SMVOAAA002">
+             <summary>
+            欄位關聯設定名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVO.SMVOAAA.SMVOAAA003">
+             <summary>
+            流程作業畫面關聯識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVO.SMVOAAA.SMWDAAA002">
+             <summary>
+            流程作業畫面關聯名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVO.SMVOAAA.SMVOAAA004">
+             <summary>
+            輸出欄位XML
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVO.SMVOAAA.SMVOAAA005">
+             <summary>
+            是否禁用行動簽核功能
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVL.SMVLAAA.SMVLAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVL.SMVLAAA.SMVLAAA002">
+             <summary>
+            使用者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVL.SMVLAAA.SMVLAAA003">
+             <summary>
+            片語內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB002">
+             <summary>
+            所屬格式識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB003">
+             <summary>
+            順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB004">
+             <summary>
+            類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB005">
+             <summary>
+            數字補0長度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB006">
+             <summary>
+            是否為群組
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAB.SMVIAAB007">
+             <summary>
+            內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAB.SMTAAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAB.SMTAAAB002">
+             <summary>
+            主檔GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAB.SMTAAAB003">
+             <summary>
+            參數名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAB.SMTAAAB004">
+             <summary>
+            參數值
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAB.SMTAAAB005">
+             <summary>
+            參數說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXA.SMXAAAA.SMXAAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXA.SMXAAAA.SMXAAAA002">
+             <summary>
+            應用程式代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXA.SMXAAAA.SMXAAAA003">
+             <summary>
+            應用程式名稱
+             </summary>
+        </member>
+        <member name="M:WebServerProject.auth.AUTHAgent.getAllAuth(System.String,System.String[])">
+            <summary>
+            根據userid取得所有SMSAAAA列表的權限. 傳回空Hashtable表示為administrator
+            </summary>
+            <param name="userid"></param>
+            <returns></returns>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA002">
+             <summary>
+            類型代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA003">
+             <summary>
+            類型名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA004">
+             <summary>
+            是否使用
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA005">
+             <summary>
+            R
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA006">
+             <summary>
+            G
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVF.SMVFAAA.SMVFAAA007">
+             <summary>
+            B
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.ReplyDetail.GUID">
+             <summary>
+            唯一識別碼,唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.ReplyDetail.ParentGUID">
+             <summary>
+            資料所屬表單,資料所屬表單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.ReplyDetail.Replier">
+             <summary>
+            覆核人,覆核人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.ReplyDetail.Time">
+             <summary>
+            覆核時間,覆核時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAA.SMVIAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAA.SMVIAAA002">
+             <summary>
+            格式代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAA.SMVIAAA003">
+             <summary>
+            格式名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVI.SMVIAAA.SMVIAAA004">
+             <summary>
+            說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA002">
+             <summary>
+            批次代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA003">
+             <summary>
+            批次名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA004">
+             <summary>
+            完整類別名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA005">
+             <summary>
+            是否分段執行
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA006">
+             <summary>
+            分段數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA007">
+             <summary>
+            是否立即執行
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA008">
+             <summary>
+            相依批次GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA009">
+             <summary>
+            相依性批次狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA010">
+             <summary>
+            批次排程xml
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA011">
+             <summary>
+            執行狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA012">
+             <summary>
+            失敗後動作
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA013">
+             <summary>
+            批次容許執行最大時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA014">
+             <summary>
+            批次容許執行最大時間單位
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA015">
+             <summary>
+            容許時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTA.SMTAAAA.SMTAAAA016">
+             <summary>
+            容許時間單位
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAC.SMWSAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAC.SMWSAAC002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAC.SMWSAAC003">
+             <summary>
+            角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA002">
+             <summary>
+            使用者帳號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA003">
+             <summary>
+            訊息類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA004">
+             <summary>
+            通知時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA005">
+             <summary>
+            是否已讀取
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA006">
+             <summary>
+            是否已警示
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA007">
+             <summary>
+            標題
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA008">
+             <summary>
+            訊息內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVC.SMVCAAA.SMVCAAA009">
+             <summary>
+            系統連結Url
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.CustomerDetail.GUID">
+             <summary>
+            唯一識別碼,唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.CustomerDetail.ParentGUID">
+             <summary>
+            資料所屬表單,資料所屬表單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.CustomerDetail.Type">
+             <summary>
+            聯絡方式,聯絡方式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.CustomerDetail.Contactor">
+             <summary>
+            聯絡人,聯絡人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.CustomerDetail.Time">
+             <summary>
+            聯絡時間,聯絡時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAB.SMWSAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAB.SMWSAAB002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAB.SMWSAAB003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAB.SMWSAAB004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.ATTACHCOUNT">
+             <summary>
+            附件數量
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA002">
+             <summary>
+            單號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA005">
+             <summary>
+            流程實例序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA006">
+             <summary>
+            主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA007">
+             <summary>
+            重要性
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA008">
+             <summary>
+            填表人代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA009">
+             <summary>
+            填表人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA010">
+             <summary>
+            填表單位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA011">
+             <summary>
+            填表單位名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA012">
+             <summary>
+            關係人代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA013">
+             <summary>
+            關係人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA014">
+             <summary>
+            關係人單位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA015">
+             <summary>
+            關係人單位名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA016">
+             <summary>
+            流程發起單位
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA017">
+             <summary>
+            填表日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA018">
+             <summary>
+            作業畫面識別(SMWAAAA001)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA019">
+             <summary>
+            資料單頭識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA020">
+             <summary>
+            流程狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA101">
+             <summary>
+            延伸欄位101
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA102">
+             <summary>
+            延伸欄位102
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA103">
+             <summary>
+            延伸欄位103
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA104">
+             <summary>
+            延伸欄位104
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA105">
+             <summary>
+            延伸欄位105
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA106">
+             <summary>
+            延伸欄位106
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA107">
+             <summary>
+            延伸欄位107
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA108">
+             <summary>
+            延伸欄位108
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA109">
+             <summary>
+            延伸欄位109
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA110">
+             <summary>
+            延伸欄位110
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA111">
+             <summary>
+            延伸欄位111
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA112">
+             <summary>
+            延伸欄位112
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA113">
+             <summary>
+            延伸欄位113
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA114">
+             <summary>
+            延伸欄位114
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA115">
+             <summary>
+            延伸欄位115
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA116">
+             <summary>
+            延伸欄位116
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA117">
+             <summary>
+            延伸欄位117
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA118">
+             <summary>
+            延伸欄位118
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA119">
+             <summary>
+            延伸欄位119
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWY.SMWYAAA.SMWYAAA120">
+             <summary>
+            延伸欄位120
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAD.SMWDAAD001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAD.SMWDAAD002">
+             <summary>
+            所屬作業畫面識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAD.SMWDAAD003">
+             <summary>
+            角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC002">
+             <summary>
+            代理區間識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAA003">
+             <summary>
+            代理期間(起)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAA004">
+             <summary>
+            代理期間(迄)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC003">
+             <summary>
+            被代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.ownerName">
+             <summary>
+            被代理人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC004">
+             <summary>
+            代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.userName">
+             <summary>
+            代理人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC005">
+             <summary>
+            發起部門識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.organizationUnitName">
+             <summary>
+            發起部門
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC006">
+             <summary>
+            流程編號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC007">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC008">
+             <summary>
+            是否永久代理
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAC.SMVKAAC009">
+             <summary>
+            版本
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAA.SMWSAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAA.SMWSAAA002">
+             <summary>
+            資料夾代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAA.SMWSAAA003">
+             <summary>
+            資料夾名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAA.SMWSAAA004">
+             <summary>
+            流程選擇
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWS.SMWSAAA.SMWSAAA005">
+             <summary>
+            角色選擇
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWP.SMWPAAA.SMWPAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWP.SMWPAAA.SMWPAAA002">
+             <summary>
+            順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWP.SMWPAAA.SMWPAAA003">
+             <summary>
+            角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWP.SMWPAAA.SMWPAAA004">
+             <summary>
+            參與者內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWP.SMWPAAA.SMWPAAA005">
+             <summary>
+            工作分派方式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWP.SMWPAAA.SMWPAAA006">
+             <summary>
+            關卡形式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAC.SMWDAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAC.SMWDAAC002">
+             <summary>
+            所屬作業畫面識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAC.SMWDAAC003">
+             <summary>
+            欄位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAC.SMWDAAC004">
+             <summary>
+            對應欄位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAC.SMWDAAC005">
+             <summary>
+            對應欄位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVP.SMVPAAB.SMVPAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVP.SMVPAAB.SMVPAAB002">
+             <summary>
+            IP
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAB002">
+             <summary>
+            代理區間識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAA003">
+             <summary>
+            代理期間(起)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAA004">
+             <summary>
+            代理期間(迄)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAB003">
+             <summary>
+            被代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.ownerName">
+             <summary>
+            被代理人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAB004">
+             <summary>
+            代理順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAB005">
+             <summary>
+            代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.userName">
+             <summary>
+            代理人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKC.SMVKAAB.SMVKAAB006">
+             <summary>
+            版本
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB002">
+             <summary>
+            所屬作業畫面識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB003">
+             <summary>
+            欄位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB004">
+             <summary>
+            欄位格式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB005">
+             <summary>
+            是否顯示(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB006">
+             <summary>
+            是否必填(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB007">
+             <summary>
+            是否唯讀(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB008">
+             <summary>
+            是否稽核(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB009">
+             <summary>
+            是否顯示(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB010">
+             <summary>
+            是否必填(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB011">
+             <summary>
+            是否唯讀(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAB.SMWAAAB012">
+             <summary>
+            是否稽核(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA002">
+             <summary>
+            流程定義代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA003">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA004">
+             <summary>
+            單號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA005">
+             <summary>
+            建立時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA006">
+             <summary>
+            發起人代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA007">
+             <summary>
+            發起人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA008">
+             <summary>
+            流程狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA009">
+             <summary>
+            流程實例識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA010">
+             <summary>
+            流程實例序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWM.SMWMAAA.SMWMAAA011">
+             <summary>
+            主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWG.SMWGAAA.SMWGAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWG.SMWGAAA.SMWGAAA002">
+             <summary>
+            欄位名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWG.SMWGAAA.SMWGAAA003">
+             <summary>
+            變數名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWG.SMWGAAA.SMWGAAA004">
+             <summary>
+            顯示名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB002">
+             <summary>
+            所屬作業畫面識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB003">
+             <summary>
+            欄位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB004">
+             <summary>
+            欄位格式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB005">
+             <summary>
+            是否顯示
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB006">
+             <summary>
+            是否必填
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB007">
+             <summary>
+            是否唯讀
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAB.SMWDAAB008">
+             <summary>
+            是否稽核
+             </summary>
+        </member>
+        <member name="M:WebServerProject.DataOperate.DeptRecFK(System.String,System.String,System.Collections.Hashtable)">
+            <summary>
+            深層置換(其效能與單身有絕對性關係 單身↑效能↓、單身↑↑效能↓↓)
+            </summary>
+            <param name="currentGUID">所要搜尋的外鍵GUID</param>
+            <param name="targetGUID">要替換的目標GUID</param>
+            <param name="child">此Hashtable結構中是放置[單身]的DataObjectSet       Ex.dos.getAvailableDataObject(0).child</param>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB002">
+             <summary>
+            所屬模組
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB003">
+             <summary>
+            程式代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB004">
+             <summary>
+            層級
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB005">
+             <summary>
+            通知人員
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB006">
+             <summary>
+            是否寄發Email
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB007">
+             <summary>
+            是否警示
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAB.SMXBAAB008">
+             <summary>
+            是否紀錄Log
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVS.SMVSAAA.SMVSAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVS.SMVSAAA.SMVSAAA002">
+             <summary>
+            下載標題
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVS.SMVSAAA.SMVSAAA003">
+             <summary>
+            下載HTML
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVS.SMVSAAA.SMVSAAA004">
+             <summary>
+            是否上線
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVS.SMVSAAA.SMVSAAA005">
+             <summary>
+            權限項目
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB002">
+             <summary>
+            所屬格式識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB003">
+             <summary>
+            欄位名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB004">
+             <summary>
+            欄位類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB005">
+             <summary>
+            長度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB006">
+             <summary>
+            預設值
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB007">
+             <summary>
+            標題
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAB.SMVJAAB008">
+             <summary>
+            內容意義
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA002">
+             <summary>
+            作業畫面代碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA003">
+             <summary>
+            作業畫面名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA004">
+             <summary>
+            主旨格式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA005">
+             <summary>
+            作業畫面URL
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA006">
+             <summary>
+            說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA007">
+             <summary>
+            是否在未設定關連流程時以一般模式處理欄位
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA008">
+             <summary>
+            權限項目
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA009">
+             <summary>
+            AgentSchema
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA010">
+             <summary>
+            是否取代預設按鈕顯示設定
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA011">
+             <summary>
+            儲存(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA012">
+             <summary>
+            重新整理(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA013">
+             <summary>
+            回清單(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA014">
+             <summary>
+            儲存(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA015">
+             <summary>
+            刪除(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA016">
+             <summary>
+            重新整理(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA017">
+             <summary>
+            歷史紀錄(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA018">
+             <summary>
+            回清單(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA019">
+             <summary>
+            列印憑證(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA021">
+             <summary>
+            儲存(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA022">
+             <summary>
+            重新整理(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA023">
+             <summary>
+            回清單(新增)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA024">
+             <summary>
+            儲存(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA025">
+             <summary>
+            刪除(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA026">
+             <summary>
+            重新整理(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA027">
+             <summary>
+            歷史紀錄(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA028">
+             <summary>
+            回清單(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA029">
+             <summary>
+            列印憑證(顯示)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWA.SMWAAAA.SMWAAAA030">
+             <summary>
+            送出後是否停留畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA002">
+             <summary>
+            設定名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA003">
+             <summary>
+            流程定義代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA004">
+             <summary>
+            流程角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA005">
+             <summary>
+            作業畫面識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA006">
+             <summary>
+            作業模式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA007">
+             <summary>
+            是否為主要顯示畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA008">
+             <summary>
+            附件控制
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA009">
+             <summary>
+            意見表達
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA010">
+             <summary>
+            意見表達識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA011">
+             <summary>
+            主旨字串格式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA012">
+             <summary>
+            單號格式識別
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA013">
+             <summary>
+            AgentSchema
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA014">
+             <summary>
+            設定流程畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA015">
+             <summary>
+            加簽畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA016">
+             <summary>
+            權限項目
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA017">
+             <summary>
+            是否顯示簽核意見
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA018">
+             <summary>
+            送單後處理
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA019">
+             <summary>
+            重辦設定畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA020">
+             <summary>
+            轉寄設定畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA021">
+             <summary>
+            轉派設定畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA022">
+             <summary>
+            允許轉寄類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA023">
+             <summary>
+            憑証是否列印條碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA024">
+             <summary>
+            流程檢視是否顯示流程圖
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA025">
+             <summary>
+            可發起參考流程
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA026">
+             <summary>
+            發起參考流程畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA027">
+             <summary>
+            簽核畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA028">
+             <summary>
+            簽核畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA029">
+             <summary>
+            簽核畫面
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA030">
+             <summary>
+            參考流程結束才可簽核
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA031">
+             <summary>
+            送簽核後模式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA032">
+             <summary>
+            是否顯示表單資訊
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA033">
+             <summary>
+            草稿筆數限制
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA034">
+             <summary>
+            送單後是否刪除草稿來源
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA051">
+             <summary>
+            自訂工具列按鈕功能一
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA052">
+             <summary>
+            自訂工具列按鈕功能二
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA053">
+             <summary>
+            自訂工具列按鈕功能三
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA054">
+             <summary>
+            自訂工具列按鈕功能四
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA055">
+             <summary>
+            自訂工具列按鈕功能五
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA056">
+             <summary>
+            撤簽
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA057">
+             <summary>
+            簽核是否採用Queue執行
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA101">
+             <summary>
+            儲存
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA102">
+             <summary>
+            刪除
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA103">
+             <summary>
+            發起
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA104">
+             <summary>
+            簽核
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA105">
+             <summary>
+            附件
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA106">
+             <summary>
+            儲存草稿
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA107">
+             <summary>
+            讀取草稿
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA108">
+             <summary>
+            檢視相關表單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA109">
+             <summary>
+            重新整理
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA110">
+             <summary>
+            流程檢視
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA111">
+             <summary>
+            設定流程
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA112">
+             <summary>
+            加簽
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA113">
+             <summary>
+            撤銷
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA114">
+             <summary>
+            重辦
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA115">
+             <summary>
+            轉寄
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA116">
+             <summary>
+            發起參考流程
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA117">
+             <summary>
+            複製表單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA118">
+             <summary>
+            歷史紀錄
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA119">
+             <summary>
+            列印憑證
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA120">
+             <summary>
+            回清單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA121">
+             <summary>
+            轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA122">
+             <summary>
+            取回重辦
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA151">
+             <summary>
+            自訂工具列按鈕一
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA152">
+             <summary>
+            自訂工具列按鈕二
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA153">
+             <summary>
+            自訂工具列按鈕三
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA154">
+             <summary>
+            自訂工具列按鈕四
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA155">
+             <summary>
+            自訂工具列按鈕五
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA156">
+             <summary>
+            撤簽
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA201">
+             <summary>
+            儲存
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA202">
+             <summary>
+            刪除
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA203">
+             <summary>
+            發起
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA204">
+             <summary>
+            簽核
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA205">
+             <summary>
+            附件
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA206">
+             <summary>
+            儲存草稿
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA207">
+             <summary>
+            讀取草稿
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA208">
+             <summary>
+            檢視相關表單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA209">
+             <summary>
+            重新整理
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA210">
+             <summary>
+            流程檢視
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA211">
+             <summary>
+            設定流程
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA212">
+             <summary>
+            加簽
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA213">
+             <summary>
+            撤銷
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA214">
+             <summary>
+            重辦
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA215">
+             <summary>
+            轉寄
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA216">
+             <summary>
+            發起參考流程
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA217">
+             <summary>
+            複製表單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA218">
+             <summary>
+            歷史紀錄
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA219">
+             <summary>
+            列印憑證
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA220">
+             <summary>
+            回清單
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA221">
+             <summary>
+            轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA222">
+             <summary>
+            取回重辦
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA251">
+             <summary>
+            自訂工具列按鈕一
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA252">
+             <summary>
+            自訂工具列按鈕二
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA253">
+             <summary>
+            自訂工具列按鈕三
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA254">
+             <summary>
+            自訂工具列按鈕四
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA255">
+             <summary>
+            自訂工具列按鈕五
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA256">
+             <summary>
+            撤簽
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA300">
+             <summary>
+            開啟轉派區域
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA301">
+             <summary>
+            一般
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA302">
+             <summary>
+            通知
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA303">
+             <summary>
+            執行
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA304">
+             <summary>
+            直接轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA305">
+             <summary>
+            系統代理人轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA306">
+             <summary>
+            系統逾時轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA307">
+             <summary>
+            管理員代理轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA308">
+             <summary>
+            負責人代理轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA309">
+             <summary>
+            工作取回
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA310">
+             <summary>
+            工作轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA311">
+             <summary>
+            管理員工作轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA312">
+             <summary>
+            負責人工作轉派
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA313">
+             <summary>
+            表單資訊預設展開
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA314">
+             <summary>
+            簽核資訊預設展開
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA315">
+             <summary>
+            關卡排序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA316">
+             <summary>
+            轉派排序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA321">
+             <summary>
+            類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA322">
+             <summary>
+            關卡名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA323">
+             <summary>
+            處理者
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA324">
+             <summary>
+            簽核結果
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA325">
+             <summary>
+            簽核意見
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA326">
+             <summary>
+            簽核時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA327">
+             <summary>
+            狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA328">
+             <summary>
+            轉寄
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA329">
+             <summary>
+            開始時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA330">
+             <summary>
+            處理時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA331">
+             <summary>
+            類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA332">
+             <summary>
+            處理人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA333">
+             <summary>
+            受託人
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA334">
+             <summary>
+            轉派意見
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA335">
+             <summary>
+            轉派時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA451">
+             <summary>
+            自訂按鈕一開窗寬
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA452">
+             <summary>
+            自訂按鈕二開窗寬
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA453">
+             <summary>
+            自訂按鈕三開窗寬
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA454">
+             <summary>
+            自訂按鈕四開窗寬
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA455">
+             <summary>
+            自訂按鈕五開窗寬
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA551">
+             <summary>
+            自訂按鈕一開窗高
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA552">
+             <summary>
+            自訂按鈕二開窗高
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA553">
+             <summary>
+            自訂按鈕三開窗高
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA554">
+             <summary>
+            自訂按鈕四開窗高
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWD.SMWDAAA.SMWDAAA555">
+             <summary>
+            自訂按鈕五開窗高
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA002">
+             <summary>
+            所屬應用程式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXAAAA002">
+             <summary>
+            應用程式代碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXAAAA003">
+             <summary>
+            應用程式名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA003">
+             <summary>
+            模組代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA004">
+             <summary>
+            模組名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA005">
+             <summary>
+            通知人員
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA006">
+             <summary>
+            是否寄發Email
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA007">
+             <summary>
+            是否警示
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXB.SMXBAAA.SMXBAAA008">
+             <summary>
+            是否紀錄Log
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVM.SMVMAAA.SMVMAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVM.SMVMAAA.SMVMAAA002">
+             <summary>
+            使用者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVM.SMVMAAA.SMVMAAA003">
+             <summary>
+            使用者識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVM.SMVMAAA.userName">
+             <summary>
+            使用者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAA.SMVJAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAA.SMVJAAA002">
+             <summary>
+            代理器名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAA.SMVJAAA003">
+             <summary>
+            組件名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAA.SMVJAAA004">
+             <summary>
+            完整類別名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVJ.SMVJAAA.SMVJAAA005">
+             <summary>
+            主檔資料表
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAB.SMVDAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAB.SMVDAAB002">
+             <summary>
+            訊息識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAB.SMVDAAB003">
+             <summary>
+            閱讀使用者
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAB.SMVDAAB004">
+             <summary>
+            通知時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAB.SMVDAAB005">
+             <summary>
+            是否已閱讀內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAB.SMVDAAB006">
+             <summary>
+            閱讀時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAC.SMWTAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAC.SMWTAAC002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAC.SMWTAAC003">
+             <summary>
+            角色名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRD.SMRDAAA.SMRDAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRD.SMRDAAA.SMRDAAA002">
+             <summary>
+            群組代碼(SMSAABA002)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRD.SMRDAAA.SMRDAAA003">
+             <summary>
+            Webi登入帳號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRD.SMRDAAA.SMRDAAA004">
+             <summary>
+            Webi登入密碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA002">
+             <summary>
+            使用者GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA003">
+             <summary>
+            行事曆類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA004">
+             <summary>
+            是否為循環事件
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA005">
+             <summary>
+            循環時間設定
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA006">
+             <summary>
+            日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA007">
+             <summary>
+            起始時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA008">
+             <summary>
+            結束時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA009">
+             <summary>
+            主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVG.SMVGAAA.SMVGAAA010">
+             <summary>
+            內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAA.SMVDAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAA.SMVDAAA003">
+             <summary>
+            訊息類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAA.SMVDAAA004">
+             <summary>
+            通知時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAA.SMVDAAA007">
+             <summary>
+            標題
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAA.SMVDAAA008">
+             <summary>
+            訊息內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVD.SMVDAAA.SMVDAAA009">
+             <summary>
+            系統連結Url
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAB.SMWTAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAB.SMWTAAB002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAB.SMWTAAB003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAB.SMWTAAB004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA002">
+             <summary>
+            憑證格式代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA003">
+             <summary>
+            憑證格式名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA004">
+             <summary>
+            憑證格式類型
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA005">
+             <summary>
+            憑證格式定義XML
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA006">
+             <summary>
+            憑證格式檔案GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA007">
+             <summary>
+            憑證格式所屬使用者
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRA.SMRAAAA.SMRAAAA008">
+             <summary>
+            是否開放所有人使用
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAA.SMWTAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAA.SMWTAAA002">
+             <summary>
+            資料夾代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAA.SMWTAAA003">
+             <summary>
+            資料夾名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAA.SMWTAAA004">
+             <summary>
+            流程選擇
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWT.SMWTAAA.SMWTAAA005">
+             <summary>
+            角色選擇
+             </summary>
+        </member>
+        <member name="T:WebServerProject.system.substitute.MultiSubstitute">
+            <summary>
+            ECP多重代理人機制 經實測多組代理情況效能較DefaultSubstitute佳
+            </summary>
+        </member>
+        <member name="M:WebServerProject.system.substitute.MultiSubstitute.getSubstituteList(System.String,com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            取得被代理人清單
+            </summary>
+            <param name="userID">代理人</param>
+            <param name="engine">engine</param>
+            <returns>string[i,0] 被代理人ID, string[i,1] 被代理流程ProcessId, string[i,2] 被代理部門代號 (通用代理為null)</returns>
+        </member>
+        <member name="M:WebServerProject.system.substitute.MultiSubstitute.recursiveGetSubstitute(System.String,System.String,com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            遞迴處理傳入的代理人資料
+            </summary>
+            <param name="userID">須處理的代理人ID</param>
+            <param name="filterProcID">鎖定的流程種類</param>
+            <param name="engine">資料引擎</param>
+            <returns>取得的代理人資料</returns>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAB.SMWHAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAB.SMWHAAB002">
+             <summary>
+            所屬意見群組識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAB.SMWHAAB003">
+             <summary>
+            意見值
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAB.SMWHAAB004">
+             <summary>
+            意見內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAB.SMWHAAB005">
+             <summary>
+            流程處理
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA002">
+             <summary>
+            流程實例識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA003">
+             <summary>
+            發起時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA005">
+             <summary>
+            流程實例序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA006">
+             <summary>
+            發起者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA007">
+             <summary>
+            流程狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA008">
+             <summary>
+            是否允許ByPass
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA009">
+             <summary>
+            主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWQ.SMWQAAA.SMWQAAA010">
+             <summary>
+            目前處理活動名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVT.SMVTAAA.SMVTAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVT.SMVTAAA.SMVTAAA002">
+             <summary>
+            使用者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVT.SMVTAAA.userName">
+             <summary>
+            使用者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVT.SMVTAAA.SMVTAAA003">
+             <summary>
+            密碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAA.SMWHAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAA.SMWHAAA002">
+             <summary>
+            意見群組代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAA.SMWHAAA003">
+             <summary>
+            意見群組名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWH.SMWHAAA.SMWHAAA004">
+             <summary>
+            說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB002">
+             <summary>
+            所屬識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB003">
+             <summary>
+            參數代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB004">
+             <summary>
+            參數名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB005">
+             <summary>
+            參數長度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB006">
+             <summary>
+            初始值
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB007">
+             <summary>
+            是否為表單參數
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAB.SMWBAAB008">
+             <summary>
+            表單識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB003">
+             <summary>
+            列印者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB004">
+             <summary>
+            列印者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB005">
+             <summary>
+            列印位置
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB006">
+             <summary>
+            列印時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAB007">
+             <summary>
+            瀏覽器版本
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAA002">
+             <summary>
+            列印名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXF.SMXFAAA.SMXDAAA003">
+             <summary>
+            列印標的
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVN.SMVNAAA.SMVNAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVN.SMVNAAA.SMVNAAA002">
+             <summary>
+            使用者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVN.SMVNAAA.SMVNAAA003">
+             <summary>
+            部門識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVN.SMVNAAA.organizationUnitName">
+             <summary>
+            部門名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC002">
+             <summary>
+            代理區間識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC003">
+             <summary>
+            被代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC004">
+             <summary>
+            代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.userId">
+             <summary>
+            代理人編號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.userName">
+             <summary>
+            代理人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC005">
+             <summary>
+            發起部門識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.organizationUnitId">
+             <summary>
+            發起部門代碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.organizationUnitName">
+             <summary>
+            發起部門名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC006">
+             <summary>
+            流程編號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC007">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC008">
+             <summary>
+            是否永久代理
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAC.SMVKAAC009">
+             <summary>
+            版本
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA002">
+             <summary>
+            流程識別號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA005">
+             <summary>
+            是否顯示簽核意見
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA006">
+             <summary>
+            是否顯示表單資訊
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWB.SMWBAAA.SMWBAAA007">
+             <summary>
+            是否紀錄上傳檔案人員時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB002">
+             <summary>
+            程式代碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB003">
+             <summary>
+            程式名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB004">
+             <summary>
+            網址
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB005">
+             <summary>
+            初始寬度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB006">
+             <summary>
+            初始高度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB007">
+             <summary>
+            是否最大視窗
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB008">
+             <summary>
+            是否強制新視窗執行
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB009">
+             <summary>
+            使用權限項目代碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB010">
+             <summary>
+            說明檔路徑
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB011">
+             <summary>
+            作業目的
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB012">
+             <summary>
+            使用時機
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB013">
+             <summary>
+            操作說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVB.SMVAAAB.SMVAAAB014">
+             <summary>
+            注意事項
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAB.SMTCAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAB.SMTCAAB002">
+             <summary>
+            主檔GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAB.SMTCAAB003">
+             <summary>
+            序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAB.SMTCAAB004">
+             <summary>
+            顯示進度
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA002">
+             <summary>
+            應用程式代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA003">
+             <summary>
+            應用程式名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA004">
+             <summary>
+            模組代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA005">
+             <summary>
+            模組名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA006">
+             <summary>
+            程式代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA007">
+             <summary>
+            程式名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA008">
+             <summary>
+            警示層級
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA009">
+             <summary>
+            發生時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA010">
+             <summary>
+            警示訊息
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA011">
+             <summary>
+            追蹤內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA012">
+             <summary>
+            使用者代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA013">
+             <summary>
+            使用者姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA014">
+             <summary>
+            客戶端位置
+             </summary>
+        </member>
+        <member name="P:WebServerProject.audit.SMXC.SMXCAAA.SMXCAAA015">
+             <summary>
+            瀏覽器
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.SMVKAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.SMVKAAB002">
+             <summary>
+            代理區間識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.SMVKAAB003">
+             <summary>
+            被代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.SMVKAAB004">
+             <summary>
+            代理順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.SMVKAAB005">
+             <summary>
+            代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.userId">
+             <summary>
+            代理人編號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.userName">
+             <summary>
+            代理人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAB.SMVKAAB006">
+             <summary>
+            版本
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA002">
+             <summary>
+            參數代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA003">
+             <summary>
+            參數名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA004">
+             <summary>
+            參數內容值
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA005">
+             <summary>
+            說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA006">
+             <summary>
+            是否加密
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA007">
+             <summary>
+            群組
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVH.SMVHAAA.SMVHAAA008">
+             <summary>
+            加密金鑰類別名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTCAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTCAAA002">
+             <summary>
+            主檔GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTAAAA002">
+             <summary>
+            批次代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTCAAA003">
+             <summary>
+            分段執行順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTCAAA004">
+             <summary>
+            執行起始時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTCAAA005">
+             <summary>
+            執行結束時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMTC.SMTCAAA.SMTCAAA006">
+             <summary>
+            執行狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA002">
+             <summary>
+            報表來源代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA003">
+             <summary>
+            報表來源名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA004">
+             <summary>
+            報表來源SQL
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA005">
+             <summary>
+            報表格式定義XML
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA006">
+             <summary>
+            報表格式檔案GUID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA007">
+             <summary>
+            報表格式所屬使用者
+             </summary>
+        </member>
+        <member name="P:WebServerProject.report.SMRB.SMRBAAA.SMRBAAA008">
+             <summary>
+            是否開放所有人使用
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.SMVKAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.SMVKAAA002">
+             <summary>
+            被代理人識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.userId">
+             <summary>
+            被代理人編號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.userName">
+             <summary>
+            被代理人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.SMVKAAA003">
+             <summary>
+            代理期間(起)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.SMVKAAA004">
+             <summary>
+            代理期間(迄)
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.SMVKAAA005">
+             <summary>
+            優先順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVKA.SMVKAAA.SMVKAAA006">
+             <summary>
+            是否更新至GP
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA002">
+             <summary>
+            公告發布日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA003">
+             <summary>
+            公告有效期限
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA004">
+             <summary>
+            是否上線
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA005">
+             <summary>
+            公告標題
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA006">
+             <summary>
+            公告內容
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA007">
+             <summary>
+            公告部門
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA008">
+             <summary>
+            是否包含子部門
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVE.SMVEAAA.SMVEAAA009">
+             <summary>
+            是否有附件
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAB.SMWRAAB001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAB.SMWRAAB002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAB.SMWRAAB003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAB.SMWRAAB004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAD.SMWIAAD001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAD.SMWIAAD002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAD.SMWIAAD003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAD.SMWIAAD004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="T:WebServerProject.system.substitute.DefaultSubstitute">
+            <summary>
+            預設ECP代理人機制
+            </summary>
+        </member>
+        <member name="M:WebServerProject.system.substitute.DefaultSubstitute.getSubstituteList(System.String,com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            取得被代理人清單
+            </summary>
+            <param name="userID">代理人</param>
+            <param name="engine">engine</param>
+            <returns>string[i,0] 被代理人ID, string[i,1] 被代理流程ProcessId, string[i,2] 被代理部門代號 (通用代理為null)</returns>
+        </member>
+        <member name="M:WebServerProject.system.substitute.DefaultSubstitute.recursiveGetSubstitute(System.String,System.String,com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            遞迴處理傳入的代理人資料
+            </summary>
+            <param name="userID">須處理的代理人ID</param>
+            <param name="filterProcID">鎖定的流程種類</param>
+            <param name="engine">資料引擎</param>
+            <returns>取得的代理人資料</returns>
+        </member>
+        <member name="M:WebServerProject.SysParam.setEncryptionKey(System.String)">
+             <summary>
+             置換組件使用的加密鑰匙
+             Ex.
+            com.dsc.kernal.security.TriDESecurity tri = new com.dsc.kernal.security.TriDESecurity();
+            string Key = tri.getPublicKey();
+             </summary>
+             <param name="publicKey"></param>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAC.SMVRAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAC.SMVRAAC002">
+             <summary>
+            假日名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.maintain.SMVR.SMVRAAC.SMVRAAC003">
+             <summary>
+            日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.GUID">
+             <summary>
+            唯一識別碼,唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.OID">
+             <summary>
+            EFGP發起流程後的流程OID,EFGP發起流程後的流程OID
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.ProcessNo">
+             <summary>
+            EFGP發起流程後的流程序號,EFGP發起流程後的流程序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.Description">
+             <summary>
+            EFGP發起流程後的的流程主旨,EFGP發起流程後的的流程主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.Title">
+             <summary>
+            說明,說明
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.CustomerID">
+             <summary>
+            客戶代號,客戶代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.LastName">
+             <summary>
+            姓氏,姓氏
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.FirstName">
+             <summary>
+            名字,名字
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.Email">
+             <summary>
+            Email,Email
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.Date">
+             <summary>
+            異動日期,異動日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.Time">
+             <summary>
+            異動時間,異動時間
+             </summary>
+        </member>
+        <member name="P:WebServerProject.form.Sample.FormHead.Status">
+             <summary>
+            表單狀態,表單狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA002">
+             <summary>
+            單號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA003">
+             <summary>
+            流程代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA004">
+             <summary>
+            流程名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA005">
+             <summary>
+            流程實例序號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA006">
+             <summary>
+            主旨
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA007">
+             <summary>
+            重要性
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA008">
+             <summary>
+            填表人代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA009">
+             <summary>
+            填表人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA010">
+             <summary>
+            填表單位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA011">
+             <summary>
+            填表單位名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA012">
+             <summary>
+            關係人代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA013">
+             <summary>
+            關係人姓名
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA014">
+             <summary>
+            關係人單位代號
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA015">
+             <summary>
+            關係人單位名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA016">
+             <summary>
+            流程發起單位
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA017">
+             <summary>
+            填表日期
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA018">
+             <summary>
+            作業畫面識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA019">
+             <summary>
+            資料單頭識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA020">
+             <summary>
+            流程狀態
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA021">
+             <summary>
+            附件
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA022">
+            <summary>
+            資料夾代號
+            </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA023">
+             <summary>
+            資料夾名稱
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA024">
+             <summary>
+            流程模式
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWR.SMWRAAA.SMWRAAA200">
+             <summary>
+            欄位順序
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAC.SMWIAAC001">
+             <summary>
+            唯一識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAC.SMWIAAC002">
+             <summary>
+            所屬識別碼
+             </summary>
+        </member>
+        <member name="P:WebServerProject.flow.SMWI.SMWIAAC.SMWIAAC003">
+             <summary>
+            角色名稱
+             </summary>
+        </member>
+    </members>
+</doc>

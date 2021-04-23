@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EH0106.EH0106B" tableName="EH0106B">
+  <queryStr>
+    SELECT GUID,SheetNo,EmpNo,EmpName,Date,Stime,Etime,WorkType,Time,ERRType,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EH0106B
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="員工工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="員工姓名" showName=""/>
+    <field dataField="Date" typeField="STRING" lengthField="30" defaultValue="" displayName="加班日期" showName=""/>
+    <field dataField="Stime" typeField="STRING" lengthField="20" defaultValue="" displayName="開始時間" showName=""/>
+    <field dataField="Etime" typeField="STRING" lengthField="20" defaultValue="" displayName="結束時間" showName=""/>
+    <field dataField="WorkType" typeField="STRING" lengthField="20" defaultValue="" displayName="班別" showName=""/>
+    <field dataField="Time" typeField="STRING" lengthField="20" defaultValue="" displayName="異常時數" showName=""/>
+    <field dataField="ERRType" typeField="STRING" lengthField="20" defaultValue="" displayName="異常類型" showName=""/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EM0111.EM0111A" tableName="EM0111A">
+  <queryStr>
+    SELECT GUID,SheetNo,Subject,Uname,CName,mobileuser,partNouser,zb,cpu,cupfs,disk,powerx,powerd,mouse,keyboardx,keyboardd,bzwk,qzwk,wxwk,memory,xk,wx,telphone,smq,BGDN,CXDN,GCDNP,GCDNZ,GYDN6,GYDN8,GYDN9,reason,QTLY,remark,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EM0111A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="Uname" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="CName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="mobileuser" typeField="STRING" lengthField="20" defaultValue="" displayName="行動電話" showName=""/>
+    <field dataField="partNouser" typeField="STRING" lengthField="25" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="zb" typeField="STRING" lengthField="10" defaultValue="" displayName="主板" showName=""/>
+    <field dataField="cpu" typeField="STRING" lengthField="10" defaultValue="" displayName="CPU" showName=""/>
+    <field dataField="cupfs" typeField="STRING" lengthField="10" defaultValue="" displayName="CPU風扇" showName=""/>
+    <field dataField="disk" typeField="STRING" lengthField="10" defaultValue="" displayName="硬碟" showName=""/>
+    <field dataField="powerx" typeField="STRING" lengthField="10" defaultValue="" displayName="小電源" showName=""/>
+    <field dataField="powerd" typeField="STRING" lengthField="10" defaultValue="" displayName="大電源" showName=""/>
+    <field dataField="mouse" typeField="STRING" lengthField="10" defaultValue="" displayName="鼠標" showName=""/>
+    <field dataField="keyboardx" typeField="STRING" lengthField="10" defaultValue="" displayName="小鍵盤" showName=""/>
+    <field dataField="keyboardd" typeField="STRING" lengthField="10" defaultValue="" displayName="大鍵盤" showName=""/>
+    <field dataField="bzwk" typeField="STRING" lengthField="10" defaultValue="" displayName="百兆網卡" showName=""/>
+    <field dataField="qzwk" typeField="STRING" lengthField="10" defaultValue="" displayName="千兆網卡" showName=""/>
+    <field dataField="wxwk" typeField="STRING" lengthField="10" defaultValue="" displayName="無線網卡" showName=""/>
+    <field dataField="memory" typeField="STRING" lengthField="10" defaultValue="" displayName="內存條" showName=""/>
+    <field dataField="xk" typeField="STRING" lengthField="10" defaultValue="" displayName="顯卡" showName=""/>
+    <field dataField="wx" typeField="STRING" lengthField="10" defaultValue="" displayName="網線" showName=""/>
+    <field dataField="telphone" typeField="STRING" lengthField="10" defaultValue="" displayName="電話機" showName=""/>
+    <field dataField="smq" typeField="STRING" lengthField="10" defaultValue="" displayName="掃描槍" showName=""/>
+	<field dataField="BGDN" typeField="STRING" lengthField="10" defaultValue="" displayName="辦公電腦" showName=""/>
+	<field dataField="CXDN" typeField="STRING" lengthField="10" defaultValue="" displayName="產線電腦" showName=""/>
+	<field dataField="GCDNP" typeField="STRING" lengthField="10" defaultValue="" displayName="工程電腦品牌機" showName=""/>
+	<field dataField="GCDNZ" typeField="STRING" lengthField="10" defaultValue="" displayName="工程電腦組裝機" showName=""/>
+	<field dataField="GYDN6" typeField="STRING" lengthField="10" defaultValue="" displayName="工業電腦6" showName=""/>
+	<field dataField="GYDN9" typeField="STRING" lengthField="10" defaultValue="" displayName="工業電腦9" showName=""/>
+	<field dataField="GYDN8" typeField="STRING" lengthField="10" defaultValue="" displayName="工業電腦8" showName=""/>
+    <field dataField="reason" typeField="STRING" lengthField="500" defaultValue="" displayName="更換原因" showName=""/>
+    <field dataField="QTLY" typeField="STRING" lengthField="500" defaultValue="" displayName="其他領用" showName=""/>
+    <field dataField="remark" typeField="STRING" lengthField="500" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="zb"/>
+    <field dataField="cpu"/>
+    <field dataField="cupfs"/>
+    <field dataField="disk"/>
+    <field dataField="powerx"/>
+    <field dataField="powerd"/>
+    <field dataField="powerd"/>
+    <field dataField="mouse"/>
+    <field dataField="keyboardx"/>
+    <field dataField="keyboardd"/>
+    <field dataField="bzwk"/>
+    <field dataField="qzwk"/>
+    <field dataField="wxwk"/>
+    <field dataField="memory"/>
+    <field dataField="xk"/>
+    <field dataField="wx"/>
+    <field dataField="telphone"/>
+    <field dataField="smq"/>
+	<field dataField="BGDN"/>
+	<field dataField="CXDN"/>
+	<field dataField="GCDNP"/>
+	<field dataField="GCDNZ"/>
+	<field dataField="GYDN6"/>
+	<field dataField="GYDN9"/>
+	<field dataField="GYDN8"/>
+    <field dataField="QTLY"/>
+    <field dataField="remark"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

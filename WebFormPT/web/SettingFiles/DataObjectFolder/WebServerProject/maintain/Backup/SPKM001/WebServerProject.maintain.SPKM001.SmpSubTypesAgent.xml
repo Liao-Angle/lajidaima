@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpSubType" TableName="SmpSubType">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpSubTypeAdm" TableName="SmpSubTypeAdm" RelationString="GUID=SubTypeGUID">
+  </DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpSubTypeBelongGroup" TableName="SmpSubTypeBelongGroup" RelationString="GUID=SubTypeGUID">
+  </DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpDocType" TableName="SmpDocType" RelationString="GUID=SubTypeGUID">
+  </DOS>
+</DOS>
+

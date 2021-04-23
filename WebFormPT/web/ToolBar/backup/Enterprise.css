@@ -1,0 +1,21 @@
+body
+{
+	font-size:9pt;
+	background-color:#FFFFFF;
+	overflow:hidden;
+}
+.ToolBarContainer
+{
+	font-size:9pt;
+	background-image:url(Images/buttom_bg.jpg);
+    background: -moz-linear-gradient(top,  #FDFDFD,  #DBDBDB);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FDFDFD), to(#DBDBDB));
+    filter:"progid:dximagetransform.microsoft.gradient(gradientType=0, startColorStr=#FDFDFD, endColorStr=#DBDBDB)";
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:#B6B9C1;
+}
+.ToolBarTree
+{
+	font-size:9pt;
+}

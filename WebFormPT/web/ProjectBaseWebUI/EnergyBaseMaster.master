@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="EnergyBaseMaster.master.cs" Inherits="ProjectBaseWebUI_EnergyBaseMaster" %>
+<%@ Register Assembly="DSCWebControl" Namespace="DSCWebControl" TagPrefix="cc1" %>
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="../StyleSheet/WebFormPT.css" rel="stylesheet" type="text/css" />
+    <title>未命名頁面</title>
+        <script language=javascript>
+		var pressQuit=0;
+		var count=0;
+		function window_onbeforeunload(){
+		   if(pressQuit==0){
+	            if (count == 0) {
+		            //修正事件取法
+                    var evt = getEvent();
+		            evt.returnValue = "<%=com.dsc.locale.LocaleString.getMainFrameLocaleString("MainFrame.aspx.language.ini", "global", "string001", "感謝您使用本系統.  再見!")%>";		
+                    //FF不支援window.event.reason
+		            if (evt.reason != null && evt.reason == false){
+			            cancelBubble(evt)
+                    }
+	            }
+	        }
+        }
+        function window_onunload(e){
+            if(pressQuit==0){
+                count++;
+	            var objHTTP = createXMLHTTP() ;
+	            objHTTP.open('Get','../Logout.aspx',false);
+	            objHTTP.send();
+	            if (e == undefined) {
+	                objHTTP = createXMLHTTP() ;
+	                objHTTP.open('Get','../Logout.aspx',false);
+	                objHTTP.send();
+	            }else{
+		            window.open(e);
+		            window.close();
+	            }
+		    }
+        }
+
+    function doClientSaveButton()
+    {
+    //
+        var objHTTP = createXMLHTTP() ;
+        //Step1: 呼叫後端儲存單頭並取得GUID
+        objHTTP.open('POST','<%=Page.Request.RawUrl.Split(new char[]{'?'})[0] %>',false); 
+        objHTTP.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        objHTTP.send('saveData=1&currentPageUniqueID='+getPuid());
+        var retValue=objHTTP.responseText;
+
+        if(retValue.substring(0,5) == 'ERROR'){
+            alert(retValue.substring(5, retValue.length));
+            return false;
+        }
+
+        if(retValue!='')
+        {
+            //Step2: 循序呼叫單身的saveDB client script
+            var iframeinfo=new Array(<%=((EnergyBasePage)Page).iframeInfo.GetLength(0) %>); 
+            var FKS=new Array(<%=((EnergyBasePage)Page).iframeInfo.GetLength(0) %>); 
+            <%
+            for(int i=0;i<((EnergyBasePage)Page).iframeInfo.GetLength(0);i++){
+                Response.Write("iframeinfo["+i.ToString()+"]='"+((EnergyBasePage)Page).iframeInfo[i,0]+"';\n"); 
+                Response.Write("FKS["+i.ToString()+"]='"+((EnergyBasePage)Page).iframeInfo[i,2]+"';\n"); 
+            } 
+            %>     
+        
+            for(var i=0;i<iframeinfo.length;i++){
+                //var iframeobj=eval('document.all.'+iframeinfo[i]);
+                var iframeobj=eval('document.getElementById(\''+iframeinfo[i]+'\');');
+                //如果跟單頭沒關係的就不做了 
+                if(FKS[i]!=''){ 
+                    var rets=iframeobj.contentWindow.saveDB(getPuid(), FKS[i], retValue);
+                    if(rets!=''){
+                        //有錯誤, 執行rollback 
+                       objHTTP.open('POST','<%=Page.Request.RawUrl.Split(new char[]{'?'})[0] %>',false); 
+                       objHTTP.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                       objHTTP.send('rollback=1&currentPageUniqueID='+getPuid());
+
+                       alert(rets);
+                       return false;  
+                    }
+                }
+            }  
+        }else{
+            alert('strange empty'); 
+       } 
+
+        //Step3: 成功, commit
+        objHTTP.open('POST','<%=Page.Request.RawUrl.Split(new char[]{'?'})[0] %>',false); 
+        objHTTP.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        objHTTP.send('commit=1&currentPageUniqueID='+getPuid());
+        var returnScript=objHTTP.responseText;
+        eval(returnScript);//alert('儲存成功');  
+        
+        return true; 
+    }
+   function initPageButton()
+   {
+        //document.all.ToolBar.style.backgroundImage="url(<%=Page.ResolveClientUrl("~/Images/GeneralWebFormButtonBack.gif") %>)";
+        document.getElementById('ToolBar').style.backgroundImage="url(<%=Page.ResolveClientUrl("~/Images/GeneralWebFormButtonBack.gif") %>)";
+   } 
+
+   function dispatchDetailRefreshEvent(detailID, methodName, objectClientID)
+   {
+        if(detailID!=''){
+            str='document.getElementById(detailID).contentWindow.'+methodName+'("'+objectClientID+'");';
+        }else{
+            str=methodName+'("'+objectClientID+'");';
+        }
+        //alert(str);
+        eval(str);
+   }
+    </script> 
+    
+</head>
+<body topmargin=0 leftmargin=0 onload='initPageButton()'>
+    <form id="form1" runat="server">
+    <div>
+        <table id=ToolBar border=0 cellspacing=0 cellpadding=0 width=100% height=25px ><tr><td><cc1:GlassButton ID="AddButton" runat="server" ImageUrl="~/Images/EnergyAddNew.gif" OnClick="AddButton_Click" Text="新增" CssClass="GeneralButton" ConfirmText="你確定要新增此筆資料嗎?" /><cc1:GlassButton ID="EditButton" runat="server" ImageUrl="~/Images/EnergyEdit.gif" OnClick="EditButton_Click" Text="編輯" CssClass="GeneralButton" /><cc1:GlassButton ID="SaveButton" runat="server" ImageUrl="~/Images/EnergySave.gif" Text="儲存" OnClick="SaveButton_Click" CssClass="GeneralButton" BeforeClick="doClientSaveButton" /><cc1:GlassButton ID="CancelButton" runat="server" ImageUrl="~/Images/EnergyCancel.gif" OnClick="CancelButton_Click" Text="取消" CssClass="GeneralButton" /><cc1:GlassButton ID="BackListButton" runat="server" ImageUrl="~/Images/EnergyBackList.gif" OnClick="BackListButton_Click" Text="回查詢" CssClass="GeneralButton" /></td></tr></table> 
+        <table border=0 cellpadding=2>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td> 
+        </tr> 
+        </table> 
+    </div>
+    </form>
+</body>
+</html>

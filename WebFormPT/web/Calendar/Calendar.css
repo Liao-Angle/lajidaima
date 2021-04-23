@@ -1,0 +1,55 @@
+﻿body 
+{
+	font-size:9pt;
+	background-color:#F0F0F0;
+	overflow:hidden;
+}
+.CalendarStyle
+{
+	background-color:White;
+}
+.DayHeaderStyle
+{
+}
+.DayStyle
+{
+	text-decoration:none;
+}
+.OtherMonthDayStyle
+{
+	
+}
+.SelectedDayStyle
+{
+	font-weight:bold;
+}
+.SelectorStyle
+{
+	background-color:#999999;
+}
+.TitleStyle
+{
+	background-color:#CCCCCC;
+}
+.TodayDayStyle
+{
+
+}
+.DayItemTitle
+{
+	background-color:#8C8C8C;
+	color:White;
+	font-size:9pt;
+	font-weight:bold;
+}
+.DayItemSubTitle
+{
+	background-color:#CECECE;
+	color:White;
+	font-size:9pt;
+	font-weight:bold;
+}
+.ItemStyle
+{
+	font-size:9pt;
+}

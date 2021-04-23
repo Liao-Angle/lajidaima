@@ -1,0 +1,115 @@
+[2014/11/11 09:00:02]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 09:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 10:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 10:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 11:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 11:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 12:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 12:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 13:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 13:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 14:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 14:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 15:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 15:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 16:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 16:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 17:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 17:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 18:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 18:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 19:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 19:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 20:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 20:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 21:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 21:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 22:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 22:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 23:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/11 23:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 00:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 00:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 01:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 02:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 02:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 03:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 03:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 04:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 04:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 05:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 05:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 06:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 06:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 07:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 07:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 08:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 08:30:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 09:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 09:30:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/12 10:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/13 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/14 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/15 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/16 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/17 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/18 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/19 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/20 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/21 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/22 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/23 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/24 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/25 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/26 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/27 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/28 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/29 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/11/30 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/01 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/02 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/03 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/04 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/05 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/06 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/07 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/08 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/09 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/10 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/11 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/12 01:00:02]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/13 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/14 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/15 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/16 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/17 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/18 01:00:02]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/19 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/20 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/21 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/22 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/23 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/24 01:00:02]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/25 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/25 01:00:40]   於 System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection)
+   於 System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj)
+   於 System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   於 System.Data.SqlClient.SqlDataReader.ConsumeMetaData()
+   於 System.Data.SqlClient.SqlDataReader.get_MetaData()
+   於 System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, DbAsyncResult result)
+   於 System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   於 System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   於 System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   於 System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, String srcTable)
+   於 com.dsc.kernal.utility.DBProcessor.getDataSet(SqlDataAdapter adapter, String tableName)
+   於 com.dsc.kernal.utility.DBProcessor.getDataSet(String sqlString, String tableName)
+   於 SubmitNotification.Submit.run() 於 D:\simplo\C#\program\WebFormPT\SubmitNotification\Submit.cs: 行 52
+[2014/12/25 01:00:42]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/26 01:00:01]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID
+[2014/12/27 01:00:00]select b.SourceId from SmpNonSignList a, SmpSupplierEvaluate b where a.signUserId='4828' and a.formGUID = b.GUID

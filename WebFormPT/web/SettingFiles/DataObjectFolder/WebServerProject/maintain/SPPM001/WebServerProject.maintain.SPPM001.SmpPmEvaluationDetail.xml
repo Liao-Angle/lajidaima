@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPPM001.SmpPmEvaluationDetail" tableName="SmpPmEvaluationDetail">
+  <queryStr>
+	  select GUID, EvaluationGUID, ItemNo, ItemName, Content, FractionExp, MinFraction, MaxFraction,ItemNum,ItemWeight, IS_DISPLAY, IS_LOCK, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME from SmpPmEvaluationDetail
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="EvaluationGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核表識別碼" showName=""/>
+    <field dataField="ItemNo" typeField="STRING" lengthField="50" defaultValue="" displayName="編號" showName=""/>
+    <field dataField="ItemName" typeField="STRING" lengthField="50" defaultValue="" displayName="項目" showName=""/>
+    <field dataField="Content" typeField="STRING" lengthField="500" defaultValue="" displayName="考核內容" showName=""/>
+    <field dataField="FractionExp" typeField="STRING" lengthField="50" defaultValue="" displayName="分數說明" showName=""/>
+    <field dataField="MinFraction" typeField="STRING" lengthField="3" defaultValue="" displayName="最低分數" showName=""/>
+    <field dataField="MaxFraction" typeField="STRING" lengthField="3" defaultValue="" displayName="最高分數" showName=""/>
+	<field dataField="ItemNum" typeField="STRING" lengthField="10" defaultValue="" displayName="項目個數" showName=""/>
+	<field dataField="ItemWeight" typeField="STRING" lengthField="10" defaultValue="" displayName="權重" showName=""/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" 
+              showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" 
+              showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" 
+              showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="EvaluationGUID"/>
+    <field dataField="ItemNo"/>
+  </keyField>
+  <allowEmptyField>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPTS011.SmpTSAchievementRateV" tableName="SmpTSAchievementRateV">
+  <queryStr>
+    select CompanyCode,SchYear, SchSource,SchMonth, YM, SchNo, SubjectNo,SubjectName,deptId ,deptName,      
+	StartDate, InOut, SubjectType, Status, ActionStatus, Appraisal ,       
+	WrittenTest, Implement, Satisfaction, InOther, InOtherDesc,       
+	Presentation, Certificate, Report, OJT, OutOther, OutOtherDesc   
+    From SmpTSAchievementRateV
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>        
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName="SMP:新普科技;TP:中普科技"/>	
+    <field dataField="SchYear" typeField="STRING" lengthField="4" defaultValue="" displayName="計劃年度" showName=""/>	
+	  <field dataField="SchSource" typeField="STRING" lengthField="50" defaultValue="" displayName="課程來源" showName="1:年度計劃;2:新增申請"/>  
+	  <field dataField="SchMonth" typeField="STRING" lengthField="50" defaultValue="" displayName="預計開課月份" showName=""/>
+    <field dataField="YM" typeField="STRING" lengthField="50" defaultValue="" displayName="預計開課年月" showName=""/>
+	<field dataField="SchNo" typeField="STRING" lengthField="50" defaultValue="" displayName="計劃代號" showName=""/>
+    <field dataField="SubjectNo" typeField="STRING" lengthField="50" defaultValue="" displayName="課程代號" showName=""/>
+	  <field dataField="SubjectName" typeField="STRING" lengthField="255" defaultValue="" displayName="課程名稱" showName=""/>
+	  <field dataField="deptId" typeField="STRING" lengthField="50" defaultValue="" displayName="開課部門" showName=""/>
+	  <field dataField="deptName" typeField="STRING" lengthField="50" defaultValue="" displayName="開課部門名稱" showName=""/>	
+	  <field dataField="StartDate" typeField="STRING" lengthField="10" defaultValue="" displayName="上課日期" showName=""/>
+    <field dataField="InOut" typeField="STRING" lengthField="50" defaultValue="" displayName="內外訓" showName="I:內訓;O:外訓"/>
+	  <field dataField="SubjectType" typeField="STRING" lengthField="50" defaultValue="" displayName="課程類別" showName="1:新人訓練;2:專業職能;3:管理職能;4:品質管理;5:安全衛生"/>
+    <field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="結案狀態" showName=""/>
+    <field dataField="ActionStatus" typeField="STRING" lengthField="50" defaultValue="" displayName="執行狀況" showName="New:新增;Cancelled:取消;OnSchedule:如期上課;Delay:延期;InAdvance:提前完成"/>	
+	  <field dataField="Appraisal" typeField="STRING" lengthField="50" defaultValue="" displayName="評核方式" showName=""/>
+	  <field dataField="WrittenTest" typeField="STRING" lengthField="50" defaultValue="" displayName="筆試" showName="Y:Y;N:N"/>
+	  <field dataField="Implement" typeField="STRING" lengthField="50" defaultValue="" displayName="實作" showName="Y:Y;N:N"/>	
+	  <field dataField="Satisfaction" typeField="STRING" lengthField="50" defaultValue="" displayName="課程滿意度調查" showName="Y:Y;N:N"/>	
+	  <field dataField="InOther" typeField="STRING" lengthField="50" defaultValue="" displayName="內訓其他評核方式" showName="Y:Y;N:N"/>
+	  <field dataField="InOtherDesc" typeField="STRING" lengthField="50" defaultValue="" displayName="內訓其他評核方式說明" showName=""/>
+	  <field dataField="Presentation" typeField="STRING" lengthField="50" defaultValue="" displayName="發表開課" showName="Y:Y;N:N"/>
+	  <field dataField="Certificate" typeField="STRING" lengthField="50" defaultValue="" displayName="證書" showName="Y:Y;N:N"/>
+	  <field dataField="Report" typeField="STRING" lengthField="50" defaultValue="" displayName="受訓心得報告" showName="Y:Y;N:N"/>  
+	  <field dataField="OJT" typeField="STRING" lengthField="50" defaultValue="" displayName="OJT(工作應用計劃書)" showName="Y:Y;N:N"/>
+	  <field dataField="OutOther" typeField="STRING" lengthField="50" defaultValue="" displayName="外訓其他評核方式" showName="Y:Y;N:N"/>
+	  <field dataField="OutOtherDesc" typeField="STRING" lengthField="50" defaultValue="" displayName="外訓其他評核方式說明" showName=""/>  
+  </fieldDefinition>
+  <identityField>
+    <field dataField="SchNo"/>
+  </identityField>
+  <keyField>   
+	<field dataField="SchNo"/>  
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+	  <field dataField="deptId"/>
+	  <field dataField="deptName"/>
+	  <field dataField="StartDate"/>  
+	  <field dataField="ActionStatus"/>
+	  <field dataField="Appraisal"/>
+	  <field dataField="WrittenTest"/>
+	  <field dataField="Implement"/>
+	  <field dataField="Satisfaction"/>
+	  <field dataField="InOther"/>
+	  <field dataField="InOtherDesc"/>
+	  <field dataField="Presentation"/>	
+	  <field dataField="Certificate"/>
+	  <field dataField="Report"/>
+	  <field dataField="OJT"/>		
+	  <field dataField="OutOther"/>
+	  <field dataField="OutOtherDesc"/>   
+  </allowEmptyField>
+  <nonUpdateField> 	
+  </nonUpdateField> 
+</DataObject>

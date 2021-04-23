@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EP0101.EP0101A" tableName="EP0101A">
+  <queryStr>SELECT GUID,SheetNo,Subject,EmpNo,EmpName,EmpMobile,Depart,SDate,Title,Aim,Area,Ask,YWorkDate,SworkDate,Money,sgdw,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM dbo.EP0101A</queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="64" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="255" defaultValue="" displayName="申請人工號" showName=""/>
+  <field dataField="EmpName" typeField="STRING" lengthField="255" defaultValue="" displayName="申請人姓名" showName=""/>
+    <field dataField="EmpMobile" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人電話" showName=""/>
+    <field dataField="Depart" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人部門" showName=""/>
+    <field dataField="SDate" typeField="STRING" lengthField="50" defaultValue="" displayName="申請日期" showName=""/>
+    <field dataField="Title" typeField="STRING" lengthField="50" defaultValue="" displayName="需求主題" showName=""/>
+    <field dataField="Aim" typeField="STRING" lengthField="255" defaultValue="" displayName="需求目的" showName=""/>
+    <field dataField="Area" typeField="STRING" lengthField="50" defaultValue="" displayName="規劃區域" showName=""/>
+    <field dataField="Ask" typeField="STRING" lengthField="255" defaultValue="" displayName="具體規劃要求" showName=""/>
+    <field dataField="YWorkDate" typeField="STRING" lengthField="50" defaultValue="" displayName="預計完工日期" showName=""/>
+    <field dataField="SworkDate" typeField="STRING" lengthField="50" defaultValue="" displayName="實際完工日期" showName=""/>
+    <field dataField="Money" typeField="STRING" lengthField="50" defaultValue="" displayName="金錢" showName=""/>
+    <field dataField="sgdw" typeField="STRING" lengthField="50" defaultValue="" displayName="施工單位" showName=""/>
+    
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="1" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="YWorkDate"/>
+    <field dataField="SworkDate"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

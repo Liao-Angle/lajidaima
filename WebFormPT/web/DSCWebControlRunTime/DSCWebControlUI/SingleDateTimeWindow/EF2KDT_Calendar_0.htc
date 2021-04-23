@@ -1,0 +1,640 @@
+﻿<public:component>
+<PUBLIC:ATTACH EVENT="onclick" ONEVENT="onclickEventCenter()" FOR="element" />
+<PUBLIC:ATTACH EVENT="ondblclick" ONEVENT="ondblclickEventCenter()" FOR="element" />
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="onMouseoverECenter()" FOR="element" />
+<PUBLIC:METHOD NAME="getValue" />
+<script language="javascript">
+//==================================================================================
+//==================================================================================
+//專案名稱: EasyFlow Fassade
+//程式名稱: ActiveX\EF2KDT_Calendar.htc
+//原始版本: 10.01.0001
+//　撰寫者: 余英蘭
+//撰寫日期: 2004/01/01
+//
+//版權聲明: Copyright(c) 1999-2001, 鼎新電腦股份有限公司  版權所有 (02)8667-2776
+//　　　　 本電腦程式受著作權法及國際公約保護。
+//　　　　 凡未經授權擅自複製或散佈本程式的全部或部分，將遭受最嚴厲的民、刑事處分。
+//
+//修正摘要:
+//
+//==================================================================================
+//==================================================================================
+
+element.document.createStyleSheet('EF2KDT_Calendar.css');
+
+var strDate="";
+var initYear;
+var initMonth;
+var initDate;
+var chtDayNames=new Array(" 日 ", " 一 ", " 二 ", " 三 ", " 四 ", " 五 ", " 六 ");
+var engDayNames=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+var chtMonthNames=new Array(" 一月 ", " 二月 ", " 三月 ", " 四月 ", " 五月 ", " 六月 ", " 七月 ", " 八月 ", " 九月 ", " 十月 ", " 十一月 ", " 十二月 ") ;
+var engMonthNames=new Array("January","Febrary","April","March","May","June","July","August","September","October","November","December") ;
+
+// According to User's Browser's Language Setting, Assign different Arrays.
+//if(navigator.userLanguage == "zh-tw") {
+	var DayNames = chtDayNames;
+	var MonthNames = chtMonthNames;
+	var msgToday = "今天是 ";
+//} else {
+//	var DayNames = engDayNames;
+//	var MonthNames = engMonthNames;
+//	var msgToday = "Today is ";
+//}
+
+element.innerHTML="<html><head><title></title>" +
+"</head><body>" +
+"<table width='100%' cellpadding=1 cellspacing=1 style={border-width:0px;font-size:9pt;}>" +
+"<tr>" +
+"<td align=center height=9 ><FONT id='prevYear' FACE='Webdings' style={font-height:9pt;color:red;cursor:hand;}>3</FONT></td>" +
+"<td align=center height=9 colspan=5><span id='thisYear2' style={padding-top:4px;font-height:9pt;color:gray;}></span>" +
+"<a>" +
+"<FONT FACE='Webdings' id='yearDown' style={font-height:9pt;color:red;cursor:hand;}>6</FONT></a>" +
+"<div id='tooltip' style='position:absolute;visibility:hidden;'>" +
+"<select  size='7' height='9' id=thisYear style={font-family:Arial;padding-top:4px;font-height:9pt;color:gray;} >" +
+"	              <option value='0'></option>" +
+"	              <option value='1'></option>" +
+"	              <option value='2'></option>" +
+"	              <option value='3'></option>" +
+"	              <option value='4'></option>" +
+"	              <option value='5'></option>" +
+"	              <option value='6'></option>" +
+"                 </select>" +
+"                  </div></td>" +
+"		<td  align=center height=9><FONT id='nextYear' FACE='Webdings' style={font-height:9pt;color:red;cursor:hand;}>4</FONT></td>" +
+"	</tr>" +
+"<tr>" +
+" <td align=center height='9' ><FONT id='prevMonth' FACE='Webdings' style={font-height:9pt;color:red;cursor:hand;}>3</FONT></td>" +
+"  <td align=center height='9' colspan='5'>" +
+"     <span id=thisMonth2 style={font-family:Arial;padding-top:4px;font-height:9pt;color:gray;}></span>" +	
+"      <a>" +
+"      <FONT FACE='Webdings' id='monthDown' style={font-height:9pt;color:red;cursor:hand;}>6</FONT></a>" +
+"	      <div id='tooltip2' style='position:absolute;visibility:hidden;'>" +
+"	      <select  size='6' height=9 id=thisMonth style={font-family:Arial;padding-top:4px;font-height:9pt;color:gray;}>" +
+"		              <option value='0'>" + MonthNames[0] + "</option>" +
+"		              <option value='1'>" + MonthNames[1] + "</option>" +
+"		              <option value='2'>" + MonthNames[2] + "</option>" +
+"		              <option value='3'>" + MonthNames[3] + "</option>" +
+"		              <option value='4'>" + MonthNames[4] + "</option>" +
+"		              <option value='5'>" + MonthNames[5] + "</option>" +
+"		              <option value='6'>" + MonthNames[6] + "</option>" +
+"		              <option value='7'>" + MonthNames[7] + "</option>" +
+"		              <option value='8'>" + MonthNames[8] + "</option>" +
+"		              <option value='9'>" + MonthNames[9] + "</option>" +
+"		              <option value='10'>" + MonthNames[10] + "</option>" +
+"		              <option value='11'>" + MonthNames[11] + "</option>" +
+"	              </select>" +
+"              </div></td>" +
+"	      <td align=center height=9 ><FONT id='nextMonth' FACE='Webdings' style={font-height:9pt;color:red;cursor:hand;}>4</FONT></td>" +
+"	</tr>" +
+"	<tr >" +
+"		<td id=col_1 class='calendarDays'>" + DayNames[0] + "</td>" +
+"		<td id=col_2 class='calendarDays'>" + DayNames[1] + "</td>" +
+"		<td id=col_3 class='calendarDays'>" + DayNames[2] + "</td>" +
+"		<td id=col_4 class='calendarDays'>" + DayNames[3] + "</td>" +
+"		<td id=col_5 class='calendarDays'>" + DayNames[4] + "</td>" +
+"		<td id=col_6 class='calendarDays'>" + DayNames[5] + "</td>" +
+"		<td id=col_7 class='calendarDays'>" + DayNames[6] + "</td>" +
+"	</tr>" +
+"	<tr bgcolor='menu'>" +
+"		<td colspan=7></td>" +
+"	</tr>" +
+"	<tr>" +
+"		<td id='date_1' datevalue='' class='calendarWeekend'>1</td>" +
+"		<td id='date_2' datevalue='' class='calendarWeekday'>2</td>" +
+"		<td id='date_3' datevalue='' class='calendarWeekday'>3</td>" +
+"		<td id='date_4' datevalue='' class='calendarWeekday'>4</td>" +
+"		<td id='date_5' datevalue='' class='calendarWeekday'>5</td>" +
+"		<td id='date_6' datevalue='' class='calendarWeekday'>6</td>" +
+"		<td id='date_7' datevalue='' class='calendarWeekend'>7</td>" +
+"	</tr>" +
+"	<tr>" +
+"		<td id='date_8' datevalue='' class='calendarWeekend'>8</td>" +
+"		<td id='date_9' datevalue='' class='calendarWeekday'>9</td>" +
+"		<td id='date_10' datevalue='' class='calendarWeekday'>10</td>" +
+"		<td id='date_11' datevalue='' class='calendarWeekday'>11</td>" +
+"		<td id='date_12' datevalue='' class='calendarWeekday'>12</td>" +
+"		<td id='date_13' datevalue='' class='calendarWeekday'>13</td>" +
+"		<td id='date_14' datevalue='' class='calendarWeekend'>14</td>" +
+"	</tr>" +
+"	<tr>" +
+"		<td id='date_15' datevalue='' class='calendarWeekend'>15</td>" +
+"		<td id='date_16' datevalue='' class='calendarWeekday'>16</td>" +
+"		<td id='date_17' datevalue='' class='calendarWeekday'>17</td>" +
+"		<td id='date_18' datevalue='' class='calendarWeekday'>18</td>" +
+"		<td id='date_19' datevalue='' class='calendarWeekday'>19</td>" +
+"		<td id='date_20' datevalue='' class='calendarWeekday'>20</td>" +
+"		<td id='date_21' datevalue='' class='calendarWeekend'>21</td>" +
+"	</tr>" +
+"	<tr>" +
+"		<td id='date_22' datevalue='' class='calendarWeekend'>22</td>" +
+"		<td id='date_23' datevalue='' class='calendarWeekday'>23</td>" +
+"		<td id='date_24' datevalue='' class='calendarWeekday'>24</td>" +
+"		<td id='date_25' datevalue='' class='calendarWeekday'>25</td>" +
+"		<td id='date_26' datevalue='' class='calendarWeekday'>26</td>" +
+"		<td id='date_27' datevalue='' class='calendarWeekday'>27</td>" +
+"		<td id='date_28' datevalue='' class='calendarWeekend'>28</td>" +
+"	</tr>" +
+"	<tr>" +
+"		<td id='date_29' datevalue='' class='calendarWeekend'>29</td>" +
+"		<td id='date_30' datevalue='' class='calendarWeekday'>30</td>" +
+"		<td id='date_31' datevalue='' class='calendarWeekday'>31</td>" +
+"		<td id='date_32' datevalue='' class='calendarWeekday'>32</td>" +
+"		<td id='date_33' datevalue='' class='calendarWeekday'>33</td>" +
+"		<td id='date_34' datevalue='' class='calendarWeekday'>34</td>" +
+"		<td id='date_35' datevalue='' class='calendarWeekend'>35</td>" +
+"	</tr>" +
+"	<tr>" +
+"		<td id='date_36' datevalue='' class='calendarWeekend'>36</td>" +
+"		<td id='date_37' datevalue='' class='calendarWeekday'>37</td>" +
+"		<td id='date_38' datevalue='' class='calendarWeekday'>38</td>" +
+"		<td id='date_39' datevalue='' class='calendarWeekday'>39</td>" +
+"		<td id='date_40' datevalue='' class='calendarWeekday'>40</td>" +
+"		<td id='date_41' datevalue='' class='calendarWeekday'>41</td>" +
+"		<td id='date_42' datevalue='' class='calendarWeekend'>42</td>" +
+"	</tr>" +
+"</table>" +
+"<div id=thisDate style={font-family:Arial;padding-top:2px;padding-left:4px;font-size:9pt;color:gray;></div>" +
+"</body></html>"
+
+today=new Date();
+var initYear=today.getFullYear();
+var initMonth=today.getMonth()+1;
+var initDate=today.getDate();
+
+showDayName();
+
+if(element.initDate)
+{
+	pickDay =new Date(element.initDate);
+	var pickYear=pickDay.getFullYear();
+	var pickMonth=pickDay.getMonth()+1;
+	var pickDate=pickDay.getDate();
+}
+else
+{
+	var pickYear=initYear;
+	var pickMonth=initMonth;
+	var pickDate=initDate;
+}
+//strDate=pickYear+ "/" +pickMonth+ "/" +pickDate;
+var prevPickDate="";
+var prevClassName="";
+comboYearInit();
+drawCalendar(pickYear,pickMonth,pickDate);
+
+function showDayName()
+{
+	for (i=1; i<8;i++)
+	{
+		element.document.all("col_"+i).innerHTML=DayNames[i-1];
+		//document.all("col_"+i).innerHTML=DayNames[i-1];
+	}
+}
+
+function drawCalendar(pYear,pMonth,pDate)
+{
+	var mFirstDay = pYear + "/" + pMonth + "/" + 1  ;
+	FirstDay= new Date(mFirstDay);
+	var mLastDay = pYear + "/" + pMonth + "/" + getMonthLastDay(pYear,pMonth);
+	LastDay = new Date(mLastDay);
+        //該月的1號是那個禮拜的第幾天
+        var weekdayofone = FirstDay.getDay()+1;
+        var tempCount;
+        var cFirstDay;
+        var cLastDay;
+	//求出月曆的第一個禮拜天是幾月幾號
+	if (pMonth ==1)
+	{
+	       if (weekdayofone==1)
+	       {
+	       	      cFirstDay =  mFirstDay;	
+	       }
+	       else
+	       {
+	              cFirstDay = (pYear-1) + "/" + 12 + "/" + (31-weekdayofone+2);
+	       }
+	}
+	else
+	{
+               if (weekdayofone==1)
+	       {
+	       	      cFirstDay =  mFirstDay;	
+	       }
+	       else
+	       {
+        	      cFirstDay = pYear + "/" + (pMonth-1) + "/" + (getMonthLastDay(pYear,pMonth-1)-weekdayofone+2);
+	       }	        
+        }
+	
+	//求出該月的最後一天是那個禮拜的第幾天
+	tempCount = LastDay.getDay()+1;
+	//求月曆的最後一天是幾月幾號
+	if (pMonth ==12)
+	{
+	       if (tempCount==7)
+	       {
+	       	      cLastDay = mLastDay;	
+	       }
+	       else
+	       {
+	              cLastDay = (pYear+1) + "/" + 1 + "/" + (7-tempCount);
+	       }
+	}
+	else
+	{
+               if (tempCount==7)
+	       {
+	       	      cLastDay = mLastDay;	
+	       }
+	       else
+	       {
+        	      cLastDay = pYear + "/" + (pMonth+1) + "/" + (7-tempCount);
+	       }	        
+        }
+        
+        objcLastDay = new Date(cLastDay);
+
+        if (pMonth==2)
+	{
+		//當二月非閏年,且一號剛好是第一個禮拜天---只有四個禮拜,所以前後的月曆日要更改
+		if(getMonthLastDay(pYear,pMonth)==28 &&  (cFirstDay ==  mFirstDay))
+		{
+			cFirstDay = pYear + "/" + 1 + "/" + 25;
+			cLastDay = objcLastDay.getFullYear() + "/" + 3 + "/" + 7;
+		}
+		else {
+		        cLastDay = objcLastDay.getFullYear() + "/" + (objcLastDay.getMonth()+1) + "/" + (objcLastDay.getDate()+7);
+		}
+	}
+	else
+	{
+		//除了六個禮拜的 其餘的月曆最後一天均需修正
+		if (((getMonthLastDay(pYear,pMonth)==30) && (weekdayofone != 7)) || ((getMonthLastDay(pYear,pMonth)==31) && (weekdayofone!=6 && weekdayofone!=7)) ) 
+		{
+		     //該月的最後一天,如果是禮拜六,則修正的日期從下個月開始
+		     if(cLastDay == mLastDay){
+		           if((objcLastDay.getMonth()+1)==12){ 
+            		   	cLastDay = (objcLastDay.getFullYear()+1) + "/" + 1 + "/" + 7;
+		     	   }
+		     	   else{
+		     	        
+		     	        cLastDay = objcLastDay.getFullYear() + "/" + (objcLastDay.getMonth()+2) + "/" + 7;
+		     	   }	
+		     }
+		     else{
+ 		           cLastDay = objcLastDay.getFullYear() + "/" + (objcLastDay.getMonth()+1) + "/" + (objcLastDay.getDate()+7);
+		     }
+		}   
+	}
+	objcFirstDay= new Date(cFirstDay);
+	var tempDay;
+	if(objcFirstDay.getDate() != 1)
+	{
+		tempDay=objcFirstDay.getFullYear() + "/" + (objcFirstDay.getMonth()+1) + "/" + (objcFirstDay.getDate()-1);
+	}
+	else
+	{
+			if (objcFirstDay.getMonth() ==0)
+			{
+		              tempDay = (objcFirstDay.getFullYear()-1) + "/" + 12 + "/" + 31;
+			}
+			else
+			{
+	        	      tempDay = objcFirstDay.getFullYear() + "/" + objcFirstDay.getMonth() + "/" + getMonthLastDay(objcFirstDay.getFullYear(),objcFirstDay.getMonth());
+          		}
+	}
+
+	var tempObj;
+	objtempDay= new Date(tempDay);
+	for (var i = 1 ; i<43 ; i++)
+	{
+		
+		if(objtempDay.getDate()== getMonthLastDay(objtempDay.getFullYear(),objtempDay.getMonth()+1)  ) 
+		{
+			if( objtempDay.getMonth() == 11)
+			{
+				tempDay = ( (objtempDay.getFullYear()+1) + "/" + 1 + "/" + 1);
+			}
+			else
+			{
+				tempDay = objtempDay.getFullYear() + "/" + (objtempDay.getMonth()+2) + "/" + 1;
+			}
+		}
+		
+		else
+		{
+       	        	tempDay = objtempDay.getFullYear() + "/" + (objtempDay.getMonth()+1) + "/" + (objtempDay.getDate()+1);
+		}	
+		
+		objtempDay= new Date(tempDay);
+		tempObj = element.document.all("date_" + i);
+		tempObj.datevalue = tempDay;
+		tempObj.innerHTML = objtempDay.getDate();
+
+		if ((objtempDay.getMonth()+1) == pMonth) 
+		{
+			if ((objtempDay.getDay() == 0) || (objtempDay.getDay() == 6)) 
+			{
+				tempObj.className = "calendarWeekend";
+				tempObj.style.color="black";
+			}
+			else
+			{
+				tempObj.className = "calendarWeekday";
+				tempObj.style.color="black";
+			}
+			if (objtempDay.getDate() == pDate) 
+			{
+				tempObj.className = "thisDate";
+				tempObj.style.color="black";
+			}
+		}
+		else
+		{
+			if ((objtempDay.getDay() == 0) || (objtempDay.getDay() == 6)) 
+			{
+				tempObj.className = "calendarWeekend";
+				tempObj.style.color="whitesmoke";
+			}
+			else
+			{
+				tempObj.className = "calendarWeekday";
+				tempObj.style.color="lightgrey";
+			}
+		}
+	}
+        element.document.all.thisYear2.innerHTML = DateFormat("year",pYear);
+	element.document.all.thisYear.value = 3;
+	element.document.all.thisMonth.value = pMonth-1 ;
+	element.document.all.thisMonth2.innerHTML=DateFormat("month",pMonth);
+	element.document.all.thisDate.innerHTML = DateFormat("today", today);
+        
+}
+
+function getMonthLastDay(year,month)
+{
+    var lastdate;
+    //if(date==null||(date<1)||(date>31)){return 0;}
+    if (month==2) {  
+        // Check for leap year
+	if ( ( (year%4==0)&&(year%100 != 0) ) || (year%400==0) ) 
+	{       
+	        // leap year
+		lastdate=29;
+	}
+	else 
+	{ 
+	        lastdate=28;
+	}
+    }	
+    else if ((month==4)||(month==6)||(month==9)||(month==11)) {
+	lastdate=30;		
+	}	
+    else {lastdate=31; }
+    return lastdate;		
+}
+
+function DateFormat(str,value)
+{
+	var strDateFormat;
+	switch(str)
+	{
+		case "year" :
+			if (value > 0)
+			{
+				strDateFormat= value;
+			}
+			else
+			{
+				strDateFormat= value.toString + " B.C.";
+			}
+			break;	
+		case "month" :
+		        strDateFormat = MonthNames[value-1];
+			break;
+		case "today" :
+		        strDateFormat = msgToday + ": " + initYear + "/" + initMonth + "/" + initDate;
+			break;
+	
+	}
+	return strDateFormat;
+}
+
+function clickDate(key)
+{
+	tempDate=new Date(element.document.all("date_" + key).datevalue);
+	pickYear=tempDate.getFullYear();
+	pickMonth=(tempDate.getMonth()+1);
+	pickDate=tempDate.getDate();
+	drawCalendar(pickYear,pickMonth,pickDate);
+	//strDate=pickYear + "/" + LZ(pickMonth) + "/" + LZ(pickDate);
+	//window.close();
+}
+
+function LZ(x) {return(x<0||x>9?"":"0")+x}
+
+function prevYear()
+{
+	pickYear = pickYear -1;
+	drawCalendar(pickYear,pickMonth,pickDate);
+	comboYearInit();
+}
+
+function nextYear()
+{
+	pickYear = pickYear+1;
+	drawCalendar(pickYear,pickMonth,pickDate);
+	comboYearInit();	
+}
+
+function prevMonth()
+{
+	if ((pickMonth-1) < 1) 
+	{
+		pickYear = pickYear - 1;
+		pickMonth = 12;
+	}
+	else
+	{
+		pickMonth = pickMonth - 1;
+	}
+	drawCalendar(pickYear,pickMonth,pickDate);
+}
+
+function nextMonth()
+{
+	if ((pickMonth+1) > 12) 
+	{
+		pickYear = pickYear + 1;
+		pickMonth = 1;
+	}
+	else
+	{
+		pickMonth = pickMonth + 1;
+	}
+	drawCalendar(pickYear,pickMonth,pickDate);
+}
+
+function changeMonth()
+{
+	element.document.all.tooltip2.style.visibility="hidden";
+	pickMonth = eval(element.document.all.thisMonth.value)+1;
+	drawCalendar(pickYear,pickMonth,pickDate);
+}
+function comboYearInit()
+{
+	element.document.all.thisYear.options[0].text = pickYear-3;
+	element.document.all.thisYear.options[1].text = pickYear-2;
+	element.document.all.thisYear.options[2].text = pickYear-1;
+	element.document.all.thisYear.options[3].text = pickYear;
+	element.document.all.thisYear.options[4].text = pickYear+1;
+	element.document.all.thisYear.options[5].text = pickYear+2;
+	element.document.all.thisYear.options[6].text = pickYear+3;
+}
+function changeYear()
+{
+	element.document.all.tooltip.style.visibility="hidden";
+	pickYear = eval(element.document.all.thisYear.options[element.document.all.thisYear.value].text);
+	comboYearInit();
+	drawCalendar(pickYear,pickMonth,pickDate);
+
+}
+
+function showtip(elementID){
+	if (element.document.all && element.document.readyState=="complete"){
+		elementID.style.pixelLeft=event.clientX+ element.document.body.scrollLeft-58
+		elementID.style.pixelTop=event.clientY+ element.document.body.scrollTop+10
+		elementID.style.visibility="visible"
+	}
+	
+}
+
+function hidetip(elementID){
+	if (element.document.all)
+	{
+		if(elementID.style.visibility == "visible")
+		{
+			elementID.style.visibility ="hidden";
+		}
+	}
+}
+
+function bodyClick()
+{
+	element.document.all.tooltip.style.visibility="hidden";
+	element.document.all.tooltip2.style.visibility="hidden";
+}
+
+
+//處理滑鼠左鍵點選動作的判斷
+function onclickEventCenter()
+{
+	if(event.srcElement.id!='')
+	{
+		
+		var eventElementID = event.srcElement.id;
+		if(eventElementID == "prevYear")
+		{
+			bodyClick();
+			prevYear();
+		}
+		else if(eventElementID == "nextYear")
+		{
+			bodyClick();
+			nextYear();
+		}
+		else if(eventElementID == "prevMonth")
+		{
+			bodyClick();
+			prevMonth();
+		}
+		else if(eventElementID == "nextMonth")
+		{
+			bodyClick();
+			nextMonth();
+		}
+		else if(eventElementID == "yearDown")
+		{
+			element.document.all.tooltip2.style.visibility="hidden";
+			showtip(tooltip);
+		}
+		else if(eventElementID == "monthDown")
+		{
+			element.document.all.tooltip.style.visibility="hidden";
+			showtip(tooltip2);
+		}
+		else if(eventElementID == "thisYear")
+		{
+			changeYear();
+		}
+		else if(eventElementID == "thisMonth")
+		{
+			changeMonth();
+		}
+		else
+		{
+			var underLinePos;
+			if((underLinePos = event.srcElement.id.indexOf("_",0)) != -1)
+			{
+				if(event.srcElement.id.substring(0,underLinePos) =="date")
+				{
+					var handlerID = event.srcElement.id.substring(underLinePos+1,event.srcElement.id.length);
+					clickDate(handlerID);
+				}
+			}
+			bodyClick();
+		}
+	}
+	else
+	{
+		bodyClick();
+	}
+}
+
+//處理滑鼠在element上動作的判斷
+function onMouseoverECenter()
+{
+	if(event.srcElement.id!='')
+	{
+		var eventElementID = event.srcElement.id;
+		if(eventElementID == "yearDown")
+		{
+			hidetip(tooltip);
+		}
+		else if(eventElementID == "monthDown")
+		{
+			hidetip(tooltip2);
+		}
+		
+	}
+}
+
+function getValue()
+{
+	strDate = pickYear + "/" + LZ(pickMonth) + "/" + LZ(pickDate);
+	return strDate;
+}
+
+//雙擊兩下開窗
+function ondblclickEventCenter()
+{
+	if(event.srcElement.id!='')
+	{
+		var eventElementID = event.srcElement.id;
+		if (eventElementID.substring(0,5) == "date_")
+		{
+			if ( window.dialogArguments[0] == "0" )
+				returnValue = calendar1.getValue() + " " + time1.getValue();
+			else
+				returnValue = calendar1.getValue();
+			window.close();
+		}
+	}
+}
+</script>
+
+
+
+</public:component>

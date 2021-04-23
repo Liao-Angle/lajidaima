@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPAD002.SPADB" tableName="SPADB">
+  <queryStr>
+          select GUID, SheetNo, USERGUID, USERID, USERNAME, DEPTID, DEPTNAME, CREATE_DATE, REASON, REASON_DESC, START_TIME, END_TIME, COMPANY, REVIEWER
+          , IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,REASON_OPTION, u.userName as CheckByName, b.Subject from SPADB b
+		  left join Users u on u.OID=b.REVIEWER
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單單號" showName=""/>
+    <field dataField="USERGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人GUID" showName=""/>
+    <field dataField="USERID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人工號" showName=""/>
+    <field dataField="USERNAME" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人姓名" showName=""/>
+    <field dataField="DEPTID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人部門代號" showName=""/>
+    <field dataField="DEPTNAME" typeField="STRING" lengthField="50" defaultValue="" displayName="申請人部門名稱" showName=""/>
+    <field dataField="CREATE_DATE" typeField="STRING" lengthField="50" defaultValue="" displayName="填表日期" showName=""/>	  
+	<field dataField="REASON" typeField="STRING" lengthField="50" defaultValue="" displayName="更正理由代號" showName=""/>
+	<field dataField="REASON_DESC" typeField="STRING" lengthField="50" defaultValue="" displayName="更正理由說明" showName=""/>
+    <field dataField="START_TIME" typeField="STRING" lengthField="50" defaultValue="" displayName="上班時間" showName=""/>
+    <field dataField="END_TIME" typeField="STRING" lengthField="50" defaultValue="" displayName="下班時間" showName=""/>
+    <field dataField="COMPANY" typeField="STRING" lengthField="10" defaultValue="SMP" displayName="公司別" showName=""/>
+    <field dataField="REVIEWER" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+	<field dataField="REASON_OPTION" typeField="STRING" lengthField="50" defaultValue="" displayName="更正理由" showName=""/>
+	<field dataField="CheckByName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人姓名" showName=""/>
+	<field dataField="Subject" typeField="STRING" lengthField="200" defaultValue="" displayName="主旨" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="USERGUID"/>
+    <field dataField="USERID"/>
+    <field dataField="USERNAME"/>
+    <field dataField="DEPTID"/>
+    <field dataField="DEPTNAME"/>
+    <field dataField="CREATE_DATE"/>
+    <field dataField="REASON"/>
+    <field dataField="REASON_DESC"/>
+    <field dataField="START_TIME"/>
+    <field dataField="END_TIME"/>
+    <field dataField="COMPANY"/>
+    <field dataField="REVIEWER"/>
+	<field dataField="REASON_OPTION"/>
+	<field dataField="CheckByName"/>
+	<field dataField="Subject"/>
+  </allowEmptyField>
+  <nonUpdateField>
+	<field dataField="CheckByName"/>
+  </nonUpdateField>
+</DataObject>

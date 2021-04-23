@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.STD002.STD002" tableName="STD002">
+  <queryStr>select GUID, STD002001, STD002002, STD002003, STD002004, STD002005, STD002006, STD002007, STD002008, IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME from STD002</queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="STD002001" typeField="STRING" lengthField="50" defaultValue="" displayName="請假人GUID" showName=""/>
+    <field dataField="STD002002" typeField="STRING" lengthField="50" defaultValue="" displayName="請假人員編" showName=""/>
+    <field dataField="STD002003" typeField="STRING" lengthField="255" defaultValue="" displayName="請假人姓名" showName=""/>
+    <field dataField="STD002004" typeField="STRING" lengthField="50" defaultValue="" displayName="代理人GUID" showName=""/>
+    <field dataField="STD002005" typeField="STRING" lengthField="50" defaultValue="" displayName="假別" showName=""/>
+    <field dataField="STD002006" typeField="STRING" lengthField="20" defaultValue="" displayName="請假起始" showName=""/>
+	  <field dataField="STD002007" typeField="STRING" lengthField="20" defaultValue="" displayName="請假截止" showName=""/>
+	  <field dataField="STD002008" typeField="STRING" lengthField="255" defaultValue="" displayName="說明" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="STD002001"/>
+    <field dataField="STD002002"/>
+    <field dataField="STD002003"/>
+    <field dataField="STD002004"/>
+    <field dataField="STD002005"/>
+    <field dataField="STD002006"/>
+	  <field dataField="STD002007"/>
+	  <field dataField="STD002008"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPAD007.SmpForeignTrvlBilling" tableName="SmpForeignTrvlBilling">
+  <queryStr>
+    select GUID, Subject, SheetNo, OriginatorGUID, DeptGUID, Title, AgentGUID, CheckByGUID, StartTrvlDate, EndTrvlDate
+    , ChgStartTrvlDate, ChgEndTrvlDate, SiteUs, SiteJp, SiteKr, SiteSub, SiteOther, SiteUsDesc, SiteJpDesc, SiteKrDesc
+	, SiteSubDesc, SiteOtherDesc, FeeCharge, TrvlDesc, ChgTrvlDesc
+    , PrePayTwd, PrePayTwdAmt, PrePayCny, PrePayCnyAmt, PrePayUsd, PrePayUsdAmt, PrePayJpy, PrePayJpyAmt, PrePayEur, PrePayEurAmt, PrePayOther, PrePayOtherAmt, PrePayComment
+    , OriForeignForm, ActualStartTrvlDate, ActualEndTrvlDate, ActualPayTw, ActualPayTwTw, ActualPayUs, ActualPayUsTw, ActualPayJp, ActualPayJpTw
+    , ActualPayKr, ActualPayKrTw, ActualPayCn, ActualPayCnTw, ActualPayMa, ActualPayMaTw, ActualPayOu, ActualPayOuTw, ActualPayOther, ActualPayOtherTw
+    , ActualAmount, ActualApAmt,  ActualRtnApAmt, ActualRtnApDate, FinDesc
+	, ChgPrePayTwd,ChgPrePayTwdAmt,ChgPrePayCny,ChgPrePayCnyAmt,ChgPrePayUsd,ChgPrePayUsdAmt,ChgPrePayJpy,ChgPrePayJpyAmt,ChgPrePayEur,ChgPrePayEurAmt,ChgPrePayOther,ChgPrePayOtherAmt
+    , IS_DISPLAY, IS_LOCK, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME 
+	, ei.empName as OriginatorUserName, ei.deptName as DeptName, au.userName as AgentName, cu.userName as CheckByName
+	, TrvlSiteName, FeeName, PrePayName, ChgPrePayName from SmpForeignTrvlBilling sft
+	left join EmployeeInfo ei on ei.empGUID=sft.OriginatorGUID
+	left join Users au on au.OID=sft.AgentGUID
+	left join Users cu on cu.OID=sft.CheckByGUID
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="250" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="SheetNo" showName=""/>
+    <field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="出差人員" showName=""/>
+    <field dataField="DeptGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請單位" showName=""/>
+    <field dataField="Title" typeField="STRING" lengthField="50" defaultValue="" displayName="職稱" showName=""/>
+    <field dataField="AgentGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="職務代理人" showName=""/>
+	<field dataField="CheckByGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人" showName=""/>
+	<field dataField="StartTrvlDate" typeField="STRING" lengthField="50" defaultValue="" displayName="預計出差日期起" showName=""/>
+    <field dataField="EndTrvlDate" typeField="STRING" lengthField="50" defaultValue="" displayName="預計出差日期訖" showName=""/>
+	<field dataField="ChgStartTrvlDate" typeField="STRING" lengthField="50" defaultValue="" displayName="異動出差日期起" showName=""/>
+    <field dataField="ChgEndTrvlDate" typeField="STRING" lengthField="50" defaultValue="" displayName="異動出差日期訖" showName=""/>
+	<field dataField="SiteUs" typeField="STRING" lengthField="1" defaultValue="" displayName="出差地點-美國" showName="N:否;Y:是"/>
+    <field dataField="SiteJp" typeField="STRING" lengthField="1" defaultValue="" displayName="出差地點-日本" showName="N:否;Y:是"/>
+    <field dataField="SiteKr" typeField="STRING" lengthField="1" defaultValue="" displayName="出差地點-韓國" showName="N:否;Y:是"/>
+    <field dataField="SiteSub" typeField="STRING" lengthField="1" defaultValue="" displayName="出差地點-子公司" showName="N:否;Y:是"/>
+    <field dataField="SiteOther" typeField="STRING" lengthField="1" defaultValue="" displayName="出差地點-其他" showName="N:否;Y:是"/>
+    <field dataField="SiteUsDesc" typeField="STRING" lengthField="250" defaultValue="" displayName="出差地點-美國說明" showName=""/>
+    <field dataField="SiteJpDesc" typeField="STRING" lengthField="250" defaultValue="" displayName="出差地點-日本說明" showName=""/>
+	<field dataField="SiteKrDesc" typeField="STRING" lengthField="250" defaultValue="" displayName="出差地點-韓國說明" showName=""/>
+	<field dataField="SiteSubDesc" typeField="STRING" lengthField="250" defaultValue="" displayName="出差地點-子公司說明" showName=""/>
+    <field dataField="SiteOtherDesc" typeField="STRING" lengthField="250" defaultValue="" displayName="出差地點-其他說明" showName=""/>
+	<field dataField="FeeCharge" typeField="STRING" lengthField="2" defaultValue="" displayName="費用負擔" showName=""/>
+	<field dataField="TrvlDesc" typeField="STRING" lengthField="4000" defaultValue="" displayName="出差事由" showName=""/>
+	<field dataField="ChgTrvlDesc" typeField="STRING" lengthField="4000" defaultValue="" displayName="異動後出差事由" showName=""/>
+
+   <field dataField="PrePayTwd" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-台幣" showName="N:否;Y:是"/>
+	<field dataField="PrePayTwdAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支台幣金額" showName=""/>
+    <field dataField="PrePayCny" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-人民幣" showName="N:否;Y:是"/>
+	<field dataField="PrePayCnyAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支人民幣金額" showName=""/>
+    <field dataField="PrePayUsd" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-美金" showName="N:否;Y:是"/>
+	<field dataField="PrePayUsdAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支美金金額" showName=""/>
+	<field dataField="PrePayJpy" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-日圓" showName="N:否;Y:是"/>
+	<field dataField="PrePayJpyAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支日圓金額" showName=""/>
+	<field dataField="PrePayEur" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-歐元" showName="N:否;Y:是"/>
+	<field dataField="PrePayEurAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支歐元金額" showName=""/>
+    <field dataField="PrePayOther" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-其他" showName="N:否;Y:是"/>
+	<field dataField="PrePayOtherAmt" typeField="STRING" lengthField="50" defaultValue="" displayName="預支其他金額說明" showName=""/>
+    
+	<field dataField="PrePayComment" typeField="STRING" lengthField="50" defaultValue="" displayName="預支備註" showName=""/>
+
+    <field dataField="OriForeignForm" typeField="STRING" lengthField="2000" defaultValue="" displayName="勾稽出差申請單號" showName=""/>
+    <field dataField="ActualStartTrvlDate" typeField="STRING" lengthField="50" defaultValue="" displayName="實際出差日期起" showName=""/>
+    <field dataField="ActualEndTrvlDate" typeField="STRING" lengthField="50" defaultValue="" displayName="實際出差日期訖" showName=""/>
+
+    <field dataField="ActualPayTw" typeField="STRING" lengthField="50" defaultValue="" displayName="台幣金額" showName=""/>
+    <field dataField="ActualPayTwTw" typeField="STRING" lengthField="50" defaultValue="" displayName="台幣換算NT" showName=""/>
+    <field dataField="ActualPayUs" typeField="STRING" lengthField="50" defaultValue="" displayName="美金金額" showName=""/>
+    <field dataField="ActualPayUsTw" typeField="STRING" lengthField="50" defaultValue="" displayName="美金換算NT" showName=""/>
+    <field dataField="ActualPayJp" typeField="STRING" lengthField="50" defaultValue="" displayName="日幣金額" showName=""/>
+    <field dataField="ActualPayJpTw" typeField="STRING" lengthField="50" defaultValue="" displayName="日幣換算NT" showName=""/>
+    <field dataField="ActualPayKr" typeField="STRING" lengthField="50" defaultValue="" displayName="韓幣金額" showName=""/>
+    <field dataField="ActualPayKrTw" typeField="STRING" lengthField="50" defaultValue="" displayName="韓幣換算NT" showName=""/>
+    <field dataField="ActualPayCn" typeField="STRING" lengthField="50" defaultValue="" displayName="人民幣金額" showName=""/>
+    <field dataField="ActualPayCnTw" typeField="STRING" lengthField="50" defaultValue="" displayName="人民幣換算NT" showName=""/>
+    <field dataField="ActualPayMa" typeField="STRING" lengthField="50" defaultValue="" displayName="馬幣金額" showName=""/>
+    <field dataField="ActualPayMaTw" typeField="STRING" lengthField="50" defaultValue="" displayName="馬幣換算NT" showName=""/>
+    <field dataField="ActualPayOu" typeField="STRING" lengthField="50" defaultValue="" displayName="歐元金額" showName=""/>
+    <field dataField="ActualPayOuTw" typeField="STRING" lengthField="50" defaultValue="" displayName="歐元換算NT" showName=""/>
+    <field dataField="ActualPayOther" typeField="STRING" lengthField="50" defaultValue="" displayName="其他金額" showName=""/>
+    <field dataField="ActualPayOtherTw" typeField="STRING" lengthField="50" defaultValue="" displayName="其他換算NT" showName=""/>
+
+    <field dataField="ActualAmount" typeField="STRING" lengthField="50" defaultValue="" displayName="總金額" showName=""/>
+    <field dataField="ActualApAmt" typeField="STRING" lengthField="50" defaultValue="" displayName="應付金額" showName=""/>
+    <field dataField="ActualRtnApAmt" typeField="STRING" lengthField="50" defaultValue="" displayName="預支還回" showName=""/>
+    <field dataField="ActualRtnApDate" typeField="STRING" lengthField="50" defaultValue="" displayName="還回日期" showName=""/>
+	<field dataField="FinDesc" typeField="STRING" lengthField="50" defaultValue="" displayName="財務註記" showName=""/>	
+	
+	<field dataField="ChgPrePayTwd" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-台幣" showName="N:否;Y:是"/>
+	<field dataField="ChgPrePayTwdAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支台幣金額" showName=""/>
+    <field dataField="ChgPrePayCny" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-人民幣" showName="N:否;Y:是"/>
+	<field dataField="ChgPrePayCnyAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支人民幣金額" showName=""/>
+    <field dataField="ChgPrePayUsd" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-美金" showName="N:否;Y:是"/>
+	<field dataField="ChgPrePayUsdAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支美金金額" showName=""/>
+	<field dataField="ChgPrePayJpy" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-日圓" showName="N:否;Y:是"/>
+	<field dataField="ChgPrePayJpyAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支日圓金額" showName=""/>
+	<field dataField="ChgPrePayEur" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-歐元" showName="N:否;Y:是"/>
+	<field dataField="ChgPrePayEurAmt" typeField="STRING" lengthField="20" defaultValue="" displayName="預支歐元金額" showName=""/>
+    <field dataField="ChgPrePayOther" typeField="STRING" lengthField="1" defaultValue="" displayName="預支申請-其他" showName="N:否;Y:是"/>
+	<field dataField="ChgPrePayOtherAmt" typeField="STRING" lengthField="50" defaultValue="" displayName="預支其他金額說明" showName=""/>
+	
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+	<field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+	
+	<field dataField="OriginatorUserName" typeField="STRING" lengthField="50" defaultValue="" displayName="出差員姓名" showName=""/>
+	<field dataField="DeptName" typeField="STRING" lengthField="50" defaultValue="" displayName="申請單位名稱" showName=""/>
+	<field dataField="AgentName" typeField="STRING" lengthField="50" defaultValue="" displayName="職務代理人姓名" showName=""/>
+	<field dataField="CheckByName" typeField="STRING" lengthField="50" defaultValue="" displayName="審核人姓名" showName=""/>
+	<field dataField="TrvlSiteName" typeField="STRING" lengthField="50" defaultValue="" displayName="出差地點" showName=""/>
+	<field dataField="FeeName" typeField="STRING" lengthField="50" defaultValue="" displayName="費用負擔" showName=""/>
+	<field dataField="PrePayName" typeField="STRING" lengthField="50" defaultValue="" displayName="預支內容" showName=""/>
+	<field dataField="ChgPrePayName" typeField="STRING" lengthField="50" defaultValue="" displayName="變更後預支內容" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="OriginatorGUID"/>
+    <field dataField="DeptGUID"/>
+    <field dataField="Title" />
+    <field dataField="AgentGUID" />
+    <field dataField="CheckByGUID" />
+    <field dataField="StartTrvlDate" />
+    <field dataField="EndTrvlDate" />
+	<field dataField="ChgStartTrvlDate" />
+    <field dataField="ChgEndTrvlDate" />
+    <field dataField="SiteUs" />
+    <field dataField="SiteJp" />
+    <field dataField="SiteKr" />
+    <field dataField="SiteSub" />
+    <field dataField="SiteOther" />
+    <field dataField="SiteUsDesc" />
+    <field dataField="SiteJpDesc" />
+    <field dataField="SiteKrDesc" />
+    <field dataField="SiteSubDesc" />
+    <field dataField="SiteOtherDesc" />
+    <field dataField="FeeCharge" />
+    <field dataField="TrvlDesc" />
+	<field dataField="ChgTrvlDesc" />
+    <field dataField="PrePayTwd" />
+    <field dataField="PrePayTwdAmt" />
+    <field dataField="PrePayCny" />
+    <field dataField="PrePayCnyAmt" />
+    <field dataField="PrePayUsd" />
+    <field dataField="PrePayUsdAmt" />
+    <field dataField="PrePayJpy" />
+    <field dataField="PrePayJpyAmt" />
+	<field dataField="PrePayEur" />
+    <field dataField="PrePayEurAmt" />
+	<field dataField="PrePayOther" />
+    <field dataField="PrePayOtherAmt" />
+    <field dataField="PrePayComment" />
+    <field dataField="ActualGetDate" />
+    <field dataField="GetMemberGUID" />
+    
+    <field dataField="OriForeignForm"/>
+    <field dataField="ActualPayTw"/>
+    <field dataField="ActualPayTwTw"/>
+    <field dataField="ActualPayUs"/>
+    <field dataField="ActualPayUsTw"/>
+    <field dataField="ActualPayJp"/>
+    <field dataField="ActualPayJpTw"/>
+    <field dataField="ActualPayKr"/>
+    <field dataField="ActualPayKrTw"/>
+    <field dataField="ActualPayCn"/>
+    <field dataField="ActualPayCnTw"/>
+    <field dataField="ActualPayMa"/>
+    <field dataField="ActualPayMaTw"/>
+    <field dataField="ActualPayOu"/>
+    <field dataField="ActualPayOuTw"/>
+    <field dataField="ActualPayOther"/>
+    <field dataField="ActualPayOtherTw"/>
+    <field dataField="ActualAmount"/>
+    <field dataField="ActualApAmt"/>
+    <field dataField="ActualRtnApAmt"/>
+    <field dataField="ActualRtnApDate"/>
+    <field dataField="FinDesc"/>
+	
+	<field dataField="ChgPrePayTwd" />
+    <field dataField="ChgPrePayTwdAmt" />
+    <field dataField="ChgPrePayCny" />
+    <field dataField="ChgPrePayCnyAmt" />
+    <field dataField="ChgPrePayUsd" />
+    <field dataField="ChgPrePayUsdAmt" />
+	<field dataField="ChgPrePayJpy" />
+    <field dataField="ChgPrePayJpyAmt" />
+	<field dataField="ChgPrePayEur" />
+    <field dataField="ChgPrePayEurAmt" />
+    <field dataField="ChgPrePayOther" />
+    <field dataField="ChgPrePayOtherAmt" />
+	
+	<field dataField="OriginatorUserName" />
+	<field dataField="DeptName" />
+	<field dataField="AgentName" />
+	<field dataField="CheckByName" />
+	<field dataField="TrvlSiteName" />
+	<field dataField="FeeName" />
+	<field dataField="PrePayName" />
+	<field dataField="ChgPrePayName" />
+	
+  </allowEmptyField>
+    
+  <nonUpdateField>
+	<field dataField="OriginatorUserName" />
+	<field dataField="DeptName" />
+	<field dataField="AgentName" />
+	<field dataField="CheckByName" />  
+  </nonUpdateField>
+</DataObject>

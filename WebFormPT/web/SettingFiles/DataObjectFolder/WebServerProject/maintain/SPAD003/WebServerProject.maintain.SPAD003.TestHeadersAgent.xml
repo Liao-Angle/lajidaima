@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD003.TestHeaders" TableName="TestHeaders">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD003.TestLines" TableName="TestLines" RelationString="GUID=HeaderGUID">
+    <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD003.TestShips" TableName="TestShips" RelationString="GUID=LineGUID">
+    </DOS>    
+  </DOS>
+</DOS>

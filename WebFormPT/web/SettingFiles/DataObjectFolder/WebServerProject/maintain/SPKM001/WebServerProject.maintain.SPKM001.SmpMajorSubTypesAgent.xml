@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpMajorType" TableName="SmpMajorType">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpMajorTypeAdm" TableName="SmpMajorTypeAdm" RelationString="GUID=MajorTypeGUID">
+  </DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpSubType" TableName="SmpSubType" RelationString="GUID=MajorTypeGUID">
+    <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpSubTypeAdm" TableName="SmpSubTypeAdm" RelationString="GUID=SubTypeGUID">
+    </DOS>
+    <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpSubTypeBelongGroup" TableName="SmpSubTypeBelongGroup" RelationString="GUID=SubTypeGUID">
+    </DOS>
+    <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpDocType" TableName="SmpDocType" RelationString="GUID=SubTypeGUID">
+      <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpDocTypeReader" TableName="SmpDocTypeReader" RelationString="GUID=DocTypeGUID">
+      </DOS>
+    </DOS>
+  </DOS>
+</DOS>

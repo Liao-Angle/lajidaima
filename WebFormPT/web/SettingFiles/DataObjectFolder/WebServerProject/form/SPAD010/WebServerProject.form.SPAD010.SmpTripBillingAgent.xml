@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPAD010.SmpTripBilling" TableName="SmpTripBilling">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPAD010.SmpTripBillingDetail" TableName="SmpTripBillingDetail" RelationString="GUID=HeaderGUID">
+  </DOS>
+</DOS>
+

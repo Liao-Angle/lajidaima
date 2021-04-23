@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="WebFormPT">
+</Property><Property Name="Solution File" Value="D:\ECP\WebFormPT\WebFormPT.sln">
+</Property><Property Name="User Options File" Value="D:\ECP\WebFormPT\WebFormPT.suo">
+</Property><Property Name="Date" Value="2013年4月1日">
+</Property><Property Name="Time" Value="下午 15:26">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="WebFormPT.sln" Description="File successfully backed up as D:\ECP\WebFormPT\Backup\WebFormPT.sln">
+</Event><Event ErrorLevel="0" Project="" Source="WebFormPT.suo" Description="File successfully backed up as D:\ECP\WebFormPT\Backup\WebFormPT.suo">
+</Event><Event ErrorLevel="0" Project="" Source="WebFormPT.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="WebFormPT.sln" Description="Converted">
+</Event></UpgradeLog>

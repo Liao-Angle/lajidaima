@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD001.SmpUserFlow" TableName="SmpUserFlow">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPAD001.SmpUserFlowDetail" TableName="SmpUserFlowDetail" RelationString="GUID=UserFlowGUID">
+  </DOS>
+</DOS>

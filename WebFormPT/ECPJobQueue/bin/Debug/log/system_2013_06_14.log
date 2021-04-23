@@ -1,0 +1,486 @@
+Log Time: 2013/06/14 10:38:02
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 10:38:02
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 10:38:02
+Log Content:
+Establish queues
+Log Time: 2013/06/14 10:38:02
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 10:38:22
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 10:38:22
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 10:38:22
+Log Content:
+Start queue job
+Log Time: 2013/06/14 10:38:22
+Log Content:
+Service start success
+Log Time: 2013/06/14 10:38:22
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 10:38:22
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Establish queues
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Start queue job
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Service start success
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 10:39:14
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Establish queues
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Start queue job
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Service start success
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 10:39:53
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Establish queues
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Start queue job
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Service start success
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 10:41:24
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 10:48:59
+Log Content:
+Stop job listener
+Log Time: 2013/06/14 10:48:59
+Log Content:
+Stop queue job
+Log Time: 2013/06/14 10:48:59
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/14 10:48:59
+Log Content:
+QueryStatus SocketException: 中止操作被 WSACancelBlockingCall 呼叫打斷。
+   於 System.Net.Sockets.Socket.Accept()
+   於 System.Net.Sockets.TcpListener.AcceptSocket()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 325
+Log Time: 2013/06/14 10:50:20
+Log Content:
+Stop query status
+Log Time: 2013/06/14 10:50:20
+Log Content:
+Service stop success
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Establish queues
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Start queue job
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Service start success
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 10:51:01
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 10:58:58
+Log Content:
+Stop job listener
+Log Time: 2013/06/14 10:58:58
+Log Content:
+Stop queue job
+Log Time: 2013/06/14 10:58:58
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/14 10:58:58
+Log Content:
+QueryStatus SocketException: 中止操作被 WSACancelBlockingCall 呼叫打斷。
+   於 System.Net.Sockets.Socket.Accept()
+   於 System.Net.Sockets.TcpListener.AcceptSocket()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 330
+Log Time: 2013/06/14 11:00:09
+Log Content:
+Stop query status
+Log Time: 2013/06/14 11:00:09
+Log Content:
+Service stop success
+Log Time: 2013/06/14 11:00:44
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 11:00:44
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 11:00:44
+Log Content:
+Establish queues
+Log Time: 2013/06/14 11:00:44
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 11:00:54
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 11:00:54
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 11:00:54
+Log Content:
+Start queue job
+Log Time: 2013/06/14 11:00:54
+Log Content:
+Service start success
+Log Time: 2013/06/14 11:00:54
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 11:00:54
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 11:07:40
+Log Content:
+Stop job listener
+Log Time: 2013/06/14 11:07:40
+Log Content:
+Stop queue job
+Log Time: 2013/06/14 11:07:40
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/14 11:07:40
+Log Content:
+QueryStatus SocketException: 中止操作被 WSACancelBlockingCall 呼叫打斷。
+   於 System.Net.Sockets.Socket.Accept()
+   於 System.Net.Sockets.TcpListener.AcceptSocket()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 330
+Log Time: 2013/06/14 11:07:48
+Log Content:
+Stop query status
+Log Time: 2013/06/14 11:07:48
+Log Content:
+Service stop success
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Establish queues
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Start queue job
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Service start success
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 11:08:27
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 11:18:05
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 11:18:05
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 11:18:05
+Log Content:
+Establish queues
+Log Time: 2013/06/14 11:18:05
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 11:18:08
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 11:18:08
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 11:18:08
+Log Content:
+Start queue job
+Log Time: 2013/06/14 11:18:08
+Log Content:
+Service start success
+Log Time: 2013/06/14 11:18:08
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 11:18:08
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 11:21:59
+Log Content:
+Stop job listener
+Log Time: 2013/06/14 11:21:59
+Log Content:
+Stop queue job
+Log Time: 2013/06/14 11:21:59
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/14 11:21:59
+Log Content:
+QueryStatus SocketException: 中止操作被 WSACancelBlockingCall 呼叫打斷。
+   於 System.Net.Sockets.Socket.Accept()
+   於 System.Net.Sockets.TcpListener.AcceptSocket()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 333
+Log Time: 2013/06/14 11:21:59
+Log Content:
+Stop query status
+Log Time: 2013/06/14 11:21:59
+Log Content:
+Service stop success
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Establish queues
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Start queue job
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Service start success
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 11:22:25
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 11:29:33
+Log Content:
+Stop job listener
+Log Time: 2013/06/14 11:29:33
+Log Content:
+Stop queue job
+Log Time: 2013/06/14 11:29:33
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/14 11:29:33
+Log Content:
+QueryStatus SocketException: 中止操作被 WSACancelBlockingCall 呼叫打斷。
+   於 System.Net.Sockets.Socket.Accept()
+   於 System.Net.Sockets.TcpListener.AcceptSocket()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 333
+Log Time: 2013/06/14 11:29:33
+Log Content:
+Stop query status
+Log Time: 2013/06/14 11:29:33
+Log Content:
+Service stop success
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Establish queues
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Start queue job
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Service start success
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 11:29:40
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 11:31:36
+Log Content:
+Stop job listener
+Log Time: 2013/06/14 11:31:36
+Log Content:
+Stop queue job
+Log Time: 2013/06/14 11:31:36
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/14 11:31:36
+Log Content:
+QueryStatus SocketException: 中止操作被 WSACancelBlockingCall 呼叫打斷。
+   於 System.Net.Sockets.Socket.Accept()
+   於 System.Net.Sockets.TcpListener.AcceptSocket()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 333
+Log Time: 2013/06/14 11:32:42
+Log Content:
+Stop query status
+Log Time: 2013/06/14 11:32:42
+Log Content:
+Service stop success
+Log Time: 2013/06/14 11:32:56
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 11:32:56
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 11:32:56
+Log Content:
+Establish queues
+Log Time: 2013/06/14 11:32:56
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 11:33:05
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 11:33:05
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 11:33:05
+Log Content:
+Start queue job
+Log Time: 2013/06/14 11:33:05
+Log Content:
+Service start success
+Log Time: 2013/06/14 11:33:05
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/14 11:33:05
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 14:27:59
+Log Content:
+Get Parameter
+Log Time: 2013/06/14 14:27:59
+Log Content:
+Get register Job class
+Log Time: 2013/06/14 14:27:59
+Log Content:
+Establish queues
+Log Time: 2013/06/14 14:27:59
+Log Content:
+Restore jobs
+Log Time: 2013/06/14 14:28:10
+Log Content:
+Start listening createJob
+Log Time: 2013/06/14 14:28:10
+Log Content:
+Start listenting query status
+Log Time: 2013/06/14 14:28:10
+Log Content:
+Start queue job
+Log Time: 2013/06/14 14:28:10
+Log Content:
+Service start success
+Log Time: 2013/06/14 14:28:10
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/14 14:28:10
+Log Content:
+Listening CreateJob Service 8488 port……

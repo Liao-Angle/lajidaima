@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EH0112.EH0112A" tableName="EH0112A">
+  <queryStr>
+    SELECT ID,GUID,SheetNo,Subject,EmpNo,EmpName,PartNo,ComeDate,RqDate,LeaveDate,DtName,Gwei,GwType,GwNo,sgz,Phone,Privilege,note1,note2,note3,note4,note5,note6,note7,note8,note9,note10,note11,note12,PayNo35,PayNo29,PayNo34,PayNo38,PayNo67,PayNo78,ForwardHR,line,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EH0112A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="ID" typeField="STRING"  lengthField="50"  defaultValue="" displayName="ID" showName=""/>
+    <!--<field dataField="HRCODE" typeField="STRING"  lengthField="50"  defaultValue="" displayName="HRCODE" showName=""/>-->
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="50" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="PartNo" typeField="STRING" lengthField="25" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="ComeDate" typeField="STRING" lengthField="20" defaultValue="" displayName="入職日期" showName=""/>
+    <field dataField="RqDate" typeField="STRING" lengthField="20" defaultValue="" displayName="申請日期" showName=""/>
+    <field dataField="LeaveDate" typeField="STRING" lengthField="20" defaultValue="" displayName="離職日期" showName=""/>
+    <field dataField="DtName" typeField="STRING" lengthField="20" defaultValue="" displayName="職務" showName=""/>
+    <field dataField="Gwei" typeField="STRING" lengthField="20" defaultValue="" displayName="崗位名稱" showName=""/>
+    <field dataField="GwType" typeField="STRING" lengthField="20" defaultValue="" displayName="崗位類別" showName=""/>
+    <field dataField="GwNo" typeField="STRING" lengthField="20" defaultValue="" displayName="崗位編號" showName=""/>
+    <field dataField="sgz" typeField="STRING" lengthField="20" defaultValue="" displayName="上崗證" showName=""/>
+    <field dataField="Phone" typeField="STRING" lengthField="20" defaultValue="" displayName="聯繫電話" showName=""/>
+    <field dataField="Privilege" typeField="STRING" lengthField="34" defaultValue="" displayName="選項" showName=""/>
+    <field dataField="note1" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note2" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note3" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note4" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note5" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note6" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note7" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note8" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note9" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note10" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note11" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="note12" typeField="STRING" lengthField="20" defaultValue="" displayName="備註" showName=""/>
+    <field dataField="PayNo35" typeField="STRING" lengthField="20" defaultValue="" displayName="手冊" showName=""/>
+    <field dataField="PayNo29" typeField="STRING" lengthField="20" defaultValue="" displayName="協議" showName=""/>
+    <field dataField="PayNo34" typeField="STRING" lengthField="20" defaultValue="" displayName="廠牌" showName=""/>
+    <field dataField="PayNo38" typeField="STRING" lengthField="20" defaultValue="" displayName="工作服" showName=""/>
+    <field dataField="PayNo67" typeField="STRING" lengthField="20" defaultValue="" displayName="住宿物品" showName=""/>
+    <field dataField="PayNo78" typeField="STRING" lengthField="20" defaultValue="" displayName="住宿扣款" showName=""/>
+    <field dataField="ForwardHR" typeField="STRING" lengthField="20" defaultValue="" displayName="傳送HR" showName="是否整合至HR"/>
+    <field dataField="line" typeField="STRING" lengthField="25" defaultValue="" displayName="線別" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <!--<field dataField="HRCODE"/>-->
+    <field dataField="note1"/>
+    <field dataField="note2"/>
+    <field dataField="note3"/>
+    <field dataField="note4"/>
+    <field dataField="note5"/>
+    <field dataField="note6"/>
+    <field dataField="note7"/>
+    <field dataField="note8"/>
+    <field dataField="note9"/>
+    <field dataField="note10"/>
+    <field dataField="note11"/>
+    <field dataField="note12"/>
+    <field dataField="PayNo35"/>
+    <field dataField="PayNo29"/>
+    <field dataField="PayNo34"/>
+    <field dataField="PayNo38"/>
+    <field dataField="PayNo67"/>
+    <field dataField="PayNo78"/>
+    <field dataField="sgz"/>
+    <field dataField="Gwei"/>
+    <field dataField="GwType"/>
+    <field dataField="GwNo"/>
+    <field dataField="line"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

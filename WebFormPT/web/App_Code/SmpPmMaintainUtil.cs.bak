@@ -1,0 +1,521 @@
+﻿using System;
+using System.Collections;
+using System.Configuration;
+using System.Data;
+using System.Data.OracleClient;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+
+using com.dsc.kernal.agent;
+using com.dsc.kernal.databean;
+using com.dsc.kernal.factory;
+using com.dsc.kernal.mail;
+using com.dsc.kernal.utility;
+
+
+namespace smp.pms.utility
+{
+    /// <summary>
+    /// BasicFormPage 的摘要描述
+    /// </summary>
+    public class SmpPmMaintainUtil
+    {
+        public const string ASSESSMENT_STATUS_DRAFT = "DRAFT";
+        public const string ASSESSMENT_STATUS_OPEN = "OPEN";
+        public const string ASSESSMENT_STATUS_COMPLETE = "COMPLETE";
+        public const string ASSESSMENT_STATUS_CLOSE = "CLOSE";
+        public const string ASSESSMENT_STATUS_CANCEL = "CANCEL";
+        public const string ASSESSMENT_CATEGORY_ORG_UNIT = "0";
+        public const string ASSESSMENT_CATEGORY_USER_DEFINE = "1";
+        public const string ASSESSMENT_LEVEL_LEVEL1 = "1";
+        public const string ASSESSMENT_LEVEL_LEVEL2 = "2";
+        public const string ASSESSMENT_LEVEL_LEVEL0 = "0";
+        public const string ACHIEVEMENT_DIST_WAY = "0";
+        public const string ACHIEVEMENT_MEMBER_TYPE_GROUP = "0";
+        public const string ACHIEVEMENT_MEMBER_TYPE_USER = "1";
+        public const string ASSESSMENT_YES = "Y";
+        public const string ASSESSMENT_NO = "N";
+        public const string ASSESSMENT_STAGE_SELF_EVALUATION = "0";
+        public const string ASSESSMENT_STAGE_FIRST_ASSESS = "1";
+        public const string ASSESSMENT_STAGE_SECOND_ASSESS = "2";
+
+        /// <summary>
+        /// 查詢使用者之相關資料,包含職位,直屬主管,所屬部門!
+        /// [0]:OID, [1]:姓名, [2]: AD帳號, [3]:職稱, [4]:email, [5]:公司別, [6]: 部門代號, [7]: 部門名稱, [8] 公司別名稱, [9] 部門主管工號, [10] 部門主管姓名, [11] 身份別
+        /// </summary>
+        /// <param name="engine"></param> default engine
+        /// <param name="userGUID"></param> User GUID
+        /// <returns>string[]</returns> 僅回傳一筆
+        public static string[] getUserInfoById(AbstractEngine engine, string userId)
+        {
+            string sql = "select empGUID, empName, empEName, titleName, empEmail, orgId, deptId, deptName, orgName, deptManagerId, deptManagerName, functionName from SmpHrEmployeeInfoV where empNumber='" + Utility.filter(userId) + "' ";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            string[] result = new string[12];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                result[0] = ds.Tables[0].Rows[0][0].ToString();
+                result[1] = ds.Tables[0].Rows[0][1].ToString();
+                result[2] = ds.Tables[0].Rows[0][2].ToString();
+                result[3] = ds.Tables[0].Rows[0][3].ToString();
+                result[4] = ds.Tables[0].Rows[0][4].ToString();
+                result[5] = ds.Tables[0].Rows[0][5].ToString();
+                result[6] = ds.Tables[0].Rows[0][6].ToString();
+                result[7] = ds.Tables[0].Rows[0][7].ToString();
+                result[8] = ds.Tables[0].Rows[0][8].ToString();
+                result[9] = ds.Tables[0].Rows[0][9].ToString();
+                result[10] = ds.Tables[0].Rows[0][10].ToString();
+                result[11] = ds.Tables[0].Rows[0][11].ToString();
+            }
+            else
+            {
+                result[0] = "";
+                result[1] = "";
+                result[2] = "";
+                result[3] = "";
+                result[4] = "";
+                result[5] = "";
+                result[6] = "";
+                result[7] = "";
+                result[8] = "";
+                result[9] = "";
+                result[10] = "";
+                result[11] = "";
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 取得部門人員, [][]: [][0]帳號識別碼, [][1]工號, [][2]姓名, [][3]部門識別碼, [][4]部門代號, [][5]部門名稱, [][6]部門主管工號, [][7]部門主管名稱, [][8]公司別, [][9]公司別名稱, [][10]職稱, [][11]身份別
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="groupName"></param>
+        /// <returns>string[][]</returns>
+        public static string[][] getOrgUnitUser(AbstractEngine engine, string deptId)
+        {
+            string sql = "select empGUID, empNumber, empName, deptOID, deptId, deptName, deptManagerId, deptManagerName, orgId, orgName, titleName, functionName, OnBoardDate from SmpHrEmployeeInfoV where deptId='" + Utility.filter(deptId) + "'";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int rows = ds.Tables[0].Rows.Count;
+            string[][] result = new string[rows][];
+            for (int i = 0; i < rows; i++)
+            {
+                result[i] = new string[13];
+                result[i][0] = ds.Tables[0].Rows[i][0].ToString();
+                result[i][1] = ds.Tables[0].Rows[i][1].ToString();
+                result[i][2] = ds.Tables[0].Rows[i][2].ToString();
+                result[i][3] = ds.Tables[0].Rows[i][3].ToString();
+                result[i][4] = ds.Tables[0].Rows[i][4].ToString();
+                result[i][5] = ds.Tables[0].Rows[i][5].ToString();
+                result[i][6] = ds.Tables[0].Rows[i][6].ToString();
+                result[i][7] = ds.Tables[0].Rows[i][7].ToString();
+                result[i][8] = ds.Tables[0].Rows[i][8].ToString();
+                result[i][9] = ds.Tables[0].Rows[i][9].ToString();
+                result[i][10] = ds.Tables[0].Rows[i][10].ToString();
+                result[i][11] = ds.Tables[0].Rows[i][11].ToString();
+                result[i][12] = ds.Tables[0].Rows[i][12].ToString();
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 取得使用者OID, [0]: OID, [1]: userName
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="userId"></param>
+        /// <returns>string[]</returns>
+        public static string[] getUserGUID(AbstractEngine engine, string userId)
+        {
+            string sql = "select OID, userName from Users where id='" + Utility.filter(userId) + "'";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            string[] result = new string[2];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                result[0] = ds.Tables[0].Rows[0][0].ToString();
+                result[1] = ds.Tables[0].Rows[0][1].ToString();
+            }
+            else
+            {
+                result[0] = "";
+                result[1] = "";
+            }
+
+            return result;
+        }
+                
+        /// <summary>
+        /// 取得部門主管人員資訊
+        /// [0]: 部門代號, [1]: 部門名稱, [2]: 部門主管識別號, [3]: 部門主管工號, [4]: 部門主管姓名
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="orgUnitGUID"></param>
+        /// <returns></returns>
+        public static string[] getOrgUnitInfo(AbstractEngine engine, string orgUnitGUID)
+        {
+            string sql = "select o.id, o.organizationUnitName, u.OID, u.id, u.userName from OrganizationUnit o, Users u where o.OID='" + Utility.filter(orgUnitGUID) + "' and o.managerOID = u.OID";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            string[] result = new string[5];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                result[0] = ds.Tables[0].Rows[0][0].ToString();
+                result[1] = ds.Tables[0].Rows[0][1].ToString();
+                result[2] = ds.Tables[0].Rows[0][2].ToString();
+                result[3] = ds.Tables[0].Rows[0][3].ToString();
+                result[4] = ds.Tables[0].Rows[0][4].ToString();
+            }
+            else
+            {
+                result[0] = "";
+                result[1] = "";
+                result[2] = "";
+                result[3] = "";
+                result[4] = "";
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 取得部門主管人員資訊
+        /// [0]: 部門識別碼, [1]: 部門名稱, [2]: 部門主管識別號, [3]: 部門主管工號, [4]: 部門主管姓名
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="orgUnitGUID"></param>
+        /// <returns></returns>
+        public static string[] getOrgUnitInfoById(AbstractEngine engine, string orgUnitId)
+        {
+            string sql = "select o.OID, o.organizationUnitName, u.OID, u.id, u.userName from OrganizationUnit o, Users u where o.id='" + Utility.filter(orgUnitId) + "' and o.managerOID = u.OID";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            string[] result = new string[5];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                result[0] = ds.Tables[0].Rows[0][0].ToString();
+                result[1] = ds.Tables[0].Rows[0][1].ToString();
+                result[2] = ds.Tables[0].Rows[0][2].ToString();
+                result[3] = ds.Tables[0].Rows[0][3].ToString();
+                result[4] = ds.Tables[0].Rows[0][4].ToString();
+            }
+            else
+            {
+                result[0] = "";
+                result[1] = "";
+                result[2] = "";
+                result[3] = "";
+                result[4] = "";
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 取得上層部門主管人員資訊
+        /// [0]: 部門代號, [1]: 部門名稱, [2]: 部門主管識別號, [3]: 部門主管工號, [4]: 部門主管姓名
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="orgUnitGUID"></param>
+        /// <returns></returns>
+        public static string[] getSuperOrgUnitInfo(AbstractEngine engine, string orgUnitGUID)
+        {
+            string sql = "select s.id, s.organizationUnitName, u.OID, u.id, u.userName, s.OID from OrganizationUnit o, Users u, OrganizationUnit s where o.OID='" + Utility.filter(orgUnitGUID) + "' and o.superUnitOID = s.OID and s.managerOID = u.OID";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            string[] result = new string[6];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                result[0] = ds.Tables[0].Rows[0][0].ToString();
+                result[1] = ds.Tables[0].Rows[0][1].ToString();
+                result[2] = ds.Tables[0].Rows[0][2].ToString();
+                result[3] = ds.Tables[0].Rows[0][3].ToString();
+                result[4] = ds.Tables[0].Rows[0][4].ToString();
+                result[5] = ds.Tables[0].Rows[0][5].ToString();
+            }
+            else
+            {
+                result[0] = "";
+                result[1] = "";
+                result[2] = "";
+                result[3] = "";
+                result[4] = "";
+                result[5] = "";
+            }
+
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="userGUID"></param>
+        /// <returns></returns>
+        public static string[] getUserAssessUser(AbstractEngine engine, string userGUID)
+        {
+            string sql = "select a.FirstAssessUserGUID, b.userName FirstAssessUserName, a.SecondAssessUserGUID, c.userName SecondAssessUserName from SmpPmUserAssessment a left join Users b on b.OID=a.FirstAssessUserGUID left join Users c on c.OID=a.SecondAssessUserGUID where UserGUID='" + userGUID + "'";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int rows = ds.Tables[0].Rows.Count;
+            string[] result = new string[4];
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                result[0] = ds.Tables[0].Rows[0][0].ToString();
+                result[1] = ds.Tables[0].Rows[0][1].ToString();
+                result[2] = ds.Tables[0].Rows[0][2].ToString();
+                result[3] = ds.Tables[0].Rows[0][3].ToString();
+            }
+            else
+            {
+                result[0] = "";
+                result[1] = "";
+                result[2] = "";
+                result[3] = "";
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="evaluationGUID"></param>
+        /// <returns></returns>
+        public static string[,] getCompanyIds(AbstractEngine engine)
+        {
+            string sql = "select CompanyCode, CompanyName from SmpTSCompanyV";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int rows = ds.Tables[0].Rows.Count;
+            string[,] ids = new string[1 + rows, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            for (int i = 0; i < rows; i++)
+            {
+                ids[i+1, 0] = ds.Tables[0].Rows[i][0].ToString();
+                ids[i+1, 1] = ds.Tables[0].Rows[i][1].ToString();
+            }
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="evaluationGUID"></param>
+        /// <returns></returns>
+        public static string[,] getEvaluationIds(AbstractEngine engine)
+        {
+            string sql = "select GUID, Name from SmpPmEvaluation";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int rows = ds.Tables[0].Rows.Count;
+            string[,] ids = new string[1 + rows,2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            for (int i = 0; i < rows; i++)
+            {
+                ids[i+1, 0] = ds.Tables[0].Rows[i][0].ToString();
+                ids[i+1, 1] = ds.Tables[0].Rows[i][1].ToString();
+            }
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAssessmentStatusIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[6, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            ids[1, 0] = ASSESSMENT_STATUS_DRAFT;
+            ids[1, 1] = "未開始";
+            ids[2, 0] = ASSESSMENT_STATUS_OPEN;
+            ids[2, 1] = "進行中";
+            ids[3, 0] = ASSESSMENT_STATUS_COMPLETE;
+            ids[3, 1] = "已完成";
+            ids[4, 0] = ASSESSMENT_STATUS_CLOSE;
+            ids[4, 1] = "已結案";
+            ids[5, 0] = ASSESSMENT_STATUS_CANCEL;
+            ids[5, 1] = "取消";
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getYesNoIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[3, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            ids[1, 0] = ASSESSMENT_YES;
+            ids[1, 1] = "是";
+            ids[2, 0] = ASSESSMENT_NO;
+            ids[2, 1] = "否";
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAssessmentCategoryIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[3, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            ids[1, 0] = ASSESSMENT_CATEGORY_ORG_UNIT;
+            ids[1, 1] = "部門組織";
+            ids[2, 0] = ASSESSMENT_CATEGORY_USER_DEFINE;
+            ids[2, 1] = "自定流程";
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAssessmentLevelIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[4, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            ids[1, 0] = ASSESSMENT_LEVEL_LEVEL1;
+            ids[1, 1] = "一階";
+            ids[2, 0] = ASSESSMENT_LEVEL_LEVEL2;
+            ids[2, 1] = "二階";
+            ids[3, 0] = "0";
+            ids[3, 1] = "不限";
+
+            return ids;
+        }
+
+        public static string[,] getAssessmentStageIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[3, 2];
+            ids[0, 0] = ASSESSMENT_STAGE_SELF_EVALUATION;
+            ids[0, 1] = "員工自評";
+            ids[1, 0] = ASSESSMENT_STAGE_FIRST_ASSESS;
+            ids[1, 1] = "一階主管";
+            ids[2, 0] = ASSESSMENT_STAGE_SECOND_ASSESS;
+            ids[2, 1] = "二階主管";
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAchievementDistWayIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[2, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            ids[1, 0] = ACHIEVEMENT_DIST_WAY;
+            ids[1, 1] = "最後評核人員";
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAssessmentMemberTypeIds(AbstractEngine engine)
+        {
+            string[,] ids = new string[2, 2];
+            ids[0, 0] = ACHIEVEMENT_MEMBER_TYPE_GROUP;
+            ids[0, 1] = "部門";
+            ids[1, 0] = ACHIEVEMENT_MEMBER_TYPE_USER;
+            ids[1, 1] = "人員";
+
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAchievementLevel(AbstractEngine engine)
+        {
+            string sql = "select AchievementLevel, Description from SmpPmAchievementLevel where Active = 'Y' order by AchievementLevel";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int rows = ds.Tables[0].Rows.Count;
+            string[,] ids = new string[1 + rows, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            for (int i = 0; i < rows; i++)
+            {
+                ids[i + 1, 0] = ds.Tables[0].Rows[i][0].ToString();
+                ids[i + 1, 1] = ds.Tables[0].Rows[i][1].ToString();
+            }
+            return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <returns></returns>
+        public static string[,] getAssessment(AbstractEngine engine)
+        {
+            string sql = "select GUID, AssessmentName from SmpPmAssessmentPlan where Status <> '" + SmpPmMaintainUtil.ASSESSMENT_STATUS_DRAFT + "' order by D_INSERTTIME desc";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int rows = ds.Tables[0].Rows.Count;
+            string[,] ids = new string[1 + rows, 2];
+            ids[0, 0] = "";
+            ids[0, 1] = "";
+            for (int i = 0; i < rows; i++)
+            {
+                ids[i + 1, 0] = ds.Tables[0].Rows[i][0].ToString();
+                ids[i + 1, 1] = ds.Tables[0].Rows[i][1].ToString();
+            }
+
+            return ids;
+        }
+		
+		 /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="engine"></param>
+        /// <param name="userGUID"></param>
+        /// <returns></returns>
+        public static string[] getLastAchievementAssessmentPlan(AbstractEngine engine, string userGUID)
+        {
+            string sql = "select distinct b.GUID, b.AssessmentName, b.D_INSERTTIME from SmpPmUserAchievement a, SmpPmAssessmentPlan b "
+                + "where a.AssessUserGUID = '"+userGUID+"' "
+                + "and a.Status='" + SmpPmMaintainUtil.ASSESSMENT_STATUS_OPEN + "' and a.AssessmentPlanGUID=b.GUID order by b.D_INSERTTIME desc";
+            DataSet ds = engine.getDataSet(sql, "TEMP");
+            int row = ds.Tables[0].Rows.Count;
+            string[] values = new string[2];
+            if (row > 0)
+            {
+                values[0] = ds.Tables[0].Rows[0][0].ToString();
+                values[1] = ds.Tables[0].Rows[0][1].ToString();
+            }
+            else
+            {
+                values[0] = "";
+                values[1] = "";
+            }
+            return values;
+        }
+    }
+}

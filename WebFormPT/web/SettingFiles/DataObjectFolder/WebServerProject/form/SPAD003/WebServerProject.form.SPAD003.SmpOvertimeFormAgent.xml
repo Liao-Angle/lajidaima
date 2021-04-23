@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPAD003.SmpOvertimeForm" TableName="SmpOvertimeForm">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.form.SPAD003.SmpOvertimeDetail" TableName="SmpOvertimeDetail" RelationString="GUID=OvertimeFormGUID">
+  </DOS>
+</DOS>

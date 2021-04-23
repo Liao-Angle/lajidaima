@@ -1,0 +1,229 @@
+Log Time: 2015/03/10 15:14:20
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:14:20
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:16:13
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:16:13
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:16:32
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:16:32
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:18:18
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:18:18
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:37:04
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:37:04
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:48:28
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:48:28
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:53:09
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:53:09
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:53:34
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:53:34
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 15:53:51
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 15:53:51
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 16:06:20
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 16:06:20
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 16:08:08
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 16:08:08
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 16:37:18
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 16:37:18
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 16:40:34
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 16:40:34
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 16:51:19
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 16:51:19
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 16:52:56
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod() in d:\WorkSpace\DSC Working\技術服務\01_技術\1.技術研發\ECP\Source\WebFormPT\WebFormPT2010\com\dsc\kernal\batch\JobQueue.cs:line 259
+Log Time: 2015/03/10 16:52:56
+Log Content:
+
+DotJ call NaNa (Response XML) : 
+Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment' 
+Exception message : java.rmi.RemoteException: EJBException:; nested exception is: 
+	com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException
+
+Log Time: 2015/03/10 17:35:51
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 17:35:51
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 
+Log Time: 2015/03/10 17:54:15
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 17:54:15
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 
+Log Time: 2015/03/10 17:56:32
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 17:56:32
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 
+Log Time: 2015/03/10 17:59:40
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 17:59:40
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 
+Log Time: 2015/03/10 18:06:55
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 18:06:55
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 
+Log Time: 2015/03/10 18:23:23
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 18:23:23
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 
+Log Time: 2015/03/10 18:36:37
+Log Content:
+   at GPQueueClass.CompleteWorkItem.run(String[] obj) in D:\ASPNET平台\ECPBrowserCap\GPQueueClass\CompleteWorkItem.cs:line 55
+   at com.dsc.kernal.batch.JobClass.startMethod()
+Log Time: 2015/03/10 18:36:37
+Log Content:
+ DotJ call NaNa (Response XML) :  Failed to invoke web service(CompleteWorkItem) while processing the following operation : invoke web service of 'executiveComment'  Exception message : java.rmi.RemoteException: EJBException:; nested exception is:   com.dsc.nana.services.exception.ServiceException: Fail to locate QueueConnectionFactory(name:'ConnectionFactory'). Exception name=javax.naming.NameNotFoundException 

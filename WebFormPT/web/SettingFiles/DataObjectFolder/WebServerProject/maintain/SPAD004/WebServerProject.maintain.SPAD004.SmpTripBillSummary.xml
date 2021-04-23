@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPAD004.SmpTripBillSummary" tableName="SmpTripBillSummary">
+  <queryStr>
+    select s.GUID, s.CompanyCode,  o.organizationName , s.SheetNo, s.OriginatorGUID, e.id as EmpNumber, e.userName 
+    , s.DeptGUID, ou.id as DeptNo, ou.organizationUnitName , s.BillingDate, s.TotalAmount, s.Description, s.IS_DISPLAY, s.IS_LOCK, s.DATA_STATUS
+    , s.D_INSERTUSER, s.D_INSERTTIME, s.D_MODIFYUSER, s.D_MODIFYTIME from SmpTripBillSummary s
+    left join Users e on e.OID=s.OriginatorGUID
+    left join Functions f on f.occupantOID = e.OID and f.isMain = '1'
+    left join OrganizationUnit AS ou ON f.organizationUnitOID = ou.OID
+    left join Organization o on o.OID = ou.organizationOID
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+	<field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別代號" showName="SMP:新普科技;TP:中普科技"/>  
+	<field dataField="organizationName" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName=""/>    	
+	<field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="單號" showName=""/>
+	<field dataField="OriginatorGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="承辦人員GUID" showName=""/>    
+	<field dataField="EmpNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="承辦人員工號" showName=""/>    
+	<field dataField="userName" typeField="STRING" lengthField="50" defaultValue="" displayName="承辦人員姓名" showName=""/>
+    <field dataField="DeptGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="申請部門GUID" showName=""/>
+    <field dataField="DeptNo" typeField="STRING" lengthField="50" defaultValue="" displayName="申請部門代號" showName=""/>    
+	<field dataField="organizationUnitName" typeField="STRING" lengthField="50" defaultValue="" displayName="申請部門名稱" showName=""/>    
+	<field dataField="BillingDate" typeField="STRING" lengthField="50" defaultValue="" displayName="請款日期" showName=""/>    
+	<field dataField="TotalAmount" typeField="DECIMAL" lengthField="50" defaultValue="" displayName="請款總金額" showName=""/>
+	<field dataField="Description" typeField="STRING" lengthField="500" defaultValue="" displayName="其他說明" showName=""/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="SheetNo"/>
+    <field dataField="organizationName"/>
+  	<field dataField="Description"/>
+	<field dataField="TotalAmount"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="organizationName"/>
+	<field dataField="EmpNumber"/>
+	<field dataField="userName"/>
+	<field dataField="DeptNo"/>
+	<field dataField="organizationUnitName"/>
+  </nonUpdateField>
+</DataObject>

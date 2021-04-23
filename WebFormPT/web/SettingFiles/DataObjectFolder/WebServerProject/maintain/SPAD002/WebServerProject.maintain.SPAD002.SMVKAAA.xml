@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPAD002.SMVKAAA" tableName="SMVKAAA">
+  <queryStr>
+		  SELECT SMVKAAA001,SMVKAAA002, U.id , U.userName, B.SMVKAAB005, AU.AgentId, AU.AgentName, SMVKAAA003, SMVKAAA004, SMVKAAA005, SMVKAAA006
+             , A.D_INSERTUSER, A.D_INSERTTIME, A.D_MODIFYUSER, A.D_MODIFYTIME FROM SMVKAAA A  
+		  LEFT JOIN SMVKAAB B ON SMVKAAA001=SMVKAAB002 AND SMVKAAB004='0'
+		  LEFT JOIN Users U ON U.OID=B.SMVKAAB003
+		  LEFT JOIN AgentUser AU ON AU.AgentOID=B.SMVKAAB005	
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="SMVKAAA001" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SMVKAAA002" typeField="STRING" lengthField="50" defaultValue="" displayName="被代理人OID" showName=""/>
+    <field dataField="id" typeField="STRING" lengthField="50" defaultValue="" displayName="被代理人工號" showName=""/>
+    <field dataField="userName" typeField="STRING" lengthField="50" defaultValue="" displayName="被代理人姓名" showName=""/>	
+	<field dataField="SMVKAAB005" typeField="STRING" lengthField="50" defaultValue="" displayName="代理人OID" showName=""/>
+    <field dataField="AgentId" typeField="STRING" lengthField="50" defaultValue="" displayName="代理人工號" showName=""/>
+    <field dataField="AgentName" typeField="STRING" lengthField="50" defaultValue="" displayName="代理人姓名" showName=""/>
+    <field dataField="SMVKAAA003" typeField="STRING" lengthField="50" defaultValue="" displayName="代理期間(起)" showName=""/>
+    <field dataField="SMVKAAA004" typeField="STRING" lengthField="50" defaultValue="" displayName="代理期間(迄)" showName=""/>
+    <field dataField="SMVKAAA005" typeField="DECIMAL" lengthField="18" defaultValue="0" displayName="SMVKAAA005" showName=""/>
+	<field dataField="SMVKAAA006" typeField="STRING" lengthField="1" defaultValue="N" displayName="SMVKAAA006" showName=""/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>	
+  </fieldDefinition>
+  <identityField>
+    <field dataField="SMVKAAA001"/>
+  </identityField>
+  <keyField>
+    <field dataField="SMVKAAA001"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="id"/>
+    <field dataField="userName"/>
+	<field dataField="SMVKAAB005"/>
+	<field dataField="AgentId"/>
+    <field dataField="AgentName"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="id"/>
+    <field dataField="userName"/>
+	<field dataField="SMVKAAB005"/>
+	<field dataField="AgentId"/>
+    <field dataField="AgentName"/>
+  </nonUpdateField>
+</DataObject>

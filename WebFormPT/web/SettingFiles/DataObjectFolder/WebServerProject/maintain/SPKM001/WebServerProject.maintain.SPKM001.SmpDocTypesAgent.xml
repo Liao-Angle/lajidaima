@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpDocType" TableName="SmpDocType">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM001.SmpDocTypeReader" TableName="SmpDocTypeReader" RelationString="GUID=DocTypeGUID">
+  </DOS>
+</DOS>

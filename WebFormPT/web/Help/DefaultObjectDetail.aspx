@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="DefaultObjectDetail.aspx.cs" Inherits="Help_DefaultObjectDetail" %>

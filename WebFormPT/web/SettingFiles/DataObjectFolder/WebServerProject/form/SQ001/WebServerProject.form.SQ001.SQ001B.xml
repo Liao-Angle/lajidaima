@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SQ001.SQ001B" tableName="SQ001B">
+  <queryStr>
+    SELECT GUID,SheetNo,qidian,zhidian,fromdate,todate,jtong,zhusu,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.SQ001B
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+	  <field dataField="qidian" typeField="STRING" lengthField="50" defaultValue=""  displayName="預訂起點" showName=""/>
+    <field dataField="zhidian" typeField="STRING" lengthField="50" defaultValue=""  displayName="預訂止點" showName=""/>
+	  <field dataField="fromdate" typeField="STRING" lengthField="50" defaultValue=""  displayName="出發日" showName=""/>
+	  <field dataField="todate" typeField="STRING" lengthField="50" defaultValue=""    displayName="到達日" showName=""/>
+	  <field dataField="jtong" typeField="STRING" lengthField="50" defaultValue=""     displayName="交通" showName=""/>
+	  <field dataField="zhusu" typeField="STRING" lengthField="50" defaultValue=""     displayName="住宿" showName=""/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="SheetNo"/>
+  </keyField>
+  <allowEmptyField>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

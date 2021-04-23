@@ -1,0 +1,8 @@
+D:\simplo\C#\program\WebFormPT\DelTempFolder\bin\Debug\DelTempFolder.dll
+D:\simplo\C#\program\WebFormPT\DelTempFolder\bin\Debug\DelTempFolder.pdb
+D:\simplo\C#\program\WebFormPT\DelTempFolder\bin\Debug\com.dll
+D:\simplo\C#\program\WebFormPT\DelTempFolder\bin\Debug\com.pdb
+D:\simplo\C#\program\WebFormPT\DelTempFolder\bin\Debug\com.xml
+D:\simplo\C#\program\WebFormPT\DelTempFolder\obj\Debug\ResolveAssemblyReference.cache
+D:\simplo\C#\program\WebFormPT\DelTempFolder\obj\Debug\DelTempFolder.dll
+D:\simplo\C#\program\WebFormPT\DelTempFolder\obj\Debug\DelTempFolder.pdb

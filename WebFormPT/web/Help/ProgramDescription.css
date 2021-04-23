@@ -1,0 +1,41 @@
+body
+{
+	font-size:9pt;
+	background-color:#F0F0F0;
+	overflow:hidden;
+}
+.h
+{
+	font-size:12pt;
+	color:blue;
+	font-weight:bold;
+}
+.BasicFormHeadBorder
+{
+	border-color:rgb(188,178,147);
+	border-left-style:solid;
+	border-top-style:solid;
+	border-width:1px
+}
+.BasicFormHeadHead
+{
+	border-color:rgb(188,178,147);
+	background-color:rgb(225,217,196);
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none
+}
+.BasicFormHeadDetail
+{
+	border-color:rgb(188,178,147);
+	background-color:white;
+	font-size:9pt;
+	font-family:Arial;
+	border-style:solid;
+	border-width:1px;
+	border-top-style:none;
+	border-left-style:none
+}

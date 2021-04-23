@@ -1,0 +1,211 @@
+Log Time: 2013/06/13 15:53:07
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 15:53:17
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Get register Job class
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Establish queues
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Restore jobs
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Start listening createJob
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Start listenting query status
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Start queue job
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Service start success
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/13 15:54:08
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Get register Job class
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Establish queues
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Restore jobs
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Start listening createJob
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Start listenting query status
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Start queue job
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Service start success
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/13 15:56:23
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/13 15:57:48
+Log Content:
+Stop job listener
+Log Time: 2013/06/13 15:57:48
+Log Content:
+Stop queue job
+Log Time: 2013/06/13 15:57:48
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/13 15:59:13
+Log Content:
+Stop query status
+Log Time: 2013/06/13 15:59:13
+Log Content:
+Service stop success
+Log Time: 2013/06/13 15:59:45
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 15:59:45
+Log Content:
+Get register Job class
+Log Time: 2013/06/13 15:59:45
+Log Content:
+Establish queues
+Log Time: 2013/06/13 15:59:45
+Log Content:
+Restore jobs
+Log Time: 2013/06/13 15:59:56
+Log Content:
+Start listening createJob
+Log Time: 2013/06/13 15:59:56
+Log Content:
+Start listenting query status
+Log Time: 2013/06/13 15:59:56
+Log Content:
+Start queue job
+Log Time: 2013/06/13 15:59:56
+Log Content:
+Service start success
+Log Time: 2013/06/13 15:59:56
+Log Content:
+Listening CreateJob Service 8488 port……
+Log Time: 2013/06/13 15:59:56
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/13 16:00:58
+Log Content:
+Stop job listener
+Log Time: 2013/06/13 16:00:58
+Log Content:
+Stop queue job
+Log Time: 2013/06/13 16:00:58
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/13 16:02:05
+Log Content:
+Stop query status
+Log Time: 2013/06/13 16:02:05
+Log Content:
+Service stop success
+Log Time: 2013/06/13 16:02:10
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 16:02:10
+Log Content:
+Get register Job class
+Log Time: 2013/06/13 16:02:10
+Log Content:
+Establish queues
+Log Time: 2013/06/13 16:02:10
+Log Content:
+Restore jobs
+Log Time: 2013/06/13 16:02:20
+Log Content:
+Start listening createJob
+Log Time: 2013/06/13 16:02:20
+Log Content:
+Start listenting query status
+Log Time: 2013/06/13 16:02:20
+Log Content:
+Start queue job
+Log Time: 2013/06/13 16:02:20
+Log Content:
+Service start success
+Log Time: 2013/06/13 16:02:20
+Log Content:
+QueryStatus SocketException: 一次只能用一個通訊端位址 (通訊協定/網路位址/連接埠)。
+   於 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   於 System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   於 System.Net.Sockets.TcpListener.Start()
+   於 ECPJobQueue.RunKernal.StartQueryServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 248
+Log Time: 2013/06/13 16:02:20
+Log Content:
+CreateJob SocketException: 一次只能用一個通訊端位址 (通訊協定/網路位址/連接埠)。
+   於 System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   於 System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   於 System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   於 System.Net.Sockets.TcpListener.Start()
+   於 ECPJobQueue.RunKernal.StartServer() 於 D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\RunKernal.cs: 行 324
+Log Time: 2013/06/13 16:02:54
+Log Content:
+Stop job listener
+Log Time: 2013/06/13 16:02:54
+Log Content:
+Stop queue job
+Log Time: 2013/06/13 16:02:54
+Log Content:
+Wait for running queue and waiting queue stop
+Log Time: 2013/06/13 16:03:50
+Log Content:
+Stop query status
+Log Time: 2013/06/13 16:03:50
+Log Content:
+Service stop success
+Log Time: 2013/06/13 16:06:27
+Log Content:
+Get Parameter
+Log Time: 2013/06/13 16:06:27
+Log Content:
+Get register Job class
+Log Time: 2013/06/13 16:06:27
+Log Content:
+Establish queues
+Log Time: 2013/06/13 16:06:27
+Log Content:
+Restore jobs
+Log Time: 2013/06/13 16:06:34
+Log Content:
+Start listening createJob
+Log Time: 2013/06/13 16:06:34
+Log Content:
+Start listenting query status
+Log Time: 2013/06/13 16:06:34
+Log Content:
+Start queue job
+Log Time: 2013/06/13 16:06:34
+Log Content:
+Service start success
+Log Time: 2013/06/13 16:06:34
+Log Content:
+Listening QueryServer 8489 port……
+Log Time: 2013/06/13 16:06:34
+Log Content:
+Listening CreateJob Service 8488 port……

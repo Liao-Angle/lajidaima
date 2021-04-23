@@ -1,0 +1,13 @@
+﻿Installing assembly 'D:\ECP\WebFormPT\ECPJobQueue\bin\Release\ECPJobQueue.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\ECP\WebFormPT\ECPJobQueue\bin\Release\ECPJobQueue.InstallLog
+   assemblypath = D:\ECP\WebFormPT\ECPJobQueue\bin\Release\ECPJobQueue.exe
+Installing service ECP Job Queue Service...
+Service ECP Job Queue Service has been successfully installed.
+Creating EventLog source ECP Job Queue Service in log Application...
+Committing assembly 'D:\ECP\WebFormPT\ECPJobQueue\bin\Release\ECPJobQueue.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\ECP\WebFormPT\ECPJobQueue\bin\Release\ECPJobQueue.InstallLog
+   assemblypath = D:\ECP\WebFormPT\ECPJobQueue\bin\Release\ECPJobQueue.exe

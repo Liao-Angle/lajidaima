@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPKM002.SmpRev" tableName="SmpRev">
+  <queryStr>
+    select GUID, RevNumber, DocGUID, FormGUID, IndexCardGUID, Released, LatestFlag, ReleaseDate,
+    IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME
+    from SmpRev
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="RevNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="版本" showName=""/>
+    <field dataField="DocGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="文件識別號" showName=""/>
+    <field dataField="FormGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="表單識別號" showName=""/>
+    <field dataField="IndexCardGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="索引卡識別號" showName=""/>
+    <field dataField="Released" typeField="STRING" lengthField="50" defaultValue="" displayName="是否生效" showName=""/>
+    <field dataField="LatestFlag" typeField="STRING" lengthField="50" defaultValue="" displayName="是否最後一版" showName=""/>
+    <field dataField="ReleaseDate" typeField="STRING" lengthField="50" defaultValue="" displayName="生效日期" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="ReleaseDate"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

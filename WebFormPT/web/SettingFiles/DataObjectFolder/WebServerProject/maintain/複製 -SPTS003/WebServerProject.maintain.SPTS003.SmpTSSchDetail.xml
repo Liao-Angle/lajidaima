@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPTS003.SmpTSSchDetail" tableName="SmpTSSchDetail">
+  <queryStr>
+	select d.GUID, d.SchFormGUID, d.PlanDetailGUID, h.CompanyCode, h.CourseYear, d.CourseMonth, ou.id, ou.organizationUnitName, d.CourseNo
+	, d.CourseName, d.DeptGUID, d.TrainingHours, d.NumberOfPeople, d.TrainingObject, d.InOut, d.CourseType, d.Fees
+	, d.EvaluationLevel, d.TTQS, d.CourseSource, d.Cancel, d.Quarter, d.IS_DISPLAY, d.IS_LOCK, d.DATA_STATUS, d.D_INSERTUSER
+	, d.D_INSERTTIME, d.D_MODIFYUSER, d.D_MODIFYTIME from SmpTSSchDetail d
+	left join OrganizationUnit ou on ou.OID = d.DeptGUID	
+	left join SmpTSSchForm h on h.GUID=d.SchFormGUID
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SchFormGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="年度開課計劃單頭GUID" showName=""/>
+    <field dataField="PlanDetailGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="年度教育訓練計劃單頭GUID" showName=""/>
+    <field dataField="CompanyCode" typeField="STRING" lengthField="50" defaultValue="" displayName="公司別" showName="SMP:新普科技;TP:中普科技"/>
+	<field dataField="CourseYear" typeField="STRING" lengthField="4" defaultValue="" displayName="年度" showName=""/>
+	<field dataField="CourseMonth" typeField="STRING" lengthField="100" defaultValue="" displayName="開課月份" showName=""/>
+	<field dataField="id" typeField="STRING" lengthField="100" defaultValue="" displayName="部門代號" showName=""/>
+    <field dataField="organizationUnitName" typeField="STRING" lengthField="100" defaultValue="" displayName="部門" showName=""/>    
+	<field dataField="CourseNo" typeField="STRING" lengthField="100" defaultValue="" displayName="課程代號" showName=""/>
+    <field dataField="CourseName" typeField="STRING" lengthField="100" defaultValue="" displayName="課程名稱" showName=""/>
+	<field dataField="DeptGUID" typeField="STRING" lengthField="100" defaultValue="" displayName="開課部門" showName=""/>
+    <field dataField="TrainingHours" typeField="STRING" lengthField="100" defaultValue="" displayName="訓練時數" showName=""/>
+	<field dataField="NumberOfPeople" typeField="STRING" lengthField="100" defaultValue="" displayName="預訓人數" showName=""/>
+    <field dataField="TrainingObject" typeField="STRING" lengthField="100" defaultValue="" displayName="預訓對象" showName=""/>
+	<field dataField="InOut" typeField="STRING" lengthField="100" defaultValue="" displayName="內外訓" showName="I:內訓;O:外訓"/>
+    <field dataField="CourseType" typeField="STRING" lengthField="100" defaultValue="" displayName="課程類別" showName="1:新人訓練;2:專業職能;3:管理職能;4:品質管理;5:環安衛"/>
+	<field dataField="Fees" typeField="STRING" lengthField="100" defaultValue="" displayName="預算費用" showName=""/>
+    <field dataField="EvaluationLevel" typeField="STRING" lengthField="100" defaultValue="" displayName="評估等級" showName="1: Level 1 反應評估;2: Level 2  學習評估;3: Level 3 行為評估 "/>
+	<field dataField="TTQS" typeField="STRING" lengthField="100" defaultValue="N" displayName="TTQS課程" showName=""/>
+    <field dataField="CourseSource" typeField="STRING" lengthField="100" defaultValue="" displayName="課程來源" showName="1:年度計劃;2:新增申請"/>
+	<field dataField="Cancel" typeField="STRING" lengthField="100" defaultValue="N" displayName="取消課程" showName=""/>
+	<field dataField="Quarter" typeField="STRING" lengthField="10" defaultValue="" displayName="季" showName=""/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="PlanDetailGUID"/>
+    <field dataField="CompanyCode"/>
+    <field dataField="CourseYear"/>	
+    <field dataField="CourseSource"/>
+  </allowEmptyField>
+  <nonUpdateField>
+	<field dataField="CompanyCode"/>
+    <field dataField="CourseYear"/>
+	<field dataField="id"/>
+    <field dataField="organizationUnitName"/>
+  </nonUpdateField>
+</DataObject>

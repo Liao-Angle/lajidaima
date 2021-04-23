@@ -1,0 +1,1825 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BaseWebUI</name>
+    </assembly>
+    <members>
+        <member name="M:BaseWebUI.WebFormBasePage.initCustomControl">
+            <summary>
+            設定動態畫面元件的預設屬性. 此處不可以設定各元件的Server動態變更屬性
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.createCustomControl(System.String)">
+            <summary>
+            複寫建立動態畫面元件方法. 在此方法中建立工具列
+            僅能設定ID, 並且必須設定PageUniqueID. 事件也必須在此方法中設定
+            SaveButton = new DSCWebControl.GlassButton();
+            SaveButton.PageUniqueID = pUID;
+            SaveButton.ID = "SaveButton";
+            this.Controls.AddAt(0, SaveButton);
+            SaveButton.Click += new DSCWebControl.GlassButton.ClickEvent(SaveButton_Click);
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.MessageBox(System.String)">
+            <summary>
+            以MessageBox方式顯示訊息
+            </summary>
+            <param name="message">要顯示的訊息</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.Confirm(System.String)">
+            <summary>
+            彈出確認/取消視窗
+            </summary>
+            <param name="message">要顯示的訊息</param>
+            <returns>true: 按下確定; false: 按下取消</returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.setSession(System.String,System.Object)">
+            <summary>
+            設定本頁所屬的Session
+            </summary>
+            <param name="sessionName">Session名稱</param>
+            <param name="value">要設定的值</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.getSession(System.String)">
+            <summary>
+            取得本頁所屬的Session
+            </summary>
+            <param name="sessionName">Session名稱</param>
+            <returns>Session值</returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.setSession(System.String,System.String,System.Object)">
+            <summary>
+            設定指定PageUniqueID的Session
+            </summary>
+            <param name="pageUniqueID">指定的PageUniqueID</param>
+            <param name="sessionName">Session名稱</param>
+            <param name="value">要設定的值</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.getSession(System.String,System.String)">
+            <summary>
+            取得指定PageUniqueID的Session
+            </summary>
+            <param name="pageUniqueID">指定的PageUniqueID</param>
+            <param name="sessionName">Session名稱</param>
+            <returns>Session值</returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.showModalDialog(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            開啟Modaldialog. 此方法參數皆相對於dhtml的window.showModalDialog參數
+            </summary>
+            <param name="url">網址, 相對於呼叫程式</param>
+            <param name="GetParam">以Get方式傳遞的參數列, 不包含?</param>
+            <param name="dialogHeight">對話窗高度</param>
+            <param name="dialogWidth">對話窗寬度</param>
+            <param name="dialogLeft">對話窗左方位置</param>
+            <param name="dialogTop">對話窗上方位置</param>
+            <param name="center">置中</param>
+            <param name="dialogHide">隱藏</param>
+            <param name="edge">邊界</param>
+            <param name="resizable">可否更改視窗大小</param>
+            <param name="scroll">是否顯示捲軸</param>
+            <param name="status">是否顯示狀態列</param>
+            <param name="unadorned">unadorned參數</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.showPanelWindow(System.String,System.String,System.Int32,System.Int32,System.String,System.Boolean,System.Boolean)">
+            <summary>
+            在Portal中開啟一視窗
+            </summary>
+            <param name="title">視窗標題</param>
+            <param name="url">網址. 此網址相對於根目錄</param>
+            <param name="width">視窗寬度</param>
+            <param name="height">視窗高度</param>
+            <param name="frameType">若輸入frameborder=0表示不顯示捲軸</param>
+            <param name="isMax">是否將此視窗開啟為最大. 若此參數為true, 則width, height值會忽略</param>
+            <param name="newWindow">是否使用新視窗開啟</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.showOpenWindow(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            開啟視窗
+            </summary>
+            <param name="url">網址</param>
+            <param name="dialogHeight">視窗高度</param>
+            <param name="dialogWidth">視窗寬度</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.executeScript(System.String)">
+            <summary>
+            欲輸出JavaScript，呼叫此方法
+            </summary>
+            <param name="script">JavaScript命令</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.setProtectedLevel(System.Int32)">
+            <summary>
+            設定此頁面保護層級
+            </summary>
+            <param name="level">1:允許複製; 2:允許選擇; 4:允許右鍵功能; 5:允許滑鼠拖曳. 可加總數字作多項設定</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.OnLoad(System.EventArgs)">
+            <summary>
+            複寫方法. 
+            </summary>
+            <param name="e">事件</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.OnLoadComplete(System.EventArgs)">
+            <summary>
+            複寫方法. 
+            </summary>
+            <param name="e">事件</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.OnInit(System.EventArgs)">
+            <summary>
+            複寫方法. 
+            </summary>
+            <param name="e">事件</param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.setElementLanguage">
+            <summary>
+            對應語系之頁面輸出
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.initControl">
+            <summary>
+            初始化頁面DSCWebControl控制項. 僅限於內部呼叫使用.
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.RegisteredJQueryReferenceScript">
+            <summary>
+            平台註
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.clearAllUpdateDataFlag">
+            <summary>
+            消除元件更新標記
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.dispatchRec4(System.Web.UI.Control)">
+            <summary>
+            遞迴方法，消除元件更新標記
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.dispatchEvent">
+            <summary>
+            DSCWebControl分派事件方法. 此方法僅限於內部呼叫
+            </summary>
+            <returns>true: 分派成功, false: 分派失敗</returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.dispatchRec1(System.Web.UI.Control,System.String)">
+            <summary>
+            設定DSCWebControl所屬之Page Unique ID
+            </summary>
+            <param name="c"></param>
+            <param name="pid"></param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.dispatchRec2(System.Web.UI.Control)">
+            <summary>
+            輸出DSCWebControl Cleint端Refresh Command
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.dispatchRec5(System.Web.UI.Control)">
+            <summary>
+            傳回DSCWebControl畫面更新之資料
+            </summary>
+            <param name="c"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.dispatchRec3(System.Web.UI.Control,System.String,System.String)">
+            <summary>
+            執行DSCWebControl事件處理
+            </summary>
+            <param name="c"></param>
+            <param name="controlID"></param>
+            <param name="controlMethod"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.WebFormBasePage.assignPageUniqueID(System.String)">
+            <summary>
+            設定DSCWebControl所屬之Page Unique ID
+            </summary>
+            <param name="PageUniqueIDs"></param>
+        </member>
+        <member name="P:BaseWebUI.WebFormBasePage.PageUniqueID">
+            <summary>
+            取得頁面的唯一識別碼
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.WebFormBasePage.CurPanelID">
+            <summary>
+            取得目前此頁面在Portal中的PanelID. 若此頁面不在Portal中, 此屬性回傳空字串
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebPage.maintainIdentity">
+            <summary>
+            程式代號(稽核模組使用)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebPage.ApplicationID">
+            <summary>
+            應用程式代號(稽核模組使用)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebPage.ModuleID">
+            <summary>
+            模組代號(稽核模組使用)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebPage.errorLevel">
+            <summary>
+            預設系統錯誤層級
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebPage.writeLog(System.Exception,System.Boolean)">
+            <summary>
+            將Exception細節訊息寫入系統稽核紀錄表SMXCAAA
+            </summary>
+            <param name="e"></param>
+            <param name="isThrowAgain"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebPage.writeLog(System.Exception)">
+            <summary>
+            將Exception細節訊息寫入系統稽核紀錄表SMXCAAA
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.showData(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            開窗時，顯示資料的事件
+            </summary>
+            <param name="objects">欲顯示的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.saveData(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            按下儲存鈕的事件
+            </summary>
+            <param name="objects">欲儲存的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.saveCustomData(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            使用者按下儲存鈕後，可以在此事件中實作額外資料的處理，亦可於 saveDataEvent 中撰寫，此事件於 saveDataEvent、資料檢核之後執行
+            </summary>
+            <param name="objects">欲儲存的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.afterSetReadOnlyForm(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            原稿/通知狀態畫面初始化完成後客製程式碼片段. 開發者可以複寫此方法, 在原稿/通知模式系統會自動將所有欄位ReadOnly後, 可更改此設定. 此複寫方法僅在原稿以及通知模式會呼叫
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="UIStatus">GeneralWebForm.FormReadOnly:原稿; GeneralWebForm.FormNotify: 通知</param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.OnInit(System.EventArgs)">
+            <summary>
+            頁面初始化事件處理，產生工具列
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.initCustomControl">
+            <summary>
+            頁面上"儲存"、"還原"、"離開"之按鈕屬性初始化
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.setReadOnlyForm">
+            <summary>
+            針對Page上的DSCWebControl唯讀屬性設為True
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.initToolBar">
+            <summary>
+            頁面上"儲存"、"還原"、"離開"之按鈕屬性初始化
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.createToolBar(System.String)">
+            <summary>
+            動態方式產生"儲存"、"還原"、"離開"之按鈕
+            </summary>
+            <param name="pUID"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.ResetButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            還原鈕按下之事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.ExitButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            離開鈕按下之事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListInlineForm.SaveButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            儲存鈕按下之事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:BaseWebUI.DataListInlineForm.isStayScreen">
+            <summary>
+            設定按下儲存鈕後是否停留畫面. true:停留畫面不關閉; false:關閉畫面. 預設為false
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.showData(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            開窗時，顯示資料的事件
+            </summary>
+            <param name="objects">欲顯示的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.saveData(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            按下儲存鈕的事件
+            </summary>
+            <param name="objects">欲儲存的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.saveCustomData(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            使用者按下儲存鈕後，可以在此事件中實作額外資料的處理，亦可於 saveDataEvent 中撰寫，此事件於 saveDataEvent、資料檢核之後執行
+            
+            </summary>
+            <param name="objects">欲儲存的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.saveDB(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            使用者按下儲存鈕之後, 需在此方法中撰寫直接存入DB的程式碼. 此事件於saveData, saveCustomData後執行
+            </summary>
+            <param name="objects">欲儲存的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.afterDelete(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            使用者按下刪除鈕後, 可覆寫此方法做刪除後續處理
+            </summary>
+            <param name="objects"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.beforeDelete(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            使用者按下刪除鈕後,可覆寫此方法做刪除前置處理,回傳訊息長度大於零,代表不允許刪除且訊息將被提示在對話框
+            </summary>
+            <param name="objects"></param>        
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.afterSetReadOnlyForm(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            原稿/通知狀態畫面初始化完成後客製程式碼片段. 開發者可以複寫此方法, 在原稿/通知模式系統會自動將所有欄位ReadOnly後, 可更改此設定. 此複寫方法僅在原稿以及通知模式會呼叫
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="UIStatus">GeneralWebForm.FormReadOnly:原稿; GeneralWebForm.FormNotify: 通知</param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.initCustomControl">
+            <summary>
+            頁面上"儲存"、"刪除"、"離開"之按鈕屬性初始化
+            </summary>        
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.setReadOnlyForm">
+            <summary>
+            針對Page上的DSCWebControl唯讀屬性設為True
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.setReadOnlyFormRec(System.Web.UI.Control)">
+            <summary>
+            遞迴方法，針對Page上的DSCWebControl唯讀屬性設為True
+            </summary>
+            <param name="c"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.initToolBar">
+            <summary>
+            頁面上"儲存"、"刪除"、"離開"之按鈕屬性初始化
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.createToolBar(System.String)">
+            <summary>
+            動態方式產生"儲存"、"刪除"、"離開"之按鈕
+            </summary>
+            <param name="pUID"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.DeleteButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            刪除鈕按下之事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.ExitButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            離開鈕按下之事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.DataListSaveForm.SaveButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            儲存鈕按下之事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="P:BaseWebUI.DataListSaveForm.isStayScreen">
+            <summary>
+            設定按下儲存鈕後是否停留畫面. true:停留畫面不關閉; false:關閉畫面. 預設為false
+            </summary>
+        </member>
+        <member name="T:BaseWebUI.GeneralWebForm">
+            <summary>
+            需撰寫:
+            createToolBar
+            cloneObject-2009/07/22補上
+            isNecessary
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.InitNew">
+            <summary>
+            可發起流程的新增資料狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.InitModify">
+            <summary>
+            可發起流程的檢視資料狀態(包含可修改以及刪除)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.InitDelete">
+            <summary>
+            可發起流程的刪除狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.FormReadOnly">
+            <summary>
+            全檢視狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessNew">
+            <summary>
+            流程處理中的新增資料狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessModify">
+            <summary>
+            流程處理中的檢視資料狀態(包含可修改以及刪除)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessDelete">
+            <summary>
+            流程處理中的刪除狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.GeneralNew">
+            <summary>
+            一般通用新增資料狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.GeneralModify">
+            <summary>
+            一般資料檢視狀態(包含可修改以及刪除)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.GeneralDelete">
+            <summary>
+            一般資料刪除狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.FromRedirect">
+            <summary>
+            由已轉派資料夾進入狀態, 僅允許回清單, 列印憑證, 以及取回
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.FormNotify">
+            <summary>
+            通知狀態
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.FormRollback">
+            <summary>
+            由已簽核資料夾進入狀態, 僅允許回清單, 列印憑證, 以及撤簽
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.Process">
+            <summary>
+            指明資料處理為流程方式
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.General">
+            <summary>
+            指明資料處理為一般方式
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.createCustomControl(System.String)">
+            <summary>
+            複寫建立動態畫面元件方法. 在此方法中建立工具列
+            僅能設定ID, 並且必須設定PageUniqueID. 事件也必須在此方法中設定
+            SaveButton = new DSCWebControl.GlassButton();
+            SaveButton.PageUniqueID = pUID;
+            SaveButton.ID = "SaveButton";
+            SaveButton.Click += new DSCWebControl.GlassButton.ClickEvent(SaveButton_Click);
+            this.Controls.AddAt(0, SaveButton);
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initCustomControl">
+            <summary>
+            設定動態畫面元件的預設屬性. 此處不可以設定各元件的Server動態變更屬性
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.OnLoad(System.EventArgs)">
+            <summary>
+            複寫OnLoad方法. 在此方法中啟動資料顯示程序
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.DeleteButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下刪除紐的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.RefreshButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下重新整理紐的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.BackListButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下回清單鈕的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.AgreeButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下同意紐的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.DisagreeButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下不同意紐的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SaveButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下儲存紐的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SubmitButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下發起紐的程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SignButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下簽核鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.AttachButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下附件鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SaveDraftButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下儲存草稿鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.ReadDraftButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下讀取草稿鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.ViewButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下檢視相關表單鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.ViewFlowButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下流程檢視鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SetFlowButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下設定流程鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.AddSignButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下加簽鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.WithDrawButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下撤銷鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.RejectButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下重辦鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.ForwardButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下轉寄鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.DispatchFlowButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下發起參考流程鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.CopyFormButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下複製表單鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.HistoryButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下歷史紀錄鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.PrintCertificateButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下列印憑證鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.RedirectButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下轉派鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.ReGetButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下取回重辦鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.RollbackButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下撤簽鈕程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.UserDefineButton1_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下自訂按鈕一程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.UserDefineButton2_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下自訂按鈕二程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.UserDefineButton3_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下自訂按鈕三程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.UserDefineButton4_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下自訂按鈕四程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.UserDefineButton5_Click(System.Object,System.EventArgs)">
+            <summary>
+            按下自訂按鈕五程序
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SignPhraseButton_Click(System.Object,System.EventArgs)">
+            <summary>
+            "簽核片語" 按鈕事件處理函式
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.readDB(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            由資料庫讀取資料到資料物件
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">資料物件的GUID欄位值. 若為新增模式, 此欄位傳入零長度字串</param>
+            <param name="UIStatus">目前畫面的UIStatus</param>
+            <returns>包含資料的資料物件</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.saveDB(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,com.dsc.kernal.databean.DataObject,System.String)">
+            <summary>
+            將資料由資料物件儲存到資料庫
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">要處理的資料物件</param>
+            <param name="oriObjects">原始的資料物件</param>
+            <param name="UIStatus">此筆資料狀態</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.deleteProcedure">
+            <summary>
+            刪除基本程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSheetNoProcedure(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            取得單號程序
+            </summary>
+            <param name="autoCodeGUID">自動編號識別碼(SMVIAAA.GUID)</param>
+            <returns>單號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.saveProcedure">
+            <summary>
+            儲存, 送單基本程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.signProcedure">
+            <summary>
+            簽核處理程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.beforeTerminateProcess(com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            呼叫簽核不同意前，可覆寫此方法；使用engine修改資料
+            </summary>
+            <param name="engine"></param>        
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.beforeSignProcedure">
+            <summary>
+            簽核前處理程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.groupSignProcedure">
+            <summary>
+            群簽處理程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSubject(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            設定主旨
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="subjectTemplate">主旨範本格式</param>
+            <returns>傳回的主旨</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.readDraftProcedure(System.String)">
+            <summary>
+            讀取草稿程序
+            </summary>
+            <param name="draftGUID">草稿EFORMDRAFT.GUID</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.saveDraftProcedure">
+            <summary>
+            儲存草稿程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.viewFlowProcedure">
+            <summary>
+            檢視流程程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.printCertificateProcedure">
+            <summary>
+            列印憑證按鈕程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.withDrawProcedure">
+            <summary>
+            撤銷流程程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.redirectProcedure">
+            <summary>
+            轉派程序, 包含代理人以及工作轉派
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.rejectProcedure">
+            <summary>
+            退回重辦程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.reGetProcedure">
+            <summary>
+            取回重辦程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.rollbackProcedure">
+            <summary>
+            撤簽程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.forwardProcedure">
+            <summary>
+            轉寄程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.dispatchFlowProcedure">
+            <summary>
+            發起參考流程程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.addSignProcedure">
+            <summary>
+            加簽程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setFlowProcedure">
+            <summary>
+            設定流程程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.copyFormProcedure">
+            <summary>
+            複製表單程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.userDefineProcedure1">
+            <summary>
+            自訂按鈕一按下後程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getHtmlStyleGraph(com.dsc.kernal.factory.AbstractEngine,System.String,System.Collections.ArrayList,System.String)">
+            <summary>
+            以HTML方式製作新的流程圖。預設行為是當graphPath檔案不存在，則以預設的HTML方式顯示流程圖。
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="opinionXML">目前簽核意見XML</param>
+            <param name="performDetailArray">由簽核意見opinionXML所解析出的PerformDetail物件ArrayList</param>
+            <param name="graphPath">GP流程圖檔路徑</param>
+            <returns>顯示簽核流程圖的HTML。若回傳零長度字串，則該流程圖不會顯示</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.userDefineProcedure2">
+            <summary>
+            自訂按鈕二按下後程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.userDefineProcedure3">
+            <summary>
+            自訂按鈕三按下後程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.userDefineProcedure4">
+            <summary>
+            自訂按鈕四按下後程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.userDefineProcedure5">
+            <summary>
+            自訂按鈕五按下後程序
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.registerScript">
+            <summary>
+            註冊頁面公用Client Script
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.registerPrintScript(com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            在頁面上設定列印功能
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initFormHeadTail(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.String,System.String)">
+            <summary>
+            設定表單資訊區域以及簽核意見
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="UIStatus">頁面狀態</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initHistory(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.String)">
+            <summary>
+            設定歷史紀錄區資訊
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="UIStatus">目前畫面狀態</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initRelation(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.String)">
+            <summary>
+            設定相關表單區資訊
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="UIStatus">目前畫面狀態</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initializeUI(com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            根據維護作業設定設定此畫面的UI呈現方式
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setProcessForm(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            根據流程作業畫面關聯設定決定畫面各元件的狀態
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="UIStatus">目前頁面狀態</param>
+        </member>
+        <!-- 忽略成員 "M:BaseWebUI.GeneralWebForm.fixNbspS(System.String)" 中格式錯誤的 XML 註解 -->
+        <member name="M:BaseWebUI.GeneralWebForm.fixNullS(System.String)">
+            <summary>
+            將輸入字串為null的調整成為零長度字串
+            </summary>
+            <param name="ori">輸入字串</param>
+            <returns>調整後字串</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.filterLowASCII(System.String)">
+            <summary>
+            //低序位ASCII 字元將造成xPath剖析錯誤；將此類字元都替代為空白符
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setGeneralForm(com.dsc.kernal.factory.AbstractEngine,System.Boolean)">
+            <summary>
+            根據一般作業畫面設定決定畫面各元件的狀態
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="isnew">true:新增狀態; false:顯示狀態</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setReadOnlyForm(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            根據作業畫面定義SMWAAAB將所有欄位ReadOnly
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setToolBar(System.Data.DataSet)">
+            <summary>
+            根據DataSet內容(SMWDAAA)決定工具列的顯示與否以及名稱
+            </summary>
+            <param name="dsa">SMWDAAA資料表</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.saveParameter">
+            <summary>
+            儲存畫面傳入參數
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getAddSignXml">
+            <summary>
+            將加簽的資料串成xml
+            </summary>
+            <returns>加簽的xml</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSetFlowXml">
+            <summary>
+            將設定流程的資料串成xml
+            </summary>
+            <returns>設定流程的xml</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.processErrorMessage(System.Int32,System.Exception)">
+            <summary>
+            處理錯誤訊息的方法
+            </summary>
+            <param name="level">錯誤等級</param>
+            <param name="e">例外物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.processErrorMessage(System.Int32,System.Exception,System.Boolean)">
+            <summary>
+            處理錯誤訊息的方法
+            </summary>
+            <param name="e">例外物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.hideAllToolBar">
+            <summary>
+            隱藏所有工具列
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initToolBar">
+            <summary>
+            初始化工具列
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.createToolBar(System.String)">
+            <summary>
+            建立工具列
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getHistoryData(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            建立歷史資料列表顯示
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">目前資料物件單頭GUID</param>
+            <returns>歷史資料列表資訊</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getRelationData(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            建立相關表單列表顯示
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">目前資料物件單頭GUID</param>
+            <returns>相關表單列表資訊</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSMWAName(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            由SMWAAAA資料表根據作業畫面代號取得作業畫面名稱
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="id">作業畫面代號</param>
+            <returns>作業畫面名稱</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.cloneObject(com.dsc.kernal.databean.DataObject,com.dsc.kernal.utility.XMLProcessor)">
+            <summary>
+            深層複製資料物件, 並且替換GUID
+            </summary>
+            <param name="target"></param>
+            <param name="source"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.showErrorMessage">
+            <summary>
+            顯示錯誤訊息
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.invokeProcess(com.dsc.kernal.factory.AbstractEngine,com.dsc.flow.data.SubmitInfo,System.String,System.String)">
+            <summary>
+            使用設定檔發起流程
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="info">流程發起資訊物件</param>
+            <param name="flowid">流程定義代號</param>
+            <param name="subject">主旨</param>
+            <returns>流程實例序號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.invokeProcessByParameter(com.dsc.kernal.factory.AbstractEngine,com.dsc.flow.data.SubmitInfo,System.String,System.String,System.String,System.String)">
+            <summary>
+            使用設定檔發起流程並參入參數
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="info">流程發起資訊物件</param>
+            <param name="flowid">流程定義代號</param>
+            <param name="paramID">流程參數代號</param>
+            <param name="paramValue">參數內容</param>
+            <param name="subject">主旨</param>
+            <returns>流程實例序號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.invokeProcessByFormParameterAndAddCusAct(com.dsc.kernal.factory.AbstractEngine,com.dsc.flow.data.SubmitInfo,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            使用設定檔以及表單參數發起流程, 並且傳入流程設定
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="info">流程發起資訊物件</param>
+            <param name="flowid">流程定義代號</param>
+            <param name="formOID">表單識別號</param>
+            <param name="formXML">表單參數內容</param>
+            <param name="subject">主旨</param>
+            <param name="actDef">自訂流程內容</param>
+            <returns>流程實例序號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.invokeProcessByFormParameter(com.dsc.kernal.factory.AbstractEngine,com.dsc.flow.data.SubmitInfo,System.String,System.String,System.String,System.String)">
+            <summary>
+            使用設定檔以及表單參數發起流程
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="info">流程發起資訊物件</param>
+            <param name="flowid">流程定義代號</param>
+            <param name="formOID">表單識別號</param>
+            <param name="formXML">表單參數內容</param>
+            <param name="subject">主旨</param>
+            <returns>流程實例序號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.completeWorkItem(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String)">
+            <summary>
+            准
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="workItemOID">工作項目識別</param>
+            <param name="executiveResult">簽核結果</param>
+            <param name="executiveComment">簽核意見</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.terminateProcess(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String)">
+            <summary>
+            不准
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <param name="executiveResult">簽核結果</param>
+            <param name="executiveComment">簽核意見</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.abortProcessForSerialNo(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            撤銷流程
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <param name="executiveComment">簽核意見</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.DraftOpenWin_OpenWindowButtonClick(System.String,System.String[0:,0:])">
+            <summary>
+            草稿開窗後處理程序
+            </summary>
+            <param name="identityid">識別</param>
+            <param name="values">回傳值陣列</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.SignPhraseOpenWin_OpenWindowButtonClick(System.String,System.String[0:,0:])">
+            <summary>
+            簽核片語開窗處理程序
+            </summary>
+            <param name="identityid"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.fetchFlowDiagram(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            取得flowSerialNo流程實例序號的流程圖, 存放於localFilePath所指定的檔案
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="flowSerialNo">流程實例序號</param>
+            <param name="localFilePath">存放暫時路徑檔案名稱</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.substituteSubjectForm(System.Web.UI.Control,com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            由畫面欄位替換主旨字串
+            </summary>
+            <param name="c">畫面元件</param>
+            <param name="engine">資料庫連線物件</param>
+            <param name="subjectTemplate">主旨格式字串</param>
+            <param name="UIStatus">畫面狀態</param>
+            <returns>替換後主旨字串</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getProcessParameter(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            由SMWBAAA001取得流程參數
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">SMWBAAA001</param>
+            <returns>包含參數內容的Hashtable</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.reexecuteActivity(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            退回重辦
+            </summary>
+            <param name="engine">資料連線物件</param>
+            <param name="userID">退回重辦使用者</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <param name="workItemOID">目前工作項目識別號</param>
+            <param name="curActID">目前活動代號</param>
+            <param name="actID">要退回的活動代號</param>
+            <param name="executiveComment">簽核意見</param>
+            <param name="reexecuteActivityType">0:退回重辦之後逐關簽核; 2:略過之前已經執行過的關卡</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.fetchActivityIDFromWorkItemOID(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String)">
+            <summary>
+            由工作項目識別號取得activityID
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="workItemOID">工作項目識別號</param>
+            <returns>活動代號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getProcessAbortComment(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            取得指定流程序號的撤銷意見
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <returns>撤銷意見</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.reassignWorkItem(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String,System.String)">
+            <summary>
+            代理人轉派
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="toUserID">被轉派者代號</param>
+            <param name="workItemOID">工作項目識別號</param>
+            <param name="executiveComment">轉派意見</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.changeWorkItemOwner(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String,System.String)">
+            <summary>
+            工作轉派
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="toUserID">被轉派者代號</param>
+            <param name="workItemOID">工作項目識別號</param>
+            <param name="executiveComment">轉派意見</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.fetchRollbackableWorkItemOID(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            取得指定流程實例序號的可撤簽工作項目識別. 如果不可撤簽, 則回傳空字串
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="userID">撤簽使用者</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.rollbackActivity(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            撤簽
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="userID">撤簽使用者</param>
+            <param name="workItemOID">撤簽的工作項目識別</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.retrieveWorkAssignment(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String)">
+            <summary>
+            取回重辦
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="userID">要取回的使用者代號</param>
+            <param name="workItemOID">工作項目識別</param>
+            <param name="executiveComment">簽核意見</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.forwardWorkItem(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String[],System.String)">
+            <summary>
+            發送通知
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="userID">發送使用者代號</param>
+            <param name="workItemOID">目前工作識別號</param>
+            <param name="acceptorOID">接收通知使用者識別號陣列</param>
+            <param name="noticeType">通知類型. 0:流程預設;1:私人轉寄; 2:於流程中追蹤; 3:被代理時通知; 4:流程被撤銷工作被回收</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.addCustomActivity(com.dsc.kernal.factory.AbstractEngine,System.String,System.Boolean,System.String,System.String,System.String)">
+            <summary>
+            加簽
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="workItemOID">要加簽目的的活動識別號</param>
+            <param name="isAfter">true: 加簽在workItemOID後面; false: 加簽在workItemOID前面</param>
+            <param name="xml">加簽內容xml</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.assignRelevantDataBySerialNo(com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.String)">
+            <summary>
+            根據傳入的流程實例序號與參數代號和參數值，將參數值設定到此流程實例內，如果塞入的是個表單，則參數代號傳入表單代號；參數值傳入表單實例的XML值。
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="pProcessInstanceSerialNo">流程實例序號</param>
+            <param name="pRelevantDataId">流程參數代號或是表單代號</param>
+            <param name="pRelevantDataValue">參數值或是表單XML</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.reassignmentSubstitute(com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            執行代理轉派動作
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.increaseViewTimesOfWorkAssignment(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            指定的workItemOID讀取次數增加1
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="userID">發送使用者代號</param>
+            <param name="workItemOID">目前工作識別號</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.modifyDraftGUID(com.dsc.kernal.databean.DataObject)">
+            <summary>
+            將資料物件的GUID改掉, 同時也遞迴方式改掉單身的FK欄位
+            </summary>
+            <param name="obj">要處理的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getGPParam(System.String)">
+            <summary>
+            由Session取得GP各參數
+            </summary>
+            <param name="param">參數名稱</param>
+            <returns>參數值</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.messageInit">
+            <summary>
+            流程相關訊息變數
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.closeRefresh">
+            <summary>
+            畫面元件事件中呼叫此方法可以關閉PanelWindow且Refresh父視窗DataList元件
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.closeSilence">
+            <summary>
+            靜默關閉畫面，無提示訊息
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.closeRefreshClick">
+            <summary>
+            自動帶下一張簽核表單
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.closeRefreshUnReadClick">
+            <summary>
+            自動帶下一張未讀取簽核表單
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.refreshDataList">
+            <summary>
+            更新DataList
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.isNew">
+            <summary>
+            取得目前頁面處理的單頭物件是否為新增狀態
+            </summary>
+            <returns>true:新增狀態; false:顯示狀態(可修改或刪除)</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.fixNull(System.String)">
+            <summary>
+            將輸入字串為null的調整成為零長度字串
+            </summary>
+            <param name="ori">輸入字串</param>
+            <returns>調整後字串</returns>
+        </member>
+        <!-- 忽略成員 "M:BaseWebUI.GeneralWebForm.fixNbsp(System.String)" 中格式錯誤的 XML 註解 -->
+        <member name="M:BaseWebUI.GeneralWebForm.isNecessary(System.Web.UI.Control)">
+            <summary>
+            判定欄位是否須進行檢查. 此方法用在checkFieldData中
+            </summary>
+            <param name="fieldID">畫面欄位名稱</param>
+            <returns>true: 必須檢查; false: 不需檢查</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.pushErrorMessage(System.String)">
+            <summary>
+            要顯示的錯誤訊息
+            </summary>
+            <param name="errorMessage">錯誤訊息內容</param>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.debugPage">
+            <summary>
+            設定是否使用註記Log. 若設定為true, 則會根據日期在/LogFolder下建立檔案
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.attachFileConfirmSaveLevel1">
+            <summary>
+            覆寫，原生表單附件，儲存資料資料夾，第一階層名稱
+            請覆寫init() method
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessPageID">
+            <summary>
+            作業畫面代號(對應稽核模組的程式代號)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.AgentSchema">
+            <summary>
+            處理Agent的ClassString
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ApplicationID">
+            <summary>
+            應用程式代號(稽核模組使用)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ModuleID">
+            <summary>
+            模組代號(稽核模組使用)
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.errorLevel">
+            <summary>
+            預設系統錯誤層級
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessNewSuccessMsg">
+            <summary>
+            新增資料發起的成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.NewSuccessMsg">
+            <summary>
+            一般新增後的成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessModifySuccessMsg">
+            <summary>
+            修改資料發起流程的成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ModifySuccessMsg">
+            <summary>
+            一般資料修改後的成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.SignSuccessMsg">
+            <summary>
+            按下簽核鈕後的成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.DataProcessSuccessMsg">
+            <summary>
+            資料儲存成功後的預設顯示訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.DeleteSuccessMsg">
+            <summary>
+            一般刪除訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ProcessDeleteSuccessMsg">
+            <summary>
+            流程刪除訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.DraftSaveSuccessMsg">
+            <summary>
+            草稿儲存成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.DraftReadSuccessMsg">
+            <summary>
+            草稿讀取成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.WithDrawSuccessMsg">
+            <summary>
+            撤銷流程成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.RejectSuccessMsg">
+            <summary>
+            退回重辦成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.RedirectSuccessMsg">
+            <summary>
+            轉派成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ReGetSuccessMsg">
+            <summary>
+            取回成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.RollbackSuccessMsg">
+            <summary>
+            撤簽成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.ForwardSuccessMsg">
+            <summary>
+            發送通知(轉寄)成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.AddSignSuccessMsg">
+            <summary>
+            加簽成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.DispatchFlowSuccessMsg">
+            <summary>
+            發起參考流程成功訊息
+            </summary>
+        </member>
+        <member name="F:BaseWebUI.GeneralWebForm.GPErrorMessage">
+            <summary>
+            GP統一錯誤訊息
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.init">
+            <summary>
+            初始化變數
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initUI(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            初始化畫面顯示
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">目前畫面所處理的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.showData(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            將資料由資料物件顯示到畫面
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">欲顯示的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.customAfterForward(com.dsc.kernal.factory.AbstractEngine,System.Data.DataRow,System.String[])">
+            <summary>
+            原稿/通知/轉寄資料夾表單作轉寄後的事件
+            </summary>
+            <param name="engine">資料庫連線字串</param>
+            <param name="dr">該筆資料的SMWYAAA</param>
+            <param name="acceptorOID">被轉寄人員OID</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.saveData(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            將畫面資料儲存到資料物件
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">欲儲存的資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.checkFieldData(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            檢查畫面資料合法. 若有錯誤, 可呼叫pushErrorMessage加入錯誤訊息
+            若回傳true, 則程序繼續進行, false則中斷程序並且rollback.
+            但是若檢查中有呼叫pushErrorMessage, 則不論回傳是否為true, 都會繼續程序, 但會顯示訊息
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">目前畫面資料物件</param>
+            <returns></returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getCustomizeSheetNo(com.dsc.kernal.factory.AbstractEngine)">
+            <summary>
+            客製化單號
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <returns>單號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSheetNoParam(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            設定自動編號所需要的參數. 若此自動編號不需要參數, 可直接回傳null或是Empty Hashtable或是不覆寫此方法
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="autoCodeID">自動編號代碼(SMVIAAA002)</param>
+            <returns>Hashtable, key:參數名稱; value:參數值</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSubmitInfo(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,com.dsc.flow.data.SubmitInfo)">
+            <summary>
+            設定發起流程相關資訊. 必須覆寫此方法, 將表單相關資訊寫入SubmitInfo物件
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">目前資料物件</param>
+            <param name="si">SubmitInfo物件</param>
+            <returns>填寫好的SubmitInfo物件</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.initSubmitInfo(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,com.dsc.flow.data.SubmitInfo)">
+            <summary>
+            表單初始化時設定發起流程相關資訊. 必須覆寫此方法, 將表單相關資訊寫入SubmitInfo物件
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">目前資料物件</param>
+            <param name="si">SubmitInfo物件</param>
+            <returns>填寫好的SubmitInfo物件</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getObjectGUIDField">
+            <summary>
+            設定單頭資料物件的識別欄位. 若不覆寫, 預設為GUID
+            </summary>
+            <returns>欄位名稱</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getOriginalFormVariables(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.Collections.Hashtable)">
+            <summary>
+            處理原稿資料夾自定變數程序
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="objects">資料物件</param>
+            <param name="hs">包含各變數名稱為Key值的Hashtable. 需要將Value填入</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getDraftSubject(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            設定草稿主旨. 此方法若無實做, 回傳空字串. 系統預設會使用主旨格式替換, 若無設定或是發生錯誤, 才呼叫此方法取得草稿主旨
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前處理的資料物件</param>
+            <returns>草稿主旨</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.beforeModifiedDraftDataObjectGUID(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            草稿讀取後，會將草稿的資料物件GUID遞迴更換為新的GUID；以避免GUID重複問題。可在此方法拿到更新GUID前的資料物件
+            </summary>
+            <param name="engine"></param>
+            <param name="currentObject"></param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.afterReadDraft(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            草稿讀取後設定. 通常在此方法中將有時效性以及識別欄位等內容替換, 以免覆蓋原本資料
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前畫面資料物件(已由草稿內容取代)</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setFlowVariables(com.dsc.kernal.factory.AbstractEngine,System.Collections.Hashtable,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            設定流程參數, 並且指定預先送出的參數代號. 若參數代號為空字串或null, 
+            表示此流程參數不使用參數. 若此方法無實做, 參數代號固定為空字串
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="param">須設定參數的Hashtable. KEY為參數代號, Value需由此方法填入</param>
+            <param name="currentObject">目前資料物件</param>
+            <returns>預先送出的參數代號</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.afterApprove(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.String)">
+            <summary>
+            流程結案後，呼叫執行此方法
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="result">Y:完成;N:終止;W:撤銷</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.afterWithDraw(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            流程徹銷後，呼叫執行此方法
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前作業畫面物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.setPrintCertificateCustomizeDisplay(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            列印憑證模式(傳入CertificateMode=1)時, 複寫此方法決定畫面顯示
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.beforeSign(com.dsc.kernal.factory.AbstractEngine,System.Boolean,System.String)">
+            <summary>
+            送簽核前呼叫, 可於此方法中修改加簽的Xml
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="addSignXml">要加簽的Xml</param>
+            <returns>修改後的加簽Xml</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.beforeSetFlow(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            發起流程時, 若有設定流程, 此方法可程式化改寫設定流程的Xml
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="setFlowXml">設定流程的Xml</param>
+            <returns>修改後的Xml</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.afterSign(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.String)">
+            <summary>
+            簽核鈕按下後事件
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前畫面資料物件</param>
+            <param name="result">簽核案下結果</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.beforeSend(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            流程送出前呼叫
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前畫面資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.afterSend(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject)">
+            <summary>
+            流程送出後呼叫
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前畫面資料物件</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.customizeFormHead(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            決定是否客製化表單資訊區塊顯示. 預設回傳false
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">資料物件GUID</param>
+            <param name="flowOID">流程實例序號</param>
+            <returns>true: 系統停止Render原表單資訊內容; false:系統保持原render方式</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getFormHead(com.dsc.kernal.factory.AbstractEngine,System.String,System.String)">
+            <summary>
+            建立表單單頭資訊顯示
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">資料物件GUID</param>
+            <param name="flowOID">流程實例序號</param>
+            <returns>單頭資訊</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.customizeSignOpinion(System.Web.HttpServerUtility,System.Boolean,com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.Data.DataRow)">
+            <summary>
+            決定是否客製化簽核資訊區塊顯示. 預設回傳false
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="guid">資料物件GUID</param>
+            <param name="flowOID">流程實例序號</param>
+            <param name="opinionSetting">DataRow, 其中SMWDAAA300開始為各項設定</param>
+            <returns>true: 系統停止Render原表單資訊內容; false:系統保持原render方式</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.changeParameter">
+            <summary>
+            可複寫此方法改變頁面各項參數儲存值
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getSignOpinion(System.Web.HttpServerUtility,System.Boolean,com.dsc.kernal.factory.AbstractEngine,System.String,System.String,System.Data.DataRow)">
+            <summary>
+            取得簽核意見列表
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="processSerialNumber">流程實例序號</param>
+            <param name="opinionType">0:顯示所有流程;1:僅顯示已簽核流程</param>
+            <param name="opinionSetting">DataRow, 其中SMWDAAA300開始為各項設定</param>
+            <returns>意見列表</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.ShowOtherState(System.String)">
+            <summary>
+            顯示其他簽核狀態(整合EasyFlow)
+            </summary>
+            <param name="state">state</param>
+            <returns>簽核狀態說明</returns>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.afterSetReadOnlyForm(com.dsc.kernal.factory.AbstractEngine,com.dsc.kernal.databean.DataObject,System.String)">
+            <summary>
+            原稿/通知狀態畫面初始化完成後客製程式碼片段. 開發者可以複寫此方法, 在原稿/通知模式系統會自動將所有欄位ReadOnly後, 可更改此設定. 此複寫方法僅在原稿以及通知模式會呼叫
+            </summary>
+            <param name="engine">資料庫連線物件</param>
+            <param name="currentObject">目前資料物件</param>
+            <param name="UIStatus">GeneralWebForm.FormReadOnly:原稿; GeneralWebForm.FormNotify: 通知</param>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.deleteProcessData(com.dsc.kernal.factory.AbstractEngine,System.String)">
+            <summary>
+            當表單回存失敗；或其它因素導致有流程沒表單時，使用此方法清除GP流程資料。
+            以免下一關使用者看到待辦項目；但卻不能夠開啟表單。
+            </summary>
+        </member>
+        <member name="M:BaseWebUI.GeneralWebForm.getFormsender(System.String,System.String)">
+            <summary>
+            取得填表人代號
+            </summary>
+            <param name="processSerialNumber">processSerialNumber 流程實例序號</param>
+            <param name="formID">formID 流程代號</param>
+            <returns></returns>
+        </member>
+        <member name="P:BaseWebUI.GeneralWebForm.isSubstituteSign">
+            <summary>
+            是否為被代理之流程
+            </summary>
+        </member>
+        <member name="T:BaseWebUI.SystemInfo">
+            <summary>
+            封裝系統登入後的Session值
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.UserGUID">
+            <summary>
+            登入者識別號，取得Session["UserGUID"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.UserID">
+            <summary>
+            登入者代號，取得Session["UserID"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.UserName">
+            <summary>
+            登入者姓名，取得Session["UserName"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.Locale">
+            <summary>
+            登入者使用語系，取得Session["Locale"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.IsSysAdmin">
+            <summary>
+            登入者是否以administrator登入，取得Session["IsSysAdmin"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.usergroup">
+            <summary>
+            登入者所屬權限群組代碼，取得Session["usergroup"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.processid">
+            <summary>
+            登入者processid，取得Session["processid"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.layoutType">
+            <summary>
+            登入者使用版面配置，取得Session["layoutType"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.UserPWD">
+            <summary>
+            登入者密碼，取得Session["UserPWD"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.engineType">
+            <summary>
+            系統連線資料庫類型，取得Session["engineType"]
+            </summary>
+        </member>
+        <member name="P:BaseWebUI.SystemInfo.connectString">
+            <summary>
+            系統資料庫連線字串，取得Session["connectString"]
+            </summary>
+        </member>
+    </members>
+</doc>

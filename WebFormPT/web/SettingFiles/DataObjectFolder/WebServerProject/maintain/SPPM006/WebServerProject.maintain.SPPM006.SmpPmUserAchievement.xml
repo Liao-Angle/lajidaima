@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPPM006.SmpPmUserAchievement" tableName="SmpPmUserAchievement">
+  <queryStr>
+    select GUID, deptId, deptName, UserGUID, empName, titleName,ZD,ResponsibilityFlag,JiangScore,faScore,PeixunScore,ChuqinScore,MisTake1,MisTake2,Levle,AssessmentPlanGUID, AssessmentName,
+    SelfScore_W, FirstScore_W, SecondScore_W, SelfComments, FirstComments, SecondComments,
+    FinalScore, FinalComments, AchievementLevel, Description, AssessUserGUID, Status,
+    Results,
+    IS_DISPLAY, IS_LOCK, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME
+    from (
+    select
+    a.GUID, b.deptId, b.deptName, a.UserGUID, b.empName,b.titleName,b.ZD,b.ResponsibilityFlag,b.JiangScore,b.faScore,b.PeixunScore,b.ChuqinScore,b.MisTake1,b.MisTake2,b.Levle,a.AssessmentPlanGUID, c.AssessmentName,
+    d.SelfScore_W, d.FirstScore_W, d.SecondScore_W, SelfComments, FirstComments, SecondComments,
+    a.FinalScore, a.FinalComments, a.AchievementLevel, isnull(f.Description,'') Description, a.AssessUserGUID, a.Status,
+    Results =case
+    when a.AchievementLevel ='' then 'DRAFT'
+    when a.AchievementLevel is not  null and a.Status='OPEN' then 'OPEN'
+    when a.AchievementLevel is not  null and a.Status='COMPLETE' then 'COMPLETE'
+    when a.AchievementLevel is not  null and a.Status='CLOSE' then 'Enable'
+    else ''  end,
+    a.IS_DISPLAY, a.IS_LOCK, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME
+    from
+    SmpPmUserAchievement a
+    join SmpHrEmployeeInfoV b on b.empNumber=a.UserGUID
+    join SmpPmAssessmentPlan c on c.GUID=a.AssessmentPlanGUID
+    join SmpPmAssessmentUserScore d on d.UserGUID = a.UserGUID and d.AssessmentPlanGUID = a.AssessmentPlanGUID
+    left join SmpPmAchievementLevel f on a.AchievementLevel=f.AchievementLevel
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="deptId" typeField="STRING" lengthField="50" defaultValue="" displayName="部門代號" showName=""/>
+    <field dataField="deptName" typeField="STRING" lengthField="50" defaultValue="" displayName="部門" showName=""/>
+	<field dataField="UserGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核對象人員識別碼" showName=""/>
+    <field dataField="empName" typeField="STRING" lengthField="50" defaultValue="" displayName="姓名" showName=""/>
+	<field dataField="titleName" typeField="STRING" lengthField="50" defaultValue="" displayName="職稱" showName=""/>
+	<field dataField="ZD" typeField="STRING" lengthField="50" defaultValue="" displayName="職等" showName=""/>
+    <field dataField="ResponsibilityFlag" typeField="STRING" lengthField="50" defaultValue="" displayName="是否責任制" showName=""/>
+    <field dataField="JiangScore" typeField="STRING" lengthField="50" defaultValue="" displayName="獎勵分值" showName=""/>
+    <field dataField="faScore" typeField="STRING" lengthField="50" defaultValue="" displayName="處罰分值" showName=""/>
+    <field dataField="PeixunScore" typeField="STRING" lengthField="50" defaultValue="" displayName="培訓處罰分值" showName=""/>
+    <field dataField="ChuqinScore" typeField="STRING" lengthField="50" defaultValue="" displayName="出勤處罰分值" showName=""/>
+    <field dataField="MisTake1" typeField="STRING" lengthField="50" defaultValue="" displayName="小過次數" showName=""/>
+    <field dataField="MisTake2" typeField="STRING" lengthField="50" defaultValue="" displayName="大過次數" showName=""/>
+    <field dataField="MV022" typeField="STRING" lengthField="50" defaultValue="" displayName="上次等級" showName=""/>
+    <field dataField="AssessmentPlanGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核計畫識別碼" showName=""/>
+    <field dataField="AssessmentName" typeField="STRING" lengthField="50" defaultValue="" displayName="考核計畫名稱" showName=""/>    
+    <field dataField="SelfScore_W" typeField="STRING" lengthField="50" defaultValue="" displayName="自評分數" showName=""/>
+    <field dataField="FirstScore_W" typeField="STRING" lengthField="50" defaultValue="" displayName="一階評核分數" showName=""/>    
+    <field dataField="SecondScore_W" typeField="STRING" lengthField="50" defaultValue="" displayName="二階評核分數" showName=""/>
+    <field dataField="SelfComments" typeField="STRING" lengthField="250" defaultValue="" displayName="自評意見" showName=""/>
+    <field dataField="FirstComments" typeField="STRING" lengthField="250" defaultValue="" displayName="一階意見" showName=""/>
+    <field dataField="SecondComments" typeField="STRING" lengthField="250" defaultValue="" displayName="二階意見" showName=""/>
+	  <field dataField="FinalScore" typeField="STRING" lengthField="50" defaultValue="" displayName="總結分數" showName=""/>
+    <field dataField="FinalComments" typeField="STRING" lengthField="250" defaultValue="" displayName="總結評語" showName=""/>
+	<field dataField="AchievementLevel" typeField="STRING" lengthField="50" defaultValue="" displayName="等級" showName=""/>	
+	<field dataField="Description" typeField="STRING" lengthField="50" defaultValue="" displayName="等級說明" showName=""/>	
+    <field dataField="AssessUserGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="評核人員識別碼" showName=""/>   
+    <field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="評核狀態" showName="DRAFT:未開始;OPEN:進行中;COMPLETE:已完成;CLOSE:已結案;CANCEL:取消"/>	
+	<field dataField="Results" typeField="STRING" lengthField="50" defaultValue="" displayName="成績狀態" showName="DRAFT:評核中;OPEN:未提交;COMPLETE:已提交;Enable:已生效"/>
+	<field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" 
+              showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" 
+              showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" 
+              showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>  
+	  <field dataField="deptId"/>	
+	  <field dataField="deptName"/>
+	  <field dataField="UserGUID"/>
+	  <field dataField="empName"/>
+	  <field dataField="titleName"/>
+	  <field dataField="ZD"/>
+	  <field dataField="ResponsibilityFlag"/>
+	  <field dataField="AssessmentPlanGUID"/>
+    <field dataField="AssessmentName"/>   
+    <field dataField="SelfScore_W"/>   
+    <field dataField="FirstScore_W"/> 
+    <field dataField="SecondScore_W"/>
+    <field dataField="SelfComments"/>
+    <field dataField="FirstComments"/>
+    <field dataField="SecondComments"/>
+	  <field dataField="FinalScore"/>  
+	  <field dataField="FinalComments"/>  
+	  <field dataField="AchievementLevel"/> 
+	  <field dataField="Description"/>	
+    <field dataField="AssessUserGUID"/>  
+    <field dataField="Results"/>
+    <field dataField="JiangScore"/>
+    <field dataField="faScore"/>
+    <field dataField="PeixunScore"/>
+    <field dataField="ChuqinScore"/>
+    <field dataField="MisTake1"/>
+    <field dataField="MisTake2"/>
+    <field dataField="Levle"/>
+  </allowEmptyField>
+  <nonUpdateField>
+	  <field dataField="deptId"/>	
+	  <field dataField="deptName"/>
+	  <field dataField="UserGUID"/>
+	  <field dataField="empName"/>
+	  <field dataField="titleName"/>
+	  <field dataField="ZD"/>
+	  <field dataField="ResponsibilityFlag"/>
+	  <field dataField="AssessmentPlanGUID"/>
+    <field dataField="AssessmentName"/>   
+    <field dataField="SelfScore_W"/>   
+    <field dataField="FirstScore_W"/> 
+    <field dataField="SecondScore_W"/>
+    <field dataField="SelfComments"/>
+    <field dataField="FirstComments"/>
+    <field dataField="SecondComments"/>
+	  <field dataField="Description"/>	 	
+    <field dataField="AssessUserGUID"/>
+    <field dataField="Status"/> 
+	  <field dataField="Results"/>
+    <field dataField="JiangScore"/>
+    <field dataField="faScore"/>
+    <field dataField="PeixunScore"/>
+    <field dataField="ChuqinScore"/>
+    <field dataField="MisTake1"/>
+    <field dataField="MisTake2"/>
+    <field dataField="Levle"/>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPPM004.SmpPmAssessmentUserScore" tableName="SmpPmAssessmentUserScore">
+  <queryStr>
+    select GUID, UserGUID, empName, empNumber,titleName,ZD, deptName,JiangScore,faScore,PeixunScore,ChuqinScore,MisTake1,MisTake2, AssessmentPlanGUID, AssessmentName, AssessYear, AssessmentManagerGUID, EvaluationGUID, EvaluationName, SelfScore,SelfScore_W, FirstScore,FirstScore_W, SecondScore,SecondScore_W, SelfComments, FirstComments, SecondComments
+    ,AssessUserGUID, Stage, Status, StartDate, CompleteDate, AssessmentDays, UserAssessmentStageGUID, SelfEvaluation
+    ,IS_DISPLAY, IS_LOCK, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME
+    from (
+    select
+    a.GUID, a.UserGUID, b.empName, b.empNumber,b.titleName,b.ZD, b.deptName,b.JiangScore,b.faScore,b.PeixunScore,b.ChuqinScore,b.MisTake1,b.MisTake2, a.AssessmentPlanGUID, c.AssessmentName, c.AssessYear, a.AssessmentManagerGUID, a.EvaluationGUID, d.Name EvaluationName, a.SelfScore,a.SelfScore_W,a.FirstScore,a.FirstScore_W, a.SecondScore,a.SecondScore_W, a.SelfComments, a.FirstComments, a.SecondComments
+    ,e.AssessUserGUID, e.Stage, e.Status, e.StartDate, e.CompleteDate, e.AssessmentDays, e.GUID UserAssessmentStageGUID, f.SelfEvaluation
+    ,a.IS_DISPLAY, a.IS_LOCK, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME
+    from
+    SmpPmAssessmentUserScore a
+    join SmpHrEmployeeInfoV b on b.empNumber=a.UserGUID
+    join SmpPmAssessmentPlan c on c.GUID=a.AssessmentPlanGUID
+    join SmpPmEvaluation d on d.GUID=a.EvaluationGUID
+    join SmpPmUserAssessmentStage e on e.AssessmentManagerGUID=a.AssessmentManagerGUID
+    join SmpPmAssessmentConfig f on f.AssessmentPlanGUID=c.GUID
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="UserGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核對象人員識別碼" showName=""/>
+    <field dataField="empName" typeField="STRING" lengthField="50" defaultValue="" displayName="姓名" showName=""/>
+    <field dataField="empNumber" typeField="STRING" lengthField="50" defaultValue="" displayName="工號" showName=""/>
+	<field dataField="titleName" typeField="STRING" lengthField="50" defaultValue="" displayName="職稱" showName=""/>
+	<field dataField="ZD" typeField="STRING" lengthField="50" defaultValue="" displayName="職等" showName=""/>
+    <field dataField="deptName" typeField="STRING" lengthField="50" defaultValue="" displayName="部門" showName=""/>
+    <field dataField="JiangScore" typeField="STRING" lengthField="50" defaultValue="" displayName="獎勵分值" showName=""/>
+    <field dataField="faScore" typeField="STRING" lengthField="50" defaultValue="" displayName="處罰分值" showName=""/>
+    <field dataField="PeixunScore" typeField="STRING" lengthField="50" defaultValue="" displayName="培訓處罰分值" showName=""/>
+    <field dataField="ChuqinScore" typeField="STRING" lengthField="50" defaultValue="" displayName="出勤處罰分值" showName=""/>
+    <field dataField="MisTake1" typeField="STRING" lengthField="50" defaultValue="" displayName="小過次數" showName=""/>
+    <field dataField="MisTake2" typeField="STRING" lengthField="50" defaultValue="" displayName="大過次數" showName=""/>
+    <field dataField="AssessmentPlanGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核計畫識別碼" showName=""/>
+    <field dataField="AssessmentName" typeField="STRING" lengthField="50" defaultValue="" displayName="考核計畫名稱" showName=""/>
+    <field dataField="AssessYear" typeField="STRING" lengthField="50" defaultValue="" displayName="考核年度" showName=""/>
+    <field dataField="AssessmentManagerGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核人識別碼" showName=""/>
+    <field dataField="EvaluationGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核表識別碼" showName=""/>
+    <field dataField="EvaluationName" typeField="STRING" lengthField="50" defaultValue="" displayName="考評表名稱" showName=""/>
+    <field dataField="SelfScore" typeField="STRING" lengthField="50" defaultValue="" displayName="自評分數" showName=""/>
+	<field dataField="SelfScore_W" typeField="STRING" lengthField="50" defaultValue="" displayName="自評分數" showName=""/>
+    <field dataField="FirstScore" typeField="STRING" lengthField="50" defaultValue="" displayName="一階分數" showName=""/>
+	<field dataField="FirstScore_W" typeField="STRING" lengthField="50" defaultValue="" displayName="一階分數" showName=""/>
+    <field dataField="SecondScore" typeField="STRING" lengthField="50" defaultValue="" displayName="二階分數" showName=""/>
+	<field dataField="SecondScore_W" typeField="STRING" lengthField="50" defaultValue="" displayName="二階分數" showName=""/> 	  
+    <field dataField="SelfComments" typeField="STRING" lengthField="250" defaultValue="" displayName="自評意見" showName=""/>
+    <field dataField="FirstComments" typeField="STRING" lengthField="250" defaultValue="" displayName="一階意見" showName=""/>
+    <field dataField="SecondComments" typeField="STRING" lengthField="250" defaultValue="" displayName="二階意見" showName=""/>
+    <field dataField="AssessUserGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="評核人員識別碼" showName=""/>
+    <field dataField="Stage" typeField="STRING" lengthField="50" defaultValue="" displayName="評核階段" showName="0:自評階段;1:一階評核;2:二階評核"/>
+    <field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="狀態" showName="DRAFT:未開始;OPEN:進行中;COMPLETE:已完成;CLOSE:已結案;CANCEL:取消"/>
+    <field dataField="StartDate" typeField="STRING" lengthField="50" defaultValue="" displayName="開始日" showName=""/>
+    <field dataField="CompleteDate" typeField="STRING" lengthField="50" defaultValue="" displayName="完成日" showName=""/>
+    <field dataField="AssessmentDays" typeField="STRING" lengthField="3" defaultValue="" displayName="評核天數" showName=""/>
+    <field dataField="UserAssessmentStageGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="關卡識別碼" showName=""/>
+    <field dataField="SelfEvaluation" typeField="STRING" lengthField="50" defaultValue="" displayName="是否自評" showName="N:否;Y:是"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" 
+              showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" 
+              showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" 
+              showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="empName"/>
+    <field dataField="empNumber"/>
+	<field dataField="titleName"/>
+    <field dataField="ZD"/>
+    <field dataField="deptName"/>
+    <field dataField="AssessmentName"/>
+    <field dataField="AssessYear"/>
+    <field dataField="EvaluationName"/>
+    <field dataField="SelfScore"/>
+    <field dataField="SelfScore_W"/>
+    <field dataField="SelfComments"/>
+    <field dataField="FirstScore"/>
+	<field dataField="FirstScore_W"/>
+    <field dataField="FirstComments"/>
+    <field dataField="SecondScore"/>
+	<field dataField="SecondScore_W"/>
+    <field dataField="SecondComments"/>
+    <field dataField="AssessUserGUID"/>
+    <field dataField="Stage"/>
+    <field dataField="Status"/>
+    <field dataField="StartDate"/>
+    <field dataField="CompleteDate"/>
+    <field dataField="AssessmentDays"/>
+    <field dataField="UserAssessmentStageGUID"/>
+    <field dataField="SelfEvaluation"/>
+    <field dataField="JiangScore"/>
+    <field dataField="faScore"/>
+    <field dataField="PeixunScore"/>
+    <field dataField="ChuqinScore"/>
+    <field dataField="MisTake1"/>
+    <field dataField="MisTake2"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="empName"/>
+    <field dataField="empNumber"/>
+    <field dataField="titleName"/>
+	  <field dataField="ZD"/>
+    <field dataField="deptName"/>
+    <field dataField="AssessmentName"/>
+    <field dataField="AssessYear"/>
+    <field dataField="EvaluationName"/>
+    <field dataField="AssessUserGUID"/>
+    <field dataField="Stage"/>
+    <field dataField="Status"/>
+    <field dataField="StartDate"/>
+    <field dataField="CompleteDate"/>
+    <field dataField="AssessmentDays"/>
+    <field dataField="UserAssessmentStageGUID"/>
+    <field dataField="SelfEvaluation"/>
+    <field dataField="JiangScore"/>
+    <field dataField="faScore"/>
+    <field dataField="PeixunScore"/>
+    <field dataField="ChuqinScore"/>
+    <field dataField="MisTake1"/>
+    <field dataField="MisTake2"/>
+  </nonUpdateField>
+</DataObject>

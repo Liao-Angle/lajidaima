@@ -1,0 +1,20 @@
+body
+{
+	font-size:9pt;
+	background-color:#F0F0F0;
+	overflow:hidden;
+}
+.ToolBarContainer
+{
+	font-size:9pt;
+	background-image:url(Images/buttom_bg.jpg);
+    border-top-style:solid;
+    border-top-width:1px;
+    border-top-color:#B6B9C1;
+}
+.ToolBarTree
+{
+	font-size:9pt;
+	scrollbar-face-color:#EEEEEE;
+	scrollbar-highlight-color:#CCCCFF ;
+}

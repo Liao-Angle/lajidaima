@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EM0109.EM0109A" tableName="EM0109A">
+  <queryStr>
+    SELECT GUID,SheetNo,EmpNo,EmpName,Mobile,Reason,ShortCall,LongCall,GroupCall,GlobalCall,ApplyAmount,AgreeAmount,ApplyType,SDate,EDate,JoinGroup,ShortNumber,bzcb,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EM0109A
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人姓名" showName=""/>
+    <field dataField="Mobile" typeField="STRING" lengthField="20" defaultValue="" displayName="電話號碼" showName=""/>
+    <field dataField="Reason" typeField="STRING" lengthField="255" defaultValue="" displayName="申請說明" showName=""/>
+    <field dataField="ShortCall" typeField="STRING" lengthField="5" defaultValue="" displayName="本地市話 (分)" showName=""/>
+    <field dataField="LongCall" typeField="STRING" lengthField="5" defaultValue="" displayName="本地長途 (分)" showName=""/>
+    <field dataField="GroupCall" typeField="STRING" lengthField="5" defaultValue="" displayName="集團通話 (分)" showName=""/>
+    <field dataField="GlobalCall" typeField="STRING" lengthField="5" defaultValue="" displayName="國際漫遊 (分)" showName=""/>
+    <field dataField="ApplyAmount" typeField="STRING" lengthField="5" defaultValue="" displayName="申請額度" showName=""/>
+    <field dataField="AgreeAmount" typeField="STRING" lengthField="5" defaultValue="" displayName="同意額度" showName=""/>
+    <field dataField="ApplyType" typeField="STRING" lengthField="5" defaultValue="" displayName="申請類型" showName=""/>
+    <field dataField="SDate" typeField="STRING" lengthField="10" defaultValue="" displayName="起始日期" showName=""/>
+    <field dataField="EDate" typeField="STRING" lengthField="10" defaultValue="" displayName="終止日期" showName=""/>
+    <field dataField="JoinGroup" typeField="STRING" lengthField="1" defaultValue="" displayName="加入集團網" showName="Y: 是, N: 否"/>
+    <field dataField="ShortNumber" typeField="STRING" lengthField="10" defaultValue="" displayName="短號" showName=""/>
+    <field dataField="bzcb" typeField="STRING" lengthField="255" defaultValue="" displayName="超額說明" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="Mobile"/>
+    <field dataField="ShortCall"/>
+    <field dataField="LongCall"/>
+    <field dataField="GroupCall"/>
+    <field dataField="GlobalCall"/>
+    <field dataField="ApplyAmount"/>
+    <field dataField="AgreeAmount"/>
+    <field dataField="EDate"/>
+    <field dataField="ShortNumber"/>
+    <field dataField="bzcb"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

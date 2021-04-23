@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPPM004.SmpPmAssessmentUserScore" TableName="SmpPmAssessmentUserScore">
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPPM004.SmpPmAssessmentScoreDetail" TableName="SmpPmAssessmentScoreDetail" RelationString="GUID=AssessmentUserScoreGUID">
+  </DOS>
+</DOS>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.EM0105.EM0105A" tableName="EM0105A">
+  <queryStr>SELECT GUID,SheetNo,Subject,EmpNo,EmpName,onlietype,MAC,Intranet,customer,SingleDateTimeField1,SingleDateTimeField2,Area,Reason,IS_LOCK,IS_DISPLAY,DATA_STATUS,D_INSERTUSER,D_INSERTTIME,D_MODIFYUSER,D_MODIFYTIME FROM WebFormPT.dbo.EM0105A</queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別號" showName=""/>
+    <field dataField="SheetNo" typeField="STRING" lengthField="50" defaultValue="" displayName="表單號" showName=""/>
+    <field dataField="Subject" typeField="STRING" lengthField="255" defaultValue="" displayName="主旨" showName=""/>
+    <field dataField="EmpNo" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="20" defaultValue="" displayName="申請人姓名" showName=""/>
+    <field dataField="onlietype" typeField="STRING" lengthField="20" defaultValue="" displayName="上網人員類別" showName=""/>
+    <field dataField="MAC" typeField="STRING" lengthField="50" defaultValue="" displayName="MAC位址" showName=""/>
+    <field dataField="Intranet" typeField="STRING" lengthField="10" defaultValue="" displayName="上網方式" showName=""/>
+    <field dataField="customer" typeField="STRING" lengthField="20" defaultValue="" displayName="客戶姓名" showName=""/>
+    <field dataField="SingleDateTimeField1" typeField="STRING" lengthField="20" defaultValue="" displayName="開始時間" showName=""/>
+    <field dataField="SingleDateTimeField2" typeField="STRING" lengthField="20" defaultValue="" displayName="結束時間" showName=""/>
+    <field dataField="Area" typeField="STRING" lengthField="100" defaultValue="" displayName="上網位置" showName=""/>
+    <field dataField="Reason" typeField="STRING" lengthField="255" defaultValue="" displayName="申請原因" showName=""/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="50" defaultValue="" displayName="資料鎖定" showName="N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料顯示" showName="Y:顯示;N:不顯示"/>
+    <field dataField="DATA_STATUS" typeField="STRING" lengthField="50" defaultValue="Y" displayName="資料狀態" showName="N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="IP"/>
+    <field dataField="MAC"/>
+    <field dataField="SSID"/>
+    <field dataField="Area"/>
+    <field dataField="Subject"/>
+    <field dataField="EmpNo"/>
+    <field dataField="EmpName"/>
+    <field dataField="customer"/>
+    <field dataField="SingleDateTimeField1"/>
+    <field dataField="SingleDateTimeField2"/>
+  </allowEmptyField>
+  <nonUpdateField>
+  </nonUpdateField>
+</DataObject>

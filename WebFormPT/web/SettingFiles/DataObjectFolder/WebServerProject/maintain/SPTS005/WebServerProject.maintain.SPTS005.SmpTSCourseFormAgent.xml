@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPTS005.SmpTSCourseForm" TableName="SmpTSCourseForm">  
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPTS005.SmpTSCourseTrainee" TableName="SmpTSCourseTrainee" RelationString="GUID=CourseFormGUID"></DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPTS005.SmpTSCourseMaterial" TableName="SmpTSCourseMaterial" RelationString="GUID=CourseFormGUID"></DOS>
+  <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPTS005.SmpTSCourseAttach" TableName="SmpTSCourseAttach" RelationString="GUID=CourseFormGUID"></DOS>
+</DOS>

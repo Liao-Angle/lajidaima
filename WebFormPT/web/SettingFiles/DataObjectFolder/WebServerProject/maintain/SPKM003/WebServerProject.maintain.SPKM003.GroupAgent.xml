@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM003.Groups" TableName="Groups">
+    <DOS AssemblyName="WebServerProject" ChildClassString="WebServerProject.maintain.SPKM003.Group_User" TableName="Group_User" RelationString="OID=GroupOID">
+  </DOS>
+</DOS>

@@ -1,0 +1,8 @@
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\bin\Debug\ECPJobQueue.exe
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\bin\Debug\ECPJobQueue.pdb
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\bin\Debug\com.dll
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\bin\Debug\com.pdb
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\bin\Debug\com.xml
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\obj\x86\Debug\ECPJobQueue.exe
+D:\ASPNET平台\ECPBrowserCap\ECPJobQueue\obj\x86\Debug\ECPJobQueue.pdb

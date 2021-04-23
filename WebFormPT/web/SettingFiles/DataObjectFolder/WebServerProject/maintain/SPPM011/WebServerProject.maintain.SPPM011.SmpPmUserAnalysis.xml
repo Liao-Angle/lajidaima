@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPPM011.SmpPmUserAnalysis" tableName="SmpPmUserAnalysis">
+  <queryStr>
+    select AssessmentName,AssessUserGUID,PartName,EmpNo,EmpName,DtName,t.Status,t.SubmitStatus from(select distinct z.AssessmentName,a.AssessUserGUID,c.PartNo PartName,b.id EmpNo,c.EmpName,c.DtName,a.Status,a.SubmitStatus from dbo.SmpPmUserAchievement as a left join dbo.Users as b on a.AssessUserGUID=b.id
+    left join dbo.HRUSERS as  c on b.id collate chinese_taiwan_stroke_ci_as=c.EmpNo
+    left join dbo.SmpPmAssessmentPlan as z on a.AssessmentPlanGUID=z.GUID)t
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="AssessmentName" typeField="STRING" lengthField="50" defaultValue="" displayName="考核名稱" showName=""/>
+    <field dataField="AssessUserGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考評人員識別號" showName=""/>
+    <field dataField="PartName" typeField="STRING" lengthField="50" defaultValue="" displayName="部門" showName=""/>
+	  <field dataField="EmpNo" typeField="STRING" lengthField="50" defaultValue="" displayName="主管工號" showName=""/>
+    <field dataField="EmpName" typeField="STRING" lengthField="50" defaultValue="" displayName="主管姓名" showName=""/>	
+    <field dataField="DtName" typeField="STRING" lengthField="50" defaultValue="" displayName="主管職稱" showName=""/>   
+    <field dataField="Status" typeField="STRING" lengthField="50" defaultValue="" displayName="評核狀態" showName="DRAFT:未開始;OPEN:進行中;COMPLETE:已完成;CLOSE:已結案;CANCEL:取消"/>
+	<field dataField="SubmitStatus" typeField="STRING" lengthField="1" defaultValue="" displayName="審核狀態" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="AssessmentName"/>
+	<field dataField="AssessUserGUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="AssessmentName"/>
+    <field dataField="AssessUserGUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+	  <field dataField="AssessmentName"/>
+	  <field dataField="AssessUserGUID"/>
+	  <field dataField="PartName"/>
+	  <field dataField="EmpNo"/>	
+	  <field dataField="EmpName"/>
+      <field dataField="DtName"/>   
+      <field dataField="Status"/>
+      <field dataField="SubmitStatus"/>
+  </allowEmptyField>
+  <nonUpdateField>
+	  <field dataField="AssessmentName"/>
+	  <field dataField="AssessUserGUID"/>
+	  <field dataField="PartName"/>
+	  <field dataField="EmpNo"/>
+	  <field dataField="EmpName"/>
+	  <field dataField="DtName"/>
+	  <field dataField="Status"/>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.maintain.SPPM007.SmpPmAttachment" tableName="SmpPmAttachment">
+  <queryStr>
+    select GUID, AssessmentUserScoreGUID, FileItemGUID, Stage, AttachmentType, FILENAME, FILEEXT, DESCRIPTION, UPLOADUSER, UPLOADTIME,
+    IS_LOCK, IS_DISPLAY, DATA_STATUS, D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME
+    from (
+    select a.GUID, a.AssessmentUserScoreGUID, a.FileItemGUID, a.Stage, a.AttachmentType, f.FILENAME, f.FILEEXT, f.DESCRIPTION, u.userName UPLOADUSER, a.D_INSERTTIME UPLOADTIME,
+    a.IS_LOCK, a.IS_DISPLAY, a.DATA_STATUS, a.D_INSERTUSER, a.D_INSERTTIME, a.D_MODIFYUSER, a.D_MODIFYTIME
+    from SmpPmAttachment a
+    join FILEITEM f on f.GUID=a.FileItemGUID
+    join Users u on a.D_INSERTUSER=u.OID
+    ) z
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="識別碼" showName=""/>
+    <field dataField="AssessmentUserScoreGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="考核分數單頭識別碼" showName=""/>
+    <field dataField="FileItemGUID" typeField="STRING" lengthField="50" defaultValue="" displayName="檔案識別號" showName=""/>
+    <field dataField="Stage" typeField="STRING" lengthField="50" defaultValue="" displayName="評核階段" showName=" 0:員工自評;1:一階主管;二階主管"/>
+    <field dataField="AttachmentType" typeField="STRING" lengthField="50" defaultValue="" displayName="附件類型" showName=""/>
+    <field dataField="FILENAME" typeField="STRING" lengthField="250" defaultValue="" displayName="檔名" showName=""/>
+    <field dataField="FILEEXT" typeField="STRING" lengthField="50" defaultValue="" displayName="檔案類型" showName=""/>
+    <field dataField="DESCRIPTION" typeField="STRING" lengthField="250" defaultValue="" displayName="檔案說明" showName=""/>
+    <field dataField="UPLOADUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="上傳者" showName=""/>
+    <field dataField="UPLOADTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="上傳時間" showName=""/>
+    <field dataField="IS_DISPLAY" typeField="STRING" lengthField="1" defaultValue="" displayName="是否顯示" 
+              showName=" Y:顯示;N:不顯示"/>
+    <field dataField="IS_LOCK" typeField="STRING" lengthField="1" defaultValue="" displayName="資料鎖定" 
+              showName=" N:正常;A:新增中;M:修改中;D:刪除中"/>
+    <field dataField="DATA_STATUS " typeField="STRING" lengthField="1" defaultValue="" displayName="資料狀態" 
+              showName=" N:未生效;Y:生效"/>
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/>
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+    <field dataField="IS_LOCK"/>
+  </keyField>
+  <allowEmptyField>
+    <field dataField="Stage"/>
+    <field dataField="AttachmentType"/>
+    <field dataField="FILENAME"/>
+    <field dataField="FILEEXT"/>
+    <field dataField="DESCRIPTION"/>
+    <field dataField="UPLOADUSER"/>
+    <field dataField="UPLOADTIME"/>
+  </allowEmptyField>
+  <nonUpdateField>
+    <field dataField="FILENAME"/>
+    <field dataField="FILEEXT"/>
+    <field dataField="DESCRIPTION"/>
+    <field dataField="UPLOADUSER"/>
+    <field dataField="UPLOADTIME"/>
+  </nonUpdateField>
+</DataObject>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataObject assemblyName="WebServerProject" childClassString="WebServerProject.form.SPKM001.FILEITEM" tableName="FILEITEM">
+  <queryStr>
+    select GUID, JOBID, IDENTITYID, FILENAME, FILEEXT, FILEPATH, DESCRIPTION, LEVEL1, LEVEL2,
+    D_INSERTUSER, D_INSERTTIME, D_MODIFYUSER, D_MODIFYTIME,
+    UPLOADUSER, UPLOADTIME
+    FROM FILEITEM
+  </queryStr>
+  <isCheckTimeStamp>true</isCheckTimeStamp>
+  <fieldDefinition>
+    <field dataField="GUID" typeField="STRING" lengthField="50" defaultValue="" displayName="GUID" showName=""/>
+    <field dataField="JOBID" typeField="STRING" lengthField="50" defaultValue="" displayName="JOBID" showName=""/>
+    <field dataField="IDENTITYID" typeField="STRING" lengthField="50" defaultValue="" displayName="IDENTITYID" showName=""/>   
+    <field dataField="FILENAME" typeField="STRING" lengthField="255" defaultValue="" displayName="FILENAME" showName=""/>
+    <field dataField="FILEEXT" typeField="STRING" lengthField="10" defaultValue="" displayName="FILEEXT" showName=""/>
+    <field dataField="FILEPATH" typeField="STRING" lengthField="255" defaultValue="" displayName="FILEPATH" showName=""/>    
+    <field dataField="DESCRIPTION" typeField="STRING" lengthField="255" defaultValue="" displayName="檔案說明" showName=""/>
+    <field dataField="LEVEL1" typeField="STRING" lengthField="50" defaultValue="" displayName="LEVEL1" showName=""/>  
+    <field dataField="LEVEL2" typeField="STRING" lengthField="50" defaultValue="" displayName="LEVEL2" showName=""/>       
+    <field dataField="D_INSERTUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="建立者" showName=""/>
+    <field dataField="D_INSERTTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="建立時間" showName=""/>
+    <field dataField="D_MODIFYUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="更新者" showName=""/>
+    <field dataField="D_MODIFYTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="更新時間" showName=""/> 
+	<field dataField="UPLOADUSER" typeField="STRING" lengthField="50" defaultValue="" displayName="上傳者" showName=""/>
+    <field dataField="UPLOADTIME" typeField="STRING" lengthField="50" defaultValue="" displayName="上傳時間" showName=""/>    	
+  </fieldDefinition>
+  <identityField>
+    <field dataField="GUID"/>
+  </identityField>
+  <keyField>
+    <field dataField="GUID"/>
+  </keyField>
+  <allowEmptyField>    
+    <field dataField="DESCRIPTION"/>
+    <field dataField="D_INSERTUSER"/>
+	<field dataField="D_INSERTTIME"/>
+	<field dataField="D_MODIFYUSER"/>
+	<field dataField="D_MODIFYTIME"/>
+    <field dataField="UPLOADUSER"/>
+    <field dataField="UPLOADTIME"/>
+  </allowEmptyField>
+  <nonUpdateField>    
+    <field dataField="UPLOADUSER"/>
+    <field dataField="UPLOADTIME"/>
+  </nonUpdateField>
+</DataObject>

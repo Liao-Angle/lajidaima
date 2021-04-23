@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReportingServiceMaintain.master.cs" Inherits="ProjectBaseWebUI_ReportingServiceMaintain" %>
+<%@ Register Assembly="DSCWebControl" Namespace="DSCWebControl" TagPrefix="cc1" %>
+
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <link href="../StyleSheet/WebFormPT.css" rel="stylesheet" type="text/css" />
+    <title>未命名頁面</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table border=0 width=100% cellpadding=0 cellspacing=5>
+        <tr>
+            <td>
+                <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                </asp:contentplaceholder>
+            </td>
+        </tr>
+        <tr>
+            <td align=center>
+                <cc1:GlassButton ID="SendButton" runat="server" ImageUrl="~/Images/OK.gif" Text="查詢"
+                    Width="172px" OnClick="SendButton_Click" />
+                <cc1:GlassButton ID="ClearButton" runat="server" ImageUrl="~/Images/NO.gif" OnClick="ClearButton_Click"
+                    Text="清除條件" Width="150px" />
+            </td>
+        </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

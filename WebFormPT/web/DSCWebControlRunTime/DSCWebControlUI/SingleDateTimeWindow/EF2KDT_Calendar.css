@@ -1,0 +1,4 @@
+﻿.calendarDays {font-family:Arial;background-color:rgb(218,218,255);width:100px;padding-top:4px;text-align:center;}
+.calendarWeekend {font-family:Arial;color:black;background-color:lightgrey;width:100px;padding-top:4px;text-align:center;cursor:hand;}
+.calendarWeekday {font-family:Arial;color:black;background-color:mistyrose;width:100px;padding-top:4px;text-align:center;cursor:hand;}
+.thisDate {font-family:Arial;background-color:lightyellow;width:100px;padding-top:4px;text-align:center;cursor:hand;}

@@ -1,0 +1,30 @@
+2014/11/06 01:00:00
+
+d:\ECP\WebFormPT\DSCBatchService\BatchFolder\ClearTempFolder\ClearTempFolder.dll
+2014/11/06 14:30:17
+
+d:\ECP\WebFormPT\DSCBatchService\BatchFolder\DelTempFolder\DelTempFolder.dll
+2014/11/06 14:30:17
+   於 System.Reflection.Assembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, Assembly locationHint, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, Boolean forIntrospection)
+   於 System.Reflection.Assembly.InternalLoad(AssemblyName assemblyRef, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   於 System.Reflection.Assembly.LoadFrom(String assemblyFile)
+   於 DSCBatchService.BatchData.threadMethod()
+無法載入檔案或組件 'file:///d:\ECP\WebFormPT\DSCBatchService\BatchFolder\DelTempFolder\DelTempFolder.dll' 或其相依性的其中之一。 系統找不到指定的檔案。
+2014/11/06 14:30:17
+
+DelTempFolder無法載入檔案或組件 'file:///d:\ECP\WebFormPT\DSCBatchService\BatchFolder\DelTempFolder\DelTempFolder.dll' 或其相依性的其中之一。 系統找不到指定的檔案。   於 System.Reflection.Assembly._nLoad(AssemblyName fileName, String codeBase, Evidence assemblySecurity, Assembly locationHint, StackCrawlMark& stackMark, Boolean throwOnFileNotFound, Boolean forIntrospection)
+   於 System.Reflection.Assembly.InternalLoad(AssemblyName assemblyRef, Evidence assemblySecurity, StackCrawlMark& stackMark, Boolean forIntrospection)
+   於 System.Reflection.Assembly.LoadFrom(String assemblyFile, Evidence securityEvidence)
+   於 System.Activator.CreateInstanceFrom(String assemblyFile, String typeName, Boolean ignoreCase, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, Evidence securityInfo)
+   於 System.AppDomain.CreateInstanceFrom(String assemblyFile, String typeName)
+   於 System.AppDomain.CreateInstanceFromAndUnwrap(String assemblyName, String typeName)
+   於 DSCBatchService.BatchData.threadMethod()
+2014/11/06 14:44:34
+
+complete
+2014/11/06 14:46:52
+
+d:\ECP\WebFormPT\DSCBatchService\BatchFolder\DelTempFolder\DelTempFolder.dll
+2014/11/06 14:50:24
+
+complete
